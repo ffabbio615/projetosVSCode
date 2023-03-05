@@ -21,7 +21,3 @@ for (let i=0; i<10; i++)
 for (let i=0; i<10; i++){
     console.log("Número "+ (i+1) + ": " + numerosDoSorteio[i]);
 }
-
-let testandoCeil = 7.12;
-
-console.log(Math.ceil(testandoCeil));
