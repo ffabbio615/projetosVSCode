@@ -13,7 +13,7 @@ for (let i=0; i<10; i++)
             i--;
         }
     }
-    else if(numerosDoSorteio[i]==undefined && j!=10){
+    else if(numerosDoSorteio[i]===undefined && j!=10){
         numerosDoSorteio[i] = numeroSorteado;
     }
 }
