@@ -1,0 +1,128 @@
+:root {
+    --primary-color: rgb(2, 48, 107);
+}
+
+* {
+    box-sizing: border-box;
+    outline: 2;
+
+}
+
+body {
+    max-width: 1200px;
+    margin: 12vh auto;
+    padding: 0 100px;
+    overflow-x: hidden;
+    background: var(--primary-color);
+}
+
+.container {
+    background: none;
+    border-color: tomato;
+    border-radius: 1vw 0vw 1vw 0;
+    border-width: 3px;
+    border-style:groove;
+    font-family: 'Franklin Gothic Medium';
+    width: 40vw;
+    margin: auto;
+    padding: 0% 0% 2% 0%;
+}
+
+.container h1, p, label, button {
+    color: white;
+}
+
+h1{
+    text-align: center;
+    font-size:x-large;
+}
+
+p {
+    font-size: medium;
+    text-align: justify;
+    padding: 0 2% 0 2%;
+}
+
+label{
+    display: block;
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    width:39vw;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    width: 15%;
+    border-color: tomato;
+    border-width: 3px;
+    border-style: outset;
+    border-radius: 0.5vw 0vw 0.5vw 0vw;
+    font-weight:bold;
+    background: none;
+    transition:all 1s;
+}
+
+/*.botaoEnviar {
+    background-image:url("../img/pombo.png");
+    background-size: 50%;
+}*/
+
+@keyframes botaoEnviarBrilho{
+    from {box-shadow: 0vw 0vh 0vw none;}
+    /* offset-x | offset-y | blur-radius | color */
+    to {box-shadow: 0vw 0vh 1vw rgb(255, 255, 255); border-color: white;}
+    /* pode usar 0%{} 25%{} 50%{} 100%{} etc */
+}
+
+@keyframes botaoEnviarBackground{
+    0%{background-color: none;}
+    100%{background-color: tomato;}
+}
+
+button:hover{
+    box-shadow: 0vw 0vh 1vw rgb(255, 255, 255); border-color: white;
+    animation: botaoEnviarBackground 1s 0s 1 forwards;
+    cursor: pointer;
+    /*background-color: tomato;
+    transition: 500ms linear; PODE USAR DA MESMA FORMA QUE O
+    animation-name: botaoEnviarBackground;
+    animation-duration: 1s;
+    
+    animation-name: botaoEnviarBrilho;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    /*animation: botaoEnviarBrilho 1s 0s infinite alternate;  Tudo resumido em uma só linha*/
+    /* animation-direction: reverse; AO CONTRARIO
+    animation-direction: alternate-reverse; VAI E VOLTA AO CONTRARIO */
+}
+
+button:left{
+    animation-name: botaoEnviarBrilho;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+}
+
+@media (min-width:240px) and (max-width:800px) {
+    .container {
+        background: rgb(129, 129, 129);
+        width: 70%;
+    }
+    input{
+        width:35vw;
+    }
+    button {
+        display: block;
+        margin: 10px auto;
+        width: 30%;
+    }
+}
