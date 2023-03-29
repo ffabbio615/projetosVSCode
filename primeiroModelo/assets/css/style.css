@@ -62,15 +62,11 @@ button {
     border-width: 3px;
     border-style: outset;
     border-radius: 0.5vw 0vw 0.5vw 0vw;
+    font-size: medium;
     font-weight:bold;
     background: none;
     transition:all 1s;
 }
-
-/*.botaoEnviar {
-    background-image:url("../img/pombo.png");
-    background-size: 50%;
-}*/
 
 @keyframes botaoEnviarBrilho{
     from {box-shadow: 0vw 0vh 0vw none;}
@@ -102,14 +98,6 @@ button:hover{
     /*animation: botaoEnviarBrilho 1s 0s infinite alternate;  Tudo resumido em uma só linha*/
     /* animation-direction: reverse; AO CONTRARIO
     animation-direction: alternate-reverse; VAI E VOLTA AO CONTRARIO */
-}
-
-button:left{
-    animation-name: botaoEnviarBrilho;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: reverse;
 }
 
 @media (min-width:240px) and (max-width:800px) {
