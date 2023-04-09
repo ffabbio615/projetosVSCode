@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Saudável</title>
+    <link rel="stylesheet" href="./assets/css/estiloSaude.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo"> <img src="./assets/img/logo-white-01.png" alt=""></div>
+        <div class="menu">
+            <ul> <!--unordered list-->
+                <li><a href="./html/imc.html">Calcule IMC</a></li> <!--item list-->
+                <li><a href="./html/tmb.html">Taxa Basal Masculina</a></li>
+                <li><a href="./html/tmb.html">Taxa Basal Feminina</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <div class="container">
+                <div class="paragrafo">
+                    <h1>HEALTHY LIFE</h1>
+                    <p class="paragrafoComum">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Error optio a architecto mollitia quo, aperiam doloremque,
+                        ab quia tempore impedit quibusdam at necessitatibus, cumque
+                        earum sed repudiandae voluptates iure rerum?
+                    </p>
+                    <a href="#" onclick="openDialog()"><p>LOGIN</p></a>
+                </div>
+            </div>
+        </section> 
+    </main>
+
+    <dialog>
+        <div>
+        <h2>Login em Construção. Aguarde!</h2>
+        <p>Para mais informações, vá até o posto Ipiranga!</p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+      </dialog>
+
+    <script type="text/javascript">
+        var dialog = document.querySelector('dialog');
+
+function openDialog() {  
+  dialog.showModal();
+  dialog.className="caixaDeDialogo";
+}
+
+function closeDialog() {  
+  dialog.close();
+  dialog.className="";
+}
+    </script>
+</body>
+
+</html>

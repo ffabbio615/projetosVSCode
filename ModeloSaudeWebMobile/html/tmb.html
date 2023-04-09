@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da TMB</title>
+    <link rel="stylesheet" href="../assets/css/tmb.css">
+</head>
+
+<body>
+    <header>
+        <h1>CALCULE SUA TAXA METABÓLICA BASAL</h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <form action="post">
+                    <label for="valorAltura">GÊNERO</label>
+                    <select id="genero">
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                    </select>
+                    <label for="valorPeso">PESO EM KG</label>
+                    <input type="text" placeholder="Ex.: 86">
+                    <label for="valorAltura">ALTURA EM CM</label>
+                    <input type="text" placeholder="Ex.: 186">
+                    <label for="valorIdade">IDADE</label>
+                    <input type="text" placeholder="Ex.: 36">
+                    <label for="valorNivelAtividade">NÍVEL DE ATIVIDADE FÍSICA</label>
+                    <select id="nivelAtividade">
+                        <option value="1">NÃO PRATICO EXERCÍCIOS</option>
+                        <option value="2">ME EXERCITO DE 1 A 3 DIAS POR SEMANA</option>
+                        <option value="3">ME EXERCITO DE 3 A 5 DIAS POR SEMANA</option>
+                        <option value="4">ME EXERCITO TODOS OS DIAS DA SEMANA</option>
+                        <option value="5">ME EXERRCITO DUAS VEZES POR DIA TODOS OS DIAS</option>
+                    </select>
+                    <div>
+                        <button type="button"><a href="../index.html">Voltar</a></button>
+                        <button type="submit">Calcular</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
