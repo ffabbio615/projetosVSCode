@@ -149,6 +149,7 @@ h1+p::selection {
     border-style: none;
     box-shadow: 0px 0px 15px 10px rgba(23, 28, 45, 0.9);
     /* hoeizontal, vertical, blur, opacidade, cor */
+    transition: 0.5s ease-in-out;
 }
 
 dialog div{
