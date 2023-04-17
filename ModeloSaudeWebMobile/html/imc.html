@@ -16,19 +16,21 @@
     <main>
         <section>
             <div>
-                <form action="post">
+                <form action="/" method="post" id="formulario">
                     <label for="valorAltura">ALTURA EM CM</label>
-                    <input type="text" placeholder="Ex.: 86">
+                    <input type="text" id="altura" placeholder="Ex.: 1.86">
                     <label for="valorPeso">PESO EM KG</label>
-                    <input type="text" placeholder="Ex.: 186">
+                    <input type="text" id="peso" placeholder="Ex.: 86">
                     <div>
                         <button type="button"><a href="../index.html">Voltar</a></button>
                         <button type="submit">Calcular</button>
                     </div>
                 </form>
             </div>
+            <div id="resultado"></div>
         </section>
     </main>
+    <script src="../assets/js/imc.js"></script>
 </body>
 
 </html>

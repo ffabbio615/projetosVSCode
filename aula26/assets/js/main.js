@@ -41,6 +41,7 @@ function getNivelImc (imc) {
 
 function getImc (peso, altura) {
   const imc = peso / altura ** 2;
+  alert (imc.toFixed(2));
   return imc.toFixed(2);
 }
 
