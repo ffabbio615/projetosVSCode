@@ -91,6 +91,22 @@ div div button{
     text-decoration: none;
  }
 
+ .resultado{
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+ }
+
+ .paragrafoResultado{
+    max-width: 60%;
+    margin-top: 2vh;
+    padding: 10px 25px;
+    background-color: rgb(23, 28, 45,1);
+    color: white;
+    font-family: MontserratBold;
+}
+
  @media screen and (max-width: 600px) {
 
     body{
@@ -126,7 +142,6 @@ div div button{
         width: 40vw;
         height: 5vh;
     }
-
  }
 
  @media screen and (max-width: 600px) and (orientation:landscape) {
