@@ -32,6 +32,7 @@ formulario.addEventListener('submit', function(form){
     if(nivelAtividade==3){tmb= tmb*1.55;}
     if(nivelAtividade==4){tmb= tmb*1.725;}
     if(nivelAtividade==5){tmb= tmb*1.9;}
+    
     p.innerHTML += ` A quantidade de calorias que você precisa ingerir para manter é de: ${tmb.toFixed(2)}.`
     resultado.appendChild(p);
 
