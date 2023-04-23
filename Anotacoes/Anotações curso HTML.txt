@@ -1,0 +1,40 @@
+TAGS:
+
+PRINCIPAIS
+
+<html> / <head> = para estilos, formatação de linguagem de idioma e título da página / <body> = todo corpo da página
+<tittle> = Título da página
+<header> = Cabeçalho
+<main> = Principal
+<footer> = Rodapé
+<link rel="stylesheet" href="./assets/css/estilo.css"> = Linkagem de um arquivo CSS
+<script src="./assets/js/main.js"></script> = Linkagem de script em JS
+
+
+CONTAINERS
+
+<div> / <section> = são camadas e seções utilizadas quando não há um elemento já próprio para formatação, tipo <header>, <main>, <footer>, etc.
+
+<span> = Não tem nenhum atributo próprio. Serve para formatar algo na página, por isso se usa com class e id dentro, para ser invocado no CSS e mudar qualquer coisa que está dentro dele. Mas só deve ser utilizado quando não houver um elemento próprio para isso ou então quando já se criou um estilo próprio para formatar algo como padrão.
+
+OUTRAS
+
+<td> = Coluna
+<tr> = Linha
+
+LISTAS
+<ul> </ul> = lista não ordenada
+<ol> </ol> = lista ordenada (pode iniciar com outro número que não seja 1, por exemplo start="20"
+<li> </li> = item da lista (um ou vários)
+<dl> </dl> = lista com descrição <dt> titulo </dt> <dd> descrição </dd>
+<nav> </nav> = menu de navegação
+
+TABELA (todas as TAGS abrem e fecham. O navegador interpreta as novas tags para cada local semanticamente correto)
+<table> </table>
+<thead> = cabeçalho da tabela
+<tbody> = corpo da tabela
+<tfoot> = rodapé da tabela
+<caption> = descrição da tabela, que aparece em cima ou na parte de baixo
+<tr> = linha.
+<th colspan="2"> = coluna no cabeçalho. A colspan é o número de colunas que serão ocupadas dentro de uma linha
+<td rowspan="2"> = coluna no corpo e no resto. A rowspan é o número de linhas que serão ocupadas por essa coluna.

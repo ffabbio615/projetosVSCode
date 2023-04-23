@@ -1,0 +1,59 @@
+Variáveis objetos e arrays:
+
+Let > que varia
+Const > que continua com o mesmo valor
+>>>>>Para definir o tipo da variável, para uma let com nome de "numero", será assim:
+numero = Number(numero); numero = String(numero); numero = Boolean(numero); numero = Array(numero); numero = Object(numero); numero = Function(numero);
+
+ARRAY
+nomedoArray.length (tamanho do array)
+nomeDoArray.push (adicionar valor depois do último elemento do array)
+nomeDoArray.unshift (adiciona valor antes do primeiro elemento do array)
+nomeDoArray.pop (remove valor do último elemento do array)
+nomeDoArray.shift (remove valor do primeiro elemento do array)
+nomeDoArray.slice (0,X) (seleciona dentro do array os slots 0 até X)
+
+
+COMANDOS AVULSOS:
+Console.log(""); > Mostrar alguma coisa ou resultado no console
+Typeof> Diz o tipo da variável
+<script src=""></script> > Abre um arquivo, seja em JS ou outros
+Alert, confirm e prompt > caixas de informação, de confirmação e de inserção de informação, respectivamente
+
+
+MATH:
+.floor > retira as casas decimais e arredonda para baixo
+.ceil > retira as casas decimais e arredonda para cima
+.round > arredonda um número para cima ou baixo - tipo 9.49 para 9 ou 9.5 ou mais para 10
+.min e .max > pega da sequência o menor e o maior número dentro de uma sequência de números
+.random > pega um número aleatório entre 0 e 1 (se quiser por exemplo de 0 a 9, será random() *10. Para 1 até 10, ficará random() *10 +1
+.toFixed(x) > Retorna o número de casas decimais após a vírgula em x quantidade.
+
+
+OPERADORES DE COMPARAÇÃO
+> OU < Maior ou menor
+>= OU <= Maior que ou menor que
+== Igual / Checa valor
+=== Igual estrito / Checa valor e tipo
+!= Diferente / Checa valor
+!== Diferente Estrito / Checa valor e tipo
+|| Ou / Uma coisa ou outra
+
+
+JAVASCRIPT-HTML
+document.querySelector('#idDoElementoHtml'); > Seleciona um elemento HTML pelo id dele. Uma variável recebendo isso passa a ter tudo do elemento
+
+form.addEventListener('tipoDeEvento tipo submit', function (parametro reconhecido, no caso, form) {}); > Adiciona um evento a um elemento com ação dentro da função
+elemento.preventDefault(); > Cancela a ação de um elemento, tipo cancelar o post de um form
+
+`Texto mais ${variavel}` > Passa o valor das variáveis de javascript para HTML, através das crases. Só funciona dentro das crases e pode passar aspas dentro como texto
+
+return > Interrompe o que vier depois desse código, seja num método ou num código aberto
+
+document.createElement('p'); > Cria um elemento HTML. Nesse caso P (parágrafo) foi criado
+
+variavelQueRecebeuUmaTag.innerHTML = ''; > Mexe dentro do conteúdo de uma TAG. Nesse caso limpou o que estava dentro da TAG, tipo apagar uma Div
+
+variavelQueRecebeuUmaTag.innerHTML.appendChild(TAGHTML); > Adiciona dentro de uma TAG (tipo uma DIV) um elemento HTML (pode ser um parágrafo, um pedaço novo de página)
+
+

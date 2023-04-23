@@ -1,0 +1,147 @@
+innerHTML = pega o que está dentro do elemento, tipo o que está dentro de <P>AQUI DENTRO</P> ou <div>AQUI DENTRO</div>
+outerHTML = pega o que está em todo elemento. Se <p>TEXTO</p> tiver dentro de uma div, vai mexer em tudo.
+
+MEDIDAS
+vmax e vmin = tamanho minimo e máximo de acordo com a largura ou altura da tela, mantendo sempre a proporção quando usada em conjunto
+vh e vw = tamanho de acordo com a largura ou altura da tela
+em = significa o tamanho da fonte do elemento pai, que por padrão é 16px. 
+
+
+DISPLAYS E RELACIONADOS
+display:inline; = ocupa as linhas e não recebe tamanho nem cores
+display:block; = o bloco ocupa o tamanho todo da linha
+float:posição; = coloca os elementos na posição escolhida, como left, right, etc. Também faz os outros elementos de bloco ocuparem a linha, cada um com seu tamanho
+clear:direção; = limpa o que virá na direção, seja antes com left, depois com right, em ambos, etc.
+
+display:flex; = os filhos de uma classe com "flex" podem se posicionar em qualquer direção e pode ter dimensões flexíveis para se adaptar. OBS.: TUDO RELACIONADO A FLEX SERÁ FEITO DENTRO DO ELEMENTO QUE ESTÁ COM O DISPLAY FLEX.
+flex-direction:direção; = estabelece a direção entre eixo X (linha) e eixo Y (coluna). Ex.: row | row-reverse | column | column-reverse;
+flex-wrap:comportamento; = quebra os itens para uma linha seguinte, se necessário. nowrap (mesma linha) | wrap (multiplas linhas) | wrap-reverse (de baixo para cima)
+flex-flow:direção comportamento; = reúne flex-direction e flex-wrap numa só. Ex.: row nowrap | row wrap | column nowrap | column wrap;
+justify-content:posição; = coloca os itens com posições e outros atributos. flex-start | flex-end | center | space-between | space-around | space-evenly
+flex-start (alinha no início) | flex-end (alinha no fim) | center (alinha no centro) | space-between (distribui os itens por igual, encostados nas bordas da tela e com espaço entre cada um) | space-around (distribui os itens por igual, mas com margem antes e depois do item) | space-evenly (distribui os itens por igual, até no espaço entre as bordas)
+align-content:posição; = é similar ao justify-content, porém organiza as linhas de acordo com a altura da página. Ex.: flex-start|flex-end|center|space-between|space-around|stretch
+align-items:posição; = alinha os itens no eixo oposto da base definifa em flex-direction. stretch | flex-start | flex-end | center | baseline
+align-self:posição; = alinha apenas o item selecionado. auto | flex-start | flex-end | center | baseline | stretch
+
+display:grid; = altera o display do elemento para grade e dá opções específicas a isso. 
+grid-template-columns:tamanho; = dá para a grade um tamanho do tipo width para as colunas, dividindo na tela o número de colunas pelo tamanho escolhido. 50%/50% = 2col
+:fragmento; = o fr é um tamanho da tela e torna a coluna responsiva. Ex.: 1fr 1fr 1fr = 3 colunas com o mesmo tamanho. Pode usar 1fr 2fr 1fr
+:repeat(n, 1fr); = caso tenha por exemplo 30 colunas, onde n é o número de colunas que quero atribuir ao tamanho de 1fr, no caso 30
+:repeat(auto-fill, minmax(320px,1fr)); = se o tamanho chegar ou for no máximo 320px, a tela será preenchida automaticamente por 1 coluna, graças ao auto-fill
+grid-template-rows:tamanho; = funciona da mesma forma que as colunas, porém essa é em linha
+gap:tamanho; = tamanho da distância entre as colunas
+
+
+POSIÇÕES
+absolute = posição absoluta na página. Se rolar a página, ela ficará onde foi colocada inicialmente
+fixed = parecido com position absolute, mas fica fixa onde foi colocada inicialmente, mesmo que role a página
+static = posição padrão dos elementos
+relative = posição do elemento em relação ao elemento anterior na página
+sticky = posiciona o elemento até a chegada de outro com o mesmo comportamento, até o fim do conteúdo deles. Ex.: Lista telefônica A até chegar B, B até C, etc. Obs.: deve-se definir a posição dele na página ou no elemento, senão não funciona
+align-items = posição dos itens na vertical (start, center e end)
+justify-content = posição dos itens na horizontal (start ou left, center e end ou right)
+z-index = ordem das camadas. Quanto maior, mais na frente, quanto menor, mais atrás. -n|n (-1,0,1,2,3, etc)
+
+
+TEXTOS
+font-size = tamanho da fonte (px, em, %, ...) | clamp(1em, 1em + 1vw, 1.5em); Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente
+font-style = estilo da fonte (oblique e italic)
+font-weight = peso da fonte (normal ou negrito)
+direction = direção de esquerda para direita e direita para esquerda (ltr ou rtl)
+letter-spacing = espaçamento da letra
+word-spacing = espaçamento da palavra
+font-family = família tipográfica ou nome da fonte com seus atributos. Ex.: MontserratBold
+line-height = entrelinha
+text-align = alinhamento do texto (left, right, justify, etc)
+text-decoration = decoração do texto, seja linha em cima, em baixo, ondulada, traçada, etc (underline, overline, wavy, etc)
+text-ident = espaço na primeira linha do parágrafo
+text-shadow = sombra no texto (2px, 2px, 2px = X, Y, Blur)
+text-transform = transforma o texto em caixa alta, caixa baixa ou somente a primeira letra das palavras em maiúsculo
+.classe::first-letter { font-size:15px; line-height:30px;} = transforma apenas a primeira letra num parágrafo, por exemplo
+
+
+VARIADOS
+background-size: cover; = ajusta o background no tamanho da tag escolhida
+background-position: top center; = ajusta a posição do fundo no topo e centraliza nos cantos
+box-sizing: border-box; = coloca o elemento exatamente do tamanho que foi definido, aí o conteúdo interno não empurra
+característicaDoElemento:inherit; = ativa a herança do pai nesse elemento. Ex.: p{font-size:inherit;}
+característicaDoElemento:initial; = desativa a herança do pai nesse elemento. Ex.: p{font-size:initial;}
+overflow-x e overflow-Y: auto; = se algum conteúdo passar do tamanho da página e gerar uma barra de rolagem, isso serve para criar a barra somente nesse conteúdo
+html{ scroll-behavior: smooth;} = Rola a página deslizando suavemente
+
+
+SELETORES BÁSICOS
+.pai = seleciona classe pai
+.pai .filho = seleciona classe filho que vem de pai
+.pai .filho, .filha = seleciona classes filho e filha que vem de pai
+.pai+.filho = seleciona a primeira classe filho que vem logo depois de pai
+.pai~.filho = seleciona toda classe filho que vem depois de pai, porém dentro do mesmo container
+#pai = seleciona um elemento html com id pai
+html, body, h1, div, a, p, ... = seleciona um elemento pelo tipo dele
+* = seleciona todos os elementos
+
+SELETORES DE ATRIBUTOS
+[atributodoElemento] = seleciona um atributo criado dentro de um elemento html, que pode ser por JavaScript também. Ex.: <h1 class="pai" atributoDoElemento>Titulo</h1>
+[atributoDoElemento="valor"] = seleciona atributo com valor dentro. Ex.: <h1 class="pai" atributoDoElemento="valor">Titulo</h1>
+[atributoDoElemento|="valor"] = seleciona atributo que tem exatamente o que está escrito dentro e tem que vir primeiro. Ex.:<h1 atributoDoElemento="valor-teste"></h1>
+[atributoDoElemento^="valor"] = (COMEÇA COM) seleciona atributo que comece com "valor". Ex.:<h1 class="pai" atributoDoElemento="valor896¨%$#">Título</h1>
+[atributoDoElemento$="valor"] = (TERMINA COM) seleciona atributo que termina com "valor". Ex.: <h1 class="pai" atributoDoElemento="896¨%$#valor">Título</h1>
+[atributoDoElemento*="valor"] = (CONTÉM) seleciona atributo que contenha "valor". Ex.: <h1 class="pai" atributoDoElemento="896¨%$#valor896¨%$#">Título</h1>
+
+
+PSEUDO-CLASSES (São classes já definidas para realizar alguma função)
+
+Para a TAG <a>
+a:link{} = Link nunca visitado
+a:visited{} = Link que já foi visitado
+a:active{} = Link na hora que está sendo clicado
+
+Para Inputs
+:checked{} = apenas quando algo está marcado
+:focus{} = apenas quando algo está em foco
+:in-range {} = inicia uma ação quando um input chegou no valor determinado entre o mínimo e o máximo
+:out-of-range {} = inicia uma ação quando um input saiu do valor determinado entre o mínimo e o máximo
+:valid {} | :invalid {} = inicia uma ação quando algum input não estiver preenchido corretamente, como um e-mail ou um site
+:required {} = aplica em qualquer elemento que tenha o atributo "required"
+:optional {} = aplica em qualquer elemento que não tenha o atributo "required"
+
+Geral
+.pai:first-child{} = seleciona apenas o primeiro elemento que vem de pai
+.pai:last-child{} = seleciona apenas o último elemento que vem de pai
+.pai:first-of-type{} = seleciona apenas o primeiro elemento do mesmo tipo que vem dentro de pai
+.pai:last-of-type{} = seleciona apenas o último elemento do mesmo tipo que vem dentro de pai
+:hover {} = inicia uma ação ao passar o mouse em cima do elemento
+:disabled {} = inicia uma ação quando um elemento está desabilitado
+:enabled {} = inicia uma ação quando um elemento está habilitado
+:lang (pt-BR) {} = inicia uma ação quando alguma palavra do idioma citado for digitada ou estiver no texto
+:nth-child(){} = seleciona os elementos do pai de acordo com o número. (odd) ou (2n+1) ímpares|(even) ou (2n) pares|(7) sétimo elemento|(5n) de 5 em 5|(3n+4) começa com 7 e vai adicionando de 3 em 3|(-n+3) começa com 3 e termina em 0, de 1 em 1. Tem de Type, de First e Last também
+:read-only | :read-write {} = aplica quando o conteúdo não for ou for editável respectivamente. Os editáveis são inputos ou elementos com atributo "contenteditable"
+:root {} = É a página HTML. Pode-se colocar um background nela
+:target {} = inicia quando um link direciona até o alvo. Ex.: <a href="#p1">Indo ao parágrafo 1</a> <p id"p1">Esse é o parágrafo 1</p>
+:not() {} = negação. Ex.: p, input:not(checked){} | Vai selecionar todo p e input que não está marcado
+
+
+
+PSEUDO-ELEMENTOS (São classes com elementos que podem mudar a estrutura da página. Um elemento pode alterar o outro via css)
+.classe::after{} = adiciona algo depois do último elemento da classe, se tornando o último
+.classe::before{} = adiciona algo antes do primeiro elemento da classe, se tornando o primeiro
+.classe::selection {} = altera o texto quando é selecionado. (color | background-color | text-decoration)
+.classe::backdrop {} = Aplica elementos ao fundo de um elemento na página, por exemplo um <dialog>, ficando na frente de outros. (background-color | background-image)
+.classe::placeholder {} = Aplica formatação apenas ao texto placeholder de um input
+.classe::marker {content: ""} = Aplica um conteúdo de texto ou imagem antes do elemento que recebe o efeito, como marcação. Funciona bem com <li>
+.class::spelling-error{} = Checa se há erro de ortografia na linguagem definida num <p> do HTML, por exemplo. Ex.: <p contenteditable spellcheck="true">Passoca</p>
+.class::grammar-error {} = Checa de há concordância na linguagem definida no HTML. Altera somente a parte que está errada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
