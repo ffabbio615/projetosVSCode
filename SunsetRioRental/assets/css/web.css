@@ -1,34 +1,85 @@
+/* CONFIGURAÇÕES GERAIS DA PÁGINA E VARIÁVEIS */
 *{margin: 0; padding: 0;}
-body{scroll-behavior: smooth;}
+html{scroll-behavior: smooth; transition: 1s;}
+/* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
+::-webkit-scrollbar {width:12px; height: 12px;}
+::-webkit-scrollbar-track {background: var(--corBarraRolagemAzul); border-radius: 5px;}
+::-webkit-scrollbar-thumb {background: var(--corNeutraCinza); border-radius: 5px;}
+/* ::-webkit-scrollbar:vertical{display: none;} */
+/* DECLARAÇÃO DE VARIÁVEIS */
+:root{--corFundoAzul: rgb(60,160,210); --corFundoLaranja: rgb(240,140,60); --corTextoAzul: rgb(0,150,250); --corTextoLaranja: rgb(240,110,10);
+--corBarraRolagemAzul: rgb(40,130,160); --corRodape: rgb(40,150,210),rgb(40,90,200); --corNeutraBranca: rgb(255,255,255);
+--corNeutraPreta: rgb(0,0,0); --corNeutraCinza: rgb(210, 210, 210); }
+/* CLASSES, IDS E ATRIBUTOS DE AJUSTES */
+.flexivelEsquerda{justify-content: flex-start;}
+.flexivelDireita{justify-content: flex-end;}
+.flexivelCentro{justify-content:center;}
 
-header{
-    width: 100%;
-    height: 18.5vh;
-    background-color: white;
-}
 
-header div{
-    height: 30px;
-    width: 100%;
-    background-color: rgb(0,150,250);  
-    color: white;
-    display: flex;
-    align-items: center;
-}
+/* ----------PRIMEIRA PÁGINA---------- */
 
-.iconeCabecalho{
-    height: 30px;
-    width: 20px;
-}
 
-header div p{
-    font-family: Arial;
-    font-weight: bolder;
-    font-size: 14px;
-}
+/* CONFIGURAÇÕES DO CABEÇALHO DA PÁGINA */
+header{ width: 100%; height: 18.5vh;  display: flex; flex-wrap: wrap;}
 
-.secaoInicial{
-    height:81.5vh;
-    width: 100%;
-    background-image: url(../img/fundoIpanema.jpg);
-}
+.camadaTopo{height:25%; background-color: var(--corTextoAzul);
+    color: var(--corNeutraBranca); display: flex; align-items: center;}
+
+.topo40 {width: 40%;} .topo20{width: 20%;} .topo40Min{width: 40%; min-width: 25%;}
+
+.iconeTopo{height: 70%; width: auto; margin-left: 10px;}
+
+.iconeFaceTopo{margin-right: 30px;} .iconeTelefoneTopo{margin-left: 30px;}
+
+header div p{ font-family: Arial; font-weight: bolder; text-align: center; font-size: clamp(0.1em, 0.2em + 0.8vw, 0.6em + 0.3vw); padding: 0 10px;}
+/* Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente */
+
+/* MENU DA PÁGINA E LOGO */
+.logoSunset{height: 80%; width: auto; max-width: 80%; margin-left: 8%; margin-right: 5%;}
+.camadaMenu{display: flex; height: 75%; width: 20%; align-items: center; justify-content: center;} .menu{width: 60%;}
+
+header nav{width: 100%;}
+header li{margin: 0 2.5%; display: flex;}
+header li a{position:relative; text-decoration: none; color: var(--corTextoLaranja); font-family: Arial; font-weight: 600;
+text-align: center; font-size: 1.4vw; padding: 0 10px;}
+header ul{list-style-type: none; display: flex; width: 100%; height: 100%; align-items: center;}
+header li a::before{ content: ""; position: absolute; width: 100%; height: 2px; bottom: -4px; left: 0; background-color: var(--corTextoLaranja);
+visibility: hidden; transform: scaleX(0); transition: all 0.3s ease-in-out 0s;}
+header li a:hover:before {visibility: visible; -webkit-transform: scaleX(1); transform: scaleX(1);}
+
+.iconeLinguagem{height:40%; width: auto; cursor: pointer;} #botaoPortugues{margin: 0 8%;} #botaoIngles{margin-right: 8%;}
+#botaoPortugues:hover{filter:drop-shadow(0 0 15px rgb(1, 224, 1, 0.8)); transition: 0.2s ease-in-out;}
+#botaoIngles:hover{filter:drop-shadow(0 0 15px rgb(255, 1, 1, 0.8)); transition: 0.2s ease-in-out;}
+/* FIM DO CABEÇALHO DA PÁGINA */
+
+/* PRIMEIRA SEÇÃO DA PÁGINA */
+.secaoInicial{ height:81.5vh; width: 100%; background-image: url(../img/fundoIpanema.jpg); background-size: cover;
+    background-position: top center; box-shadow: inset 0 16px 8px -15px var(--corNeutraPreta);}
+
+
+
+/* ----------SEGUNDA PÁGINA---------- */
+
+
+.secaoApartamentos{height:100vh; width: 100%; background-color: var(--corFundoAzul);}
+
+
+
+/* ----------TERCEIRA PÁGINA---------- */
+
+
+.secaoPagamentos{height:100vh; width: 100%; background-color: var(--corFundoLaranja);}
+
+
+
+/* ----------QUARTA PÁGINA---------- */
+
+
+.secaoSobreNos{height:100vh; width: 100%; background-color: var(--corNeutraBranca);}
+
+
+
+/* ----------QUINTA PÁGINA---------- */
+
+
+.secaoFaq{height:100vh; width: 100%; background: linear-gradient(var(--corRodape));}

@@ -12,42 +12,52 @@
 <body>
     <!-- TOPO -->
     <header>
-        <div>
-            <img class="iconeCabecalho alinharEsquerda" alt="" src="./assets/img/iconeTelefone.svg">
-            <p class="alinharEsquerda">+55 (21) 96806-0371 / +55 (21) 98071-8871 </p>
+        <div class="flexivelEsquerda camadaTopo topo40Min">
+            <img class="iconeTopo iconeTelefoneTopo" alt="" src="./assets/img/iconeTelefone.svg">
+            <p>+55 (21) 96806-0371 / +55 (21) 98071-8871 </p>
         </div>
-        <div>
-            <img class="iconeCabecalho alinharCentro" src="./assets/img/iconeRelogio.svg" alt="">
-            <p class="alinharCentro">Seg - Sáb: 9:00 - 18:00</p>
+        <div class="flexivelCentro camadaTopo topo20">
+            <img class="iconeTopo" src="./assets/img/iconeRelogio.svg" alt="">
+            <p class="alinharCentro" id="trHorarioTopo">Seg - Sáb: 9:00 - 18:00</p>
         </div>
-        <div>
-            <img class="iconeCabecalho alinharDireita" src="./assets/img/iconeWhatsapp.svg" alt="">
-            <img class="iconeCabecalho" alinharDireita src="./assets/img/iconeInstagram.svg" alt="">
-            <img class="iconeCabecalho" alinharDireita src="./assets/img/iconeFacebook.svg" alt="">
-            <p class="alinharDireita">contato@sunsetriorental.com</p>
-        </div>
+        <div class="flexivelDireita camadaTopo topo40">
+            <img class="iconeTopo" src="./assets/img/iconeEmail.svg" alt="">
+            <p>contato@sunsetriorental.com</p>
+            <img class="iconeTopo" src="./assets/img/iconeWhatsapp.svg" alt="">
+            <img class="iconeTopo" src="./assets/img/iconeInstagram.svg" alt="">
+            <img class="iconeTopo iconeFaceTopo" src="./assets/img/iconeFacebook.svg" alt="">
         </div>
 
         <!-- Logo Menu e Linguagem -->
-        <nav>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
+        <div class="flexivelEsquerda camadaMenu">
+            <img class="logoSunset" src="./assets/img/logoSunset.svg" alt="">
+        </div>
+        <div class="flexivelCentro camadaMenu menu">
+            <nav>
+                <ul class="flexivelCentro">
+                    <li><a href="#secaoApartamentos" id="trApartamentos">APARTAMENTOS</a></li>
+                    <li><a href="#secaoPagamentos" id="trPagamentos">PAGAMENTOS</a></li>
+                    <li><a href="#secaoSobreNos" id="trSobreNos">SOBRE NÓS</a></li>
+                    <li><a href="#secaoFaq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flexivelDireita camadaMenu">
+            <img id="botaoPortugues" class="iconeLinguagem" src="./assets/img/bandeiraBrasil.png" alt="">
+            <img id="botaoIngles" class="iconeLinguagem" src="./assets/img/bandeiraEua.png" alt="">
+        </div>
     </header>
 
     <!-- Seção Inicial -->
-    <section class="secaoInicial"></section>
+    <section class="secaoInicial" id="secaoInicial"></section>
     <!-- Seção Apartamentos e Avaliações -->
-    <section></section>
+    <section class="secaoApartamentos" id="secaoApartamentos"></section>
     <!--Seção Políticas e Pagamentos-->
-    <section></section>
+    <section class="secaoPagamentos" id="secaoPagamentos"></section>
     <!-- Seção Sobre a Sunset -->
-    <section></section>
+    <section class="secaoSobreNos" id="secaoSobreNos"></section>
     <!-- Seção FAQ -->
-    <section></section>
+    <section class="secaoFaq" id="secaoFaq"></section>
     <!-- Rodapé -->
     <footer></footer>
 </body>
