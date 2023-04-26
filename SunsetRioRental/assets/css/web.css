@@ -6,27 +6,34 @@ html{scroll-behavior: smooth; transition: 1s;}
 ::-webkit-scrollbar-track {background: var(--corBarraRolagemAzul); border-radius: 5px;}
 ::-webkit-scrollbar-thumb {background: var(--corNeutraCinza); border-radius: 5px;}
 ::-webkit-scrollbar:vertical{display: none;}
+
 /* DECLARAÇÃO DE VARIÁVEIS */
 :root{--corFundoAzul: rgb(60,160,210); --corFundoLaranja: rgb(240,140,60); --corTextoAzul: rgb(0,150,250); --corTextoLaranja: rgb(240,110,10);
 --corBarraRolagemAzul: rgb(40,130,160); --corRodape: rgb(40,150,210),rgb(40,90,200); --corNeutraBranca: rgb(255,255,255);
 --corNeutraPreta: rgb(0,0,0); --corNeutraCinza: rgb(210, 210, 210); }
+
+
+/* ELEMENTOS FIXOS, BOTÕES, MODAIS OU REPETIDOS*/
+
 /* CLASSES, IDS E ATRIBUTOS DE AJUSTES */
 .flexivelEsquerda{justify-content: flex-start;}
 .flexivelDireita{justify-content: flex-end;}
 .flexivelCentro{justify-content:center;}
 
-/* ELEMENTOS FIXOS OU MODAIS OU REPETIDOS*/
+/* BOTÃO QUE RETORNA PARA O TOPO DO SITE */
 .botaoTopo{width: 30px; height: 30px; background-color: var(--corTextoAzul); position: fixed; right: 10px; bottom:10px;
 display: flex; justify-content: center; align-items: center; border-radius: 5px; filter: drop-shadow(0 0 4px var(--corNeutraPreta));}
 .botaoTopo a{text-decoration: none; padding: 2px 1px 0 0; color: var(--corNeutraBranca); font-size: 1.1em; font-weight: bolder;}
-
+/* BOTÃO BOLINHA ICONE DE HAMBURGUER COM MENU DO SITE */
 .botaoMenu{width: 50px; height: 50px; background-color: var(--corTextoAzul); position: fixed; left: 10px; top:20px;;
 display: flex; justify-content: center; align-items: center; border-radius: 50%; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.644));
 color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: pointer;}
 .botaoMenuVisivel{opacity: 1; transition: 1s ease-in-out;}
 .botaoMenuInvisivel{opacity: 0; transition: 1s ease-in-out;}
 
-.botaoCTA{width: 100px; height: 20px;}
+/* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
+.botaoCTA{width: 250px; height: 45px; border-style: none; color: var(--corNeutraBranca); border-radius: 20px; background-color: var(--corTextoAzul);
+font-weight: 700; font-feature-settings: "kern"; box-shadow: 0 0 12px -2px var(--corNeutraPreta);}
 
 
 /* ----------PRIMEIRA PÁGINA---------- */
