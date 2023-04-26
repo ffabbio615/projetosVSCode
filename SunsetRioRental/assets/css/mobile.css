@@ -1,0 +1,26 @@
+@media screen and (max-width: 999px){
+    
+.topo20{width: 30%;} .topo40 {width: 35%;}
+.iconeTopo{display: none;}
+.camadaTopo{justify-content: center;}
+.logoSunset{height: 60%;}
+.camadaMenu{width: 50%;}
+header div p{font-size: clamp(0.1em, 0.6em + 0.8vw, 0.65em + 0.3vw); margin: 0;}
+header .menu{display: none;}
+.botaoMenuInvisivel{width: 50px; height: 50px; background-color: var(--corTextoAzul); position:absolute; left: calc(50% - 25px); top:7%;;
+    display: flex; justify-content: center; align-items: center; border-radius: 50%; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.644));
+    color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; opacity: 1; transition: 1s ease-in-out; cursor: pointer;}
+    .iconeLinguagem{height: 40%;}
+}
+
+@media screen and (max-width: 879px){
+    .topo20{display: none;} .topo40 {width: 50%;}
+
+}
+
+
+@media screen and (max-width: 509px){
+    .topo40 {width: 100%;}
+    .camadaMenu{height: 50%;}
+
+}

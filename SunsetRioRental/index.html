@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunset Rio – Imoveis de temporada em Copacabana</title>
     <link rel="stylesheet" href="./assets/css/web.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css">
 </head>
 
 <body>
     <!-- TOPO -->
     <header id="topo">
-        <div class="flexivelEsquerda camadaTopo topo40Min">
+        <div class="flexivelEsquerda camadaTopo topo40">
             <img class="iconeTopo iconeTelefoneTopo" alt="" src="./assets/img/iconeTelefone.svg">
             <p>+55 (21) 96806-0371 / +55 (21) 98071-8871 </p>
         </div>
@@ -36,37 +37,358 @@
             <nav>
                 <ul class="flexivelCentro">
                     <li><a href="#secaoApartamentos" id="trApartamentos">APARTAMENTOS</a></li>
-                    <li><a href="#secaoPagamentos" id="trPagamentos">PAGAMENTOS</a></li>
+                    <li><a href="#secaoPagamentos" id="trPagamentos">POLÍTICAS</a></li>
                     <li><a href="#secaoSobreNos" id="trSobreNos">SOBRE NÓS</a></li>
                     <li><a href="#secaoFaq">FAQ</a></li>
                 </ul>
             </nav>
         </div>
         <div class="flexivelDireita camadaMenu">
-            <img id="botaoPortugues" class="iconeLinguagem" src="./assets/img/bandeiraBrasil.png" alt="">
-            <img id="botaoIngles" class="iconeLinguagem" src="./assets/img/bandeiraEua.png" alt="">
+            <img id="botaoPortugues" class="iconeLinguagem" src="./assets/img/bandeiraBrasil.svg" alt="">
+            <img id="botaoIngles" class="iconeLinguagem" src="./assets/img/bandeiraEua.svg" alt="">
         </div>
     </header>
 
     <!-- Seção Inicial -->
-    <section class="secaoInicial" id="secaoInicial"></section>
+    <section class="secaoInicial" id="secaoInicial">
+        <h1>
+            Você já contemplou a vida hoje?
+            Com a gente, isso é possível!
+        </h1>
+        <p>
+            Apartamentos limpos, com vista para o mar, a 100m da praia,
+            próximo aos transportes mais utilizados e totalmente equipado
+            para que sua experiência seja incrível.
+        </p>
+        <button id="botaoCTA" class="botaoCTA">Reserve Agora</button>
+    </section>
     <!-- Seção Apartamentos e Avaliações -->
-    <section class="secaoApartamentos" id="secaoApartamentos"></section>
+    <section class="secaoApartamentos" id="secaoApartamentos">
+        <div class="painelApartamentos">
+            
+            <h2>NOSSOS APARTAMENTOS</h2>
+            <p>Confira a seguir o que temos de melhor para sua estadia:</p>
+            
+            <div class="listaApartamentos">
+                <div id="copaLoft" class="copaLoft imagemApartamento">
+                    <button class="botaoDetalhes">DETALHES</button>
+                    <div class="tarjaApartamento">
+                        <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                        <p id="descricaoApartamento" class="descricaoApartamento">
+                            <img class="iconeApartamento" src="" alt="">
+                            <p>Característica 1</p>
+                            <img class="iconeApartamento" src="" alt="">
+                            <p>Característica 2</p>
+                            <img class="iconeApartamento" src="" alt="">
+                            <p>Característica 3</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="estiloSunset" class="estiloSunset imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="atlanticoLoft" class="atlanticoLoft imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="sunsetGarden" class="sunsetGarden imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="copaSunset" class="copaSunset imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="atlanticoEstudio" class="atlanticoEstudio imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="estudioCopa" class="estudioCopa imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="marDeCopa" class="marDeCopa imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="marDeCopa2" class="marDeCopa2 imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="copaDream" class="copaDream imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="sunsetEstudio" class="sunsetEstudio imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <div id="sunsetPremium" class="sunsetPremium imagemApartamento">
+                <button class="botaoDetalhes">DETALHES</button>
+                <div class="tarjaApartamento">
+                    <h3 id="tituloApartamento" class="tituloApartamento"></h3>
+                    <p id="descricaoApartamento" class="descricaoApartamento">
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 1</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 2</p>
+                        <img class="iconeApartamento" src="" alt="">
+                        <p>Característica 3</p>
+                    </p>
+                </div>
+            </div>
+            <button id="botaoCTA" class="botaoCTA">Reserve Agora</button>
+
+            <div class="avaliacaoDeHospedes">
+                <h2>AVALIAÇÕES DE HÓSPEDES</h2>
+                <P>Confira a seguir o que nossos hóspedes acharam da experiência:</P>
+                <div class="flexivelEsquerda">
+                    <p>“...Excelente experiência, cumpriram com o anúncio, tudo que foi oferecido foi entregue. Anfitriã muito atenciosa e solícita.”</p>
+                    <p>Juliana</p>
+                    <p>abril 2023</p>
+                </div>
+                <div class="flexivelCentro">
+                    <button class="botaoVejaMais">VEJA MAIS</button>
+                </div>
+                <div class="flexivelDireita">
+                    <p>“...Experiência incrível, apartamento limpo e aconchegante, com uma vista espetacular de Copacabana! A anfitriã super atenciosa, e receptiva!”</p>
+                    <p>Gustavo</p>
+                    <p>abril 2023</p>
+                </div>
+            </div>
+
+            <div class="politicas">
+                <h2>POLÍTICAS</h2>
+                <div class="flexivelEsquerda">
+                    <img class="iconePoliticas" src="" alt="">
+                    <h3>REGRAS DE HOSPEDAGEM</h3>
+                    <p>Nossas regras de hospedagem foram definidas para garantir a qualidade de sua estadia.</p>
+                </div>
+                <div class="flexivelCentro">
+                    <img class="iconePoliticas" src="" alt="">
+                    <h3>PAGAMENTOS E CANCELAMENTOS</h3>
+                    <p>Leia nossa política de pagamentos e cancelamentos.</p>
+                </div>
+                <div class="flexivelDireita">
+                    <img class="iconePoliticas" src="" alt="">
+                    <h3>POLÍTICA DE PRIVACIDADE</h3>
+                    <p>Leia a nossa política de privacidade e veja de que forma utilizamos os seus dados.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <!--Seção Políticas e Pagamentos-->
     <section class="secaoPagamentos" id="secaoPagamentos"></section>
     <!-- Seção Sobre a Sunset -->
     <section class="secaoSobreNos flexivelCentro" id="secaoSobreNos">
-        <div>
+        <div class="painelSobreNos">
+            
+            <h2>SOBRE A SUNSET RIO</h2>
+            <p>A Sunset Rio foi idealizada pelas Valéria’s, e iniciou seus serviços no ano de 2021, se comprometendo com as seguintes diretrizes:</p>
+            
+            <div class="flexivelEsquerda">
+                <h3 id="tituloMissao" class="tituloMissao">MISSÃO</h3>
+                <p id="descricaoMissao" class="descricaoMissao">Oferecer serviços de hospedagem, com qualidade para nossos clientes, e transparência para nossos parceiros.</p>
+            </div>
+            <div class="flexivelCentro">
+                <h3 id="tituloVisao" class="tituloVisao">VISÃO</h3>
+                <p id="descricaoVisao" class="descricaoVisao">Queremos administrar um portifólio com pelo menos 10 apartamentos, nos próximos 24 meses.</p>
+            </div>
+            <div class="flexivelDireita">
+                <h3 id="tituloValores" class="tituloValores">VALORES</h3>
+                <p id="descricaoValores" class="descricaoValores">Ética, transparência, qualidade, respeito e empatia.</p>
+            </div>
 
+            <div class="painelSobreAsValerias">
+                
+                <div class="valeriaGomes">
+                    <h3>Valéria Gomes</h3>
+                    <img class="imagemValerias" src="" alt="">
+                    <p>Responsável pela recepção dos hóspedes, é a pessoa dedicada a auxiliar sua estadia ser a mais especial possível.</p>
+                    <div class="iconesSunset">
+                        <img class="iconeSobreASunset" src="" alt="">
+                        <img class="iconeSobreASunset" src="" alt="">
+                        <img class="iconeSobreASunset" src="" alt="">
+                    </div>
+                </div>
+                
+                <div class="sobreAsValerias">
+                    <h4>SOBRE AS VALÉRIA'S</h4>
+                    <p>
+                        Em 2018, as Valéria’s (Valéria Gomes e Valéria Lima) trabalharam juntas em uma empresa de aluguel por temporada, 
+                        já consolidada na cidade do Rio de Janeiro, onde aprenderam toda a paixão de recepcionar os hóspedes e oferecer 
+                        um serviço com qualidade, graças a nossa incrível e inesquecível mentora, Cristina.
+
+                        Após vários momentos difíceis causados pela pandemia de Covid-19, em 2021 resolveram iniciar o seu próprio 
+                        empreendimento e colocar em prática as lições aprendidas.
+                    </p>
+                </div>
+
+                <div class="valeriaLima">
+                    <h3>Valéria Lima</h3>
+                    <img class="imagemValerias" src="" alt="">
+                    <p>Responsável pela parte administrativa, é a pessoa dedicada a cuidar de sua reserva e garantir que esteja tudo pronto.</p>
+                    <div class="iconesSunset">
+                        <img class="iconeSobreASunset" src="" alt="">
+                        <img class="iconeSobreASunset" src="" alt="">
+                        <img class="iconeSobreASunset" src="" alt="">
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
     <!-- Seção FAQ -->
-    <section class="secaoFaq" id="secaoFaq"></section>
+    <section class="secaoFaq" id="secaoFaq">
+        <div class="painelFaq">
+            <div class="tituloPerguntasFrequentes">
+                <h2>FAQ - PERGUNTAS FREQUENTES</h2>
+                <p>Essas são algumas perguntas que são feitas com frequencia, estamos à disposição 
+                    para quaisquer outras dúvidas.
+                </p>
+            </div>
+            <div class="perguntasFrequentes">
+                <h3>
+                    TEM CAFÉ DA MANHÃ?
+                    O QUE É TAXA DE LIMPEZA?
+                    TEM ESTACIONAMENTO?
+                    O APARTAMENTO É COMPARTILHADO COM OUTROS HÓSPEDES?
+                    POSSO RECEBER VISITAS?
+                    ACEITA PETS?
+                    QUAL HORÁRIO DE CHECK IN E CHECK OUT?
+                    POSSO FAZER FESTA NO APARTAMENTO?
+                    TEM TOALHAS E LENÇÓIS?
+                    COMO É FEITO O CHECK IN?
+                    TEM SECADOR DE CABELO?
+                    TEM FERRO DE PASSAR ROUPA?
+                </h3>
+            </div>
+            <div class="painelCTAFaq">
+                <button id="botaoCTA" class="botaoCTA">Reserve Agora</button>
+            </div>
+        </div>
+    </section>
     <!-- Rodapé -->
-    <footer></footer>
+    <footer>
+        <div>
+            <img class="iconeRodape" src="./assets/img/iconeWhatsapp.svg" alt="">
+            <img class="iconeRodape" src="./assets/img/iconeInstagram.svg" alt="">
+            <img class="iconeRodape" src="./assets/img/iconeFacebook.svg" alt="">
+            <img class="iconeRodape" src="./assets/img/iconeAirbnb.svg" alt="">
+
+            <img class="iconeRodape" src="./assets/img/iconeEmail.svg" alt="">
+            <p>contato@sunsetriorental.com</p>
+            <img class="iconeRodape" alt="" src="./assets/img/iconeTelefone.svg">
+            <p>+55 (21) 96806-0371 / +55 (21) 98071-8871 </p>
+            <p>© 2023 - Todos os direitos reservados. Desenvolvido por Fábio Marques</p>
+        </div>
+    </footer>
 
     <!-- Elementos fixos ou modais -->
-    <div id="botaoMenu" class="botaoMenuInvisivel">☰</div>
+    <div id="botaoMenu" class="botaoMenu botaoMenuInvisivel">☰</div>
     <div id="botaoTopo" class="botaoTopo"><a href="#topo">↺</a></div>
 
     <!-- Importação de Scripts JavaScript -->

@@ -133,8 +133,11 @@ PSEUDO-ELEMENTOS (São classes com elementos que podem mudar a estrutura da pág
 .class::grammar-error {} = Checa de há concordância na linguagem definida no HTML. Altera somente a parte que está errada.
 
 
+EFEITOS
 
-
+box-shadow: 10px 10px 15px black; = Caixa de sombra criada com cor e desfoque. X Y Blur Color
+box-shadow: inset 10px 10px 15px black; = A mesma sombra, porém dentro do elemento
+box-shadow: -12px 0px 15px -6px red,  box-shadow: -12px 0px 15px -6px blue; = Adiciona duas cores na sombra. X | Y | Blur | X e Y | Cor
 
 
 
