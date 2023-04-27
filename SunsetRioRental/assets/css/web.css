@@ -11,39 +11,34 @@ html{scroll-behavior: smooth; transition: 1s;}
 /* IMPORTAÇÃO DE FONTES DA PÁGINA */
 
 /* Titulos */
-@font-face {font-family: BebasNeue; src: url("../font/titles/bebasNeue/BebasNeue-Regular.ttf");}
-@font-face {font-family: CoolveticaRegular; src: url("../font/titles/coolvetica/coolveticarg.otf");}
-@font-face {font-family: CoolveticaCompressed; src: url("../font/titles/coolvetica/coolveticacompressedhv.otf");}
-@font-face {font-family: CoolveticaBold; src: url("../font/titles/coolvetica/coolveticacondensedrg.otf");}
-@font-face {font-family: LeagueGothicRegular; src: url("../font/titles/leagueGothic/LeagueGothic-Regular.ttf");}
-@font-face {font-family: LeagueGothicBold; src: url("../font/titles/leagueGothic/LeagueGothic-Condensed.ttf");}
+@font-face {font-family: RobotoRegular; src: url("../font/titles/roboto/Roboto-Regular.ttf");}
+@font-face {font-family: RobotoBold; src: url("../font/titles/roboto/Roboto-Bold.ttf");}
+@font-face {font-family: RobotoBlack; src: url("../font/titles/roboto/Roboto-Black.ttf");}
+@font-face {font-family: RobotoLight; src: url("../font/titles/roboto/Roboto-Light.ttf");}
+@font-face {font-family: RobotoMedium; src: url("../font/titles/roboto/Roboto-Medium.ttf");}
+@font-face {font-family: RobotoBoldItalic; src: url("../font/titles/roboto/Roboto-BoldItalic.ttf");}
+@font-face {font-family: RobotoItalic; src: url("../font/titles/roboto/Roboto-Italic.ttf");}
 /* Subtitulos */
 @font-face {font-family: LatoRegular; src: url("../font/subtitles/lato/Lato-Regular.ttf");}
 @font-face {font-family: LatoBold; src: url("../font/subtitles/lato/Lato-Bold.ttf");}
 @font-face {font-family: LatoBlack; src: url("../font/subtitles/lato/Lato-Black.ttf");}
-@font-face {font-family: RalewayRegular; src: url("../font/subtitles/raleway/Raleway-Regular.ttf");}
-@font-face {font-family: RalewayBold; src: url("../font/subtitles/raleway/Raleway-Bold.ttf");}
-@font-face {font-family: RalewayBlack; src: url("../font/subtitles/raleway/Raleway-Heavy.ttf");}
 /* Corpo do Texto */
-@font-face {font-family: HelveticaRegular; src: url("../font/body/helvetica/Helvetica-Regular.ttf");}
-@font-face {font-family: HelveticaBold; src: url("../font/body/helvetica/Helvetica-Bold.ttf");}
-@font-face {font-family: HelveticaBoldItalic; src: url("../font/body/helvetica/Helvetica-BoldItalic.ttf");}
-@font-face {font-family: HelveticaItalic; src: url("../font/body/helvetica/Helvetica-italic.ttf");}
-@font-face {font-family: HelveticaLight; src: url("../font/body/helvetica/helvetica-light.ttf");}
-@font-face {font-family: HelveticaCompressed; src: url("../font/body/helvetica/helvetica-compressed.otf");}
 @font-face {font-family: LiterataRegular; src: url("../font/body/literata/LiterataBookRegular.otf");}
 @font-face {font-family: LiterataBold; src: url("../font/body/literata/LiterataBook-Bold.otf");}
 @font-face {font-family: LiterataBoldItalic; src: url("../font/body/literata/LiterataBook-BoldItalic.otf");}
 @font-face {font-family: LiterataItalic; src: url("../font/body/literata/LiterataBook-Italic.otf");}
-@font-face {font-family: VerdanaRegular; src: url("../font/body/verdana/verdana-Regular.ttf");}
-@font-face {font-family: VerdanaBold; src: url("../font/body/verdana/verdana-bold.ttf");}
-@font-face {font-family: VerdanaBoldItalic; src: url("../font/body/verdana/verdana-bold-italic.ttf");}
 
 
 /* DECLARAÇÃO DE VARIÁVEIS */
-:root{--corFundoAzul: rgb(60,160,210); --corFundoLaranja: rgb(240,140,60); --corTextoAzul: rgb(0,150,250); --corTextoLaranja: rgb(240,110,10);
+:root{
+/* CORES */
+--corFundoAzul: rgb(60,160,210); --corFundoLaranja: rgb(240,140,60); --corTextoAzul: rgb(0,150,250); --corTextoLaranja: rgb(240,110,10);
 --corBarraRolagemAzul: rgb(40,130,160); --corRodape: rgb(40,150,210),rgb(40,90,200); --corNeutraBranca: rgb(255,255,255);
---corNeutraPreta: rgb(0,0,0); --corNeutraCinza: rgb(210, 210, 210); }
+--corNeutraPreta: rgb(0,0,0); --corNeutraCinza: rgb(210, 210, 210); 
+/* FONTES */
+--tr: RobotoRegular; --tb: RobotoBold; --tbk: RobotoBlack; --tl: RobotoLight; --tm: RobotoMedium; --tbi: RobotoBoldItalic; --ti: RobotoItalic
+--str: LatoRegular; --stb: LatoBold; --stbk: LatoBlack; --cr: LiterataRegular; --cb: LiterataBold; --ci: LiterataItalic; --cbi: LiterataBoldItalic;
+}
 
 
 /* ELEMENTOS FIXOS, BOTÕES, MODAIS OU REPETIDOS*/
@@ -65,8 +60,11 @@ color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: point
 .botaoMenuInvisivel{opacity: 0; transition: 1s ease-in-out;}
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
-.botaoCTA{width: 250px; height: 45px; border-style: none; color: var(--corNeutraBranca); border-radius: 20px; background-color: var(--corTextoAzul);
-font-family: LatoBlack; font-weight: 900; font-size: larger; cursor: pointer; box-shadow: 0 0 12px -2px var(--corNeutraPreta);}
+.botaoCTA{width: 250px; height: 42px; border-style: none; color: var(--corNeutraBranca); border-radius: 18px; background-color: var(--corTextoAzul);
+font-family: var(--stbk); font-weight: 900; font-size: 19px; cursor: pointer; box-shadow: 0 0 12px -2px var(--corNeutraPreta);}
+
+/* BOTÃO DETALHES PARA MOSTRAR OS DETALHES DE UM APARTAMENTO */
+.botaoDetalhes{}
 
 
 /* ----------PRIMEIRA PÁGINA---------- */
@@ -84,7 +82,7 @@ header{ width: 100%; height: 18.5vh;  display: flex; flex-wrap: wrap; background
 
 .iconeFaceTopo{margin-right: 5%;} .iconeTelefoneTopo{margin-left: 5%;}
 
-header div p{ font-family: LatoBold; text-align: center; font-size: clamp(0.1em, 0.2em + 0.8vw, 0.6em + 0.3vw); padding: 0 10px;}
+header div p{ font-family: var(--cb); text-align: center; font-size: clamp(0.1em, 0.2em + 0.8vw, 0.6em + 0.3vw); padding: 0 10px;}
 /* Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente */
 
 /* MENU DA PÁGINA E LOGO */
@@ -93,8 +91,8 @@ header div p{ font-family: LatoBold; text-align: center; font-size: clamp(0.1em,
 
 header nav{width: 100%;}
 header li{margin: 0 2.5%; display: flex;}
-header li a{position:relative; text-decoration: none; color: var(--corTextoLaranja); font-family: RalewayBold; font-weight: 600;
-text-align: center; font-size: 1.5vw; padding: 0 10px;}
+header li a{position:relative; text-decoration: none; color: var(--corTextoLaranja); font-family: var(--tb);
+text-align: center; font-size: 1.7vw; padding: 0 10px;}
 header ul{list-style-type: none; display: flex; width: 100%; height: 100%; align-items: center;}
 header li a::before{ content: ""; position: absolute; width: 100%; height: 2px; bottom: -4px; left: 0; background-color: var(--corTextoLaranja);
 visibility: hidden; transform: scaleX(0); transition: all 0.3s ease-in-out 0s;}
