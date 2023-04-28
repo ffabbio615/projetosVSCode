@@ -61,7 +61,11 @@ color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: point
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
 .botaoCTA{width: 250px; height: 42px; border-style: none; color: var(--corNeutraBranca); border-radius: 18px; background-color: var(--corTextoAzul);
-font-family: var(--stbk); font-weight: 900; font-size: 19px; cursor: pointer; box-shadow: 0 0 12px -2px var(--corNeutraPreta);}
+font-family: var(--stbk); font-weight: 900; font-size: 21px; cursor: pointer; box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
+.botaoCTA:enabled{transition: 0.5s;}
+.botaoCTA:hover{background: var(--corFundoLaranja); transition: 0.5s;}
+.botaoCTA:active{background-color: var(--corTextoLaranja);}
+
 
 /* BOTÃO DETALHES PARA MOSTRAR OS DETALHES DE UM APARTAMENTO */
 .botaoDetalhes{}
@@ -82,21 +86,21 @@ header{ width: 100%; height: 18.5vh;  display: flex; flex-wrap: wrap; background
 
 .iconeFaceTopo{margin-right: 5%;} .iconeTelefoneTopo{margin-left: 5%;}
 
-header div p{ font-family: var(--cb); text-align: center; font-size: clamp(0.1em, 0.2em + 0.8vw, 0.6em + 0.3vw); padding: 0 10px;}
+.topo div p{ font-family: var(--cb); text-align: center; font-size: clamp(0.1em, 0.2em + 0.8vw, 0.6em + 0.3vw); padding: 0 10px;}
 /* Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente */
 
 /* MENU DA PÁGINA E LOGO */
 .logoSunset{height: 80%; width: auto; max-width: 80%; margin-left: 8%; margin-right: 5%;}
 .camadaMenu{display: flex; height: 75%; width: 15%; align-items: center; justify-content: center;} .menu{width: 70%;}
 
-header nav{width: 100%;}
-header li{margin: 0 2.5%; display: flex;}
-header li a{position:relative; text-decoration: none; color: var(--corTextoLaranja); font-family: var(--tb);
+.topo nav{width: 100%;}
+.topo li{margin: 0 2.5%; display: flex;}
+.topo li a{position:relative; text-decoration: none; color: var(--corTextoLaranja); font-family: var(--tb);
 text-align: center; font-size: 1.7vw; padding: 0 10px;}
-header ul{list-style-type: none; display: flex; width: 100%; height: 100%; align-items: center;}
-header li a::before{ content: ""; position: absolute; width: 100%; height: 2px; bottom: -4px; left: 0; background-color: var(--corTextoLaranja);
+.topo ul{list-style-type: none; display: flex; width: 100%; height: 100%; align-items: center;}
+.topo li a::before{ content: ""; position: absolute; width: 100%; height: 2px; bottom: -4px; left: 0; background-color: var(--corTextoLaranja);
 visibility: hidden; transform: scaleX(0); transition: all 0.3s ease-in-out 0s;}
-header li a:hover:before {visibility: visible; -webkit-transform: scaleX(1); transform: scaleX(1);}
+.topo li a:hover:before {visibility: visible; -webkit-transform: scaleX(1); transform: scaleX(1);}
 
 .iconeLinguagem{height: auto; width: 20%; cursor: pointer; transition: 0.2s;} #botaoPortugues{margin: 0 8%;} #botaoIngles{margin-right: 5%;}
 #botaoPortugues:hover{filter:drop-shadow(0 0 20px rgba(0, 167, 0, 0.9)); transition: 0.2s ease-in-out;}
@@ -104,9 +108,14 @@ header li a:hover:before {visibility: visible; -webkit-transform: scaleX(1); tra
 /* FIM DO CABEÇALHO DA PÁGINA */
 
 /* PRIMEIRA SEÇÃO DA PÁGINA */
-.secaoInicial{ height:81.5vh; width: 100%; background-image: url(../img/fundoIpanema.jpg); background-size: cover;
+.secaoInicial{ height:81.5vh; width: 100%; background-image: url(../img/carlosDrummond.jpg); background-size: cover;
     background-position: top center; box-shadow: inset 0 16px 8px -15px var(--corNeutraPreta);}
-
+.painelSecaoInicial{display: flex; width: 39%; height: 100%; flex-wrap: wrap; justify-content: center; align-items:start;
+text-align: center; margin-left: 2%;}
+.secaoInicial h1{font-family: var(--tbk); font-size: 2.5vw; line-height: 52px; color: var(--corNeutraBranca);
+text-shadow: 1px 1px 10px rgba(41, 12, 0, 0.65),  0 0 8px var(--corTextoLaranja); padding: 8% 1% 0 0;}
+.secaoInicial p{font-family: var(--stb); font-size: 19px; line-height: 32px; color: var(--corNeutraBranca); width: 95%;
+padding-bottom: 5%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836), 0 0 5px var(--corTextoLaranja);}
 
 
 /* ----------SEGUNDA PÁGINA---------- */
