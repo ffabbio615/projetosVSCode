@@ -3,8 +3,8 @@
 html{scroll-behavior: smooth; transition: 1s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
 ::-webkit-scrollbar {width:12px; height: 12px;}
-::-webkit-scrollbar-track {background: var(--corBarraRolagemAzul); border-radius: 5px;}
-::-webkit-scrollbar-thumb {background: var(--corNeutraCinza); border-radius: 5px;}
+::-webkit-scrollbar-track {background: var(--corBarraRolagemAzul);}
+::-webkit-scrollbar-thumb {background: var(--corNeutraCinza); border-radius: 16px;}
 ::-webkit-scrollbar:vertical{display: none;}
 
 
@@ -60,15 +60,28 @@ color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: point
 .botaoMenuInvisivel{opacity: 0; transition: 1s ease-in-out;}
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
-.botaoCTA{width: 250px; height: 42px; border-style: none; color: var(--corNeutraBranca); border-radius: 18px; background-color: var(--corTextoAzul);
-font-family: var(--stbk); font-weight: 900; font-size: 21px; cursor: pointer; box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
+.botaoCTA{width: 250px; height: 42px; border-style: none; color: var(--corNeutraBranca); border-radius: 18px; cursor: pointer;
+font-family: var(--stbk); font-weight: 900; font-size: 21px; box-shadow: 0 0 12px 0px var(--corNeutraPreta);
+background-color: var(--corTextoAzul);} 
 .botaoCTA:enabled{transition: 0.5s;}
 .botaoCTA:hover{background: var(--corFundoLaranja); transition: 0.5s;}
 .botaoCTA:active{background-color: var(--corTextoLaranja);}
+.botaoCTA a {text-decoration: none; color: var(--corNeutraBranca);}
 
+/* BOTÃO "Veja Mais" que mostra avaliações no Airbnb */
+.botaoVejaMais{width: 170px; height: 32px; border-style: none; border-radius: 5px; font-family: var(--tbk); 
+font-size: 16px; font-weight: bolder; cursor: pointer; color: var(--corTextoLaranja); background-color: var(--corNeutraBranca);
+box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
+.botaoVejaMais:hover{background-color: var(--corFundoLaranja); color: var(--corNeutraBranca); transition: all 0.3s ease-in-out;}
+.botaoVejaMais:enabled{transition: 0.3s;}
+.botaoVejaMais:active{background-color: var(--corTextoLaranja);}
 
-/* BOTÃO DETALHES PARA MOSTRAR OS DETALHES DE UM APARTAMENTO */
-.botaoDetalhes{}
+/* MODAIS DOS APARTAMENTOS, DAS POLÍTICAS E DO MENU */
+.modalApartamento{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: var(--corFundoAzul);
+position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; background: var(--corFundoAzul); z-index: 5;
+transition: all 0.4s; justify-content: center; align-items: center;}
+.modalApartamento:target{visibility: visible; opacity: 1;}
+.modalApartamento a{text-decoration: none; font-size: 24px; color: var(--corNeutraBranca);}
 
 
 /* ----------PRIMEIRA PÁGINA---------- */
@@ -117,6 +130,8 @@ background: radial-gradient(closest-side, rgba(255, 255, 255, 0.2), rgba(124, 67
 .painelSecaoInicial{display: flex; width: 40%; height: 100%; flex-wrap: wrap; justify-content: center; align-items:start;
 text-align: center; margin-left: 2%; position: relative; z-index: 1;}
 
+.painelSecaoInicial div {display: flex; justify-content: center; flex-wrap: wrap;}
+
 .secaoInicial h1{font-family: var(--tbk); font-size: 2.5vw; line-height: 52px; color: var(--corNeutraBranca);
 text-shadow: 1px 1px 10px rgba(41, 12, 0, 0.65); padding: 10% 1% 0 0;}
 
@@ -129,9 +144,45 @@ padding-bottom: 5%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
 
 .secaoApartamentos{height:100vh; width: 100%; background-color: var(--corFundoAzul); box-shadow: 0px 0px 15px var(--corNeutraPreta);
 display: flex; justify-content: center;}
+.secaoApartamentos .painelApartamentos{width: 95%; height: 190vh; border-radius: 20px; position: relative; margin-top: 5vh;
+background-color: var(--corNeutraBranca);}
 
-.secaoApartamentos .painelApartamentos{width: 95%; height: 190vh; border-radius: 20px; position: relative; margin-top: 5vh; background-color: var(--corNeutraBranca);}
+.tituloApartamento h2{font-family: var(--tbk); font-size: 2.5vw; font-weight: 900; text-align: center; margin-top: 3vh;}
+.tituloApartamento p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; margin-bottom: 3vh;}
 
+.listaApartamentos{width: 100%; height: 42vh; display:flex; overflow-x: auto; align-items: center; justify-content: center; overflow-x:scroll; padding-left: 5%;}
+.imagemApartamento{width: 30%; min-width: 29%; max-width: 35%; height: 96%; display: flex; text-align: center; justify-content: center; 
+    box-shadow: 0 0 10px var(--corNeutraPreta); position: relative;  }
+.botaoApartamento{position: relative; top: 45%; left: 36%; width: 33%; height: 14%;}
+.iconeApartamento{width: auto; height: 20px; filter: invert(100%); margin: 0 2%;}
+.tarjaApartamento{width: 90%; height: 23%; background-color: var(--corNeutraBranca); position: relative; top:77%; right: 12.5%; display: flex; 
+    flex-wrap: wrap; border-radius: 5px 5px 0 0; justify-content: center; align-items: center;}
+
+.tarjaApartamento h3 {width: 100%; height: 50%; font-family: var(--stbk); font-size: 2vw;}
+.tarjaApartamento p{font-family: var(--stbk); font-size: 0.75vw;}
+.descricaoApartamento{width: 100%; height: 50%; display: flex; justify-content: center; align-items: center; text-align: center;}
+
+.copaLoft{background-image: url("../img/apartamentos/copaLoft.jpg"); background-position: center center; background-size: cover;}
+
+
+
+.painelBotaoCTAApartamentos{width: 100%; display: flex; justify-content: center; margin-top: 20px;}
+
+
+.avaliacaoDeHospedes{width: 100%; height: 50vh; margin: 3vh 0 3vh 0; background-image: url("../img/fundoAreia.png"); background-position: top center; 
+    background-size: cover; display: flex; flex-wrap: wrap; justify-content: center; box-shadow: inset 0 -7px 10px -8px;}
+.tituloAvaliacaoDeHospede{width: 100%; height: 14vh; padding-top: 4vh; color: var(--corNeutraBranca);}
+.tituloAvaliacaoDeHospede h2{font-family: var(--tbk); font-size: 2.5vw; font-weight: 900; text-align: center; line-height: 5vw; 
+    filter: drop-shadow(0 1px 8px var(--corNeutraPreta));}
+.tituloAvaliacaoDeHospede p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; 
+    filter: drop-shadow(0 1px 5px var(--corNeutraPreta));}
+.avaliacaoAirbnb{border-radius: 3vmax 3%; box-shadow: 0 1px 10px; background-color: var(--corNeutraBranca); }
+.avaliacaoAirbnb, .avaliacaoAirbnbButton{width: 30%; height: 30vh; position: relative; margin: 5vh 0 0 0; }
+.avaliacaoAirbnb div{display: flex; width: 100%; justify-content: center; align-items: center; flex-wrap: wrap;}
+.avaliacaoAirbnb div p{width: 100%; text-align: center; padding: 0 5%; color: var(--corTextoLaranja);}
+.avaliacaoAirbnb div:first-child{font-family: var(--stb); font-size: 1.2vw; line-height: 2vw; height:60%; margin-top: 5%;}
+.avaliacaoAirbnb div:last-child{font-size: 1.2vw;}
+.avaliacaoAirbnbButton div{display: flex; width: 100%; height: 100%; align-items:center; justify-content: center; margin-top: -2vh;}
 
 
 /* ----------TERCEIRA PÁGINA---------- */
@@ -140,6 +191,19 @@ display: flex; justify-content: center;}
 .secaoPagamentos{height:100vh; width: 100%; background-color: var(--corFundoLaranja); box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.61);}
 /* background-size:cover; background-position: bottom center; background-image: url(../img/fundoLaranjaOnda.svg) */
 
+.politicas{margin-top: 5vh; display: flex; flex-wrap: wrap; width: 100%; height: 60vh;}
+.tituloPoliticas{display: flex; justify-content: center; align-items: center; width: 100%; height: 15%;}
+.tituloPoliticas h2{font-family: var(--tbk); font-weight: 900; font-size: 2.5vw;}
+.politicas h3{font-family: var(--stbk); font-weight: 900; font-size: 1.8vw; padding: 3% 15%;} 
+.politicas p{font-family: var(--tb); font-size: 1.4vw; color: var(--corTextoLaranja); padding: 0 5%;}
+.iconePoliticas{width: 100%; text-align: center;}
+.politicas img{width: 35%; height: auto;}
+.regrasDeHospedagem, .pagamentosECancelamentos, .politicasDePrivacidade{width: 30%; margin: 2% 1.665%; display: flex; flex-wrap: wrap;
+    justify-content: center; text-align: center; align-items: baseline; cursor: pointer;}
+
+.regrasDeHospedagem:hover, .pagamentosECancelamentos:hover, .politicasDePrivacidade:hover{
+    background-color:var(--corTextoLaranja); color:var(--corNeutraBranca); transition: 0.5s;}
+
 
 /* ----------QUARTA PÁGINA---------- */
 
@@ -147,7 +211,35 @@ display: flex; justify-content: center;}
 .secaoSobreNos{height:100vh; z-index: -2; position:relative; width: 100%; display: flex;
 background-size:cover; background-image: url(../img/fundoCopacabanaOnda.svg);}
 
-.painelSobreNos{width: 95%; height: 100%; opacity: 0.85; background-color: var(--corNeutraBranca);}
+.painelSobreNos{width: 95%; height: 100%; background-color: rgba(255, 255, 255, 0.85)}
+.painelSobreNos h2, h3, h4{font-family: var(--tbk); font-weight: 900;}
+.painelSobreNos h2{font-size: 2.5vw;}
+.painelSobreNos h3{font-size: 2vw;}
+.painelSobreNos h4{font-size: 1.5vw;}
+.painelSobreNos p:not(.sobreAsValerias p, .valeria p){font-family: var(--stb); font-weight: 900; font-size: 1.3vw;}
+
+.tituloSobreNos{width:100%; height: 15vh;; display: flex; flex-wrap: wrap; text-align: center; margin-top: 5vh;}
+.tituloSobreNos *{width: 100%;}
+
+.painelConceitos{width: 100%; height: 20vh; display: flex;}
+.conceitos{width: 28.33%; height: 100%; margin: 0 5%;}
+.conceitos p:first-of-type{text-align:center; line-height: 2vw;} .conceitos p:last-of-type{text-align:justify; line-height: 2vw;}
+
+.painelSobreAsValerias{width: 100%; height: 55vh; display: flex; justify-content: center;}
+.conteudoSobreAsValerias{width: 90%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.valeria{width: 23%; height: 50vh; background-color: var(--corTextoLaranja); color: var(--corNeutraBranca); border-radius: 10px; 
+    position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px var(--corNeutraPreta);}
+
+.valeria div{width: 100%; text-align: center;}
+.valeria  p{font-family: var(--cr); font-size: 1vw; }
+.imagemValerias{width: 50%; height: auto; margin: 2vh 0;}
+.iconeSobreASunset{width: 10%; height: auto; padding: 10px 10px 0 10px; }
+
+.sobreAsValerias, .valeria h3, h4{text-align: center;} .sobreAsValerias, .valeria p{text-align: justify;} .valeria h3, .valeria p{padding: 0 10%;}
+.sobreAsValerias{width: 40%; height: 45vh; background-color: var(--corNeutraBranca); box-shadow: 0 0 10px; 
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;}
+
+.sobreAsValerias p{font-family: var(--cr); font-size: 1.1vw; line-height: 1.8vw; width: 100%; padding: 0 10%;}
 
 
 
@@ -157,15 +249,27 @@ background-size:cover; background-image: url(../img/fundoCopacabanaOnda.svg);}
 .secaoFaq{height:73.9vh; width: 100%; background-color: white; box-shadow: 0px 0px 15px var(--corNeutraPreta); display: flex; justify-content: center;
 align-items: center;}
 
-.painelFaq{width: 90%; height: 100%; background-color: var(--corNeutraBranca); display: flex; flex-wrap: wrap;}
-.tituloPerguntasFrequentes{display: flex; height: 10%; width: 100%; align-items: center; justify-content: center;}
-.perguntasFrequentes{display:flex; width: 90%; height: 90%;}
-.painelCTAFaq{display:flex; width: 10%; height: 90%; align-items: center;}
+.painelFaq{width: 80%; height: 100%; background-color: var(--corNeutraBranca); display: flex; flex-wrap: wrap; color: var(--corFundoAzul);}
+.tituloPerguntasFrequentes{display: flex; height: 10vh; width: 100%; align-items: center; justify-content: center; margin-top: 2vh;}
+.tituloPerguntasFrequentes div{width: 100%; height: 100%; text-align: center;}
+.tituloPerguntasFrequentes div h2{font-family: var(--tbk); font-weight: 900; font-size: 2.5vw;}
+.tituloPerguntasFrequentes div p{font-family: var(--stb); font-size: 1.5vw; text-align: center;}
+.perguntasFrequentes{display:flex; width: 50%; height: 60vh; flex-wrap: wrap; align-items: center;}
+.perguntasFrequentes div{width: 100%; height: auto;}
+.perguntasFrequentes p{width: 100%; height: 4.5vh; font-family: var(--stbk); font-size: 1.2vw; cursor: pointer; transition: 0.2s ease-out;}
+.perguntasFrequentes p:hover{color: var(--corTextoLaranja); transition: 0.2s ease-in;}
+.perguntasFrequentes p::before{content: "▶"; margin-right: 1%;}
+.painelCTAFaq{display:flex; width: 50%; height: 60vh; align-items: center; justify-content: center;}
 
 
 
 
 footer{height:29.62vh; width: 100%; position:relative; margin-top:-4vh; background-size:cover; background-image: url(../img/rodapeAzulOnda.svg); display: flex;
 justify-content: center; align-items: center;}
-footer div{height: 75%; width: 100%; display: flex; justify-content: center; align-items: center;}
-.iconeRodape{height: 30px; width: 30px;}
+.rodape{height: 75%; width: 100%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 4vh; color: var(--corNeutraBranca);}
+.rodapeRedesSociais{ width: 100%; height: 100%; font-family: var(--stb); font-size: 1.2vw;}
+.rodapeRedesSociais div:not(.paragrafoCopyright){width: 100%; height:18%; text-align: center; display: flex; justify-content: center; align-items: center; 
+    margin: 1vh 0 0 0; flex-wrap: wrap;}
+.iconeRodape{height: 100%; width: auto; padding: 0 10px 0 10px; cursor: pointer;}
+.paragrafoCopyright{width: 100%; height: 36%; margin: 0; flex-wrap: wrap; text-align: center;}
+.paragrafoCopyright p{width: 100%;}

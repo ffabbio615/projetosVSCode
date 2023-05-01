@@ -44,7 +44,8 @@ z-index = ordem das camadas. Quanto maior, mais na frente, quanto menor, mais at
 
 
 TEXTOS
-font-size = tamanho da fonte (px, em, %, ...) | clamp(1em, 1em + 1vw, 1.5em); Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente
+font-size = tamanho da fonte; (px, em, %, ...)
+font-size: clamp(1em, 1em + 1vw, 1.5em); Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente
 font-style = estilo da fonte (oblique e italic)
 font-weight = peso da fonte (normal ou negrito)
 direction = direção de esquerda para direita e direita para esquerda (ltr ou rtl)

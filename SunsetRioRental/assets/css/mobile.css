@@ -1,4 +1,6 @@
-@media screen and (max-width: 999px){
+/* 394x714px - Resolução do meu celular */
+
+@media screen and (max-width: 394px){
     
 .topo20{width: 30%;} .topo40 {width: 35%;}
 .iconeTopo{display: none;}
