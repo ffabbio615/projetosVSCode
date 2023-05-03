@@ -71,6 +71,7 @@ overflow-x e overflow-Y: auto; = se algum conteúdo passar do tamanho da página
 html{ scroll-behavior: smooth;} = Rola a página deslizando suavemente
 
 
+
 SELETORES BÁSICOS
 .pai = seleciona classe pai
 .pai .filho = seleciona classe filho que vem de pai
@@ -139,7 +140,7 @@ EFEITOS
 box-shadow: 10px 10px 15px black; = Caixa de sombra criada com cor e desfoque. X Y Blur Color
 box-shadow: inset 10px 10px 15px black; = A mesma sombra, porém dentro do elemento
 box-shadow: -12px 0px 15px -6px red,  box-shadow: -12px 0px 15px -6px blue; = Adiciona duas cores na sombra. X | Y | Blur | X e Y | Cor
-
+filter: blur() | brightness() | contrast() | drop-shadow() | grayscale() | invert() | opacity() | saturate() | sepia() | url()
 
 
 
