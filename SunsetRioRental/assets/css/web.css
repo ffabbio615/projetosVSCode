@@ -150,15 +150,16 @@ background-color: var(--corNeutraBranca);}
 .tituloApartamento h2{font-family: var(--tbk); font-size: 2.5vw; font-weight: 900; text-align: center; margin-top: 3vh;}
 .tituloApartamento p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; margin-bottom: 3vh;}
 
-.listaApartamentos{width: 100%; height: 42vh; display:flex; overflow-x: auto; align-items: center; justify-content: center; overflow-x:scroll; padding-left: 5%;}
-.imagemApartamento{width: 30%; min-width: 29%; max-width: 35%; height: 96%; display: flex; text-align: center; justify-content: center; 
-    box-shadow: 0 0 10px var(--corNeutraPreta); position: relative;  }
+.listaApartamentos{width: 100%; height: 45vh; display:flex;  align-items: center; overflow-x:auto;}
+
+.imagemApartamento{min-width: 30%; height: 90%; display: flex; text-align: center; justify-content: center; margin:0 2%; flex-grow: 0;
+    box-shadow: 0 0 10px var(--corNeutraPreta);}
 .botaoApartamento{position: relative; top: 45%; left: 36%; width: 33%; height: 14%;}
 .iconeApartamento{width: auto; height: 20px; filter: invert(100%); margin: 0 2%;}
-.tarjaApartamento{width: 90%; height: 23%; background-color: var(--corNeutraBranca); position: relative; top:77%; right: 12.5%; display: flex; 
+.tarjaApartamento{width: 90%; height: 23%; background-color: var(--corNeutraBranca); position: relative; top:77%; right: 14%; display: flex; 
     flex-wrap: wrap; border-radius: 5px 5px 0 0; justify-content: center; align-items: center;}
 
-.tarjaApartamento h3 {width: 100%; height: 50%; font-family: var(--stbk); font-size: 2vw;}
+.tarjaApartamento h3 {width: 100%; height: 50%; font-family: var(--stbk); font-size: 1.8vw;}
 .tarjaApartamento p{font-family: var(--stbk); font-size: 0.75vw;}
 .descricaoApartamento{width: 100%; height: 50%; display: flex; justify-content: center; align-items: center; text-align: center;}
 
@@ -194,15 +195,19 @@ background-color: var(--corNeutraBranca);}
 .politicas{margin-top: 5vh; display: flex; flex-wrap: wrap; width: 100%; height: 60vh;}
 .tituloPoliticas{display: flex; justify-content: center; align-items: center; width: 100%; height: 15%;}
 .tituloPoliticas h2{font-family: var(--tbk); font-weight: 900; font-size: 2.5vw;}
-.politicas h3{font-family: var(--stbk); font-weight: 900; font-size: 1.8vw; padding: 3% 15%;} 
+.politicas h3{font-family: var(--stbk); font-weight: 900; font-size: 1.8vw; padding: 3% 15%; transition: 0.3s ease-in;} 
 .politicas p{font-family: var(--tb); font-size: 1.4vw; color: var(--corTextoLaranja); padding: 0 5%;}
-.iconePoliticas{width: 100%; text-align: center;}
+.iconePoliticas{width: 100%; text-align: center; transition: 0.3s ease-in;}
 .politicas img{width: 35%; height: auto;}
 .regrasDeHospedagem, .pagamentosECancelamentos, .politicasDePrivacidade{width: 30%; margin: 2% 1.665%; display: flex; flex-wrap: wrap;
-    justify-content: center; text-align: center; align-items: baseline; cursor: pointer;}
+    justify-content: center; text-align: center; align-items: baseline; cursor: pointer; transition: 0.5s ease-in;}
 
 .regrasDeHospedagem:hover, .pagamentosECancelamentos:hover, .politicasDePrivacidade:hover{
-    background-color:var(--corTextoLaranja); color:var(--corNeutraBranca); transition: 0.5s;}
+    background-color:var(--corTextoLaranja); color:var(--corNeutraBranca); transition: 0.3s ease-in;}
+.regrasDeHospedagem:hover .iconePoliticas, .pagamentosECancelamentos:hover  .iconePoliticas, .politicasDePrivacidade:hover  .iconePoliticas{
+    margin-top: 10%; position:relative; transition: 0.5s ease-in;}
+.regrasDeHospedagem:hover h3, .pagamentosECancelamentos:hover  h3, .politicasDePrivacidade:hover  h3{margin-top: -9%; ;
+    position:relative; transition: 0.5s ease-in;}
 
 
 /* ----------QUARTA PÁGINA---------- */

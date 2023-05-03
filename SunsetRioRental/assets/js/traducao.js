@@ -285,6 +285,7 @@ const botaoIngles = document.getElementById('botaoIngles');
 botaoPortugues.onclick = function() {
     let alterarIdioma;
     for (let i=0; i<dicionarioPortugues.length; i++){
+       // console.log("Português:", ids[i]);
         alterarIdioma = document.getElementById(ids[i]);
         alterarIdioma.innerText = dicionarioPortugues[i];
     }
@@ -294,6 +295,7 @@ botaoPortugues.onclick = function() {
 botaoIngles.onclick = function() {
     let alterarIdioma;
     for (let i=0; i<dicionarioIngles.length; i++){
+       // console.log("Inglês:", ids[i]);
         alterarIdioma = document.getElementById(ids[i]);
         alterarIdioma.innerText = dicionarioIngles[i];
     }
