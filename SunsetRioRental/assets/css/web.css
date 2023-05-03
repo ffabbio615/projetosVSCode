@@ -4,7 +4,7 @@ html{scroll-behavior: smooth; transition: 1s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
 ::-webkit-scrollbar {width:12px; height: 12px;}
 ::-webkit-scrollbar-track {background: var(--corBarraRolagemAzul);}
-::-webkit-scrollbar-thumb {background: var(--corNeutraCinza); border-radius: 16px;}
+::-webkit-scrollbar-thumb {background: var(--corTextoLaranja);}
 ::-webkit-scrollbar:vertical{display: none;}
 
 
@@ -76,6 +76,11 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 .botaoVejaMais:enabled{transition: 0.3s;}
 .botaoVejaMais:active{background-color: var(--corTextoLaranja);}
 
+/* BOTÃO "DETALHES" QUE MOSTRA OS DETALHES DE CADA APARTAMENTO */
+.botaoDetalhes{width: 35%; height: 13%; background-color: rgba(0, 0, 0, 0.5); color: var(--corNeutraBranca);
+    font-family: var(--tbk); font-size: 1vw; letter-spacing: 0.1vw; cursor: pointer; border-color: var(--corNeutraBranca); border-style: solid;}
+.botaoDetalhes:hover{background-color: var(--corNeutraBranca); color: var(--corNeutraPreta); transition: 0.5s;}
+
 /* MODAIS DOS APARTAMENTOS, DAS POLÍTICAS E DO MENU */
 .modalApartamento{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: var(--corFundoAzul);
 position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; background: var(--corFundoAzul); z-index: 5;
@@ -143,28 +148,42 @@ padding-bottom: 5%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
 
 
 .secaoApartamentos{height:100vh; width: 100%; background-color: var(--corFundoAzul); box-shadow: 0px 0px 15px var(--corNeutraPreta);
-display: flex; justify-content: center;}
-.secaoApartamentos .painelApartamentos{width: 95%; height: 190vh; border-radius: 20px; position: relative; margin-top: 5vh;
-background-color: var(--corNeutraBranca);}
+    display: flex; justify-content: center;}
+    .secaoApartamentos .painelApartamentos{width: 95%; height: 190vh; border-radius: 20px; position: relative; margin-top: 5vh;
+    background-color: var(--corNeutraBranca);}
+    
+    .tituloApartamento h2{font-family: var(--tbk); font-size: 2.5vw; font-weight: 900; text-align: center; margin-top: 3vh;}
+    .tituloApartamento p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; margin-bottom: 3vh;}
+    
+    /* .listaApartamentos{width: 100%; height: 45vh; display:flex;  align-items: center; overflow-x:auto;} */
+    .listaApartamentos{width: 95%; height: 45vh; overflow-x: auto; display:grid; grid-template-columns:repeat(12, 33.33%); margin-left: 2.5%; 
+        align-items: center;}
+   .imagemApartamento{height: 90%; box-shadow: 0 0 10px var(--corNeutraPreta); margin:0 5% 0 5%; display: flex; justify-content: center; flex-wrap: wrap;}
+   .botaoApartamento{position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;}   
+   .tarjaApartamento{width: 80%; height: 23%; background-color: var(--corNeutraBranca); position: relative; display: flex;
+    flex-wrap: wrap; text-align: center; align-self:flex-end; margin-top: -23%;}
+    .descricaoApartamento{width: 100%; height: 50%; display: flex; justify-content: center; align-items: center; text-align: center;}
+    .iconeApartamento{width: auto; height: 70%; filter: invert(100%); margin: 0 2%;}
+   .tarjaApartamento h3 {width: 100%; height: 50%; font-family: var(--stbk); font-size: 1.8vw;}
+   .tarjaApartamento p{font-family: var(--stbk); font-size: 0.85vw;}
 
-.tituloApartamento h2{font-family: var(--tbk); font-size: 2.5vw; font-weight: 900; text-align: center; margin-top: 3vh;}
-.tituloApartamento p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; margin-bottom: 3vh;}
-
-.listaApartamentos{width: 100%; height: 45vh; display:flex;  align-items: center; overflow-x:auto;}
-
-.imagemApartamento{min-width: 30%; height: 90%; display: flex; text-align: center; justify-content: center; margin:0 2%; flex-grow: 0;
-    box-shadow: 0 0 10px var(--corNeutraPreta);}
-.botaoApartamento{position: relative; top: 45%; left: 36%; width: 33%; height: 14%;}
-.iconeApartamento{width: auto; height: 20px; filter: invert(100%); margin: 0 2%;}
-.tarjaApartamento{width: 90%; height: 23%; background-color: var(--corNeutraBranca); position: relative; top:77%; right: 14%; display: flex; 
-    flex-wrap: wrap; border-radius: 5px 5px 0 0; justify-content: center; align-items: center;}
-
-.tarjaApartamento h3 {width: 100%; height: 50%; font-family: var(--stbk); font-size: 1.8vw;}
-.tarjaApartamento p{font-family: var(--stbk); font-size: 0.75vw;}
-.descricaoApartamento{width: 100%; height: 50%; display: flex; justify-content: center; align-items: center; text-align: center;}
-
-.copaLoft{background-image: url("../img/apartamentos/copaLoft.jpg"); background-position: center center; background-size: cover;}
-
+     
+    /* IMAGENS DOS APARTAMENTOS NOS RETÂNGULOS DA LISTA */
+    .copaLoft{background-image: url("../img/apartamentos/copaLoft.jpg");}
+    .estiloSunset{background-image: url("../img/apartamentos/estiloSunset.jpg");}
+    .atlanticoLoft{background-image: url("../img/apartamentos/atlanticoLoft.jpg");}
+    .sunsetGarden{background-image: url("../img/apartamentos/sunsetGarden.jpg");}
+    .copaSunset{background-image: url("../img/apartamentos/copaSunset.jpg");}
+    .atlanticoEstudio{background-image: url("../img/apartamentos/atlanticaEstudio.jpg");}
+    .estudioCopa{background-image: url("../img/apartamentos/estudioCopa.jpg");}
+    .marDeCopa{background-image: url("../img/apartamentos/marDeCopa.jpg");}
+    .marDeCopa2{background-image: url("../img/apartamentos/marDeCopaII.jpg");}
+    .copaDream{background-image: url("../img/apartamentos/copaDream.jpg");}
+    .sunsetEstudio{background-image: url("../img/apartamentos/sunsetEstudio.jpg");}
+    .sunsetPremium{background-image: url("../img/apartamentos/sunsetPremium.jpg");}
+    /* MESMO COMPORTAMENTO PARA TODAS AS IMAGENS */
+    .copaLoft, .estiloSunset, .atlanticoLoft, .sunsetGarden, .copaSunset, .atlanticoEstudio, .estudioCopa, .marDeCopa, .marDeCopa2, .copaDream,
+    .sunsetEstudio, .sunsetPremium{background-position: center center; background-size: cover;}
 
 
 .painelBotaoCTAApartamentos{width: 100%; display: flex; justify-content: center; margin-top: 20px;}
