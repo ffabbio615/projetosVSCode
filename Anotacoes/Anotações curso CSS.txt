@@ -54,6 +54,7 @@ word-spacing = espaçamento da palavra
 font-family = família tipográfica ou nome da fonte com seus atributos. Ex.: MontserratBold
 line-height = entrelinha
 text-align = alinhamento do texto (left, right, justify, etc)
+text-align-last: left; = Junto com text-align: justify, ele justifica e alinha a esquerda. (left, right)
 text-decoration = decoração do texto, seja linha em cima, em baixo, ondulada, traçada, etc (underline, overline, wavy, etc)
 text-ident = espaço na primeira linha do parágrafo
 text-shadow = sombra no texto (2px, 2px, 2px = X, Y, Blur)

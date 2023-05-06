@@ -60,9 +60,8 @@ color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: point
 .botaoMenuInvisivel{opacity: 0; transition: 1s ease-in-out;}
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
-.botaoCTA{width: 250px; height: 42px; border-style: none; color: var(--corNeutraBranca); border-radius: 18px; cursor: pointer;
-font-family: var(--stbk); font-weight: 900; font-size: 21px; box-shadow: 0 0 12px 0px var(--corNeutraPreta);
-background-color: var(--corTextoAzul);} 
+.botaoCTA{width: 20vw; height: 7vh; border-style: none; color: var(--corNeutraBranca); border-radius: 1.6vw; cursor: pointer;
+font-family: var(--stbk); font-weight: 900; font-size: 1.5vw; box-shadow: 0 0 1vw -0.2vw var(--corNeutraPreta); background-color: var(--corTextoAzul);} 
 .botaoCTA:enabled{transition: 0.5s;}
 .botaoCTA:hover{background: var(--corFundoLaranja); transition: 0.5s;}
 .botaoCTA:active{background-color: var(--corTextoLaranja);}
@@ -96,8 +95,8 @@ transition: all 0.4s; justify-content: center; align-items: center;}
 .mdDescricaoApartamento{grid-area: mdDescricaoApartamento;} .mdFacilidadesApartamento{grid-area: mdFacilidadesApartamento;}
 .mdLocalizacaoApartamento{grid-area: mdLocalizacaoApartamento;}
 
-.mdFotoApartamento, .mdTituloApartamento, .mdDescricaoApartamento, .mdFacilidadesApartamento, .mdLocalizacaoApartamento{display: flex; 
-    justify-content: center; align-items: center; text-align: center; margin:1% 2%; flex-wrap: wrap;}
+.mdFotoApartamento, .mdTituloApartamento, .mdDescricaoApartamento, .mdLocalizacaoApartamento, .mdFacilidadesApartamento{display: flex; justify-content: center; 
+    align-items: center; margin:1% 2%; flex-wrap: wrap;}
 
 .mdFotoApartamento{margin-top: 3%;}
 .mdDisplayFotosApartamento{width: 70%; height: 100%; border-radius: 0.5vw; box-shadow: 0 0 15px -5px var(--corNeutraPreta); cursor: pointer;}
@@ -106,6 +105,24 @@ transition: all 0.4s; justify-content: center; align-items: center;}
 .mdTituloApartamento p{width: 100%; font-family: var(--tb); font-size: 1.4vw; color: var(--corNeutraPreta); padding: 0 5%; margin-bottom: 1%;}
 .mdTituloApartamento button {margin-top: 3%;}
 
+.mdDescricaoApartamento :not(p:first-child){text-align:justify; text-align-last:left;}
+.mdDescricaoApartamento p:first-of-type{text-align: center; font-family: var(--tbk); font-size: 1.5vw; color: var(--corTextoLaranja);}
+.mdDescricaoApartamento p{width: 100%; font-family: var(--cr); font-size: 1vw; color: var(--corNeutraPreta); padding: 0 5%; margin-bottom: 1%;}
+
+.mdFacilidadesApartamento{display: grid; grid-template-columns: 50% 50%; grid-template-rows: 20% 80%; margin-top: 3%;
+    grid-template-areas: "mdTituloFacilidadesApartamento mdTituloFacilidadesApartamento" "mdFacilidadesEsquerdaApartamento mdFacilidadesDireitaApartamento";}
+.mdTituloFacilidadesApartamento{grid-area: mdTituloFacilidadesApartamento; text-align: center; font-family: var(--tbk); font-size: 1.5vw; 
+    color: var(--corTextoLaranja);}
+.mdFacilidadesEsquerdaApartamento{grid-area: mdFacilidadesEsquerdaApartamento; text-align: center;}
+.mdFacilidadesDireitaApartamento{grid-area: mdFacilidadesDireitaApartamento; text-align: center;}
+.mdFacilidadesEsquerdaApartamento p, .mdFacilidadesDireitaApartamento p{width: 100%;}
+.mdFacilidadesEsquerdaApartamento, .mdFacilidadesDireitaApartamento {font-family: var(--cr); font-size: 1vw; color: var(--corNeutraPreta); display: flex;
+flex-wrap: wrap;}
+
+.mdLocalizacaoApartamento{margin-top: 3%;}
+.mdLocalizacaoApartamento div:last-of-type{width: 100%; height: 80%; text-align: center;}
+.mdLocalizacaoApartamento div iframe{height: 100%; width: 100%;}
+.mdTituloLocalizacaoApartamento{width: 100%; height: 20%; font-family: var(--tbk); font-size: 1.5vw; color: var(--corTextoLaranja); text-align: center;}
 
 
 .btnFecharModal{position:absolute; top: 3%; right: 3%;}
