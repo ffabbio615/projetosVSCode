@@ -82,12 +82,33 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 .botaoDetalhes:hover{background-color: var(--corNeutraBranca); color: var(--corNeutraPreta); transition: 0.5s;}
 
 /* MODAIS DOS APARTAMENTOS, DAS POLÍTICAS E DO MENU */
-.modalApartamento{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: var(--corFundoAzul);
-position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; background: var(--corFundoAzul); z-index: 5;
+.modalApartamento{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: rgba(0, 0, 0, 0.8);
+position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5;
 transition: all 0.4s; justify-content: center; align-items: center;}
 .modalApartamento:target{visibility: visible; opacity: 1;}
 .modalApartamento a{text-decoration: none; font-size: 24px; color: var(--corNeutraBranca);}
+.blurModal{filter: blur(5px);}
+.painelModalApartamento{width: 85%; height: 90%; background-color: var(--corFundoAzul); display: grid; grid-template-columns: 100%;}
+.conteudoModalApartamento{width: 95%; height: 90%; background-color: var(--corNeutraBranca); margin: 2.5%; border-radius: 2vw; display: grid;
+    grid-template-columns: 50% 50%; grid-template-rows: 50% 20% 30%; grid-template-areas: "mdFotoApartamento mdTituloApartamento"
+    "mdDescricaoApartamento mdDescricaoApartamento" "mdFacilidadesApartamento mdLocalizacaoApartamento";}
+.mdFotoApartamento{grid-area: mdFotoApartamento;} .mdTituloApartamento{grid-area: mdTituloApartamento;} 
+.mdDescricaoApartamento{grid-area: mdDescricaoApartamento;} .mdFacilidadesApartamento{grid-area: mdFacilidadesApartamento;}
+.mdLocalizacaoApartamento{grid-area: mdLocalizacaoApartamento;}
 
+.mdFotoApartamento, .mdTituloApartamento, .mdDescricaoApartamento, .mdFacilidadesApartamento, .mdLocalizacaoApartamento{display: flex; 
+    justify-content: center; align-items: center; text-align: center; margin:1% 2%; flex-wrap: wrap;}
+
+.mdFotoApartamento{margin-top: 3%;}
+.mdDisplayFotosApartamento{width: 70%; height: 100%; border-radius: 0.5vw; box-shadow: 0 0 15px -5px var(--corNeutraPreta); cursor: pointer;}
+.mdTituloApartamento div{text-align: center; width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content:center;} 
+.mdTituloApartamento h2{width: 100%; font-family: var(--tbk); font-weight: 900; font-size: 3.5vw; color: var(--corTextoLaranja); margin-bottom: 2%;}
+.mdTituloApartamento p{width: 100%; font-family: var(--tb); font-size: 1.4vw; color: var(--corNeutraPreta); padding: 0 5%; margin-bottom: 1%;}
+.mdTituloApartamento button {margin-top: 3%;}
+
+
+
+.btnFecharModal{position:absolute; top: 3%; right: 3%;}
 
 /* ----------PRIMEIRA PÁGINA---------- */
 

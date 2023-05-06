@@ -63,7 +63,7 @@
                     próximo aos transportes mais utilizados e totalmente equipado
                     para que sua experiência seja incrível.
                 </p>
-                <button id="trBotaoCTA" class="botaoCTA"><a href="#modalApartamento">Reserve Agora</a></button>
+                <button class="botaoCTA"><a id="trBotaoCTA" href="#modalApartamento">Reserve Agora</a></button>
             </div>
         </div>
     </section>
@@ -506,7 +506,29 @@
     <!-- Elementos fixos ou modais -->
     <div id="botaoMenu" class="botaoMenu botaoMenuInvisivel">☰</div>
     <div id="botaoTopo" class="botaoTopo"><a href="#topo">↺</a></div>
-    <div id="modalApartamento" class="modalApartamento"><a href="#">Fechar</a></div>
+    <div id="modalApartamento" class="modalApartamento">
+        <div class="painelModalApartamento">
+            <a id="btnFecharModalApartamento" class="btnFecharModal" href="#">&#10006;</a>
+            <div class="conteudoModalApartamento">
+                <div class="mdFotoApartamento">
+                    <div class="copaLoft mdDisplayFotosApartamento">
+
+                    </div>
+                </div>
+                <div class="mdTituloApartamento">
+                    <div>
+                        <h2>Copa Loft</h2>
+                        <p>Beira Mar - Copacabana</p>
+                        <p>1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 25m²</p>
+                        <button id="trBotaoCTAModal" class="botaoCTA">Reserve Agora</button>
+                    </div>
+                </div>
+                <div class="mdDescricaoApartamento">MEIO</div>
+                <div class="mdFacilidadesApartamento">ESQUERDA BAIXO</div>
+                <div class="mdLocalizacaoApartamento">DIREITA BAIXO</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Importação de Scripts JavaScript -->
     <script src="./assets/js/main.js"></script>
