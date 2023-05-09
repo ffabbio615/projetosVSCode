@@ -87,8 +87,8 @@ transition: all 0.4s; justify-content: center; align-items: center;}
 .modalApartamento:target{visibility: visible; opacity: 1;}
 .modalApartamento a{text-decoration: none; font-size: 24px; color: var(--corNeutraBranca);}
 .blurModal{filter: blur(5px);}
-.painelModalApartamento{width: 85%; height: 90%; background-color: var(--corFundoAzul); display: grid; grid-template-columns: 100%;}
-.conteudoModalApartamento{width: 95%; height: 90%; background-color: var(--corNeutraBranca); margin: 2.5%; border-radius: 2vw; display: grid;
+.painelModalApartamento{width: 85%; height: 90%; background-color: var(--corFundoAzul); display: flex; align-items: center; justify-content: center;}
+.conteudoModalApartamento{width: 95%; height: 92%; background-color: var(--corNeutraBranca); border-radius: 2vw; display: grid;
     grid-template-columns: 50% 50%; grid-template-rows: 50% 20% 30%; grid-template-areas: "mdFotoApartamento mdTituloApartamento"
     "mdDescricaoApartamento mdDescricaoApartamento" "mdFacilidadesApartamento mdLocalizacaoApartamento";}
 
@@ -96,14 +96,26 @@ transition: all 0.4s; justify-content: center; align-items: center;}
 .mdDescricaoApartamento{grid-area: mdDescricaoApartamento;} .mdFacilidadesApartamento{grid-area: mdFacilidadesApartamento;}
 .mdLocalizacaoApartamento{grid-area: mdLocalizacaoApartamento;}
 
-.mdFotoApartamento, .mdTituloApartamento, .mdDescricaoApartamento, .mdLocalizacaoApartamento, .mdFacilidadesApartamento{display: flex; justify-content: center; 
-    align-items: center; margin:1% 2%; flex-wrap: wrap;}
+.mdFotosApartamento, .mdTituloApartamento, .mdDescricaoApartamento, .mdLocalizacaoApartamento, .mdFacilidadesApartamento{display: flex; 
+    justify-content: center; align-items: center; margin:1% 2%; flex-wrap: wrap;}
 
-.mdFotoApartamento{margin-top: 3%;}
-.mdSetaEFotoApartamento, .mdSetaDFotoApartamento{font-size: 2vw; font-family: var(--tbk);  color: var(--corTextoAzul); 
+.mdFotosApartamento{margin-top: 3%;}
+.mdSetaEFotosApartamento, .mdSetaDFotosApartamento{font-size: 2vw; font-family: var(--tbk);  color: var(--corTextoAzul); 
     cursor: pointer; width: 4%;}
-.mdDisplayFotosApartamento{width: 70%; height: 100%; border-radius: 0.5vw; box-shadow: 0 0 15px -5px var(--corNeutraPreta); margin: 0 4%;}
-.mdImagensApartamento{width: 100%; height: 100%;}
+.mdSetaEFotosApartamento:hover, .mdSetaDFotosApartamento:hover{filter: drop-shadow(0 0 0.5vw var(--corTextoAzul));}
+.mdSetaEFotosApartamento:active, .mdSetaDFotosApartamento:active{color: var(--corTextoLaranja);}
+.mdContainerFotosApartamento{width: 70%; height: 100%; border-radius: 0.5vw; box-shadow: 0 0 15px -5px var(--corNeutraPreta); margin: 0 4%; }
+.mdDisplayFotosApartamento{width: 100%; height: 100%; display: grid; grid-template-columns: repeat(5, 100%); overflow-x:hidden;}
+.mdImagemApartamento1, .mdImagemApartamento2, .mdImagemApartamento3, .mdImagemApartamento4, .mdImagemApartamento5{width: 100%; height: 100%;
+    cursor: pointer; transition: 1s ease-in-out; position: relative;}
+
+.mdImagemApartamento1{background: red;} .mdImagemApartamento2{background: black;} .mdImagemApartamento3{background: yellow;}
+.mdImagemApartamento5{background: blue;} .mdImagemApartamento4{background: purple;}
+
+/* MOVE AS FOTOS JA JANELA MODAL PARA OS LADOS */
+.mdMoverImg1{margin-left: -100%; transition: 1s ease-in-out; z-index: 1;} .mdMoverImg2{margin-left: -200%; transition: 1s ease-in-out; z-index: 2;}
+.mdMoverImg3{margin-left: -300%; transition: 1s ease-in-out; z-index: 3;} .mdMoverImg4{margin-left: -400%; transition: 1s ease-in-out; z-index: 4;}
+
 
 .mdTituloApartamento div{text-align: center; width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content:center;} 
 .mdTituloApartamento h2{width: 100%; font-family: var(--tbk); font-weight: 900; font-size: 3.5vw; color: var(--corTextoLaranja); margin-bottom: 2%;}
@@ -198,7 +210,6 @@ padding-bottom: 3%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
     .tituloApartamento h2{font-family: var(--tbk); font-size: 2.5vw; font-weight: 900; text-align: center; margin-top: 3vh;}
     .tituloApartamento p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; margin-bottom: 3vh;}
     
-    /* .listaApartamentos{width: 100%; height: 45vh; display:flex;  align-items: center; overflow-x:auto;} */
     .listaApartamentos{width: 95%; height: 45vh; overflow-x: auto; display:grid; grid-template-columns:repeat(12, 33.33%); margin-left: 2.5%; 
         align-items: center;}
    .imagemApartamento{height: 90%; box-shadow: 0 0 10px var(--corNeutraPreta); margin:0 5% 0 5%; display: flex; justify-content: center; flex-wrap: wrap;}
