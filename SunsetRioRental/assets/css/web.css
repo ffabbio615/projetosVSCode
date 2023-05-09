@@ -79,6 +79,9 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 .botaoDetalhes{width: 35%; height: 13%; background-color: rgba(0, 0, 0, 0.5); color: var(--corNeutraBranca);
     font-family: var(--tbk); font-size: 1vw; letter-spacing: 0.1vw; cursor: pointer; border-color: var(--corNeutraBranca); border-style: solid;}
 .botaoDetalhes:hover{background-color: var(--corNeutraBranca); color: var(--corNeutraPreta); transition: 0.5s;}
+.botaoDetalhes:hover a{background-color: var(--corNeutraBranca); color: var(--corNeutraPreta); transition: 0.7s;}
+.botaoDetalhes a {text-decoration: none; color: var(--corNeutraBranca);}
+
 
 /* MODAIS DOS APARTAMENTOS, DAS POLÍTICAS E DO MENU */
 .modalApartamento{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: rgba(0, 0, 0, 0.8);
@@ -141,6 +144,11 @@ flex-wrap: wrap;}
 .mdLocalizacaoApartamento div iframe{height: 100%; width: 100%;}
 .mdTituloLocalizacaoApartamento{width: 100%; height: 20%; font-family: var(--tbk); font-size: 1.5vw; color: var(--corTextoLaranja); text-align: center;}
 
+.fundoImagemAmpliadaModal{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: rgba(0, 0, 0, 0.8);  transition: 0.5s;
+    position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 6; justify-content: center; align-items: center;}
+.mostrarFundoImagemAmpliadaModal{visibility: visible; opacity: 1;}
+.imagemAmpliadaModal{position: fixed; z-index: 6; width: 65%; height: 75%; margin: 0; cursor:default; transition: 0s;}
+.fecharFundoImagem{float:right; padding: 0.5% 1%; background-color: var(--corFundoLaranja); color: var(--corNeutraBranca); cursor: pointer;}
 
 .btnFecharModal{position:absolute; top: 3%; right: 3%;}
 
