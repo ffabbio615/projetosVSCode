@@ -16,7 +16,7 @@ header .menu{display: none;}
 }
 
 @media screen and (max-width: 879px){
-    .topo20{display: none;} .topo40 {width: 50%;}
+    .botaoTopo a{font-size: calc(2.5vw + 0.2rem);}
 
 }
 

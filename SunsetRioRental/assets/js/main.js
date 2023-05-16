@@ -19,77 +19,98 @@
 // botaoPortugues.onclick = function(){idioma=0;};
 // botaoIngles.onclick = function(){idioma=1;};
 
+
+// FAZ PASSAR OS APARTAMENTOS NA LISTA DA SEÇÃO APARTAMENTOS
+const setaEListaApartamento = document.querySelector("#setaEListaApartamento");
+const setaDListaApartamento = document.querySelector("#setaDListaApartamento");
+const listaApartamentos = document.querySelector("#listaApartamentos");
+// setaDListaApartamento.onclick = function(){listaApartamentos.classList.add("listaApartamentosPos1")};
+setaDListaApartamento.onclick = function(){listaApartamentos.scrollBy(window.innerWidth*0.301, 0);};
+setaEListaApartamento.onclick = function(){listaApartamentos.scrollBy(-window.innerWidth*0.301, 0);};
+
+
 // FAZ O EFEITO DE ABRIR A JANELA MODAL DOS APARTAMENTOS
-let borrar = document.querySelector("#trBotaoDetalhes1");
-const fecharModal = document.querySelector("#btnFecharModalApartamento");
-borrar.onclick = function(){
-    borrar = document.querySelector("#secaoInicial")
-    borrar.className = "secaoInicial blurModal";
+
+const abrirModalApartamentos = document.querySelector(".botaoDetalhes");
+let efeitoBorrar;
+const fecharModalApartamentos = document.querySelector("#btnFecharModalApartamento");
+abrirModalApartamentos.onclick = function(){
+    efeitoBorrar = document.querySelector("#secaoApartamentos");
+    efeitoBorrar.className = "secaoApartamentos blurModal";
 };
 
-fecharModal.onclick = function(){
-    borrar = document.querySelector("#secaoApartamentos")
-    borrar.className = "secaoApartamentos";
+fecharModalApartamentos.onclick = function(){
+    efeitoBorrar = document.querySelector("#secaoApartamentos")
+    efeitoBorrar.className = "secaoApartamentos";
 };
 
 
 // CARREGA NA MODAL APARTAMENTO O NÚMERO DE IMAGENS QUE TEM NO APARTAMENTO E APLICA O EFEITO DE PASSAR PARA OS LADOS
-let numeroImagensApartamento;
+let numeroImagensApartamento = 6;
+let apartamentoSelecionado = "nenhum";
+const quantidadeDeApartamentos = 12;
 const botaoDetalhesApartamento = [];
-for(let i=1; i<=12; i++){
-    botaoDetalhesApartamento[i] = document.querySelector(`#trBotaoDetalhes${i}`);
+for(let i=0; i<quantidadeDeApartamentos; i++){botaoDetalhesApartamento[i] = document.querySelector(`#trBotaoDetalhes${i+1}`);}
+
+for (let i = 1; i <= quantidadeDeApartamentos; i++) {botaoDetalhesApartamento[i - 1].onclick = function () {selecaoDeApartamento(i);};}
+
+function selecaoDeApartamento(i)
+{
     // COPA LOFT
-    if(i==1){numeroImagensApartamento = 5;}
+    if (i-1 == 0) { apartamentoSelecionado = "copaLoft"; numeroImagensApartamento = 7; aplicarNumeroImagensApartamento(); aplicarEventoImagensModal()
+    for(j=0; j<numeroImagensApartamento; j++){if(imagemApartamento[j] != undefined){imagemApartamento[j].className = `copaLoft${j}`;}else return;}}
     // Estilo Sunset
-    if(i==2){numeroImagensApartamento = 5;}
+    if (i-1 == 1) { numeroImagensApartamento = 5; }
     // Atlântico Loft
-    if(i==3){numeroImagensApartamento = 5;}
+    if (i-1 == 2) { numeroImagensApartamento = 5; }
     // Sunset Garden
-    if(i==4){numeroImagensApartamento = 5;}
+    if (i-1 == 3) { numeroImagensApartamento = 5; }
     // Copa Sunset
-    if(i==5){numeroImagensApartamento = 5;}
+    if (i-1 == 4) { numeroImagensApartamento = 5; }
     // Atlântico Estúdio
-    if(i==6){numeroImagensApartamento = 5;}
+    if (i-1 == 5) { numeroImagensApartamento = 5; }
     // Estúdio Copa
-    if(i==7){numeroImagensApartamento = 5;}
+    if (i-1 == 6) { numeroImagensApartamento = 5; }
     // Mar de Copa
-    if(i==8){numeroImagensApartamento = 5;}
+    if (i-1 == 7) { numeroImagensApartamento = 5; }
     // Mar de CopaII
-    if(i==9){numeroImagensApartamento = 5;}
+    if (i-1 == 8) { numeroImagensApartamento = 5; }
     // Copa Dream
-    if(i==10){numeroImagensApartamento = 5;}
+    if (i-1 == 9) { numeroImagensApartamento = 5; }
     // Sunset Estudio
-    if(i==11){numeroImagensApartamento = 5;}
+    if (i-1 == 10) { numeroImagensApartamento = 5; }
     // Sunset Premium
-    if(i==12){numeroImagensApartamento = 5;}
+    if (i-1 == 11) { numeroImagensApartamento = 5; }
 }
 
-function aplicarNumeroImagensApartamento(){
-    for(let i=0; i<numeroImagensApartamento; i++){imagemApartamento.push (document.querySelector(`#mdImagemApartamento${i+1}`));}
-}
-
-let contadorImagemModal = 0;
+let contadorImagemModal = 1;
 const setaEFotosApartamento = document.querySelector("#mdSetaEFotosApartamento");
 const setaDFotosApartamento = document.querySelector("#mdSetaDFotosApartamento");
 const imagemApartamento = [];
-aplicarNumeroImagensApartamento();
+
+function aplicarNumeroImagensApartamento(){
+    for(let i=1; i<=numeroImagensApartamento; i++){imagemApartamento.push (document.querySelector(`#mdImagemApartamento${i}`));} 
+    contadorImagemModal = 1; resetarPosicoesImagens(); mudarImagem();
+}
 
 setaDFotosApartamento.onclick = function(){
-    if (contadorImagemModal <4){contadorImagemModal ++; resetarPosicoesImagens(); mudarImagem();}};
+    if (contadorImagemModal <numeroImagensApartamento){contadorImagemModal ++; resetarPosicoesImagens(); mudarImagem();}};
 
 setaEFotosApartamento.onclick = function(){
-    if (contadorImagemModal <=4 && contadorImagemModal>0){contadorImagemModal --; resetarPosicoesImagens(); mudarImagem();}
-    if(contadorImagemModal==0){resetarPosicoesImagens();}};
+    if (contadorImagemModal <=numeroImagensApartamento && contadorImagemModal>1){contadorImagemModal --; resetarPosicoesImagens(); mudarImagem();}
+    if(contadorImagemModal==1){resetarPosicoesImagens();}};
 
-function resetarPosicoesImagens(){for(let i=0; i<=4; i++){imagemApartamento[i].className = `mdImagemApartamento${i+1}`;}}
-function mudarImagem(){for(let i=0; i<=4; i++){imagemApartamento[i].classList.add(`mdMoverImg${contadorImagemModal}`);}}
+function resetarPosicoesImagens(){for(let i=0; i<numeroImagensApartamento; i++){imagemApartamento[i].className = `${apartamentoSelecionado}${i}`;}}
+function mudarImagem(){for(let i=0; i<numeroImagensApartamento; i++){imagemApartamento[i].classList.add(`mdMoverImg${contadorImagemModal-1}`);}}
 
 // EFEITO DE AMPLIAÇÃO DA IMAGEM DA JANELA MODAL
 
 const fundoImagemAmpliadaModal = document.querySelector("#fundoImagemAmpliadaModal");
 const imagemAmpliadaModal = document.querySelector("#imagemAmpliadaModal");
 
-for(let i=0; i<=imagemApartamento.length; i++){if(imagemApartamento[i] != undefined){imagemApartamento[i].onclick = function(){ampliarImagem(i);};}}
+function aplicarEventoImagensModal(){
+    for(let i=0; i<=imagemApartamento.length; i++){if(imagemApartamento[i] != undefined){imagemApartamento[i].onclick = function(){ampliarImagem(i);};}}
+}
 
 function ampliarImagem(numero){
     fundoImagemAmpliadaModal.classList.add("mostrarFundoImagemAmpliadaModal");
@@ -99,3 +120,43 @@ function ampliarImagem(numero){
 
 const fecharFundoImagem = document.querySelector("#fecharFundoImagem");
 fecharFundoImagem.onclick = function(){fundoImagemAmpliadaModal.className = "fundoImagemAmpliadaModal";};
+
+
+const faq = [];
+for(let i=1; i<=12; i++){
+    faq[i-1] = document.querySelector(`#trFaq${i}`);
+    if(i==12){adicionarEventoFaq();}
+}
+
+function adicionarEventoFaq(){
+for(let j=0; j<12; j++){
+    faq[j].onclick = function(){
+        const respostaFaq = document.querySelector("#respostaFaq");
+        if(respostaFaq!=null)
+        {respostaFaq.parentNode.removeChild(respostaFaq);}
+        const elementoRespostaFaq = document.createElement('p');
+        // elementoRespostaFaq.className = "respostaFaq";
+        elementoRespostaFaq.setAttribute ('id', 'respostaFaq');
+        const textoResposta = selecionarRepostaFaq(j+1);
+        faq[j].parentNode.insertBefore(elementoRespostaFaq, faq[j].nextSibling);
+        elementoRespostaFaq.innerText = textoResposta;
+        setTimeout(()=> elementoRespostaFaq.classList.add("respostaFaq"), 1);
+    }
+}
+}
+
+function limparRespostaFaq(elementoFaq){elementoFaq.innerHTML = '';}
+function selecionarRepostaFaq(resposta){
+    if(resposta ==1){return "Não oferecemos café da manhã, mas todos os apartamentos estão equipados com itens básicos para preparar refeições.";}
+    if(resposta ==2){return "É a taxa de serviço para na modalidade de aluguel de temporada. Essa taxa auxilia nas despesas com lavanderia, energia, limpeza, entre outros. Não significa limpeza diária no apartamento.";}
+    if(resposta ==3){return "Não. Nenhum dos prédios possuem garagem. Nas ruas ao redor, existem vagas da prefeitura e estacionamentos particulares.";}
+    if(resposta ==4){return "Não. Durante a estadia, o apartamento fica disponível apenas para o hóspede.";}
+    if(resposta ==5){return "A capacidade do apartamento não pode ser excedida. Ou seja, se o apartamento acomoda 5 pessoas e a reserva foi feita para 2 pessoas, o hóspede poderá receber até 3 pessoas. As visitas deverão ser informadas previamente. A capacidade do apartamento pode ser verificado através do site, ou através de mensagens para o nosso whatsapp, ou email. Obs.: Alguns condomínios não permitem visitas, confirme antes conosco.";}
+    if(resposta ==6){return "Na maioria dos apartamentos, sim. Porém, em alguns não é permitido pelo condomínio. Nos envie uma mensagem para confirmar.";}
+    if(resposta ==7){return "O horário padrão de check in é 14h, e de check out 12h. Flexibilizações de horário são feitas mediante disponibilidade do apartamento e taxas poderão ser aplicadas.";}
+    if(resposta ==8){return "Não. É proibido festas e eventos em qualquer um de nossos apartamentos.";}
+    if(resposta ==9){return "Sim. Disponibilizamos roupa de cama e toalhas para todos os hóspedes.";}
+    if(resposta ==10){return "Um dia antes da chegada, entramos em contato para combinar a entrega das chaves. Tem um cofre de chaves ao lado da porta, que possibilita o self check in.";}
+    if(resposta ==11){return "Sim, disponibilizamos secador de cabelo.";}
+    if(resposta ==12){return "Sim, disponibilizamos ferro de passar roupas.";}
+}

@@ -26,7 +26,7 @@ let ids = [
 
 // QUINTA PÁGINA
 
-"trTituloFaq","trParagrafoFaq","trFaqCafeDaManha","trFaqTaxaDeLimpeza","trFaqEstacionamento","trFaqCompartilhado","trFaqVisitas","trFaqPets","trFaqCheckInOut","trFaqFesta","trFaqToalhas","trFaqCheckin","trFaqSecador", "trFaqFerro","trBotaoCTA3",
+"trTituloFaq","trParagrafoFaq","trFaq1","trFaq2","trFaq3","trFaq4","trFaq5","trFaq6","trFaq7","trFaq8","trFaq9","trFaq10","trFaq11", "trFaq12","trBotaoCTA3",
 
 
 // RODAPÉ
@@ -156,7 +156,7 @@ let dicionarioPortugues = [
 
 // RODAPÉ
 
-"© 2023 - Todos os direitos reservados. Desenvolvido por Fábio Marques.AAAAAA"
+"© 2023 - Todos os direitos reservados. Desenvolvido por Fábio Marques."
 
 ];
 let dicionarioIngles = [
@@ -277,7 +277,7 @@ let dicionarioIngles = [
 
 // RODAPÉ
 
-"© 2023 - Todos os direitos reservados. Desenvolvido por Fábio Marques."
+"© 2023 - All Rights Reserved. Developed by Fábio Marques."
 
 ];
 const botaoPortugues = document.getElementById('botaoPortugues');

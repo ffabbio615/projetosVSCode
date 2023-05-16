@@ -13,29 +13,33 @@
 <body>
     <!-- TOPO -->
     <header id="topo" class="topo">
-        <div class="flexivelEsquerda camadaTopo topo40">
-            <img class="iconeTopo iconeTelefoneTopo" alt="" src="./assets/img/iconeTelefone.svg">
-            <p>+55 (21) 96806-0371 / +55 (21) 98071-8871 </p>
+        <div class="topoTel">
+            <img class="imgTopo imgTopoTel" alt="" src="./assets/img/iconeTelefone.svg">
+            <div class="textoTopo">
+                <p>+55 (21) 96806-0371 / +55 (21) 98071-8871 </p>
+            </div>
         </div>
-        <div class="flexivelCentro camadaTopo topo20">
-            <img class="iconeTopo" src="./assets/img/iconeRelogio.svg" alt="">
-            <p class="alinharCentro" id="trHorarioTopo">Seg - Sáb: 9:00 - 18:00</p>
+        <div class="topoRel">
+            <img class="imgTopo imgTopoRel" alt="" src="./assets/img/iconeRelogio.svg">
+            <div class="textoTopo">
+                <p id="trHorarioTopo">Seg - Sáb: 9:00 - 18:00</p>
+            </div>
         </div>
-        <div class="flexivelDireita camadaTopo topo40">
-            <img class="iconeTopo" src="./assets/img/iconeEmail.svg" alt="">
-            <p>contato@sunsetriorental.com</p>
-            <img class="iconeTopo" src="./assets/img/iconeWhatsapp.svg" alt="">
-            <img class="iconeTopo" src="./assets/img/iconeInstagram.svg" alt="">
-            <img class="iconeTopo iconeFaceTopo" src="./assets/img/iconeFacebook.svg" alt="">
+        <div class="topoRedes">
+            <a><img class="imgTopo imgTopoRedes" src="./assets/img/iconeEmail.svg" alt=""></a>
+            <div class="textoTopoRedes">
+                <p>contato@sunsetriorental.com</p>
+            </div>
+            <a href="https://api.whatsapp.com/message/GUCWMSYYBHZFK1"><img class="imgTopo imgTopoRedes" src="./assets/img/iconeWhatsapp.svg" alt=""></a>
+            <a href="https://www.instagram.com/sunsetriorental"><img class="imgTopo imgTopoRedes" src="./assets/img/iconeInstagram.svg" alt=""></a>
+            <a href="https://www.facebook.com/sunsetriorental" class="imgTopoFacebook"><img class="imgTopo imgTopoRedes" src="./assets/img/iconeFacebook.svg" alt=""></a>
         </div>
-
-        <!-- Logo Menu e Linguagem -->
-        <div class="flexivelEsquerda camadaMenu">
-            <img class="logoSunset" src="./assets/img/logoSunset.svg" alt="">
+        <div class="menuLogo">
+            <img src="./assets/img/logoSunset.svg" alt="">
         </div>
-        <div class="flexivelCentro camadaMenu menu">
+        <div class="menuLinks">
             <nav>
-                <ul class="flexivelCentro">
+                <ul>
                     <li><a href="#secaoApartamentos" id="trApartamentos">APARTAMENTOS</a></li>
                     <li><a href="#secaoPagamentos" id="trPagamentos">POLÍTICAS</a></li>
                     <li><a href="#secaoSobreNos" id="trSobreNos">SOBRE NÓS</a></li>
@@ -43,10 +47,11 @@
                 </ul>
             </nav>
         </div>
-        <div class="flexivelDireita camadaMenu">
+        <div class="menuIdioma">
             <img id="botaoPortugues" class="iconeLinguagem" src="./assets/img/bandeiraBrasil.svg" alt="">
             <img id="botaoIngles" class="iconeLinguagem" src="./assets/img/bandeiraEua.svg" alt="">
         </div>
+        
     </header>
 
     <!-- Seção Inicial -->
@@ -63,7 +68,7 @@
                     próximo aos transportes mais utilizados e totalmente equipado
                     para que sua experiência seja incrível.
                 </p>
-                <button class="botaoCTA"><a id="trBotaoCTA" href="#">Reserve Agora</a></button>
+                <button class="botaoCTA"><a id="trBotaoCTA" href="https://www.airbnb.com.br/users/415432275/listings">Reserve Agora</a></button>
             </div>
         </div>
     </section>
@@ -77,11 +82,13 @@
                 </div>
             </div>
 
-            <div class="listaApartamentos">
+            <div id="setaEListaApartamento" class="mdSetaEFotosApartamento setaEListaApartamento">❮</div>
+            <div id="setaDListaApartamento" class="mdSetaDFotosApartamento setaDListaApartamento">❯</div>
+            <div id="listaApartamentos" class="listaApartamentos">
 
-                <div id="copaLoft" class="copaLoft imagemApartamento">
+                <div id="copaLoft" class="copaLoft0 imagemApartamento">
                     <div class="botaoApartamento">
-                        <button id="trBotaoDetalhes1" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                        <button class="botaoDetalhes"><a id="trBotaoDetalhes1" href="#modalApartamento">DETALHES</a></button>
                     </div>
                     <div class="tarjaApartamento">
                         <h3 id="tituloApartamento">Copa Loft</h3>
@@ -97,9 +104,9 @@
                 </div>
 
 
-            <div id="estiloSunset" class="estiloSunset imagemApartamento">
+            <div id="estiloSunset" class="estiloSunset0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes2" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes2" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Estilo Sunset</h3>
@@ -114,9 +121,9 @@
                 </div>
             </div>
 
-            <div id="atlanticoLoft" class="atlanticoLoft imagemApartamento">
+            <div id="atlanticoLoft" class="atlanticoLoft0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes3" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes3" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Atlântico Loft</h3>
@@ -131,9 +138,9 @@
                 </div>
             </div>
 
-            <div id="sunsetGarden" class="sunsetGarden imagemApartamento">
+            <div id="sunsetGarden" class="sunsetGarden0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes4" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes4" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Sunset Garden</h3>
@@ -148,9 +155,9 @@
                 </div>
             </div>
 
-            <div id="copaSunset" class="copaSunset imagemApartamento">
+            <div id="copaSunset" class="copaSunset0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes5" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes5" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Copa Sunset</h3>
@@ -165,9 +172,9 @@
                 </div>
             </div>
 
-            <div id="atlanticoEstudio" class="atlanticoEstudio imagemApartamento">
+            <div id="atlanticoEstudio" class="atlanticoEstudio0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes6" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes6" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Atlântico Estúdio</h3>
@@ -182,9 +189,9 @@
                 </div>
             </div>
 
-            <div id="estudioCopa" class="estudioCopa imagemApartamento">
+            <div id="estudioCopa" class="estudioCopa0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes7" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes7" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Estúdio Copa</h3>
@@ -199,9 +206,9 @@
                 </div>
             </div>
 
-            <div id="marDeCopa" class="marDeCopa imagemApartamento">
+            <div id="marDeCopa" class="marDeCopa0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes8" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes8" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Mar de Copa</h3>
@@ -216,9 +223,9 @@
                 </div>
             </div>
             
-            <div id="marDeCopa2" class="marDeCopa2 imagemApartamento">
+            <div id="marDeCopa2" class="marDeCopaII0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes9" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes9" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Mar de Copa II</h3>
@@ -233,9 +240,9 @@
                 </div>
             </div>
 
-            <div id="copaDream" class="copaDream imagemApartamento">
+            <div id="copaDream" class="copaDream0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes10" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes10" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Copa Dream</h3>
@@ -250,9 +257,9 @@
                 </div>
             </div>
 
-            <div id="sunsetEstudio" class="sunsetEstudio imagemApartamento">
+            <div id="sunsetEstudio" class="sunsetEstudio0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes11" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes11" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Sunset Estudio</h3>
@@ -267,9 +274,9 @@
                 </div>
             </div>
 
-            <div id="sunsetPremium" class="sunsetPremium imagemApartamento">
+            <div id="sunsetPremium" class="sunsetPremium0 imagemApartamento">
                 <div class="botaoApartamento">
-                    <button id="trBotaoDetalhes12" class="botaoDetalhes"><a href="#modalApartamento">DETALHES</a></button>
+                    <button class="botaoDetalhes"><a id="trBotaoDetalhes12" href="#modalApartamento">DETALHES</a></button>
                 </div>
                 <div class="tarjaApartamento">
                     <h3 id="tituloApartamento">Sunset Premium</h3>
@@ -287,7 +294,7 @@
         </div>
 
         <div class="painelBotaoCTAApartamentos">
-            <button id="trBotaoCTA2" class="botaoCTA">Reserve Agora</button>
+            <button class="botaoCTA"><a id="trBotaoCTA2" href="https://www.airbnb.com.br/users/415432275/listings">Reserve Agora</a></button>
         </div>
         
 
@@ -307,7 +314,7 @@
                 </div>
                 <div class="avaliacaoAirbnbButton">
                     <div>
-                        <button id="trBotaoVejaMais" class="botaoVejaMais">VEJA MAIS</button>
+                        <a href="https://www.airbnb.com.br/users/show/415432275"><button id="trBotaoVejaMais" class="botaoVejaMais">VEJA MAIS</button></a>
                     </div>
                 </div>
                 <div class="avaliacaoAirbnb">
@@ -448,7 +455,7 @@
 
     <!-- Seção FAQ -->
     <section class="secaoFaq" id="secaoFaq">
-        <div class="painelFaq">
+        <div class="painelFaq" id="painelFaq">
             <div class="tituloPerguntasFrequentes">
                 <div>
                     <h2 id="trTituloFaq">FAQ - PERGUNTAS FREQUENTES</h2>
@@ -457,22 +464,22 @@
             </div>
             <div class="perguntasFrequentes">
                 <div>
-                    <p id="trFaqCafeDaManha"> TEM CAFÉ DA MANHÃ?</p>
-                    <p id="trFaqTaxaDeLimpeza"> O QUE É TAXA DE LIMPEZA?</p>
-                    <p id="trFaqEstacionamento"> TEM ESTACIONAMENTO?</p>
-                    <p id="trFaqCompartilhado"> O APARTAMENTO É COMPARTILHADO COM OUTROS HÓSPEDES?</p>
-                    <p id="trFaqVisitas"> POSSO RECEBER VISITAS?</p>
-                    <p id="trFaqPets"> ACEITA PETS?</p>
-                    <p id="trFaqCheckInOut"> QUAL HORÁRIO DE CHECK IN E CHECK OUT?</p>
-                    <p id="trFaqFesta"> POSSO FAZER FESTA NO APARTAMENTO?</p>
-                    <p id="trFaqToalhas"> TEM TOALHAS E LENÇÓIS?</p>
-                    <p id="trFaqCheckin"> COMO É FEITO O CHECK IN?</p>
-                    <p id="trFaqSecador"> TEM SECADOR DE CABELO?</p>
-                    <p id="trFaqFerro"> TEM FERRO DE PASSAR ROUPA?</p>
+                    <p class="paragrafoFaq" id="trFaq1"> TEM CAFÉ DA MANHÃ?</p>
+                    <p class="paragrafoFaq" id="trFaq2"> O QUE É TAXA DE LIMPEZA?</p>
+                    <p class="paragrafoFaq" id="trFaq3"> TEM ESTACIONAMENTO?</p>
+                    <p class="paragrafoFaq" id="trFaq4"> O APARTAMENTO É COMPARTILHADO COM OUTROS HÓSPEDES?</p>
+                    <p class="paragrafoFaq" id="trFaq5"> POSSO RECEBER VISITAS?</p>
+                    <p class="paragrafoFaq" id="trFaq6"> ACEITA PETS?</p>
+                    <p class="paragrafoFaq" id="trFaq7"> QUAL HORÁRIO DE CHECK IN E CHECK OUT?</p>
+                    <p class="paragrafoFaq" id="trFaq8"> POSSO FAZER FESTA NO APARTAMENTO?</p>
+                    <p class="paragrafoFaq" id="trFaq9"> TEM TOALHAS E LENÇÓIS?</p>
+                    <p class="paragrafoFaq" id="trFaq10"> COMO É FEITO O CHECK IN?</p>
+                    <p class="paragrafoFaq" id="trFaq11"> TEM SECADOR DE CABELO?</p>
+                    <p class="paragrafoFaq" id="trFaq12"> TEM FERRO DE PASSAR ROUPA?</p>
                 </div>
             </div>
             <div class="painelCTAFaq">
-                <button id="trBotaoCTA3" class="botaoCTA">Reserve Agora</button>
+                <button class="botaoCTA"><a id="trBotaoCTA3" href="https://www.airbnb.com.br/users/415432275/listings">Reserve Agora</a></button>
             </div>
         </div>
     </section>
@@ -482,10 +489,10 @@
         <div class="rodape">
             <div class="rodapeRedesSociais">
                 <div>
-                    <img class="iconeRodape" src="./assets/img/iconeWhatsapp.svg" alt="">
-                    <img class="iconeRodape" src="./assets/img/iconeInstagram.svg" alt="">
-                    <img class="iconeRodape" src="./assets/img/iconeFacebook.svg" alt="">
-                    <img class="iconeRodape" src="./assets/img/iconeAirbnb.svg" alt="">
+                    <a href="https://api.whatsapp.com/message/GUCWMSYYBHZFK1"><img class="iconeRodape iconeRodapeLink" src="./assets/img/iconeWhatsapp.svg" alt=""></a>
+                    <a href="https://www.instagram.com/sunsetriorental"><img class="iconeRodape iconeRodapeLink" src="./assets/img/iconeInstagram.svg" alt=""></a>
+                    <a href="https://www.facebook.com/sunsetriorental"><img class="iconeRodape iconeRodapeLink" src="./assets/img/iconeFacebook.svg" alt=""></a>
+                    <a href="https://www.airbnb.com.br/users/show/415432275"><img class="iconeRodape iconeRodapeLink" src="./assets/img/iconeAirbnb.svg" alt=""></a>
                 </div>
                 <div>
                     <img class="iconeRodape" src="./assets/img/iconeEmail.svg" alt="">
@@ -517,11 +524,16 @@
                     <div id="mdSetaEFotosApartamento" class="mdSetaEFotosApartamento">❮</div>
                         <div class="mdContainerFotosApartamento">
                             <div class="mdDisplayFotosApartamento">
-                            <div id="mdImagemApartamento1" class="mdImagemApartamento1">1</div>
-                            <div id="mdImagemApartamento2" class="mdImagemApartamento2">2</div>
-                            <div id="mdImagemApartamento3" class="mdImagemApartamento3">3</div>
-                            <div id="mdImagemApartamento4" class="mdImagemApartamento4">4</div>
-                            <div id="mdImagemApartamento5" class="mdImagemApartamento5">5</div>
+                            <div id="mdImagemApartamento1"></div>
+                            <div id="mdImagemApartamento2"></div>
+                            <div id="mdImagemApartamento3"></div>
+                            <div id="mdImagemApartamento4"></div>
+                            <div id="mdImagemApartamento5"></div>
+                            <div id="mdImagemApartamento6"></div>
+                            <div id="mdImagemApartamento7"></div>
+                            <div id="mdImagemApartamento8"></div>
+                            <div id="mdImagemApartamento9"></div>
+                            <div id="mdImagemApartamento10"></div>
                         </div>
                     </div>
                     <div id="mdSetaDFotosApartamento" class="mdSetaDFotosApartamento">❯</div>
