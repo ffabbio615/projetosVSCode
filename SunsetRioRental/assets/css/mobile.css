@@ -1,6 +1,7 @@
 /* 394x714px - Resolução do meu celular */
 
-@media screen and (max-width: 394px){
+/* SMARTPHONES */
+@media screen and (min-width: 250px) and (max-width: 767px) and (orientation:portrait){
     
 .topo20{width: 30%;} .topo40 {width: 35%;}
 .iconeTopo{display: none;}
@@ -15,14 +16,28 @@ header .menu{display: none;}
     .iconeLinguagem{height: 40%;}
 }
 
-@media screen and (max-width: 879px){
-    .botaoTopo a{font-size: calc(2.5vw + 0.2rem);}
+/* TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation:portrait){}
 
+/* PC MONITOR 4:3 */
+@media screen and (width: 1024px) and (height: 768px){
+    /* .secaoInicial{height: 70vh;}
+    .secaoApartamentos{height: 90vh;} .painelApartamentos{height: 170vh !important;} 
+    .secaoSobreNos{height: 90vh;} .painelSobreAsValerias{height: 40%;} */
 }
 
+
+
+/* AJUSTES DE TEXTOS E BOTÕES */
 
 @media screen and (max-width: 509px){
     .topo40 {width: 100%;}
     .camadaMenu{height: 50%;}
+
+}
+
+@media screen and (max-width: 879px){
+    .botaoTopo a{font-size: calc(2.5vw + 0.2rem);}
+    .botaoCTA{font-size: calc(1.5vw + 0.2rem);}
 
 }

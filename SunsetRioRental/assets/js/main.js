@@ -123,26 +123,32 @@ fecharFundoImagem.onclick = function(){fundoImagemAmpliadaModal.className = "fun
 
 
 const faq = [];
+let numeroPerguntaFaq = 0;
 for(let i=1; i<=12; i++){
     faq[i-1] = document.querySelector(`#trFaq${i}`);
     if(i==12){adicionarEventoFaq();}
 }
 
-function adicionarEventoFaq(){
-for(let j=0; j<12; j++){
-    faq[j].onclick = function(){
-        const respostaFaq = document.querySelector("#respostaFaq");
-        if(respostaFaq!=null)
-        {respostaFaq.parentNode.removeChild(respostaFaq);}
-        const elementoRespostaFaq = document.createElement('p');
-        // elementoRespostaFaq.className = "respostaFaq";
-        elementoRespostaFaq.setAttribute ('id', 'respostaFaq');
-        const textoResposta = selecionarRepostaFaq(j+1);
-        faq[j].parentNode.insertBefore(elementoRespostaFaq, faq[j].nextSibling);
-        elementoRespostaFaq.innerText = textoResposta;
-        setTimeout(()=> elementoRespostaFaq.classList.add("respostaFaq"), 1);
+function adicionarEventoFaq() {
+    for (let j = 0; j < 12; j++) {
+        faq[j].onclick = function () {
+            const respostaFaq = document.querySelector("#respostaFaq");
+            if (respostaFaq != null) {
+                respostaFaq.className = "limparRespostaFaq";
+                setTimeout(() => respostaFaq.parentNode.removeChild(respostaFaq), 100);
+            }
+            if (numeroPerguntaFaq != j + 1) {
+                numeroPerguntaFaq = j + 1;
+                const elementoRespostaFaq = document.createElement('p');
+                elementoRespostaFaq.setAttribute('id', 'respostaFaq');
+                const textoResposta = selecionarRepostaFaq(j + 1);
+                faq[j].parentNode.insertBefore(elementoRespostaFaq, faq[j].nextSibling);
+                elementoRespostaFaq.innerHTML = textoResposta;
+                setTimeout(() => elementoRespostaFaq.classList.add("respostaFaq"), 1);
+            }
+            else{numeroPerguntaFaq = 0;}
+        }
     }
-}
 }
 
 function limparRespostaFaq(elementoFaq){elementoFaq.innerHTML = '';}
@@ -151,7 +157,7 @@ function selecionarRepostaFaq(resposta){
     if(resposta ==2){return "É a taxa de serviço para na modalidade de aluguel de temporada. Essa taxa auxilia nas despesas com lavanderia, energia, limpeza, entre outros. Não significa limpeza diária no apartamento.";}
     if(resposta ==3){return "Não. Nenhum dos prédios possuem garagem. Nas ruas ao redor, existem vagas da prefeitura e estacionamentos particulares.";}
     if(resposta ==4){return "Não. Durante a estadia, o apartamento fica disponível apenas para o hóspede.";}
-    if(resposta ==5){return "A capacidade do apartamento não pode ser excedida. Ou seja, se o apartamento acomoda 5 pessoas e a reserva foi feita para 2 pessoas, o hóspede poderá receber até 3 pessoas. As visitas deverão ser informadas previamente. A capacidade do apartamento pode ser verificado através do site, ou através de mensagens para o nosso whatsapp, ou email. Obs.: Alguns condomínios não permitem visitas, confirme antes conosco.";}
+    if(resposta ==5){return "A capacidade do apartamento não pode ser excedida. Ou seja, se o apartamento acomoda 5 pessoas e a reserva foi feita para 2 pessoas, o hóspede poderá receber até 3 pessoas. As visitas deverão ser informadas previamente. A capacidade do apartamento pode ser verificado através do site, ou através de mensagens para o nosso whatsapp, ou email. <br> Obs.: Alguns condomínios não permitem visitas, confirme antes conosco.";}
     if(resposta ==6){return "Na maioria dos apartamentos, sim. Porém, em alguns não é permitido pelo condomínio. Nos envie uma mensagem para confirmar.";}
     if(resposta ==7){return "O horário padrão de check in é 14h, e de check out 12h. Flexibilizações de horário são feitas mediante disponibilidade do apartamento e taxas poderão ser aplicadas.";}
     if(resposta ==8){return "Não. É proibido festas e eventos em qualquer um de nossos apartamentos.";}

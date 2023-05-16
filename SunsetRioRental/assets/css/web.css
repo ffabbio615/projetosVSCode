@@ -105,7 +105,7 @@ color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: point
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
 .botaoCTA{width: 20vw; height: 7vh; border-style: none; color: var(--corNeutraBranca); border-radius: 1.6vw; cursor: pointer;
-font-family: var(--stbk); font-weight: 900; font-size: 1.5vw; box-shadow: 0 0 1vw -0.2v var(--corNeutraPreta); background-color: var(--corTextoAzul);} 
+font-family: var(--stbk); font-weight: 900; font-size: 1.8vw; box-shadow: 0 0 1vw -0.2v var(--corNeutraPreta); background-color: var(--corTextoAzul);} 
 .botaoCTA:enabled{transition: 0.5s;}
 .botaoCTA:hover{background: var(--corFundoLaranja); transition: 0.5s;}
 .botaoCTA:active{background-color: var(--corTextoLaranja);}
@@ -226,7 +226,7 @@ flex-wrap: wrap;}
 .menuLogo, .menuLinks, .menuIdioma{background: var(--corNeutraBranca); justify-content: center;}
 
 .menuLogo{grid-area: menuLogo;}
-.menuLogo img{height: 80%; width: auto;}
+.menuLogo img{height: 80%; width: auto; max-width: 90%;}
 
 .menuLinks{grid-area: menuLinks;}
 .menuLinks nav{width: 100%;}
@@ -332,16 +332,20 @@ padding-bottom: 3%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
 
 
 .secaoPagamentos{height:100vh; width: 100%; background-color: var(--corFundoLaranja); box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.61);}
-/* background-size:cover; background-position: bottom center; background-image: url(../img/fundoLaranjaOnda.svg) */
 
-.politicas{margin-top: 5vh; display: flex; flex-wrap: wrap; width: 100%; height: 60vh;}
-.tituloPoliticas{display: flex; justify-content: center; align-items: center; width: 100%; height: 15%;}
+
+.politicas{width: 100%; height: 58vh; margin-top: 5vh; display: grid; grid-template-columns: 33.33% 33.33% 33.33%; grid-template-rows: 15% 85%; 
+    grid-template-areas: "tituloPolitica tituloPolitica tituloPolitica" "regrasDeHospedagem pagamentosECancelamentos politicasDePrivacidade" ;}
+.tituloPoliticas{grid-area: tituloPolitica;} .regrasDeHospedagem{grid-area: regrasDeHospedagem;} .pagamentosECancelamentos{grid-area: pagamentosECancelamentos;}
+.politicasDePrivacidade{grid-area: politicasDePrivacidade;}
+
+.tituloPoliticas{display: flex; justify-content: center; align-items: center;}
 .tituloPoliticas h2{font-family: var(--tbk); font-weight: 900; font-size: 2.5vw;}
 .politicas h3{font-family: var(--stbk); font-weight: 900; font-size: 1.8vw; padding: 3% 15%; transition: 0.3s ease-in;} 
 .politicas p{font-family: var(--tb); font-size: 1.4vw; color: var(--corTextoLaranja); padding: 0 5%;}
 .iconePoliticas{width: 100%; text-align: center; transition: 0.3s ease-in;}
 .politicas img{width: 35%; height: auto;}
-.regrasDeHospedagem, .pagamentosECancelamentos, .politicasDePrivacidade{width: 30%; margin: 2% 1.665%; display: flex; flex-wrap: wrap;
+.regrasDeHospedagem, .pagamentosECancelamentos, .politicasDePrivacidade{margin: 3% 5%; display: flex; flex-wrap: wrap;
     justify-content: center; text-align: center; align-items: baseline; cursor: pointer; transition: 0.5s ease-in;}
 
 .regrasDeHospedagem:hover, .pagamentosECancelamentos:hover, .politicasDePrivacidade:hover{
@@ -396,21 +400,26 @@ background-size:cover; background-image: url(../img/fundoCopacabanaOnda.svg);}
 .secaoFaq{height:73.9vh; width: 100%; background-color: white; box-shadow: 0px 0px 15px var(--corNeutraPreta); display: flex; justify-content: center;
 align-items: center;}
 
-.painelFaq{width: 80%; height: 100%; background-color: var(--corNeutraBranca); display: flex; flex-wrap: wrap; color: var(--corFundoAzul);}
-.tituloPerguntasFrequentes{display: flex; height: 10vh; width: 100%; align-items: center; justify-content: center; margin-top: 2vh;}
+.painelFaq{width: 80%; height: 100%; background-color: var(--corNeutraBranca); color: var(--corFundoAzul); display: grid; grid-template-columns: 60% 40%; 
+    grid-template-rows: 18% 82%; grid-template-areas: "tituloPerguntasFrequentes tituloPerguntasFrequentes" "perguntasFrequentes painelCTAFaq";}
+.tituloPerguntasFrequentes{grid-area: tituloPerguntasFrequentes;} .perguntasFrequentes{grid-area: perguntasFrequentes;} .painelCTAFaq{grid-area: painelCTAFaq;}
+
+.tituloPerguntasFrequentes{display: flex; align-items: center; justify-content: center; margin-top: 1%;}
 .tituloPerguntasFrequentes div{width: 100%; height: 100%; text-align: center;}
 .tituloPerguntasFrequentes div h2{font-family: var(--tbk); font-weight: 900; font-size: 2.5vw;}
 .tituloPerguntasFrequentes div p{font-family: var(--stb); font-size: 1.5vw; text-align: center;}
-.perguntasFrequentes{display:flex; width: 50%; height: 60vh; flex-wrap: wrap; align-items: center;}
-.perguntasFrequentes div{width: 100%; height: auto;}
-.paragrafoFaq{width: 100%; height: 4.2vh; font-family: var(--stbk); font-size: 1.2vw; cursor: pointer; transition: 0.2s ease-out;}
+.perguntasFrequentes{display:flex; flex-wrap: wrap; align-items: center;}
+.perguntasFrequentes div{width: 100%; height: 80%;}
+.paragrafoFaq{width: 100%; font-family: var(--stbk); font-size: 1.2vw; cursor: pointer; transition: 0.2s ease-out; margin-top: 0.5%;}
 .paragrafoFaq:hover{color: var(--corTextoLaranja); transition: 0.2s ease-in;}
 .paragrafoFaq::before{content: "▶"; margin-right: 1%;}
-.painelCTAFaq{display:flex; width: 50%; height: 60vh; align-items: center; justify-content: center;}
+.painelCTAFaq{display:flex; align-items: center; justify-content: center;}
 
 /* AQUI SERÁ A CLASSE DA RESPOSTA FAQ GERADA VIA JAVASCRIPT */
-.respostaFaq{transition: 0.4s ease-in-out; width: 100%; margin-bottom: 5%; color: var(--corNeutraBranca); background-color: var(--corFundoAzul); 
-    padding: 1% 2% 1% 2%; align-items: center; text-align:justify; text-align-last: left}
+.respostaFaq{transition: 0.3s ease-in-out; width: 80%; margin-bottom: 1%; color: var(--corNeutraBranca); background-color: var(--corFundoAzul); 
+    padding: 1% 2% 1% 2%; align-items: center; text-align:justify; text-align-last: left; font-family: var(--cr); font-size: 1.1vw; border-radius: 1vw;
+    line-height: 1.6vw;}
+.limparRespostaFaq{transition: 0.4s ease-in-out; width: 0;}
 
 
 
