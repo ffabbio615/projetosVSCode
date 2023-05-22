@@ -35,13 +35,33 @@ const abrirModalApartamentos = document.querySelector(".botaoDetalhes");
 let efeitoBorrar;
 const fecharModalApartamentos = document.querySelector("#btnFecharModalApartamento");
 abrirModalApartamentos.onclick = function(){
+    efeitoBorrar = document.querySelector("#topo");
+    efeitoBorrar.className = "topo blurModal";
+    efeitoBorrar = document.querySelector("#secaoInicial");
+    efeitoBorrar.className = "secaoInicial blurModal";
     efeitoBorrar = document.querySelector("#secaoApartamentos");
     efeitoBorrar.className = "secaoApartamentos blurModal";
+    efeitoBorrar = document.querySelector("#secaoSobreNos");
+    efeitoBorrar.className = "secaoSobreNos blurModal";
+    efeitoBorrar = document.querySelector("#secaoFaq");
+    efeitoBorrar.className = "secaoFaq blurModal";
+    efeitoBorrar = document.querySelector("#rodape");
+    efeitoBorrar.className = "rodape blurModal";
 };
 
 fecharModalApartamentos.onclick = function(){
-    efeitoBorrar = document.querySelector("#secaoApartamentos")
+    efeitoBorrar = document.querySelector("#topo");
+    efeitoBorrar.className = "topo";
+    efeitoBorrar = document.querySelector("#secaoInicial");
+    efeitoBorrar.className = "secaoInicial";
+    efeitoBorrar = document.querySelector("#secaoApartamentos");
     efeitoBorrar.className = "secaoApartamentos";
+    efeitoBorrar = document.querySelector("#secaoSobreNos");
+    efeitoBorrar.className = "secaoSobreNos";
+    efeitoBorrar = document.querySelector("#secaoFaq");
+    efeitoBorrar.className = "secaoFaq";
+    efeitoBorrar = document.querySelector("#rodape");
+    efeitoBorrar.className = "rodape";
 };
 
 
