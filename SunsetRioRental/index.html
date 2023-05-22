@@ -75,6 +75,7 @@
     <!-- Seção Apartamentos e Avaliações -->
     <section class="secaoApartamentos" id="secaoApartamentos">
         <div class="painelApartamentos">
+            <div class="apartamentos">
             <div class="tituloApartamento">
                 <div>
                     <h2 id="trTituloApartamentos">NOSSOS APARTAMENTOS</h2>
@@ -296,14 +297,14 @@
         <div class="painelBotaoCTAApartamentos">
             <button class="botaoCTA"><a id="trBotaoCTA2" href="https://www.airbnb.com.br/users/415432275/listings">Reserve Agora</a></button>
         </div>
-        
+    </div>
 
             <div class="avaliacaoDeHospedes">
                 <div class="tituloAvaliacaoDeHospede">
                     <h2 id="trTituloAvaliacoes">AVALIAÇÕES DE HÓSPEDES</h2>
                     <P id="trParagrafoAvaliacoes">Confira a seguir o que nossos hóspedes acharam da experiência:</P>
                 </div>
-                <div class="avaliacaoAirbnb">
+                <div class="avaliacaoAirbnb avaliacaoEAirbnb">
                     <div>
                         <p id="trAvaliacaolinha1.1">“...Excelente experiência, cumpriram com o anúncio, tudo que foi oferecido foi entregue. Anfitriã muito atenciosa e solícita.”</p>
                     </div>
@@ -313,11 +314,9 @@
                     </div>
                 </div>
                 <div class="avaliacaoAirbnbButton">
-                    <div>
                         <a href="https://www.airbnb.com.br/users/show/415432275"><button id="trBotaoVejaMais" class="botaoVejaMais">VEJA MAIS</button></a>
-                    </div>
                 </div>
-                <div class="avaliacaoAirbnb">
+                <div class="avaliacaoAirbnb avaliacaoDAirbnb">
                     <div>
                         <p id="trAvaliacaolinha2.1">“...Experiência incrível, apartamento limpo e aconchegante, com uma vista espetacular de Copacabana! A anfitriã super atenciosa, e receptiva!”</p>
                     </div>
@@ -393,8 +392,7 @@
     
             <div class="painelSobreAsValerias">
                 <div class="conteudoSobreAsValerias">
-                    <div class="valeria">
-                        <div>
+                    <div class="valeria valeriaGomes">
                         <div>
                             <h3>Valéria Gomes</h3>
                         </div>
@@ -404,12 +402,9 @@
                                 auxiliar sua estadia ser a mais especial possível.</p>
                         </div>
                         <div>
-                            <div class="iconesSunset">
-                                <img class="iconeSobreASunset" src="./assets/img/iconeInstagram.svg" alt="">
-                                <img class="iconeSobreASunset" src="./assets/img/iconeWhatsapp.svg" alt="">
-                                <img class="iconeSobreASunset" src="./assets/img/iconeFacebook.svg" alt="">
-                            </div>
-                        </div>
+                            <a href="https://www.instagram.com/valeria_gomes_rj/"><img class="iconeSobreASunset" src="./assets/img/iconeInstagram.svg" alt=""></a>
+                            <a href="https://api.whatsapp.com/send?phone=5521980718871"><img class="iconeSobreASunset" src="./assets/img/iconeWhatsapp.svg" alt=""></a>
+                            <img class="iconeSobreASunset" src="./assets/img/iconeFacebook.svg" alt="">
                         </div>
                     </div>
     
@@ -428,8 +423,7 @@
                         </p>
                     </div>
 
-                    <div class="valeria">
-                        <div>
+                    <div class="valeria valeriaLima">
                         <div>
                             <h3>Valéria Lima</h3>
                         </div>
@@ -439,12 +433,9 @@
                                 de sua reserva e garantir que esteja tudo pronto.</p>
                         </div>
                         <div>
-                            <div class="iconesSunset">
-                                <img class="iconeSobreASunset" src="./assets/img/iconeInstagram.svg" alt="">
-                                <img class="iconeSobreASunset" src="./assets/img/iconeWhatsapp.svg" alt="">
-                                <img class="iconeSobreASunset" src="./assets/img/iconeFacebook.svg" alt="">
-                            </div>
-                        </div>
+                            <a href="http://www.instagram.com/leriarlima"><img class="iconeSobreASunset" src="./assets/img/iconeInstagram.svg" alt=""></a>
+                            <a href="https://api.whatsapp.com/message/GUCWMSYYBHZFK1"><img class="iconeSobreASunset" src="./assets/img/iconeWhatsapp.svg" alt=""></a>
+                            <a href="http://www.facebook.com/lerialima"><img class="iconeSobreASunset" src="./assets/img/iconeFacebook.svg" alt=""></a>
                         </div>
                     </div>
 
@@ -540,15 +531,15 @@
                 </div>
                 <div class="mdTituloApartamento">
                     <div>
-                        <h2>Copa Loft</h2>
-                        <p>Beira Mar - Copacabana</p>
-                        <p>1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 25m²</p>
-                        <button id="trBotaoCTAModal" class="botaoCTA">Reserve Agora</button>
+                        <h2 id="trTituloModalApartamento">Copa Loft</h2>
+                        <p id="trSubTituloModalApartamento">Beira Mar - Copacabana</p>
+                        <p id="trConteudoApartamentoModalApartamento">1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 25m²</p>
+                        <button id="trBotaoCTAModalApartamento" class="botaoCTA">Reserve Agora</button>
                     </div>
                 </div>
                 <div class="mdDescricaoApartamento">
-                    <p>DESCRIÇÃO</p>
-                    <p> Copa Loft é um apartamento de aproximadamente 28m², que acomoda até 4 pessoas, localizado a beira mar, 
+                    <p id="trTituloDescricaoModalApartamento">DESCRIÇÃO</p>
+                    <p id="trDescricaoModalApartamento"> Copa Loft é um apartamento de aproximadamente 28m², que acomoda até 4 pessoas, localizado a beira mar, 
                     e com vista para a rua de trás da praia. O apartamento possui 1 cama queen e 1 cama de solteiro com cama 
                     auxiliar, já para a refrigeração, tem ar condicionado no quarto e ventilador na sala. Possui também uma 
                     pequena cozinha, equipada com utensílios para cozinhar, mesa com cadeiras, geladeira, fogão, microondas, 
@@ -556,26 +547,26 @@
                 </div>
                 <div class="mdFacilidadesApartamento">
                     <div class="mdTituloFacilidadesApartamento">
-                        <p>FACILIDADES</p>
+                        <p id="trFacilidadesModalApartamento">FACILIDADES</p>
                     </div>
                     <div class="mdFacilidadesEsquerdaApartamento">
-                        <p>WIFI</p>
-                        <p>AR CONDICIONADO</p>
-                        <p>VENTILADOR</p>
-                        <p>TOALHAS</p>
-                        <p>ROUPA DE CAMA</p>
+                        <p id="trFacilidade1ModalApartamento">WIFI</p>
+                        <p id="trFacilidade2ModalApartamento">AR CONDICIONADO</p>
+                        <p id="trFacilidade3ModalApartamento">VENTILADOR</p>
+                        <p id="trFacilidade4ModalApartamento">TOALHAS</p>
+                        <p id="trFacilidade5ModalApartamento">ROUPA DE CAMA</p>
                     </div>
                     <div class="mdFacilidadesDireitaApartamento">
-                        <p>JOGOS</p>
-                        <p>FERRO DE PASSAR</p>
-                        <p>SECADOR DE CABELO</p>
-                        <p>SABONETE</p>
-                        <p>KIT DE PRIMEIROS SOCORROS</p> 
+                        <p id="trFacilidade6ModalApartamento">JOGOS</p>
+                        <p id="trFacilidade7ModalApartamento">FERRO DE PASSAR</p>
+                        <p id="trFacilidade8ModalApartamento">SECADOR DE CABELO</p>
+                        <p id="trFacilidade9ModalApartamento">SABONETE</p>
+                        <p id="trFacilidade10ModalApartamento">KIT DE PRIMEIROS SOCORROS</p> 
                     </div>
                 </div>
                 <div class="mdLocalizacaoApartamento">
                     <div class="mdTituloLocalizacaoApartamento">
-                        <p>LOCALIZAÇÃO</p>
+                        <p id="trLocalizacaoModalApartamento">LOCALIZAÇÃO</p>
                     </div>
                     <div>
                         <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Av.%20Atl%C3%A2ntica%203806&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near"></iframe>    
