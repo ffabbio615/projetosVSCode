@@ -50,7 +50,6 @@ abrirModalApartamentos.onclick = function(){
 };
 
 fecharModalApartamentos.onclick = function(){
-    efeitoBorrar = document.querySelector("#secaoApartamentos")
     efeitoBorrar = document.querySelector("#topo");
     efeitoBorrar.className = "topo";
     efeitoBorrar = document.querySelector("#secaoInicial");
