@@ -4,14 +4,6 @@
 //     botaoMenu.className = "botaoMenuVisivel botaoMenu";
 // };
 
-// const linkApartamento = document.location.href;
-// if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#modalApartamento" || linkApartamento == "http://127.0.0.1:5500/SunsetRioRental/index.html#modalApartamento")
-// {
-//     // alert("O JavaScript pega o link e checa apenas uma vez, daí se o link for esse especial, vai abrir uma modal com as informações");
-//     borrar = document.querySelector("#secaoInicial")
-//     borrar.className = "secaoInicial blurModal"
-// }
-
 // SELECIONA O IDIOMA PARA GERAR AS MODAIS DO SITE NA LINGUAGEM CORRETA
 // const botaoPortugues = document.getElementById('botaoPortugues');
 // const botaoIngles = document.getElementById('botaoIngles');
@@ -34,7 +26,9 @@ setaEListaApartamento.onclick = function(){listaApartamentos.scrollBy(-window.in
 const abrirModalApartamentos = document.querySelector(".botaoDetalhes");
 let efeitoBorrar;
 const fecharModalApartamentos = document.querySelector("#btnFecharModalApartamento");
-abrirModalApartamentos.onclick = function(){
+abrirModalApartamentos.onclick = function(){efeitoDesfocar();};
+
+function efeitoDesfocar(){
     efeitoBorrar = document.querySelector("#topo");
     efeitoBorrar.className = "topo blurModal";
     efeitoBorrar = document.querySelector("#secaoInicial");
@@ -47,9 +41,11 @@ abrirModalApartamentos.onclick = function(){
     efeitoBorrar.className = "secaoFaq blurModal";
     efeitoBorrar = document.querySelector("#rodape");
     efeitoBorrar.className = "rodape blurModal";
-};
+}
 
-fecharModalApartamentos.onclick = function(){
+fecharModalApartamentos.onclick = function(){efeitoFocar();};
+
+function efeitoFocar(){
     efeitoBorrar = document.querySelector("#topo");
     efeitoBorrar.className = "topo";
     efeitoBorrar = document.querySelector("#secaoInicial");
@@ -62,11 +58,10 @@ fecharModalApartamentos.onclick = function(){
     efeitoBorrar.className = "secaoFaq";
     efeitoBorrar = document.querySelector("#rodape");
     efeitoBorrar.className = "rodape";
-};
-
+}
 
 // CARREGA NA MODAL APARTAMENTO O NÚMERO DE IMAGENS QUE TEM NO APARTAMENTO E APLICA O EFEITO DE PASSAR PARA OS LADOS
-let numeroImagensApartamento = 6;
+let numeroImagensApartamento = 0;
 let apartamentoSelecionado = "nenhum";
 const quantidadeDeApartamentos = 12;
 const botaoDetalhesApartamento = [];
@@ -77,30 +72,47 @@ for (let i = 1; i <= quantidadeDeApartamentos; i++) {botaoDetalhesApartamento[i 
 function selecaoDeApartamento(i)
 {
     // COPA LOFT
-    if (i-1 == 0) { apartamentoSelecionado = "copaLoft"; numeroImagensApartamento = 7; aplicarNumeroImagensApartamento(); aplicarEventoImagensModal()
-    for(j=0; j<numeroImagensApartamento; j++){if(imagemApartamento[j] != undefined){imagemApartamento[j].className = `copaLoft${j}`;}else return;}}
+    if (i-1 == 0) {inserirImagensDoApartamento("copaLoft",7)}
     // Estilo Sunset
-    if (i-1 == 1) { numeroImagensApartamento = 5; }
+    if (i-1 == 1) {inserirImagensDoApartamento("estiloSunset",9)}
     // Atlântico Loft
-    if (i-1 == 2) { numeroImagensApartamento = 5; }
+    if (i-1 == 2) {inserirImagensDoApartamento("atlanticoLoft",7)}
     // Sunset Garden
-    if (i-1 == 3) { numeroImagensApartamento = 5; }
+    if (i-1 == 3) {inserirImagensDoApartamento("sunsetGarden",16)}
     // Copa Sunset
-    if (i-1 == 4) { numeroImagensApartamento = 5; }
-    // Atlântico Estúdio
-    if (i-1 == 5) { numeroImagensApartamento = 5; }
+    if (i-1 == 4) {inserirImagensDoApartamento("copaSunset",19)}
+    // Atlântica Estúdio
+    if (i-1 == 5) {inserirImagensDoApartamento("atlanticaEstudio",7)}
     // Estúdio Copa
-    if (i-1 == 6) { numeroImagensApartamento = 5; }
+    if (i-1 == 6) {inserirImagensDoApartamento("estudioCopa",10)}
     // Mar de Copa
-    if (i-1 == 7) { numeroImagensApartamento = 5; }
+    if (i-1 == 7) {inserirImagensDoApartamento("marDeCopa",9)}
     // Mar de CopaII
-    if (i-1 == 8) { numeroImagensApartamento = 5; }
+    if (i-1 == 8) {inserirImagensDoApartamento("marDeCopaII",20)}
     // Copa Dream
-    if (i-1 == 9) { numeroImagensApartamento = 5; }
+    if (i-1 == 9) {inserirImagensDoApartamento("copaDream",14)}
     // Sunset Estudio
-    if (i-1 == 10) { numeroImagensApartamento = 5; }
+    if (i-1 == 10) {inserirImagensDoApartamento("sunsetEstudio",12)}
     // Sunset Premium
-    if (i-1 == 11) { numeroImagensApartamento = 5; }
+    if (i-1 == 11) {inserirImagensDoApartamento("sunsetPremium",11)}
+}
+
+function inserirImagensDoApartamento(apSel,numImgAp){
+    if (numeroImagensApartamento!=0){
+        for(i=1; i<imagemApartamento.length; i++){
+            imagemApartamento[imagemApartamento.length-i].className="";
+            imagemApartamento.pop;
+        }
+    }
+    apartamentoSelecionado = apSel;
+    numeroImagensApartamento = numImgAp;
+    aplicarNumeroImagensApartamento();
+    aplicarEventoImagensModal()
+    for(j=0; j<numeroImagensApartamento; j++){
+        if(imagemApartamento[j] != undefined){
+            imagemApartamento[j].className = `${apartamentoSelecionado}${j}`;
+        }else return;
+    }
 }
 
 let contadorImagemModal = 1;
@@ -109,7 +121,7 @@ const setaDFotosApartamento = document.querySelector("#mdSetaDFotosApartamento")
 const imagemApartamento = [];
 
 function aplicarNumeroImagensApartamento(){
-    for(let i=1; i<=numeroImagensApartamento; i++){imagemApartamento.push (document.querySelector(`#mdImagemApartamento${i}`));} 
+    for(let i=1; i<=numeroImagensApartamento; i++){imagemApartamento[i-1] = document.querySelector(`#mdImagemApartamento${i}`);} 
     contadorImagemModal = 1; resetarPosicoesImagens(); mudarImagem();
 }
 
@@ -185,4 +197,32 @@ function selecionarRepostaFaq(resposta){
     if(resposta ==10){return "Um dia antes da chegada, entramos em contato para combinar a entrega das chaves. Tem um cofre de chaves ao lado da porta, que possibilita o self check in.";}
     if(resposta ==11){return "Sim, disponibilizamos secador de cabelo.";}
     if(resposta ==12){return "Sim, disponibilizamos ferro de passar roupas.";}
+}
+
+
+
+
+//EXTRAS
+
+//LINKS PARA CARREGAR DIRETAMENTE IMAGENS E TEXTOS DOS APARTAMENTOS
+const linkApartamento = document.location.href;
+// 1-COPA LOFT | 2-Estilo Sunset | 3-Atlântico Loft | 4-Sunset Garden | 5-Copa Sunset | 6-Atlântica Estúdio
+// 7-Estúdio Copa | 8-Mar de Copa | 9-Mar de CopaII | 10-Copa Dream | 11-Sunset Estudio | 12-Sunset Premium
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#1"){aplicarLinkApartamento(1);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#2"){aplicarLinkApartamento(2);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#3"){aplicarLinkApartamento(3);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#4"){aplicarLinkApartamento(4);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#5"){aplicarLinkApartamento(5);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#6"){aplicarLinkApartamento(6);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#7"){aplicarLinkApartamento(7);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#8"){aplicarLinkApartamento(8);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#9"){aplicarLinkApartamento(9);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#10"){aplicarLinkApartamento(10);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#11"){aplicarLinkApartamento(11);}
+if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#12"){aplicarLinkApartamento(12);}
+
+function aplicarLinkApartamento(numeroLink){
+    efeitoDesfocar();
+    document.location.href = "http://25.10.190.140:5500/SunsetRioRental/index.html#modalApartamento";
+    selecaoDeApartamento(numeroLink);
 }

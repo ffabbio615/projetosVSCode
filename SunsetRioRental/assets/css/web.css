@@ -46,43 +46,334 @@ html{scroll-behavior: smooth; transition: 1s;}
 --copaLoft4: url("../img/apartamentos/copaLoft/copaLoft4.jpg");
 --copaLoft5: url("../img/apartamentos/copaLoft/copaLoft5.jpg");
 --copaLoft6: url("../img/apartamentos/copaLoft/copaLoft6.jpg");
+--copaLoft7: url("../img/apartamentos/copaLoft/copaLoft7.jpg");
+--copaLoft8: url("../img/apartamentos/copaLoft/copaLoft8.jpg");
+--copaLoft9: url("../img/apartamentos/copaLoft/copaLoft9.jpg");
+--copaLoft10: url("../img/apartamentos/copaLoft/copaLoft10.jpg");
+--copaLoft11: url("../img/apartamentos/copaLoft/copaLoft11.jpg");
+--copaLoft12: url("../img/apartamentos/copaLoft/copaLoft12.jpg");
+--copaLoft13: url("../img/apartamentos/copaLoft/copaLoft13.jpg");
+--copaLoft14: url("../img/apartamentos/copaLoft/copaLoft14.jpg");
+--copaLoft15: url("../img/apartamentos/copaLoft/copaLoft15.jpg");
+--copaLoft16: url("../img/apartamentos/copaLoft/copaLoft16.jpg");
+--copaLoft17: url("../img/apartamentos/copaLoft/copaLoft17.jpg");
+--copaLoft18: url("../img/apartamentos/copaLoft/copaLoft18.jpg");
+--copaLoft19: url("../img/apartamentos/copaLoft/copaLoft19.jpg");
 --estiloSunset0: url("../img/apartamentos/estiloSunset/estiloSunset0.jpg");
+--estiloSunset1: url("../img/apartamentos/estiloSunset/estiloSunset1.jpg");
+--estiloSunset2: url("../img/apartamentos/estiloSunset/estiloSunset2.jpg");
+--estiloSunset3: url("../img/apartamentos/estiloSunset/estiloSunset3.jpg");
+--estiloSunset4: url("../img/apartamentos/estiloSunset/estiloSunset4.jpg");
+--estiloSunset5: url("../img/apartamentos/estiloSunset/estiloSunset5.jpg");
+--estiloSunset6: url("../img/apartamentos/estiloSunset/estiloSunset6.jpg");
+--estiloSunset7: url("../img/apartamentos/estiloSunset/estiloSunset7.jpg");
+--estiloSunset8: url("../img/apartamentos/estiloSunset/estiloSunset8.jpg");
+--estiloSunset9: url("../img/apartamentos/estiloSunset/estiloSunset9.jpg");
+--estiloSunset10: url("../img/apartamentos/estiloSunset/estiloSunset10.jpg");
+--estiloSunset11: url("../img/apartamentos/estiloSunset/estiloSunset11.jpg");
+--estiloSunset12: url("../img/apartamentos/estiloSunset/estiloSunset12.jpg");
+--estiloSunset13: url("../img/apartamentos/estiloSunset/estiloSunset13.jpg");
+--estiloSunset14: url("../img/apartamentos/estiloSunset/estiloSunset14.jpg");
+--estiloSunset15: url("../img/apartamentos/estiloSunset/estiloSunset15.jpg");
+--estiloSunset16: url("../img/apartamentos/estiloSunset/estiloSunset16.jpg");
+--estiloSunset17: url("../img/apartamentos/estiloSunset/estiloSunset17.jpg");
+--estiloSunset18: url("../img/apartamentos/estiloSunset/estiloSunset18.jpg");
+--estiloSunset19: url("../img/apartamentos/estiloSunset/estiloSunset19.jpg");
 --atlanticoLoft0: url("../img/apartamentos/atlanticoLoft/atlanticoLoft0.jpg");
+--atlanticoLoft1: url("../img/apartamentos/atlanticoLoft/atlanticoLoft1.jpg");
+--atlanticoLoft2: url("../img/apartamentos/atlanticoLoft/atlanticoLoft2.jpg");
+--atlanticoLoft3: url("../img/apartamentos/atlanticoLoft/atlanticoLoft3.jpg");
+--atlanticoLoft4: url("../img/apartamentos/atlanticoLoft/atlanticoLoft4.jpg");
+--atlanticoLoft5: url("../img/apartamentos/atlanticoLoft/atlanticoLoft5.jpg");
+--atlanticoLoft6: url("../img/apartamentos/atlanticoLoft/atlanticoLoft6.jpg");
+--atlanticoLoft7: url("../img/apartamentos/atlanticoLoft/atlanticoLoft7.jpg");
+--atlanticoLoft8: url("../img/apartamentos/atlanticoLoft/atlanticoLoft8.jpg");
+--atlanticoLoft9: url("../img/apartamentos/atlanticoLoft/atlanticoLoft9.jpg");
+--atlanticoLoft10: url("../img/apartamentos/atlanticoLoft/atlanticoLoft10.jpg");
+--atlanticoLoft11: url("../img/apartamentos/atlanticoLoft/atlanticoLoft11.jpg");
+--atlanticoLoft12: url("../img/apartamentos/atlanticoLoft/atlanticoLoft12.jpg");
+--atlanticoLoft13: url("../img/apartamentos/atlanticoLoft/atlanticoLoft13.jpg");
+--atlanticoLoft14: url("../img/apartamentos/atlanticoLoft/atlanticoLoft14.jpg");
+--atlanticoLoft15: url("../img/apartamentos/atlanticoLoft/atlanticoLoft15.jpg");
+--atlanticoLoft16: url("../img/apartamentos/atlanticoLoft/atlanticoLoft16.jpg");
+--atlanticoLoft17: url("../img/apartamentos/atlanticoLoft/atlanticoLoft17.jpg");
+--atlanticoLoft18: url("../img/apartamentos/atlanticoLoft/atlanticoLoft18.jpg");
+--atlanticoLoft19: url("../img/apartamentos/atlanticoLoft/atlanticoLoft19.jpg");
 --sunsetGarden0: url("../img/apartamentos/sunsetGarden/sunsetGarden0.jpg");
+--sunsetGarden1: url("../img/apartamentos/sunsetGarden/sunsetGarden1.jpg");
+--sunsetGarden2: url("../img/apartamentos/sunsetGarden/sunsetGarden2.jpg");
+--sunsetGarden3: url("../img/apartamentos/sunsetGarden/sunsetGarden3.jpg");
+--sunsetGarden4: url("../img/apartamentos/sunsetGarden/sunsetGarden4.jpg");
+--sunsetGarden5: url("../img/apartamentos/sunsetGarden/sunsetGarden5.jpg");
+--sunsetGarden6: url("../img/apartamentos/sunsetGarden/sunsetGarden6.jpg");
+--sunsetGarden7: url("../img/apartamentos/sunsetGarden/sunsetGarden7.jpg");
+--sunsetGarden8: url("../img/apartamentos/sunsetGarden/sunsetGarden8.jpg");
+--sunsetGarden9: url("../img/apartamentos/sunsetGarden/sunsetGarden9.jpg");
+--sunsetGarden10: url("../img/apartamentos/sunsetGarden/sunsetGarden10.jpg");
+--sunsetGarden11: url("../img/apartamentos/sunsetGarden/sunsetGarden11.jpg");
+--sunsetGarden12: url("../img/apartamentos/sunsetGarden/sunsetGarden12.jpg");
+--sunsetGarden13: url("../img/apartamentos/sunsetGarden/sunsetGarden13.jpg");
+--sunsetGarden14: url("../img/apartamentos/sunsetGarden/sunsetGarden14.jpg");
+--sunsetGarden15: url("../img/apartamentos/sunsetGarden/sunsetGarden15.jpg");
+--sunsetGarden16: url("../img/apartamentos/sunsetGarden/sunsetGarden16.jpg");
+--sunsetGarden17: url("../img/apartamentos/sunsetGarden/sunsetGarden17.jpg");
+--sunsetGarden18: url("../img/apartamentos/sunsetGarden/sunsetGarden18.jpg");
+--sunsetGarden19: url("../img/apartamentos/sunsetGarden/sunsetGarden19.jpg");
 --copaSunset0: url("../img/apartamentos/copaSunset/copaSunset0.jpg");
+--copaSunset1: url("../img/apartamentos/copaSunset/copaSunset1.jpg");
+--copaSunset2: url("../img/apartamentos/copaSunset/copaSunset2.jpg");
+--copaSunset3: url("../img/apartamentos/copaSunset/copaSunset3.jpg");
+--copaSunset4: url("../img/apartamentos/copaSunset/copaSunset4.jpg");
+--copaSunset5: url("../img/apartamentos/copaSunset/copaSunset5.jpg");
+--copaSunset6: url("../img/apartamentos/copaSunset/copaSunset6.jpg");
+--copaSunset7: url("../img/apartamentos/copaSunset/copaSunset7.jpg");
+--copaSunset8: url("../img/apartamentos/copaSunset/copaSunset8.jpg");
+--copaSunset9: url("../img/apartamentos/copaSunset/copaSunset9.jpg");
+--copaSunset10: url("../img/apartamentos/copaSunset/copaSunset10.jpg");
+--copaSunset11: url("../img/apartamentos/copaSunset/copaSunset11.jpg");
+--copaSunset12: url("../img/apartamentos/copaSunset/copaSunset12.jpg");
+--copaSunset13: url("../img/apartamentos/copaSunset/copaSunset13.jpg");
+--copaSunset14: url("../img/apartamentos/copaSunset/copaSunset14.jpg");
+--copaSunset15: url("../img/apartamentos/copaSunset/copaSunset15.jpg");
+--copaSunset16: url("../img/apartamentos/copaSunset/copaSunset16.jpg");
+--copaSunset17: url("../img/apartamentos/copaSunset/copaSunset17.jpg");
+--copaSunset18: url("../img/apartamentos/copaSunset/copaSunset18.jpg");
+--copaSunset19: url("../img/apartamentos/copaSunset/copaSunset19.jpg");
 --atlanticaEstudio0: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio0.jpg");
+--atlanticaEstudio1: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio1.jpg");
+--atlanticaEstudio2: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio2.jpg");
+--atlanticaEstudio3: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio3.jpg");
+--atlanticaEstudio4: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio4.jpg");
+--atlanticaEstudio5: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio5.jpg");
+--atlanticaEstudio6: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio6.jpg");
+--atlanticaEstudio7: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio7.jpg");
+--atlanticaEstudio8: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio8.jpg");
+--atlanticaEstudio9: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio9.jpg");
+--atlanticaEstudio10: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio10.jpg");
+--atlanticaEstudio11: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio11.jpg");
+--atlanticaEstudio12: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio12.jpg");
+--atlanticaEstudio13: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio13.jpg");
+--atlanticaEstudio14: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio14.jpg");
+--atlanticaEstudio15: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio15.jpg");
+--atlanticaEstudio16: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio16.jpg");
+--atlanticaEstudio17: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio17.jpg");
+--atlanticaEstudio18: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio18.jpg");
+--atlanticaEstudio19: url("../img/apartamentos/atlanticaEstudio/atlanticaEstudio19.jpg");
 --estudioCopa0: url("../img/apartamentos/estudioCopa/estudioCopa0.jpg");
+--estudioCopa1: url("../img/apartamentos/estudioCopa/estudioCopa1.jpg");
+--estudioCopa2: url("../img/apartamentos/estudioCopa/estudioCopa2.jpg");
+--estudioCopa3: url("../img/apartamentos/estudioCopa/estudioCopa3.jpg");
+--estudioCopa4: url("../img/apartamentos/estudioCopa/estudioCopa4.jpg");
+--estudioCopa5: url("../img/apartamentos/estudioCopa/estudioCopa5.jpg");
+--estudioCopa6: url("../img/apartamentos/estudioCopa/estudioCopa6.jpg");
+--estudioCopa7: url("../img/apartamentos/estudioCopa/estudioCopa7.jpg");
+--estudioCopa8: url("../img/apartamentos/estudioCopa/estudioCopa8.jpg");
+--estudioCopa9: url("../img/apartamentos/estudioCopa/estudioCopa9.jpg");
+--estudioCopa10: url("../img/apartamentos/estudioCopa/estudioCopa10.jpg");
+--estudioCopa11: url("../img/apartamentos/estudioCopa/estudioCopa11.jpg");
+--estudioCopa12: url("../img/apartamentos/estudioCopa/estudioCopa12.jpg");
+--estudioCopa13: url("../img/apartamentos/estudioCopa/estudioCopa13.jpg");
+--estudioCopa14: url("../img/apartamentos/estudioCopa/estudioCopa14.jpg");
+--estudioCopa15: url("../img/apartamentos/estudioCopa/estudioCopa15.jpg");
+--estudioCopa16: url("../img/apartamentos/estudioCopa/estudioCopa16.jpg");
+--estudioCopa17: url("../img/apartamentos/estudioCopa/estudioCopa17.jpg");
+--estudioCopa18: url("../img/apartamentos/estudioCopa/estudioCopa18.jpg");
+--estudioCopa19: url("../img/apartamentos/estudioCopa/estudioCopa19.jpg");
 --marDeCopa0: url("../img/apartamentos/marDeCopa/marDeCopa0.jpg");
+--marDeCopa1: url("../img/apartamentos/marDeCopa/marDeCopa1.jpg");
+--marDeCopa2: url("../img/apartamentos/marDeCopa/marDeCopa2.jpg");
+--marDeCopa3: url("../img/apartamentos/marDeCopa/marDeCopa3.jpg");
+--marDeCopa4: url("../img/apartamentos/marDeCopa/marDeCopa4.jpg");
+--marDeCopa5: url("../img/apartamentos/marDeCopa/marDeCopa5.jpg");
+--marDeCopa6: url("../img/apartamentos/marDeCopa/marDeCopa6.jpg");
+--marDeCopa7: url("../img/apartamentos/marDeCopa/marDeCopa7.jpg");
+--marDeCopa8: url("../img/apartamentos/marDeCopa/marDeCopa8.jpg");
+--marDeCopa9: url("../img/apartamentos/marDeCopa/marDeCopa9.jpg");
+--marDeCopa10: url("../img/apartamentos/marDeCopa/marDeCopa10.jpg");
+--marDeCopa11: url("../img/apartamentos/marDeCopa/marDeCopa11.jpg");
+--marDeCopa12: url("../img/apartamentos/marDeCopa/marDeCopa12.jpg");
+--marDeCopa13: url("../img/apartamentos/marDeCopa/marDeCopa13.jpg");
+--marDeCopa14: url("../img/apartamentos/marDeCopa/marDeCopa14.jpg");
+--marDeCopa15: url("../img/apartamentos/marDeCopa/marDeCopa15.jpg");
+--marDeCopa16: url("../img/apartamentos/marDeCopa/marDeCopa16.jpg");
+--marDeCopa17: url("../img/apartamentos/marDeCopa/marDeCopa17.jpg");
+--marDeCopa18: url("../img/apartamentos/marDeCopa/marDeCopa18.jpg");
+--marDeCopa19: url("../img/apartamentos/marDeCopa/marDeCopa19.jpg");
 --marDeCopaII0: url("../img/apartamentos/marDeCopaII/marDeCopaII0.jpg");
+--marDeCopaII1: url("../img/apartamentos/marDeCopaII/marDeCopaII1.jpg");
+--marDeCopaII2: url("../img/apartamentos/marDeCopaII/marDeCopaII2.jpg");
+--marDeCopaII3: url("../img/apartamentos/marDeCopaII/marDeCopaII3.jpg");
+--marDeCopaII4: url("../img/apartamentos/marDeCopaII/marDeCopaII4.jpg");
+--marDeCopaII5: url("../img/apartamentos/marDeCopaII/marDeCopaII5.jpg");
+--marDeCopaII6: url("../img/apartamentos/marDeCopaII/marDeCopaII6.jpg");
+--marDeCopaII7: url("../img/apartamentos/marDeCopaII/marDeCopaII7.jpg");
+--marDeCopaII8: url("../img/apartamentos/marDeCopaII/marDeCopaII8.jpg");
+--marDeCopaII9: url("../img/apartamentos/marDeCopaII/marDeCopaII9.jpg");
+--marDeCopaII10: url("../img/apartamentos/marDeCopaII/marDeCopaII10.jpg");
+--marDeCopaII11: url("../img/apartamentos/marDeCopaII/marDeCopaII11.jpg");
+--marDeCopaII12: url("../img/apartamentos/marDeCopaII/marDeCopaII12.jpg");
+--marDeCopaII13: url("../img/apartamentos/marDeCopaII/marDeCopaII13.jpg");
+--marDeCopaII14: url("../img/apartamentos/marDeCopaII/marDeCopaII14.jpg");
+--marDeCopaII15: url("../img/apartamentos/marDeCopaII/marDeCopaII15.jpg");
+--marDeCopaII16: url("../img/apartamentos/marDeCopaII/marDeCopaII16.jpg");
+--marDeCopaII17: url("../img/apartamentos/marDeCopaII/marDeCopaII17.jpg");
+--marDeCopaII18: url("../img/apartamentos/marDeCopaII/marDeCopaII18.jpg");
+--marDeCopaII19: url("../img/apartamentos/marDeCopaII/marDeCopaII19.jpg");
 --copaDream0: url("../img/apartamentos/copaDream/copaDream0.jpg");
+--copaDream1: url("../img/apartamentos/copaDream/copaDream1.jpg");
+--copaDream2: url("../img/apartamentos/copaDream/copaDream2.jpg");
+--copaDream3: url("../img/apartamentos/copaDream/copaDream3.jpg");
+--copaDream4: url("../img/apartamentos/copaDream/copaDream4.jpg");
+--copaDream5: url("../img/apartamentos/copaDream/copaDream5.jpg");
+--copaDream6: url("../img/apartamentos/copaDream/copaDream6.jpg");
+--copaDream7: url("../img/apartamentos/copaDream/copaDream7.jpg");
+--copaDream8: url("../img/apartamentos/copaDream/copaDream8.jpg");
+--copaDream9: url("../img/apartamentos/copaDream/copaDream9.jpg");
+--copaDream10: url("../img/apartamentos/copaDream/copaDream10.jpg");
+--copaDream11: url("../img/apartamentos/copaDream/copaDream11.jpg");
+--copaDream12: url("../img/apartamentos/copaDream/copaDream12.jpg");
+--copaDream13: url("../img/apartamentos/copaDream/copaDream13.jpg");
+--copaDream14: url("../img/apartamentos/copaDream/copaDream14.jpg");
+--copaDream15: url("../img/apartamentos/copaDream/copaDream15.jpg");
+--copaDream16: url("../img/apartamentos/copaDream/copaDream16.jpg");
+--copaDream17: url("../img/apartamentos/copaDream/copaDream17.jpg");
+--copaDream18: url("../img/apartamentos/copaDream/copaDream18.jpg");
+--copaDream19: url("../img/apartamentos/copaDream/copaDream19.jpg");
 --sunsetEstudio0: url("../img/apartamentos/sunsetEstudio/sunsetEstudio0.jpg");
+--sunsetEstudio1: url("../img/apartamentos/sunsetEstudio/sunsetEstudio1.jpg");
+--sunsetEstudio2: url("../img/apartamentos/sunsetEstudio/sunsetEstudio2.jpg");
+--sunsetEstudio3: url("../img/apartamentos/sunsetEstudio/sunsetEstudio3.jpg");
+--sunsetEstudio4: url("../img/apartamentos/sunsetEstudio/sunsetEstudio4.jpg");
+--sunsetEstudio5: url("../img/apartamentos/sunsetEstudio/sunsetEstudio5.jpg");
+--sunsetEstudio6: url("../img/apartamentos/sunsetEstudio/sunsetEstudio6.jpg");
+--sunsetEstudio7: url("../img/apartamentos/sunsetEstudio/sunsetEstudio7.jpg");
+--sunsetEstudio8: url("../img/apartamentos/sunsetEstudio/sunsetEstudio8.jpg");
+--sunsetEstudio9: url("../img/apartamentos/sunsetEstudio/sunsetEstudio9.jpg");
+--sunsetEstudio10: url("../img/apartamentos/sunsetEstudio/sunsetEstudio10.jpg");
+--sunsetEstudio11: url("../img/apartamentos/sunsetEstudio/sunsetEstudio11.jpg");
+--sunsetEstudio12: url("../img/apartamentos/sunsetEstudio/sunsetEstudio12.jpg");
+--sunsetEstudio13: url("../img/apartamentos/sunsetEstudio/sunsetEstudio13.jpg");
+--sunsetEstudio14: url("../img/apartamentos/sunsetEstudio/sunsetEstudio14.jpg");
+--sunsetEstudio15: url("../img/apartamentos/sunsetEstudio/sunsetEstudio15.jpg");
+--sunsetEstudio16: url("../img/apartamentos/sunsetEstudio/sunsetEstudio16.jpg");
+--sunsetEstudio17: url("../img/apartamentos/sunsetEstudio/sunsetEstudio17.jpg");
+--sunsetEstudio18: url("../img/apartamentos/sunsetEstudio/sunsetEstudio18.jpg");
+--sunsetEstudio19: url("../img/apartamentos/sunsetEstudio/sunsetEstudio19.jpg");
 --sunsetPremium0: url("../img/apartamentos/sunsetPremium/sunsetPremium0.jpg");
+--sunsetPremium1: url("../img/apartamentos/sunsetPremium/sunsetPremium1.jpg");
+--sunsetPremium2: url("../img/apartamentos/sunsetPremium/sunsetPremium2.jpg");
+--sunsetPremium3: url("../img/apartamentos/sunsetPremium/sunsetPremium3.jpg");
+--sunsetPremium4: url("../img/apartamentos/sunsetPremium/sunsetPremium4.jpg");
+--sunsetPremium5: url("../img/apartamentos/sunsetPremium/sunsetPremium5.jpg");
+--sunsetPremium6: url("../img/apartamentos/sunsetPremium/sunsetPremium6.jpg");
+--sunsetPremium7: url("../img/apartamentos/sunsetPremium/sunsetPremium7.jpg");
+--sunsetPremium8: url("../img/apartamentos/sunsetPremium/sunsetPremium8.jpg");
+--sunsetPremium9: url("../img/apartamentos/sunsetPremium/sunsetPremium9.jpg");
+--sunsetPremium10: url("../img/apartamentos/sunsetPremium/sunsetPremium10.jpg");
+--sunsetPremium11: url("../img/apartamentos/sunsetPremium/sunsetPremium11.jpg");
+--sunsetPremium12: url("../img/apartamentos/sunsetPremium/sunsetPremium12.jpg");
+--sunsetPremium13: url("../img/apartamentos/sunsetPremium/sunsetPremium13.jpg");
+--sunsetPremium14: url("../img/apartamentos/sunsetPremium/sunsetPremium14.jpg");
+--sunsetPremium15: url("../img/apartamentos/sunsetPremium/sunsetPremium15.jpg");
+--sunsetPremium16: url("../img/apartamentos/sunsetPremium/sunsetPremium16.jpg");
+--sunsetPremium17: url("../img/apartamentos/sunsetPremium/sunsetPremium17.jpg");
+--sunsetPremium18: url("../img/apartamentos/sunsetPremium/sunsetPremium18.jpg");
+--sunsetPremium19: url("../img/apartamentos/sunsetPremium/sunsetPremium19.jpg");
 }
 /* IMAGENS APARTAMENTOS NA MODAL*/
 .copaLoft1{background-image: var(--copaLoft1);} .copaLoft2{background-image: var(--copaLoft2);} .copaLoft3{background-image: var(--copaLoft3);}
 .copaLoft4{background-image: var(--copaLoft4);} .copaLoft5{background-image: var(--copaLoft5);} .copaLoft6{background-image: var(--copaLoft6);}
-.estiloSunset1{background-image: var(--estiloSunset1);} .estiloSunset2{background-image: var(--estiloSunset2);} .estiloSunset3{background-image: var(--estiloSunset3);}
-.estiloSunset4{background-image: var(--estiloSunset4);} .estiloSunset5{background-image: var(--estiloSunset5);} .estiloSunset6{background-image: var(--estiloSunset6);}
-.atlanticoLoft1{background-image: var(--atlanticoLoft1);} .atlanticoLoft2{background-image: var(--atlanticoLoft2);} .atlanticoLoft3{background-image: var(--atlanticoLoft3);}
-.atlanticoLoft4{background-image: var(--atlanticoLoft4);} .atlanticoLoft5{background-image: var(--atlanticoLoft5);} .atlanticoLoft6{background-image: var(--atlanticoLoft6);}
-.sunsetGarden1{background-image: var(--sunsetGarden1);} .sunsetGarden2{background-image: var(--sunsetGarden2);} .sunsetGarden3{background-image: var(--sunsetGarden3);}
-.sunsetGarden4{background-image: var(--sunsetGarden4);} .sunsetGarden5{background-image: var(--sunsetGarden5);} .sunsetGarden6{background-image: var(--sunsetGarden6);}
-.copaSunset1{background-image: var(--copaSunset1);} .copaSunset2{background-image: var(--copaSunset2);} .copaSunset3{background-image: var(--copaSunset3);}
-.copaSunset4{background-image: var(--copaSunset4);} .copaSunset5{background-image: var(--copaSunset5);} .copaSunset6{background-image: var(--copaSunset6);}
+.copaLoft7{background-image: var(--copaLoft7);} .copaLoft8{background-image: var(--copaLoft8);} .copaLoft9{background-image: var(--copaLoft9);}
+.copaLoft10{background-image: var(--copaLoft10);} .copaLoft11{background-image: var(--copaLoft11);} .copaLoft12{background-image: var(--copaLoft12);}
+.copaLoft13{background-image: var(--copaLoft13);} .copaLoft14{background-image: var(--copaLoft14);} .copaLoft15{background-image: var(--copaLoft15);}
+.copaLoft16{background-image: var(--copaLoft16);} .copaLoft17{background-image: var(--copaLoft17);} .copaLoft18{background-image: var(--copaLoft18);}
+.copaLoft19{background-image: var(--copaLoft19);} .copaLoft20{background-image: var(--copaLoft20);}
 .atlanticaEstudio1{background-image: var(--atlanticaEstudio1);} .atlanticaEstudio2{background-image: var(--atlanticaEstudio2);} .atlanticaEstudio3{background-image: var(--atlanticaEstudio3);}
 .atlanticaEstudio4{background-image: var(--atlanticaEstudio4);} .atlanticaEstudio5{background-image: var(--atlanticaEstudio5);} .atlanticaEstudio6{background-image: var(--atlanticaEstudio6);}
+.atlanticaEstudio7{background-image: var(--atlanticaEstudio7);} .atlanticaEstudio8{background-image: var(--atlanticaEstudio8);} .atlanticaEstudio9{background-image: var(--atlanticaEstudio9);}
+.atlanticaEstudio10{background-image: var(--atlanticaEstudio10);} .atlanticaEstudio11{background-image: var(--atlanticaEstudio11);} .atlanticaEstudio12{background-image: var(--atlanticaEstudio12);}
+.atlanticaEstudio13{background-image: var(--atlanticaEstudio13);} .atlanticaEstudio14{background-image: var(--atlanticaEstudio14);} .atlanticaEstudio15{background-image: var(--atlanticaEstudio15);}
+.atlanticaEstudio16{background-image: var(--atlanticaEstudio16);} .atlanticaEstudio17{background-image: var(--atlanticaEstudio17);} .atlanticaEstudio18{background-image: var(--atlanticaEstudio18);}
+.atlanticaEstudio19{background-image: var(--atlanticaEstudio19);} .atlanticaEstudio20{background-image: var(--atlanticaEstudio20);}
+.atlanticoLoft1{background-image: var(--atlanticoLoft1);} .atlanticoLoft2{background-image: var(--atlanticoLoft2);} .atlanticoLoft3{background-image: var(--atlanticoLoft3);}
+.atlanticoLoft4{background-image: var(--atlanticoLoft4);} .atlanticoLoft5{background-image: var(--atlanticoLoft5);} .atlanticoLoft6{background-image: var(--atlanticoLoft6);}
+.atlanticoLoft7{background-image: var(--atlanticoLoft7);} .atlanticoLoft8{background-image: var(--atlanticoLoft8);} .atlanticoLoft9{background-image: var(--atlanticoLoft9);}
+.atlanticoLoft10{background-image: var(--atlanticoLoft10);} .atlanticoLoft11{background-image: var(--atlanticoLoft11);} .atlanticoLoft12{background-image: var(--atlanticoLoft12);}
+.atlanticoLoft13{background-image: var(--atlanticoLoft13);} .atlanticoLoft14{background-image: var(--atlanticoLoft14);} .atlanticoLoft15{background-image: var(--atlanticoLoft15);}
+.atlanticoLoft16{background-image: var(--atlanticoLoft16);} .atlanticoLoft17{background-image: var(--atlanticoLoft17);} .atlanticoLoft18{background-image: var(--atlanticoLoft18);}
+.atlanticoLoft19{background-image: var(--atlanticoLoft19);} .atlanticoLoft20{background-image: var(--atlanticoLoft20);}
+.copaDream1{background-image: var(--copaDream1);} .copaDream2{background-image: var(--copaDream2);} .copaDream3{background-image: var(--copaDream3);}
+.copaDream4{background-image: var(--copaDream4);} .copaDream5{background-image: var(--copaDream5);} .copaDream6{background-image: var(--copaDream6);}
+.copaDream7{background-image: var(--copaDream7);} .copaDream8{background-image: var(--copaDream8);} .copaDream9{background-image: var(--copaDream9);}
+.copaDream10{background-image: var(--copaDream10);} .copaDream11{background-image: var(--copaDream11);} .copaDream12{background-image: var(--copaDream12);}
+.copaDream13{background-image: var(--copaDream13);} .copaDream14{background-image: var(--copaDream14);} .copaDream15{background-image: var(--copaDream15);}
+.copaDream16{background-image: var(--copaDream16);} .copaDream17{background-image: var(--copaDream17);} .copaDream18{background-image: var(--copaDream18);}
+.copaDream19{background-image: var(--copaDream19);} .copaDream20{background-image: var(--copaDream20);}
+.copaSunset1{background-image: var(--copaSunset1);} .copaSunset2{background-image: var(--copaSunset2);} .copaSunset3{background-image: var(--copaSunset3);}
+.copaSunset4{background-image: var(--copaSunset4);} .copaSunset5{background-image: var(--copaSunset5);} .copaSunset6{background-image: var(--copaSunset6);}
+.copaSunset7{background-image: var(--copaSunset7);} .copaSunset8{background-image: var(--copaSunset8);} .copaSunset9{background-image: var(--copaSunset9);}
+.copaSunset10{background-image: var(--copaSunset10);} .copaSunset11{background-image: var(--copaSunset11);} .copaSunset12{background-image: var(--copaSunset12);}
+.copaSunset13{background-image: var(--copaSunset13);} .copaSunset14{background-image: var(--copaSunset14);} .copaSunset15{background-image: var(--copaSunset15);}
+.copaSunset16{background-image: var(--copaSunset16);} .copaSunset17{background-image: var(--copaSunset17);} .copaSunset18{background-image: var(--copaSunset18);}
+.copaSunset19{background-image: var(--copaSunset19);} .copaSunset20{background-image: var(--copaSunset20);}
+.estiloSunset1{background-image: var(--estiloSunset1);} .estiloSunset2{background-image: var(--estiloSunset2);} .estiloSunset3{background-image: var(--estiloSunset3);}
+.estiloSunset4{background-image: var(--estiloSunset4);} .estiloSunset5{background-image: var(--estiloSunset5);} .estiloSunset6{background-image: var(--estiloSunset6);}
+.estiloSunset7{background-image: var(--estiloSunset7);} .estiloSunset8{background-image: var(--estiloSunset8);} .estiloSunset9{background-image: var(--estiloSunset9);}
+.estiloSunset10{background-image: var(--estiloSunset10);} .estiloSunset11{background-image: var(--estiloSunset11);} .estiloSunset12{background-image: var(--estiloSunset12);}
+.estiloSunset13{background-image: var(--estiloSunset13);} .estiloSunset14{background-image: var(--estiloSunset14);} .estiloSunset15{background-image: var(--estiloSunset15);}
+.estiloSunset16{background-image: var(--estiloSunset16);} .estiloSunset17{background-image: var(--estiloSunset17);} .estiloSunset18{background-image: var(--estiloSunset18);}
+.estiloSunset19{background-image: var(--estiloSunset19);} .estiloSunset20{background-image: var(--estiloSunset20);}
 .estudioCopa1{background-image: var(--estudioCopa1);} .estudioCopa2{background-image: var(--estudioCopa2);} .estudioCopa3{background-image: var(--estudioCopa3);}
 .estudioCopa4{background-image: var(--estudioCopa4);} .estudioCopa5{background-image: var(--estudioCopa5);} .estudioCopa6{background-image: var(--estudioCopa6);}
+.estudioCopa7{background-image: var(--estudioCopa7);} .estudioCopa8{background-image: var(--estudioCopa8);} .estudioCopa9{background-image: var(--estudioCopa9);}
+.estudioCopa10{background-image: var(--estudioCopa10);} .estudioCopa11{background-image: var(--estudioCopa11);} .estudioCopa12{background-image: var(--estudioCopa12);}
+.estudioCopa13{background-image: var(--estudioCopa13);} .estudioCopa14{background-image: var(--estudioCopa14);} .estudioCopa15{background-image: var(--estudioCopa15);}
+.estudioCopa16{background-image: var(--estudioCopa16);} .estudioCopa17{background-image: var(--estudioCopa17);} .estudioCopa18{background-image: var(--estudioCopa18);}
+.estudioCopa19{background-image: var(--estudioCopa19);} .estudioCopa20{background-image: var(--estudioCopa20);}
 .marDeCopa1{background-image: var(--marDeCopa1);} .marDeCopa2{background-image: var(--marDeCopa2);} .marDeCopa3{background-image: var(--marDeCopa3);}
 .marDeCopa4{background-image: var(--marDeCopa4);} .marDeCopa5{background-image: var(--marDeCopa5);} .marDeCopa6{background-image: var(--marDeCopa6);}
+.marDeCopa7{background-image: var(--marDeCopa7);} .marDeCopa8{background-image: var(--marDeCopa8);} .marDeCopa9{background-image: var(--marDeCopa9);}
+.marDeCopa10{background-image: var(--marDeCopa10);} .marDeCopa11{background-image: var(--marDeCopa11);} .marDeCopa12{background-image: var(--marDeCopa12);}
+.marDeCopa13{background-image: var(--marDeCopa13);} .marDeCopa14{background-image: var(--marDeCopa14);} .marDeCopa15{background-image: var(--marDeCopa15);}
+.marDeCopa16{background-image: var(--marDeCopa16);} .marDeCopa17{background-image: var(--marDeCopa17);} .marDeCopa18{background-image: var(--marDeCopa18);}
+.marDeCopa19{background-image: var(--marDeCopa19);} .marDeCopa20{background-image: var(--marDeCopa20);}
 .marDeCopaII1{background-image: var(--marDeCopaII1);} .marDeCopaII2{background-image: var(--marDeCopaII2);} .marDeCopaII3{background-image: var(--marDeCopaII3);}
 .marDeCopaII4{background-image: var(--marDeCopaII4);} .marDeCopaII5{background-image: var(--marDeCopaII5);} .marDeCopaII6{background-image: var(--marDeCopaII6);}
-.CopaDream1{background-image: var(--CopaDream1);} .CopaDream2{background-image: var(--CopaDream2);} .CopaDream3{background-image: var(--CopaDream3);}
-.CopaDream4{background-image: var(--CopaDream4);} .CopaDream5{background-image: var(--CopaDream5);} .CopaDream6{background-image: var(--CopaDream6);}
-.sunsetStudio1{background-image: var(--sunsetStudio1);} .sunsetStudio2{background-image: var(--sunsetStudio2);} .sunsetStudio3{background-image: var(--sunsetStudio3);}
-.sunsetStudio4{background-image: var(--sunsetStudio4);} .sunsetStudio5{background-image: var(--sunsetStudio5);} .sunsetStudio6{background-image: var(--sunsetStudio6);}
+.marDeCopaII7{background-image: var(--marDeCopaII7);} .marDeCopaII8{background-image: var(--marDeCopaII8);} .marDeCopaII9{background-image: var(--marDeCopaII9);}
+.marDeCopaII10{background-image: var(--marDeCopaII10);} .marDeCopaII11{background-image: var(--marDeCopaII11);} .marDeCopaII12{background-image: var(--marDeCopaII12);}
+.marDeCopaII13{background-image: var(--marDeCopaII13);} .marDeCopaII14{background-image: var(--marDeCopaII14);} .marDeCopaII15{background-image: var(--marDeCopaII15);}
+.marDeCopaII16{background-image: var(--marDeCopaII16);} .marDeCopaII17{background-image: var(--marDeCopaII17);} .marDeCopaII18{background-image: var(--marDeCopaII18);}
+.marDeCopaII19{background-image: var(--marDeCopaII19);} .marDeCopaII20{background-image: var(--marDeCopaII20);}
+.sunsetEstudio1{background-image: var(--sunsetEstudio1);} .sunsetEstudio2{background-image: var(--sunsetEstudio2);} .sunsetEstudio3{background-image: var(--sunsetEstudio3);}
+.sunsetEstudio4{background-image: var(--sunsetEstudio4);} .sunsetEstudio5{background-image: var(--sunsetEstudio5);} .sunsetEstudio6{background-image: var(--sunsetEstudio6);}
+.sunsetEstudio7{background-image: var(--sunsetEstudio7);} .sunsetEstudio8{background-image: var(--sunsetEstudio8);} .sunsetEstudio9{background-image: var(--sunsetEstudio9);}
+.sunsetEstudio10{background-image: var(--sunsetEstudio10);} .sunsetEstudio11{background-image: var(--sunsetEstudio11);} .sunsetEstudio12{background-image: var(--sunsetEstudio12);}
+.sunsetEstudio13{background-image: var(--sunsetEstudio13);} .sunsetEstudio14{background-image: var(--sunsetEstudio14);} .sunsetEstudio15{background-image: var(--sunsetEstudio15);}
+.sunsetEstudio16{background-image: var(--sunsetEstudio16);} .sunsetEstudio17{background-image: var(--sunsetEstudio17);} .sunsetEstudio18{background-image: var(--sunsetEstudio18);}
+.sunsetEstudio19{background-image: var(--sunsetEstudio19);} .sunsetEstudio20{background-image: var(--sunsetEstudio20);}
+.sunsetGarden1{background-image: var(--sunsetGarden1);} .sunsetGarden2{background-image: var(--sunsetGarden2);} .sunsetGarden3{background-image: var(--sunsetGarden3);}
+.sunsetGarden4{background-image: var(--sunsetGarden4);} .sunsetGarden5{background-image: var(--sunsetGarden5);} .sunsetGarden6{background-image: var(--sunsetGarden6);}
+.sunsetGarden7{background-image: var(--sunsetGarden7);} .sunsetGarden8{background-image: var(--sunsetGarden8);} .sunsetGarden9{background-image: var(--sunsetGarden9);}
+.sunsetGarden10{background-image: var(--sunsetGarden10);} .sunsetGarden11{background-image: var(--sunsetGarden11);} .sunsetGarden12{background-image: var(--sunsetGarden12);}
+.sunsetGarden13{background-image: var(--sunsetGarden13);} .sunsetGarden14{background-image: var(--sunsetGarden14);} .sunsetGarden15{background-image: var(--sunsetGarden15);}
+.sunsetGarden16{background-image: var(--sunsetGarden16);} .sunsetGarden17{background-image: var(--sunsetGarden17);} .sunsetGarden18{background-image: var(--sunsetGarden18);}
+.sunsetGarden19{background-image: var(--sunsetGarden19);} .sunsetGarden20{background-image: var(--sunsetGarden20);}
+.sunsetLoft1{background-image: var(--sunsetLoft1);} .sunsetLoft2{background-image: var(--sunsetLoft2);} .sunsetLoft3{background-image: var(--sunsetLoft3);}
+.sunsetLoft4{background-image: var(--sunsetLoft4);} .sunsetLoft5{background-image: var(--sunsetLoft5);} .sunsetLoft6{background-image: var(--sunsetLoft6);}
+.sunsetLoft7{background-image: var(--sunsetLoft7);} .sunsetLoft8{background-image: var(--sunsetLoft8);} .sunsetLoft9{background-image: var(--sunsetLoft9);}
+.sunsetLoft10{background-image: var(--sunsetLoft10);} .sunsetLoft11{background-image: var(--sunsetLoft11);} .sunsetLoft12{background-image: var(--sunsetLoft12);}
+.sunsetLoft13{background-image: var(--sunsetLoft13);} .sunsetLoft14{background-image: var(--sunsetLoft14);} .sunsetLoft15{background-image: var(--sunsetLoft15);}
+.sunsetLoft16{background-image: var(--sunsetLoft16);} .sunsetLoft17{background-image: var(--sunsetLoft17);} .sunsetLoft18{background-image: var(--sunsetLoft18);}
+.sunsetLoft19{background-image: var(--sunsetLoft19);} .sunsetLoft20{background-image: var(--sunsetLoft20);}
 .sunsetPremium1{background-image: var(--sunsetPremium1);} .sunsetPremium2{background-image: var(--sunsetPremium2);} .sunsetPremium3{background-image: var(--sunsetPremium3);}
 .sunsetPremium4{background-image: var(--sunsetPremium4);} .sunsetPremium5{background-image: var(--sunsetPremium5);} .sunsetPremium6{background-image: var(--sunsetPremium6);}
+.sunsetPremium7{background-image: var(--sunsetPremium7);} .sunsetPremium8{background-image: var(--sunsetPremium8);} .sunsetPremium9{background-image: var(--sunsetPremium9);}
+.sunsetPremium10{background-image: var(--sunsetPremium10);} .sunsetPremium11{background-image: var(--sunsetPremium11);} .sunsetPremium12{background-image: var(--sunsetPremium12);}
+.sunsetPremium13{background-image: var(--sunsetPremium13);} .sunsetPremium14{background-image: var(--sunsetPremium14);} .sunsetPremium15{background-image: var(--sunsetPremium15);}
+.sunsetPremium16{background-image: var(--sunsetPremium16);} .sunsetPremium17{background-image: var(--sunsetPremium17);} .sunsetPremium18{background-image: var(--sunsetPremium18);}
+.sunsetPremium19{background-image: var(--sunsetPremium19);} .sunsetPremium20{background-image: var(--sunsetPremium20);}
+
+
 .mdDisplayFotosApartamento *{background-position: center center; background-size: cover;}
 
 /* ELEMENTOS FIXOS, BOTÕES, MODAIS OU REPETIDOS*/
@@ -140,9 +431,11 @@ transition: all 0.4s; justify-content: center; align-items: center;}
 .mdSetaEFotosApartamento:hover, .mdSetaDFotosApartamento:hover{filter: drop-shadow(0 0 0.5vw var(--corTextoAzul));}
 .mdSetaEFotosApartamento:active, .mdSetaDFotosApartamento:active{color: var(--corTextoLaranja);}
 .mdContainerFotosApartamento{width: 70%; height: 100%; border-radius: 0.5vw; box-shadow: 0 0 15px -5px var(--corNeutraPreta); margin: 0 4%; }
-.mdDisplayFotosApartamento{width: 100%; height: 100%; display: grid; grid-template-columns: repeat(10, 100%); overflow-x:hidden;}
+.mdDisplayFotosApartamento{width: 100%; height: 100%; display: grid; grid-template-columns: repeat(20, 100%); overflow-x:hidden;}
 #mdImagemApartamento1, #mdImagemApartamento2, #mdImagemApartamento3, #mdImagemApartamento4, #mdImagemApartamento5, #mdImagemApartamento6, 
-#mdImagemApartamento7, #mdImagemApartamento8, #mdImagemApartamento9, #mdImagemApartamento10{width: 100%; height: 100%;
+#mdImagemApartamento7, #mdImagemApartamento8, #mdImagemApartamento9, #mdImagemApartamento10, #mdImagemApartamento11, #mdImagemApartamento12,
+#mdImagemApartamento13, #mdImagemApartamento14, #mdImagemApartamento15,#mdImagemApartamento16, #mdImagemApartamento17, #mdImagemApartamento18,
+#mdImagemApartamento19, #mdImagemApartamento20{width: 100%; height: 100%;
     cursor: pointer; transition: 1s ease-in-out; position: relative;}
 
 /* MOVE AS FOTOS JA JANELA MODAL PARA OS LADOS */
@@ -150,7 +443,12 @@ transition: all 0.4s; justify-content: center; align-items: center;}
 .mdMoverImg3{margin-left: -300%; transition: 1s ease-in-out; z-index: 3;} .mdMoverImg4{margin-left: -400%; transition: 1s ease-in-out; z-index: 4;}
 .mdMoverImg5{margin-left: -500%; transition: 1s ease-in-out; z-index: 5;} .mdMoverImg6{margin-left: -600%; transition: 1s ease-in-out; z-index: 6;}
 .mdMoverImg7{margin-left: -700%; transition: 1s ease-in-out; z-index: 7;} .mdMoverImg8{margin-left: -800%; transition: 1s ease-in-out; z-index: 8;}
-.mdMoverImg9{margin-left: -900%; transition: 1s ease-in-out; z-index: 9;}
+.mdMoverImg9{margin-left: -900%; transition: 1s ease-in-out; z-index: 9;} .mdMoverImg10{margin-left: -1000%; transition: 1s ease-in-out; z-index: 10;}
+.mdMoverImg11{margin-left: -1100%; transition: 1s ease-in-out; z-index: 11;} .mdMoverImg12{margin-left: -1200%; transition: 1s ease-in-out; z-index: 12;}
+.mdMoverImg13{margin-left: -1300%; transition: 1s ease-in-out; z-index: 13;} .mdMoverImg14{margin-left: -1400%; transition: 1s ease-in-out; z-index: 14;}
+.mdMoverImg15{margin-left: -1500%; transition: 1s ease-in-out; z-index: 15;} .mdMoverImg16{margin-left: -1600%; transition: 1s ease-in-out; z-index: 16;}
+.mdMoverImg17{margin-left: -1700%; transition: 1s ease-in-out; z-index: 17;} .mdMoverImg18{margin-left: -1800%; transition: 1s ease-in-out; z-index: 18;}
+.mdMoverImg19{margin-left: -1900%; transition: 1s ease-in-out; z-index: 19;} .mdMoverImg20{margin-left: -2000%; transition: 1s ease-in-out; z-index: 20;}
 
 
 .mdTituloApartamento div{text-align: center; width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content:center;} 
@@ -185,6 +483,25 @@ flex-wrap: wrap;}
 .fecharFundoImagem{float:right; padding: 0.5% 1%; background-color: var(--corFundoLaranja); color: var(--corNeutraBranca); cursor: pointer;}
 
 .btnFecharModal{position:absolute; top: 3%; right: 3%;}
+
+.modalPagamentos{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: rgba(0, 0, 0, 0.8);
+    position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5;
+    transition: all 0.4s; justify-content: center; align-items: center;}
+.modalPagamentos:target{visibility: visible; opacity: 1;}
+.modalPagamentos a{text-decoration: none; font-size: 24px; color: var(--corNeutraBranca);}
+.painelModalPagamentos{width: 85%; height: 90%; background-color: var(--corFundoLaranja); display: flex; align-items: center; justify-content: center;}
+.conteudoModalPagamentos{width: 95%; height: 92%; background-color: var(--corNeutraBranca); border-radius: 2vw; display: grid;}
+.mdConteudoRegrasDeHospedagem{width: 100%; height: 100%; display: grid; grid-template-columns: 50% 50%; grid-template-rows: 10% 90%; 
+    grid-template-areas: "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" "mdColunaEsquerdaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
+.mdTituloRegrasDeHospedagem{grid-area: mdTituloRegrasDeHospedagem; margin-top: 0.8%;}
+.mdTituloRegrasDeHospedagem h2{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.8vw; text-align: center; line-height: 2.5vw;}
+.mdTituloRegrasDeHospedagem p{color: var(--corNeutraPreta); font-family: var(--cr); font-size: 0.8vw; text-align: center;}
+.mdColunaEsquerdaRegrasDeHospedagem{grid-area: mdColunaEsquerdaRegrasDeHospedagem;}
+.mdColunaDireitaRegrasDeHospedagem{grid-area: mdColunaDireitaRegrasDeHospedagem;}
+.mdColunaEsquerdaRegrasDeHospedagem, .mdColunaDireitaRegrasDeHospedagem{margin: 0% 5%;}
+.mdColunaEsquerdaRegrasDeHospedagem h3, .mdColunaDireitaRegrasDeHospedagem h3{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.2vw; 
+    line-height: 1.7vw; margin-top: 3%;}
+.mdColunaEsquerdaRegrasDeHospedagem p, .mdColunaDireitaRegrasDeHospedagem p{font-family: var(--cr); font-size: 0.8vw; line-height: 1vw; text-align: justify;}
 
 /* ----------PRIMEIRA PÁGINA---------- */
 
@@ -338,6 +655,7 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 
 .politicas{width: 100%; height: 58vh; margin-top: 1%; grid-area: politicas; grid-template-columns: 33.33% 33.33% 33.33%; grid-template-rows: 15% 85%; 
     grid-template-areas: "tituloPolitica tituloPolitica tituloPolitica" "regrasDeHospedagem pagamentosECancelamentos politicasDePrivacidade"; display: grid;}
+.politicas a{text-decoration: none; color: var(--corNeutraPreta);}
 .tituloPoliticas{grid-area: tituloPolitica;} .regrasDeHospedagem{grid-area: regrasDeHospedagem;} .pagamentosECancelamentos{grid-area: pagamentosECancelamentos;}
 .politicasDePrivacidade{grid-area: politicasDePrivacidade;}
 
