@@ -34,10 +34,7 @@ let ids = [
 "trParagrafoCopyright",
 
 //MODAL APARTAMENTOS
-"trTituloModalApartamento", "trSubTituloModalApartamento", "trConteudoApartamentoModalApartamento", "trBotaoCTAModalApartamento", "trTituloDescricaoModalApartamento", 
-"trDescricaoModalApartamento", "trFacilidadesModalApartamento", "trFacilidade1ModalApartamento", "trFacilidade2ModalApartamento", "trFacilidade3ModalApartamento", 
-"trFacilidade4ModalApartamento", "trFacilidade5ModalApartamento", "trFacilidade6ModalApartamento", "trFacilidade7ModalApartamento", "trFacilidade8ModalApartamento", 
-"trFacilidade9ModalApartamento", "trFacilidade10ModalApartamento", "trLocalizacaoModalApartamento"
+"trBotaoCTAModalApartamento", "trTituloDescricaoModalApartamento", "trFacilidadesModalApartamento", "trLocalizacaoModalApartamento"
 
 ];
 
@@ -165,24 +162,10 @@ const dicionarioPortugues = [
 "© 2023 - Todos os direitos reservados. Desenvolvido por Fábio Marques.",
 
 //MODAL APARTAMENTOS
-"trTituloModalApartamento", 
-"trSubTituloModalApartamento", 
-"trConteudoApartamentoModalApartamento", 
-"Reserve Agora", 
-"trTituloDescricaoModalApartamento",
-"trDescricaoModalApartamento",
-"trFacilidadesModalApartamento", 
-"trFacilidade1ModalApartamento", 
-"trFacilidade2ModalApartamento", 
-"trFacilidade3ModalApartamento", 
-"trFacilidade4ModalApartamento",
-"trFacilidade5ModalApartamento", 
-"trFacilidade6ModalApartamento", 
-"trFacilidade7ModalApartamento", 
-"trFacilidade8ModalApartamento", 
-"trFacilidade9ModalApartamento", 
-"trFacilidade10ModalApartamento", 
-"trLocalizacaoModalApartamento"
+"Reserve Agora",
+"DESCRIÇÂO",
+"FACILIDADES",
+"LOCALIZAÇÃO"
 
 ];
 let dicionarioIngles = [
@@ -306,24 +289,10 @@ let dicionarioIngles = [
 "© 2023 - All Rights Reserved. Developed by Fábio Marques.",
 
 //MODAL APARTAMENTOS
-"trTituloModalApartamento", 
-"trSubTituloModalApartamento", 
-"trConteudoApartamentoModalApartamento", 
-"Book Now", 
-"trTituloDescricaoModalApartamento",
-"trDescricaoModalApartamento",
-"trFacilidadesModalApartamento", 
-"trFacilidade1ModalApartamento", 
-"trFacilidade2ModalApartamento", 
-"trFacilidade3ModalApartamento", 
-"trFacilidade4ModalApartamento",
-"trFacilidade5ModalApartamento", 
-"trFacilidade6ModalApartamento", 
-"trFacilidade7ModalApartamento", 
-"trFacilidade8ModalApartamento", 
-"trFacilidade9ModalApartamento", 
-"trFacilidade10ModalApartamento", 
-"trLocalizacaoModalApartamento"
+"Book Now",
+"DESCRIPTION",
+"AMENITIES",
+"LOCALIZATION"
 
 ];
 const botaoPortugues = document.getElementById('botaoPortugues');

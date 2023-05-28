@@ -1,5 +1,6 @@
 /* CONFIGURAÇÕES GERAIS DA PÁGINA E VARIÁVEIS */
 *{margin: 0; padding: 0;}
+body{background-color: rgb(40,90,200);}
 html{scroll-behavior: smooth; transition: 1s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
 ::-webkit-scrollbar {width:12px; height: 12px;}
@@ -408,8 +409,7 @@ font-family: var(--stbk); font-weight: 900; font-size: 1.8vw; box-shadow: 0 0 1v
 
 /* MODAIS DOS APARTAMENTOS, DAS POLÍTICAS E DO MENU */
 .modalApartamento{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: rgba(0, 0, 0, 0.8);
-position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5;
-transition: all 0.4s; justify-content: center; align-items: center;}
+position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5; transition: all 0.4s; justify-content: center; align-items: center;}
 .modalApartamento:target{visibility: visible; opacity: 1;}
 .modalApartamento a{text-decoration: none; font-size: 24px; color: var(--corNeutraBranca);}
 .blurModal{filter: blur(5px);}
@@ -491,17 +491,42 @@ flex-wrap: wrap;}
 .modalPagamentos a{text-decoration: none; font-size: 24px; color: var(--corNeutraBranca);}
 .painelModalPagamentos{width: 85%; height: 90%; background-color: var(--corFundoLaranja); display: flex; align-items: center; justify-content: center;}
 .conteudoModalPagamentos{width: 95%; height: 92%; background-color: var(--corNeutraBranca); border-radius: 2vw; display: grid;}
-.mdConteudoRegrasDeHospedagem{width: 100%; height: 100%; display: grid; grid-template-columns: 50% 50%; grid-template-rows: 10% 90%; 
-    grid-template-areas: "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" "mdColunaEsquerdaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
-.mdTituloRegrasDeHospedagem{grid-area: mdTituloRegrasDeHospedagem; margin-top: 0.8%;}
-.mdTituloRegrasDeHospedagem h2{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.8vw; text-align: center; line-height: 2.5vw;}
-.mdTituloRegrasDeHospedagem p{color: var(--corNeutraPreta); font-family: var(--cr); font-size: 0.8vw; text-align: center;}
+
+.mdConteudoRegrasDeHospedagem, .mdConteudoPagamentosECancelamentos{width: 100%; height: 100%; display: grid; grid-template-columns: 50% 50%; 
+    grid-template-rows: 10% 90%;}
+.mdTituloRegrasDeHospedagem, .mdTituloPagamentosECancelamentos, .mdTituloPoliticasDePrivacidade{margin-top: 0.8%;}
+.mdTituloRegrasDeHospedagem h2, .mdTituloPagamentosECancelamentos h2, .mdTituloPoliticasDePrivacidade h2{color: var(--corTextoLaranja); font-family: var(--tbk);
+    font-size: 1.8vw; text-align: center; line-height: 2.5vw;}
+.mdTituloRegrasDeHospedagem p, .mdTituloPagamentosECancelamentos p, .mdTituloPoliticasDePrivacidade p{color: var(--corNeutraPreta); font-family: var(--cr); 
+    font-size: 0.8vw; text-align: center;}
+.mdColunaEsquerdaRegrasDeHospedagem, .mdColunaDireitaRegrasDeHospedagem, .mdColunaEsquerdaPagamentosECancelamentos, .mdColunaDireitaPagamentosECancelamentos,
+.mdInformacoesPoliticasDePrivacidade{margin: 0% 5%;}
+.mdColunaEsquerdaRegrasDeHospedagem h3, .mdColunaDireitaRegrasDeHospedagem h3, .mdColunaEsquerdaPagamentosECancelamentos h3, 
+.mdColunaDireitaPagamentosECancelamentos h3, .mdInformacoesPoliticasDePrivacidade h3{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.2vw; 
+    line-height: 1.7vw; margin-top: 3%;}
+.mdColunaEsquerdaRegrasDeHospedagem p, .mdColunaDireitaRegrasDeHospedagem p, .mdColunaEsquerdaPagamentosECancelamentos p, 
+.mdColunaDireitaPagamentosECancelamentos p, .mdInformacoesPoliticasDePrivacidade p{font-family: var(--cr); font-size: 0.8vw; line-height: 1vw; 
+    text-align: justify;}
+
+.mdConteudoRegrasDeHospedagem{grid-template-areas: 
+    "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" "mdColunaEsquerdaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
+.mdTituloRegrasDeHospedagem{grid-area: mdTituloRegrasDeHospedagem;}
 .mdColunaEsquerdaRegrasDeHospedagem{grid-area: mdColunaEsquerdaRegrasDeHospedagem;}
 .mdColunaDireitaRegrasDeHospedagem{grid-area: mdColunaDireitaRegrasDeHospedagem;}
-.mdColunaEsquerdaRegrasDeHospedagem, .mdColunaDireitaRegrasDeHospedagem{margin: 0% 5%;}
-.mdColunaEsquerdaRegrasDeHospedagem h3, .mdColunaDireitaRegrasDeHospedagem h3{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.2vw; 
-    line-height: 1.7vw; margin-top: 3%;}
-.mdColunaEsquerdaRegrasDeHospedagem p, .mdColunaDireitaRegrasDeHospedagem p{font-family: var(--cr); font-size: 0.8vw; line-height: 1vw; text-align: justify;}
+
+.mdConteudoPagamentosECancelamentos{grid-template-areas: 
+    "mdTituloPagamentosECancelamentos mdTituloPagamentosECancelamentos" "mdColunaEsquerdaPagamentosECancelamentos mdColunaDireitaPagamentosECancelamentos";}
+.mdTituloPagamentosECancelamentos{grid-area: mdTituloPagamentosECancelamentos;}
+.mdColunaEsquerdaPagamentosECancelamentos{grid-area: mdColunaEsquerdaPagamentosECancelamentos}
+.mdLinkPagamentosECancelamentos {color: var(--corTextoAzul); margin-top: 2%;}
+.mdColunaDireitaPagamentosECancelamentos{grid-area: mdColunaDireitaPagamentosECancelamentos;}
+
+.mdConteudoPoliticasDePrivacidade{width: 100%; height: 100%; display: grid; grid-template-columns: 100%; grid-template-rows: 30% 400%; overflow-y:auto;
+    grid-template-areas: "mdTituloPoliticasDePrivacidade" "mdInformacoesPoliticasDePrivacidade";}
+.mdTituloPoliticasDePrivacidade{grid-area: mdTituloPoliticasDePrivacidade;}
+.mdInformacoesPoliticasDePrivacidade{grid-area: mdInformacoesPoliticasDePrivacidade;}
+
+.mdConteudoModalPagamentosInvisivel{display: none;}
 
 /* ----------PRIMEIRA PÁGINA---------- */
 
@@ -605,7 +630,7 @@ padding-bottom: 3%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
     .atlanticoLoft0{background-image: var(--atlanticoLoft0);}
     .sunsetGarden0{background-image: var(--sunsetGarden0);}
     .copaSunset0{background-image: var(--copaSunset0);}
-    .atlanticoEstudio0{background-image: var(--atlanticaEstudio0);}
+    .atlanticaEstudio0{background-image: var(--atlanticaEstudio0);}
     .estudioCopa0{background-image: var(--estudioCopa0);}
     .marDeCopa0{background-image: var(--marDeCopa0);}
     .marDeCopaII0{background-image: var(--marDeCopaII0);}
@@ -613,7 +638,7 @@ padding-bottom: 3%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
     .sunsetEstudio0{background-image: var(--sunsetEstudio0);}
     .sunsetPremium0{background-image: var(--sunsetPremium0);}
     /* MESMO COMPORTAMENTO PARA TODAS AS IMAGENS */
-    .copaLoft0, .estiloSunset0, .atlanticoLoft0, .sunsetGarden0, .copaSunset0, .atlanticoEstudio0, .estudioCopa0, .marDeCopa0, .marDeCopaII0, .copaDream0,
+    .copaLoft0, .estiloSunset0, .atlanticoLoft0, .sunsetGarden0, .copaSunset0, .atlanticaEstudio0, .estudioCopa0, .marDeCopa0, .marDeCopaII0, .copaDream0,
     .sunsetEstudio0, .sunsetPremium0{background-position: center center; background-size: cover;}
 
 

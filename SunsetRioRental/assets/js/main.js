@@ -21,7 +21,39 @@ setaDListaApartamento.onclick = function(){listaApartamentos.scrollBy(window.inn
 setaEListaApartamento.onclick = function(){listaApartamentos.scrollBy(-window.innerWidth*0.301, 0);};
 
 
-// FAZ O EFEITO DE ABRIR A JANELA MODAL DOS APARTAMENTOS
+//MODAL PAGAMENTOS
+const btnRegrasDeHospedagem = document.querySelector("#regrasDeHospedagem")
+const mdConteudoRegrasDeHospedagem = document.querySelector("#mdConteudoRegrasDeHospedagem");
+const btnPagamentosECancelamentos = document.querySelector("#pagamentosECancelamentos");
+const mdConteudoPagamentosECancelamentos = document.querySelector("#mdConteudoPagamentosECancelamentos");
+const btnPoliticasDePrivacidade = document.querySelector("#politicasDePrivacidade");
+const mdConteudoPoliticasDePrivacidade = document.querySelector("#mdConteudoPoliticasDePrivacidade");
+const fecharModalPagamentos = document.querySelector("#btnFecharModalPagamentos");
+
+btnRegrasDeHospedagem.onclick = function(){
+    efeitoDesfocar();
+    mdConteudoRegrasDeHospedagem.className = "mdConteudoRegrasDeHospedagem";
+}
+
+btnPagamentosECancelamentos.onclick = function(){
+    efeitoDesfocar();
+    mdConteudoPagamentosECancelamentos.className = "mdConteudoPagamentosECancelamentos";
+}
+
+btnPoliticasDePrivacidade.onclick = function(){
+    efeitoDesfocar();
+    mdConteudoPoliticasDePrivacidade.className = "mdConteudoPoliticasDePrivacidade";
+}
+
+fecharModalPagamentos.onclick = function(){
+    efeitoFocar();
+    mdConteudoRegrasDeHospedagem.className = "mdConteudoModalPagamentosInvisivel";
+    mdConteudoPagamentosECancelamentos.className = "mdConteudoModalPagamentosInvisivel";
+    mdConteudoPoliticasDePrivacidade.className = "mdConteudoModalPagamentosInvisivel";
+}
+
+
+// FAZ O EFEITO DE ABRIR A JANELA MODAL DOS APARTAMENTOS E DOS PAGAMENTOS
 
 const abrirModalApartamentos = document.querySelector(".botaoDetalhes");
 let efeitoBorrar;
