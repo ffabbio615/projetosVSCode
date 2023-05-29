@@ -453,12 +453,12 @@ position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5
 
 .mdTituloApartamento div{text-align: center; width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content:center;} 
 .mdTituloApartamento h2{width: 100%; font-family: var(--tbk); font-weight: 900; font-size: 3.5vw; color: var(--corTextoLaranja); margin-bottom: 2%;}
-.mdTituloApartamento p{width: 100%; font-family: var(--tb); font-size: 1.4vw; color: var(--corNeutraPreta); padding: 0 5%; margin-bottom: 1%;}
+.mdTituloApartamento p{width: 100%; font-family: var(--tb); font-size: 1.3vw; color: var(--corNeutraPreta); margin: 0 6% 1% 6%;}
 .mdTituloApartamento button {margin-top: 3%;}
 
 .mdDescricaoApartamento :not(p:first-child){text-align:justify; text-align-last:left;}
 .mdDescricaoApartamento p:first-of-type{text-align: center; font-family: var(--tbk); font-size: 1.5vw; color: var(--corTextoLaranja);}
-.mdDescricaoApartamento p{width: 100%; font-family: var(--cr); font-size: 1vw; color: var(--corNeutraPreta); padding: 0 5%; margin-bottom: 1%;}
+.mdDescricaoApartamento p{width: 100%; font-family: var(--cr); font-size: 0.9vw; color: var(--corNeutraPreta); padding: 0 1%;}
 
 .mdFacilidadesApartamento{display: grid; grid-template-columns: 50% 50%; grid-template-rows: 20% 80%; margin-top: 3%;
     grid-template-areas: "mdTituloFacilidadesApartamento mdTituloFacilidadesApartamento" "mdFacilidadesEsquerdaApartamento mdFacilidadesDireitaApartamento";}
@@ -474,6 +474,7 @@ flex-wrap: wrap;}
 .mdLocalizacaoApartamento div:last-of-type{width: 100%; height: 80%; text-align: center;}
 .mdLocalizacaoApartamento div iframe{height: 100%; width: 100%;}
 .mdTituloLocalizacaoApartamento{width: 100%; height: 20%; font-family: var(--tbk); font-size: 1.5vw; color: var(--corTextoLaranja); text-align: center;}
+.mdMapaInvisivel{display: none;}
 
 .fundoImagemAmpliadaModal{width: 100%; height: 100vh; visibility: hidden; opacity: 0; background-color: rgba(0, 0, 0, 0.8);  transition: 0.5s;
     position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 6; justify-content: center; align-items: center;}
@@ -494,19 +495,16 @@ flex-wrap: wrap;}
 
 .mdConteudoRegrasDeHospedagem, .mdConteudoPagamentosECancelamentos{width: 100%; height: 100%; display: grid; grid-template-columns: 50% 50%; 
     grid-template-rows: 10% 90%;}
-.mdTituloRegrasDeHospedagem, .mdTituloPagamentosECancelamentos, .mdTituloPoliticasDePrivacidade{margin-top: 0.8%;}
-.mdTituloRegrasDeHospedagem h2, .mdTituloPagamentosECancelamentos h2, .mdTituloPoliticasDePrivacidade h2{color: var(--corTextoLaranja); font-family: var(--tbk);
-    font-size: 1.8vw; text-align: center; line-height: 2.5vw;}
-.mdTituloRegrasDeHospedagem p, .mdTituloPagamentosECancelamentos p, .mdTituloPoliticasDePrivacidade p{color: var(--corNeutraPreta); font-family: var(--cr); 
-    font-size: 0.8vw; text-align: center;}
+.mdTituloRegrasDeHospedagem, .mdTituloPagamentosECancelamentos{margin-top: 0.8%;}
+.mdTituloRegrasDeHospedagem h2, .mdTituloPagamentosECancelamentos h2{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.8vw; 
+    text-align: center; line-height: 2.5vw;}
+.mdTituloRegrasDeHospedagem p, .mdTituloPagamentosECancelamentos p{color: var(--corNeutraPreta); font-family: var(--cr); font-size: 0.8vw; text-align: center;}
 .mdColunaEsquerdaRegrasDeHospedagem, .mdColunaDireitaRegrasDeHospedagem, .mdColunaEsquerdaPagamentosECancelamentos, .mdColunaDireitaPagamentosECancelamentos,
 .mdInformacoesPoliticasDePrivacidade{margin: 0% 5%;}
 .mdColunaEsquerdaRegrasDeHospedagem h3, .mdColunaDireitaRegrasDeHospedagem h3, .mdColunaEsquerdaPagamentosECancelamentos h3, 
-.mdColunaDireitaPagamentosECancelamentos h3, .mdInformacoesPoliticasDePrivacidade h3{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.2vw; 
-    line-height: 1.7vw; margin-top: 3%;}
+.mdColunaDireitaPagamentosECancelamentos h3{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.2vw; line-height: 1.7vw; margin-top: 3%;}
 .mdColunaEsquerdaRegrasDeHospedagem p, .mdColunaDireitaRegrasDeHospedagem p, .mdColunaEsquerdaPagamentosECancelamentos p, 
-.mdColunaDireitaPagamentosECancelamentos p, .mdInformacoesPoliticasDePrivacidade p{font-family: var(--cr); font-size: 0.8vw; line-height: 1vw; 
-    text-align: justify;}
+.mdColunaDireitaPagamentosECancelamentos p{font-family: var(--cr); font-size: 0.8vw; line-height: 1vw; text-align: justify;}
 
 .mdConteudoRegrasDeHospedagem{grid-template-areas: 
     "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" "mdColunaEsquerdaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
@@ -521,12 +519,23 @@ flex-wrap: wrap;}
 .mdLinkPagamentosECancelamentos {color: var(--corTextoAzul); margin-top: 2%;}
 .mdColunaDireitaPagamentosECancelamentos{grid-area: mdColunaDireitaPagamentosECancelamentos;}
 
-.mdConteudoPoliticasDePrivacidade{width: 100%; height: 100%; display: grid; grid-template-columns: 100%; grid-template-rows: 30% 400%; overflow-y:auto;
+.mdConteudoPoliticasDePrivacidade{width: 100%; height: 100%; display: grid; grid-template-columns: 100%; grid-template-rows: 30% 370%; overflow:auto;
     grid-template-areas: "mdTituloPoliticasDePrivacidade" "mdInformacoesPoliticasDePrivacidade";}
 .mdTituloPoliticasDePrivacidade{grid-area: mdTituloPoliticasDePrivacidade;}
 .mdInformacoesPoliticasDePrivacidade{grid-area: mdInformacoesPoliticasDePrivacidade;}
 
+.mdTituloPoliticasDePrivacidade{margin-top: 2%;}
+.mdTituloPoliticasDePrivacidade h2{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.8vw; text-align: center; margin-bottom: 1%;}
+.mdTituloPoliticasDePrivacidade p:first-of-type{font-family: var(--cb); font-size: 1vw; text-align: left; margin: 0 0 1% 5%;}
+.mdTituloPoliticasDePrivacidade p{color: var(--corNeutraPreta); font-family: var(--cr); font-size: 0.8vw; text-align: left; margin-left: 5%; line-height: 1.2vw;}
+
+.mdInformacoesPoliticasDePrivacidade h3{color: var(--corTextoLaranja); font-family: var(--tbk); font-size: 1.2vw; line-height: 1.7vw; margin-top: 3%;}
+.mdInformacoesPoliticasDePrivacidade h4{text-align: left; font-family: var(--ci); font-size: 1vw; line-height: 2vw; margin-top: 1%;}
+.mdInformacoesPoliticasDePrivacidade p, li{font-family: var(--cr); font-size: 0.9vw; line-height: 1.5vw; text-align: justify;}
+.mdInformacoesPoliticasDePrivacidade li{margin-left: 2%;}
+
 .mdConteudoModalPagamentosInvisivel{display: none;}
+
 
 /* ----------PRIMEIRA PÁGINA---------- */
 
@@ -733,7 +742,7 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 .valeria div{width: 100%; text-align: center;}
 .valeria  p{font-family: var(--cr); font-size: 1vw; }
 .imagemValerias{width: 50%; height: auto; margin: 2vh 0;}
-.iconeSobreASunset{width: 10%; height: auto; margin: 4% 2% 0 2%;}
+.iconeSobreASunset{width: 10%; height: auto; margin: 4% 4% 0 4%;}
 
 .valeriaGomes{grid-area: valeriaGomes;} .valeriaLima{grid-area: valeriaLima;} .sobreAsValerias{grid-area: sobreAsValerias;}
 

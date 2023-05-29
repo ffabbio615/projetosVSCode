@@ -43,7 +43,7 @@ const dicionarioPortugues = [
 
 //PRIMEIRA PÁGINA
 "Sunset Rio – Imoveis de temporada em Copacabana",
-"Seg - Sáb: 9:00 - 18:00",
+"Seg - Sab: 9:00 - 18:00",
 "APARTAMENTOS",
 "POLÍTICAS",
 "SOBRE NÓS",
@@ -163,14 +163,14 @@ const dicionarioPortugues = [
 
 //MODAL APARTAMENTOS
 "Reserve Agora",
-"DESCRIÇÂO",
+"DESCRIÇÃO",
 "FACILIDADES",
 "LOCALIZAÇÃO"
 
 ];
 let dicionarioIngles = [
     "Sunset Rio – Vacation rentals in Copacabana",
-    "Mon - Sat: 9:00am - 18:00pm",
+    "Mon - Sat: 9:00 - 18:00",
     "APARTMENTS",
     "POLITICS",
     "ABOUT US",
@@ -295,10 +295,12 @@ let dicionarioIngles = [
 "LOCALIZATION"
 
 ];
+
+let alterarIdioma;
+
 const botaoPortugues = document.getElementById('botaoPortugues');
 const botaoIngles = document.getElementById('botaoIngles');
 botaoPortugues.onclick = function() {
-    let alterarIdioma;
     for (let i=0; i<dicionarioPortugues.length; i++){
        // console.log("Português:", ids[i]);
         alterarIdioma = document.getElementById(ids[i]);
@@ -308,7 +310,6 @@ botaoPortugues.onclick = function() {
 };
 
 botaoIngles.onclick = function() {
-    let alterarIdioma;
     for (let i=0; i<dicionarioIngles.length; i++){
        // console.log("Inglês:", ids[i]);
         alterarIdioma = document.getElementById(ids[i]);
