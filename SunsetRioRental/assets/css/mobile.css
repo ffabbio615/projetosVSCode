@@ -2,18 +2,36 @@
 
 /* SMARTPHONES */
 @media screen and (min-width: 250px) and (max-width: 767px) and (orientation:portrait){
-    
-.topo20{width: 30%;} .topo40 {width: 35%;}
-.iconeTopo{display: none;}
-.camadaTopo{justify-content: center;}
-.logoSunset{height: 60%;}
-.camadaMenu{width: 50%;}
-header div p{font-size: clamp(0.1em, 0.6em + 0.8vw, 0.65em + 0.3vw); margin: 0;}
-header .menu{display: none;}
-.botaoMenuInvisivel{width: 50px; height: 50px; background-color: var(--corTextoAzul); position:absolute; left: calc(50% - 25px); top:7%;;
-    display: flex; justify-content: center; align-items: center; border-radius: 50%; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.644));
-    color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; opacity: 1; transition: 1s ease-in-out; cursor: pointer;}
-    .iconeLinguagem{height: 40%;}
+
+:root{
+/* CORES */
+--corFundoAzul: rgb(60,160,210); --corFundoLaranja: rgb(240,140,60); --corTextoAzul: rgb(0,150,250); --corTextoLaranja: rgb(240,110,10);
+--corBarraRolagemAzul: rgb(40,130,160); --corRodape: rgb(40,150,210),rgb(40,90,200); --corNeutraBranca: rgb(255,255,255);
+--corNeutraPreta: rgb(0,0,0); --corNeutraCinza: rgb(210, 210, 210); 
+/* FONTES */
+--tr: RobotoRegular; --tb: RobotoBold; --tbk: RobotoBlack; --tl: RobotoLight; --tm: RobotoMedium; --tbi: RobotoBoldItalic; --ti: RobotoItalic
+--str: LatoRegular; --stb: LatoBold; --stbk: LatoBlack; --cr: LiterataRegular; --cb: LiterataBold; --ci: LiterataItalic; --cbi: LiterataBoldItalic;
+}
+
+.botaoCTA{width: 75vw; height: 8vh; height: calc(var(--vh, 1vh) * 8); border-radius: 0.2vw; font-size: 7vw !important; 
+    box-shadow: 0 0 2vw -0.2vw var(--corNeutraPreta);} 
+.botaoMenu{display: flex; width: 6.5vh; height: 6.5vh; top:0.7%; left: 5%; grid-area: botaoMenu; z-index: 5;}
+.botaoTopo{width: 4vh; height: 4vh; right: 10px; bottom:10px; border-radius: 0.5vh;}
+.botaoTopo a{padding: 0; font-size: 3.5vh !important;}
+
+.topo{height: 35vh; grid-template-columns: 50% 50%; grid-template-rows: 25% 75%; grid-template-areas: "botaoMenu menuIdioma" "menuLogo menuLogo";
+    height: calc(var(--vh, 1vh) * 35);}
+.topo, .menuIdioma{background-color: var(--corTextoAzul);}
+.topoTel, .topoRel, .topoRedes, .menuLinks{display: none;}
+.iconeLinguagem{height: 50%; width: auto;}
+
+.secaoInicial{ height:65vh; background-position: top left; background-size: 300%; height: calc(var(--vh, 1vh) * 65);}
+.escurecerSecaoInicial{height:65vh; height: calc(var(--vh, 1vh) * 65); background: radial-gradient(closest-side, rgba(255, 255, 255, 0.185), 
+    rgba(36, 19, 0, 0.322), rgba(27, 15, 0, 0.3));}
+.painelSecaoInicial{width: 92%; align-items:center; margin-left: 4%;}
+.secaoInicial h1{font-size: 10vw; line-height: 12vw; padding: 0% 1% 0 0; margin-bottom: 5%;}
+.secaoInicial p{font-size: 4.2vw; line-height: 7vw; width: 100%; text-align: justify; text-align-last: center; margin-bottom: 4%;}
+
 }
 
 /* TABLETS */

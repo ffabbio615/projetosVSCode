@@ -1,6 +1,14 @@
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+const dataAtual = new Date();
+document.querySelector("#trParagrafoCopyright").innerHTML = `© ${dataAtual.getFullYear()} - Todos os direitos reservados. Desenvolvido por Fábio Marques.`;
 let ids = [
 
 //PRIMEIRA PÁGINA
+
 "trTitulo", "trHorarioTopo", "trApartamentos", "trPagamentos", "trSobreNos", "trTituloSecao1", "trParagrafoSecao1", "trBotaoCTA", 
 
 
@@ -34,6 +42,7 @@ let ids = [
 "trParagrafoCopyright",
 
 //MODAL APARTAMENTOS
+
 "trBotaoCTAModalApartamento", "trTituloDescricaoModalApartamento", "trFacilidadesModalApartamento", "trLocalizacaoModalApartamento"
 
 ];
@@ -42,6 +51,7 @@ let ids = [
 const dicionarioPortugues = [
 
 //PRIMEIRA PÁGINA
+
 "Sunset Rio – Imoveis de temporada em Copacabana",
 "Seg - Sab: 9:00 - 18:00",
 "APARTAMENTOS",
@@ -159,9 +169,10 @@ const dicionarioPortugues = [
 
 // RODAPÉ
 
-"© 2023 - Todos os direitos reservados. Desenvolvido por Fábio Marques.",
+`© ${dataAtual.getFullYear()} - Todos os direitos reservados. Desenvolvido por Fábio Marques.`,
 
 //MODAL APARTAMENTOS
+
 "Reserve Agora",
 "DESCRIÇÃO",
 "FACILIDADES",
@@ -286,9 +297,10 @@ let dicionarioIngles = [
 
 // RODAPÉ
 
-"© 2023 - All Rights Reserved. Developed by Fábio Marques.",
+`© ${dataAtual.getFullYear()} - All Rights Reserved. Developed by Fábio Marques.`,
 
 //MODAL APARTAMENTOS
+
 "Book Now",
 "DESCRIPTION",
 "AMENITIES",

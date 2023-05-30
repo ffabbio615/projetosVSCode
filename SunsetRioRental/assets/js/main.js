@@ -157,7 +157,9 @@ function inserirTextoDoApartamento(i,idiomaAp)
 {
     const tituloModalApartamento = document.querySelector("#trTituloModalApartamento");
     const subTituloModalApartamento = document.querySelector("#trSubTituloModalApartamento");
-    const conteudoApartamentoModalApartamento = document.querySelector("#trConteudoApartamentoModalApartamento");
+    const conteudoCamasModalApartamento = document.querySelector("#trConteudoCamasModalApartamento");
+    const conteudoPessoasModalApartamento = document.querySelector("#trConteudoPessoasModalApartamento");
+    const conteudoMetragemModalApartamento = document.querySelector("#trConteudoMetragemModalApartamento");
     const descricaoModalApartamento = document.querySelector("#trDescricaoModalApartamento");
     const facilidade1ModalApartamento = document.querySelector("#trFacilidade1ModalApartamento");
     const facilidade2ModalApartamento = document.querySelector("#trFacilidade2ModalApartamento");
@@ -175,8 +177,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 1) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Copa Loft";
-            subTituloModalApartamento.innerHTML = "Beira Mar - Copacabana";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 25m²";
+            subTituloModalApartamento.innerHTML = "Apartamento à beira mar";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "25m²";
             descricaoModalApartamento.innerHTML = "Copa Loft é um apartamento de aproximadamente 28m², que acomoda até 4 pessoas, localizado a beira mar, e com vista para a rua de trás da praia. O apartamento possui 1 cama queen e 1 cama de solteiro com cama auxiliar, já para a refrigeração, tem ar condicionado no quarto e ventilador na sala. Possui também uma pequena cozinha, equipada com utensílios para cozinhar, mesa com cadeiras, geladeira, fogão, microondas, banheiro com chuveiro elétrico, TV e wifi.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -198,8 +202,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 2) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Estilo Sunset";
-            subTituloModalApartamento.innerHTML = "4 pessoas, 1 quadra da praia";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 30m²";
+            subTituloModalApartamento.innerHTML = "Apartamento a 1 quadra da praia";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "30m²";
             descricaoModalApartamento.innerHTML = "O Estilo Sunset é um apartamento localizado no Posto 6 da praia de Copacabana, a menos de 5 min de caminhada até a praia. É possível acomodar até 4 pessoas, com 1 cama queen no quarto, e 1 cama de solteiro com cama auxiliar, na sala. Para refrigeração, tem ar condicionado no quarto, e ventilador de teto nos dois ambientes. O apartamento também possui chuveiro elétrico e uma pequena cozinha equipada com utensílios básicos para cozinhar.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -221,8 +227,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 3) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Atlântico Loft";
-            subTituloModalApartamento.innerHTML = "Apt para até 3 pessoas à beira mar";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 1 Solteiro 3 Pessoas 20m²";
+            subTituloModalApartamento.innerHTML = "Apartamento à beira mar";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro";
+            conteudoPessoasModalApartamento.innerHTML = "3 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "20m²";
             descricaoModalApartamento.innerHTML = "O Atlântico loft está localizado na Av. Atlântica, na altura do Posto 6 da praia de Copacabana. O apartamento possui cerca de 20m² e acomoda até 3 pessoas, com 1 cama de casal e 1 cama de solteiro, acomodados no mesmo ambiente,que possui ar condicionado e ventilador de teto. O apartamento possui uma pequena cozinha equipada com utensílios básicos para cozinhar, mesa com cadeiras, geladeira, fogão, microondas. chuveiro elétrico, TV e wifi. O apt tem vista para os fundos do prédio.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -244,8 +252,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 4) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Sunset Garden";
-            subTituloModalApartamento.innerHTML = "Sunset Garden - 2 qts a 2 quadras da praia";
-            conteudoApartamentoModalApartamento.innerHTML = "Outros 6 Pessoas 50m²";
+            subTituloModalApartamento.innerHTML = "Sunset Garden - 2 quartos a 2 quadras da praia";
+            conteudoCamasModalApartamento.innerHTML = "4 camas + 1 colchonete";
+            conteudoPessoasModalApartamento.innerHTML = "6 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "50m²";
             descricaoModalApartamento.innerHTML = "O Sunset Garden é um apartamento de 2 quartos, com uma pequena área externa, que está localizado a 2 quadras na quadra do metrô, na rua Sá Ferreira 120. O apt acomoda 6 pessoas, sendo 1 quarto com cama de casal, 1 quarto com cama de solteiro e cama auxiliar, e uma cama de viúva com um colchonete adicional, na sala. Para refrigeração, os cômodos possuem ventiladores. O apartamento possui WIFI e Smartv de 32″. A cozinha é americana, integrada à sala e equipada com utensílios básicos para cozinhar.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "";
@@ -267,8 +277,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 5) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Copa Sunset";
-            subTituloModalApartamento.innerHTML = "Apartamento 2 quartos 100m da praia";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Queen + 1 Casal + 1 Solteiro 5 Pessoas 50m²";
+            subTituloModalApartamento.innerHTML = "Apartamento 2 quartos - 100m da praia";
+            conteudoCamasModalApartamento.innerHTML = "1 Queen + 1 Casal + 1 Solteiro";
+            conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "50m²";
             descricaoModalApartamento.innerHTML = "Venhar aproveitar sua estadia no RJ no Copa Sunset! Ele é um apartamento espaçoso, no Posto 6, na rua atrás da praia, entre Copacabana e Ipanema. São 2 quartos, sendo 1 deles suíte com cama Queen e espaço para home office. No outro quarto temos 1 cama de casal e 1 de solteiro, acomodando o total de 5 pessoas no apartamento. Ambos os quartos tem ar condicionado e ventilador de teto. A cozinha é ampla e equipada com utensílios básicos para cozinhar. Oferecemos roupa de cama, toalhas e wifi.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -290,8 +302,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 6) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Atlântica Estúdio";
-            subTituloModalApartamento.innerHTML = "Apartamento vista mar para 5 pessoas";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar 5 Pessoas 30m²";
+            subTituloModalApartamento.innerHTML = "Apartamento com vista para o mar";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "30m²";
             descricaoModalApartamento.innerHTML = "O Atlântica Estudio é um apartamento completo que acomoda até 5 pessoas, sendo 1 cama de casal no quarto, e 2 camas de solteiro com uma cama auxiliar na sala. O apartamento está equipado com: utensílios para cozinhar, geladeira, fogão, pratos, copos, TV com canais abertos, ar condicionado split no quarto e ventiladores de teto no quarto e na sala. Wifi de 100Mbps. Disponibilizamos também, roupa de cama e toalhas. A localização é entre os Postos 5 e 6.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -313,8 +327,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 7) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Estúdio Copa";
-            subTituloModalApartamento.innerHTML = "Beira mar para 4 pessoas Posto 6";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 25m²";
+            subTituloModalApartamento.innerHTML = "Apartamento à beira mar - Posto 6";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "25m²";
             descricaoModalApartamento.innerHTML = "Aproveite com sua família e amigos no Estúdio Copa! O apartamento possui 25m² e acomoda até 4 pessoas sendo de: 1 cama de casal e 1 cama de solteiro com 1 cama auxiliar, acomodados no mesmo ambiente, que é refrigerado com ar condicionado e ventilador de teto. O apartamento também possui uma pequena cozinha equipada com utensílios para cozinhar, mesa com banquinhos, geladeira, fogão. Banheiro com chuveiro elétrico. Tv smart e wifi. A localização e a beira mar mas com vista para os fundos do prédio";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -336,8 +352,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 8) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Mar de Copa";
-            subTituloModalApartamento.innerHTML = "Apartamento vista mar para 5 pessoas";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar 5 Pessoas 30m²"
+            subTituloModalApartamento.innerHTML = "Apartamento com vista para o mar";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar"
+            conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "30m²";
             descricaoModalApartamento.innerHTML = "O Mar de Copa é um excelente apartamento que acomoda até 5 pessoas, sendo 1 cama de casal, 2 camas de solteiro e 1 cama auxiliar. O apartamento está equipado com: utensílios para cozinhar, geladeira, fogão, pratos, copos, TV com canais abertos, wifi, ar condicionado. A localização é excelente, Posto 6, na divisa entre Copacabana e Ipanema! Dá para ver o nascer do sol na janela, e caminhar alguns minutos até Ipanema para ver o por do sol. Disponibilizamos também, roupa de cama e toalhas.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -359,8 +377,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 9) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Mar de Copa II";
-            subTituloModalApartamento.innerHTML = "Apartamento vista mar para 5 pessoas";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar 5 Pessoas 30m²";
+            subTituloModalApartamento.innerHTML = "Apartamento com vista para o mar";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "30m²";
             descricaoModalApartamento.innerHTML = "O Mar de Copa II é um excelente apartamento que acomoda até 5 pessoas, sendo 1 cama de casal, e 2 camas de solteiro + 1 auxiliar na sala. O apartamento está equipado com: utensílios para cozinhar, geladeira, fogão, pratos, copos, TV com canais abertos, wifi, ar condicionado. A localização é excelente, Posto 6, na divisa entre Copacabana e Ipanema! Dá para ver o nascer do sol na janela, e caminhar alguns minutos até Ipanema para ver o por do sol. Disponibilizamos também, roupa de cama e toalhas.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -382,8 +402,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 10) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Copa Dream";
-            subTituloModalApartamento.innerHTML = "Apartamento com vista para o mar para até 5 pessoas";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar 5 Pessoas 30m²";
+            subTituloModalApartamento.innerHTML = "Apartamento com vista para o mar";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "30m²";
             descricaoModalApartamento.innerHTML = "O Copa Dream é um apartamento completo que acomoda até 5 pessoas, sendo 1 cama de casal e 1 cama de solteiro com cama auxiliar. O apartamento está equipado com: utensílios para cozinhar, frigobar, fogão, pratos, copos, TV com canais abertos, ar condicionado no quarto e ventiladores de teto no quarto e na sala. Disponibilizamos também, roupa de cama e toalhas. A localização é no Posto 6. Obs.: Os itens e decorações mostrados nas fotos, podem sofrer alterações sem aviso prévio.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -405,8 +427,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 11) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Sunset Estúdio";
-            subTituloModalApartamento.innerHTML = "Apartamento a 2 quadras da praia e ao lado metrô para até 3 pessoas";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 1 Solteiro 3 Pessoas 25m²";
+            subTituloModalApartamento.innerHTML = "2 quadras da praia e ao lado metrô";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro";
+            conteudoPessoasModalApartamento.innerHTML = "3 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "25m²";
             descricaoModalApartamento.innerHTML = "Relaxe com sua família e amigos no Sunset Estúdio! O apartamento é super aconchegante e possui cerca de 23m² e acomodando até 3 pessoas. Para acomodar todos os hóspedes, o apartamento dispõe de: 1 cama de casal e 1 cama de solteiro acomodados no mesmo ambiente, que é refrigerado com ar condicionado e ventilador de teto. Uma Pequena cozinha equipada com utensílios básicos para cozinhar, além de sanduicheira, filtro para café, microondas, mesa com banquinhos e frigobar. Banheiro com chuveiro elétrico. A tv tem canais à cabo básico, e você poderá usar sua conta pessoal para assistir netflix, prime vídeo, entre outros. A internet é disponibilizada via wifi com velocidade de 250 Mbps. A localização é na Rua Sá Ferreira, em um prédio tranquilo e residencial, a cerca de 150m da saída D do metrô de General Osório, e cerca de 350m da praia de Copacabana (2 quadras), fica pertinho também, de Ipanema e do Arpoador, além de amplo comércio, bares, restaurantes, supermercados, drogarias e transportes públicos na região.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -428,8 +452,10 @@ function inserirTextoDoApartamento(i,idiomaAp)
     if (i == 12) {
         if (idiomaAp == 1){
             tituloModalApartamento.innerHTML = "Sunset Premium";
-            subTituloModalApartamento.innerHTML = "Apartamento para 4 pessoas com vista lateral para o mar.";
-            conteudoApartamentoModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar 4 Pessoas 30m²";
+            subTituloModalApartamento.innerHTML = "Apartamento com vista lateral para o mar.";
+            conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
+            conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
+            conteudoMetragemModalApartamento.innerHTML = "30m²";
             descricaoModalApartamento.innerHTML = "Aproveite para relaxar no Sunset Premium, um apartamento completo na quadra da praia e vista lateral para o mar, localizado entre o Posto 5 e 6 da praia de Copacabana. O apartamento acomoda até 4 pessoas, sendo 1 cama de casal e 1 cama de solteiro com auxiliar, acomodados no mesmo ambiente, refrigerado por ventilador de teto e ar condicionado split. Possui também, cozinha equipada com fogão, frigobar, microondas e utensílios básicos para que possa preparar refeições durante sua estadia. O apartamento possui smartv de 32″ e tv a cabo com canais básicos, além de wifi de 240Mbps. Oferecemos roupa de cama e toalhas sem custos adicionais para nossos hóspedes. Obs.: Os itens e decorações mostrados nas fotos, podem sofrer alterações sem aviso prévio.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";

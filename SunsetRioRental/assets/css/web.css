@@ -385,11 +385,9 @@ html{scroll-behavior: smooth; transition: 1s;}
 display: flex; justify-content: center; align-items: center; border-radius: 5px; filter: drop-shadow(0 0 4px var(--corNeutraPreta));}
 .botaoTopo a{text-decoration: none; padding: 2px 1px 0 0; color: var(--corNeutraBranca); font-size: calc(1.3vw + 0.2rem); font-weight: bolder;}
 /* BOTÃO BOLINHA ICONE DE HAMBURGUER COM MENU DO SITE */
-.botaoMenu{width: 50px; height: 50px; background-color: var(--corTextoAzul); position: fixed; left: 10px; top:20px;;
-display: flex; justify-content: center; align-items: center; border-radius: 50%; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.644));
-color: var(--corNeutraBranca); font-size: 1.5em; font-weight: 700; cursor: pointer;}
-.botaoMenuVisivel{opacity: 1; transition: 1s ease-in-out;}
-.botaoMenuInvisivel{opacity: 0; transition: 1s ease-in-out;}
+.botaoMenu{background-color: var(--corTextoAzul); position: fixed; display: none; justify-content: center; align-items: center; 
+    border-radius: 50vw; filter: drop-shadow(0 0 6px rgba(40, 90, 200, 0.644)); color: var(--corNeutraBranca); font-size: 7vw; font-family: var(--tbk); 
+    cursor: pointer; transition: 1s ease-in-out;}
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
 .botaoCTA{width: 20vw; height: 7vh; border-style: none; color: var(--corNeutraBranca); border-radius: 1.6vw; cursor: pointer;
@@ -424,10 +422,13 @@ position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5
 
 .mdFotosApartamento, .mdTituloApartamento, .mdDescricaoApartamento, .mdLocalizacaoApartamento, .mdFacilidadesApartamento{display: flex; 
     justify-content: center; align-items: center; margin:1% 2%; flex-wrap: wrap;}
+.mdFotosApartamento{display: none;}
+.modalApartamento:target .mdFotosApartamento{display: flex;}
 
 .mdFotosApartamento{margin-top: 3%;}
-.mdSetaEFotosApartamento, .mdSetaDFotosApartamento{font-size: 2vw; font-family: var(--tbk);  color: var(--corTextoAzul); 
+.mdSetaEFotosApartamento, .mdSetaDFotosApartamento{font-size: 3vw; font-family: var(--tbk);  color: var(--corTextoAzul); 
     cursor: pointer; width: 4%;}
+.mdSetaEFotosApartamento::selection, .mdSetaDFotosApartamento::selection {background-color: rgba(255,255,255,0);}
 .mdSetaEFotosApartamento:hover, .mdSetaDFotosApartamento:hover{filter: drop-shadow(0 0 0.5vw var(--corTextoAzul));}
 .mdSetaEFotosApartamento:active, .mdSetaDFotosApartamento:active{color: var(--corTextoLaranja);}
 .mdContainerFotosApartamento{width: 70%; height: 100%; border-radius: 0.5vw; box-shadow: 0 0 15px -5px var(--corNeutraPreta); margin: 0 4%; }
@@ -452,9 +453,12 @@ position: fixed; display: flex; top: 0; right: 0; bottom: 0; left: 0; z-index: 5
 
 
 .mdTituloApartamento div{text-align: center; width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content:center;} 
-.mdTituloApartamento h2{width: 100%; font-family: var(--tbk); font-weight: 900; font-size: 3.5vw; color: var(--corTextoLaranja); margin-bottom: 2%;}
-.mdTituloApartamento p{width: 100%; font-family: var(--tb); font-size: 1.3vw; color: var(--corNeutraPreta); margin: 0 6% 1% 6%;}
+.mdTituloApartamento h2{width: 100%; font-family: var(--tbk); font-size: 3.5vw; color: var(--corTextoLaranja);}
+.mdTituloApartamento p{width: 100%; font-family: var(--tb); font-size: 1.6vw; color: var(--corNeutraPreta); margin: 0 6% 1% 6%;}
 .mdTituloApartamento button {margin-top: 3%;}
+.mdConteudoModalApartamento{display: flex; flex-wrap: nowrap !important; margin-top: 1%;}
+.mdConteudoModalApartamento p{width: auto; margin: 0 3% 0 1%; font-size: 1.1vw;}
+.iconeModalApartamento{width: 3%; height: auto; filter: invert();}
 
 .mdDescricaoApartamento :not(p:first-child){text-align:justify; text-align-last:left;}
 .mdDescricaoApartamento p:first-of-type{text-align: center; font-family: var(--tbk); font-size: 1.5vw; color: var(--corTextoLaranja);}
@@ -542,7 +546,8 @@ flex-wrap: wrap;}
 
 /* CONFIGURAÇÕES DO CABEÇALHO DA PÁGINA */
 .topo{width: 100%; height: 18.5vh; background-color: var(--corNeutraBranca); display: grid; grid-template-columns: repeat(10,10%); 
-    grid-template-rows: 25% 75%; grid-template-areas: "topoTel topoTel topoTel topoTel topoRel topoRel topoRedes topoRedes topoRedes topoRedes" "menuLogo menuLogo menuLinks menuLinks menuLinks menuLinks menuLinks menuLinks menuIdioma menuIdioma";}
+    grid-template-rows: 25% 75%; grid-template-areas: "topoTel topoTel topoTel topoTel topoRel topoRel topoRedes topoRedes topoRedes topoRedes" 
+    "menuLogo menuLogo menuLinks menuLinks menuLinks menuLinks menuLinks menuLinks menuIdioma menuIdioma";}
 
 .textoTopo{height: 100%; width: 96%; display: flex; align-items: center;}
 .textoTopo p, .textoTopoRedes p{font-family: var(--cb); font-size: calc(0.9vw + 0.2rem); margin: 0 2%; color: var(--corNeutraBranca);}
@@ -618,8 +623,9 @@ padding-bottom: 3%; text-shadow: 1px 1px 4px rgba(34, 11, 1, 0.836);}
     .tituloApartamento p{font-family: var(--stb); font-size: 1.5vw; font-weight: 900; text-align: center; margin-bottom: 3vh;}
 
     .setaEListaApartamento, .setaDListaApartamento{position: absolute; top: 18%;}
-    .setaEListaApartamento{left: 2%;}
+    .setaEListaApartamento{left: 1.5%; }
     .setaDListaApartamento{right: -1%;}
+    .setaEListaApartamento::selection, .setaDListaApartamento::selection{background-color: rgba(255,255,255,0)}
     
     .listaApartamentos{width: 95%; height: 45vh; overflow-x:hidden; display:grid; grid-template-columns:repeat(12, 33.33%); margin-left: 2.5%; 
         align-items: center;}
@@ -724,14 +730,15 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 .painelSobreNos h2{font-size: 2.5vw;}
 .painelSobreNos h3{font-size: 2vw;}
 .painelSobreNos h4{font-size: 1.5vw;}
-.painelSobreNos p:not(.sobreAsValerias p, .valeria p){font-family: var(--stb); font-weight: 900; font-size: 1.3vw;}
 
 .tituloSobreNos{display: flex; flex-wrap: wrap; text-align: center; margin-top: 2%; grid-area: tituloSobreNos;}
 .tituloSobreNos *{width: 100%;}
+.tituloSobreNos p{font-family: var(--cr); font-size: 1.3vw;}
 
 .painelConceitos{display: flex; grid-area: painelConceitos;}
-.conceitos{width: 28.33%; height: 100%; margin: 1% 5%;}
-.conceitos p:first-of-type{text-align:center; line-height: 2vw;} .conceitos p:last-of-type{text-align:justify; line-height: 2vw;}
+.conceitos{width: 28.33%; height: 100%; margin: 1.5% 5%;}
+.conceitos p:first-of-type{text-align:center; line-height: 3vw; font-family: var(--tbk); font-size: 1.5vw;} 
+.conceitos p:last-of-type{text-align:justify; line-height: 1.6vw; font-family: var(--cr); font-size: 1.1vw;}
 
 .painelSobreAsValerias{display: flex; justify-content: center; grid-area: painelSobreAsValerias;}
 .conteudoSobreAsValerias{width: 80%; height: 100%; display: grid; grid-template-columns: 27% 46% 27%; 
@@ -740,16 +747,17 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
 .valeria{background-color: var(--corTextoLaranja); color: var(--corNeutraBranca); border-radius: 10px; margin: 12% 0;
     display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px var(--corNeutraPreta); flex-wrap: wrap;}
 .valeria div{width: 100%; text-align: center;}
-.valeria  p{font-family: var(--cr); font-size: 1vw; }
-.imagemValerias{width: 50%; height: auto; margin: 2vh 0;}
-.iconeSobreASunset{width: 10%; height: auto; margin: 4% 4% 0 4%;}
+.valeria  p{font-family: var(--cr); font-size: 1vw; line-height: 1.5vw;}
+.imagemValerias{width: 50%; height: auto; margin: 2% 0;}
+.iconeSobreASunset{width: 10%; height: auto; margin: 4% 4% 4% 4%;}
 
 .valeriaGomes{grid-area: valeriaGomes;} .valeriaLima{grid-area: valeriaLima;} .sobreAsValerias{grid-area: sobreAsValerias;}
 
 .sobreAsValerias{background-color: var(--corNeutraBranca); box-shadow: 0 0 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; 
     margin: 12% 0; position: relative; z-index: -1;}
-.sobreAsValerias, .valeria h3, h4{text-align: center;} .sobreAsValerias, .valeria p{text-align: justify;} .valeria h3, .valeria p{padding: 0 10%;}
-.sobreAsValerias p{font-family: var(--cr); font-size: 1.1vw; line-height: 1.8vw; width: 100%; padding: 0 10%;}
+.sobreAsValerias, .valeria h3, h4{text-align: center;} .sobreAsValerias, .valeria p{text-align: justify;} .valeria h3, .valeria p{margin: 2% 10% 0 10%;}
+.sobreAsValerias h4{margin-top: 2.5%;}
+.sobreAsValerias p{font-family: var(--cr); font-size: 1.1vw; line-height: 1.8vw; width: 100%; margin: 0 10% 2.5% 10%;}
 
 
 
