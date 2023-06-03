@@ -1,10 +1,6 @@
-
-
-// const something = document.getElementById('trApartamentos');
-// something.onclick = function() {
-//     let botaoMenu = document.querySelector("#botaoMenu");
-//     botaoMenu.className = "botaoMenuVisivel botaoMenu";
-// };
+//RECEBE O TAMANHO INTERNO NO NAVEGADOR E ADICIONA A VARIÁVEL CSS
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 //SELECIONA O IDIOMA PARA GERAR AS MODAIS DO SITE NA LINGUAGEM CORRETA
 botaoPortugues = document.getElementById('botaoPortugues');

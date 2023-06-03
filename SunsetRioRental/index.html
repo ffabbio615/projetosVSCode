@@ -49,7 +49,9 @@
         </div>
         <div class="menuIdioma">
             <img id="botaoPortugues" class="iconeLinguagem" src="./assets/img/bandeiraBrasil.svg" alt="">
+            <p class="siglaBotaoPortugues"></p>
             <img id="botaoIngles" class="iconeLinguagem" src="./assets/img/bandeiraEua.svg" alt="">
+            <p class="siglaBotaoIngles"></p>
         </div>
         
     </header>
@@ -329,7 +331,7 @@
 
 
             <div class="politicas">
-                <div class="tituloPoliticas">
+                <div id="tituloPoliticas" class="tituloPoliticas">
                     <h2 id="trTituloPoliticas">POLÍTICAS E PAGAMENTOS</h2>
                 </div>
                 <a href="#modalPagamentos" id="regrasDeHospedagem" class="regrasDeHospedagem">
@@ -447,7 +449,7 @@
     <!-- Seção FAQ -->
     <section class="secaoFaq" id="secaoFaq">
         <div class="painelFaq" id="painelFaq">
-            <div class="tituloPerguntasFrequentes">
+            <div id="tituloPerguntasFrequentes" class="tituloPerguntasFrequentes">
                 <div>
                     <h2 id="trTituloFaq">FAQ - PERGUNTAS FREQUENTES</h2>
                     <p id="trParagrafoFaq">Essas são algumas perguntas que são feitas com frequencia, estamos à disposição para quaisquer outras dúvidas.</p>
@@ -502,12 +504,52 @@
     </footer>
 
     <!-- Elementos fixos ou modais -->
-    <div id="botaoMenu" class="botaoMenu">☰</div>
-
-
-
+    <div id="botaoMenu" class="botaoMenu"><a class="btnAbrirMenuMobile" href="#menuMobile">☰</a></div>
     <div id="botaoTopo" class="botaoTopo"><a href="#topo">↺</a></div>
     
+    <div id="menuMobile" class="menuMobile">
+        <div class="painelMenuMobile">
+            <div class="redesMenuMobile">
+                <a href="https://api.whatsapp.com/message/GUCWMSYYBHZFK1"><img class="imgMenuMobile"
+                        src="./assets/img/iconeWhatsapp.svg" alt=""></a>
+                <a href="https://www.instagram.com/sunsetriorental"><img class="imgMenuMobile"
+                        src="./assets/img/iconeInstagram.svg" alt=""></a>
+                <a href="https://www.facebook.com/sunsetriorental"><img class="imgMenuMobile"
+                        src="./assets/img/iconeFacebook.svg" alt=""></a>
+            </div>
+            <div class="btnFecharMenuMobile"><a href="#">✖</a></div>
+
+            <nav class="linksMenuMobile">
+                <ul>
+                    <li><a class="primeiroLinkMobile" href="#secaoApartamentos" id="trApartamentosMobile">APARTAMENTOS</a>
+                    </li>
+                    <li><a href="#trTituloPoliticas" id="trPagamentosMobile">POLÍTICAS</a></li>
+                    <li><a href="#secaoSobreNos" id="trSobreNosMobile">SOBRE NÓS</a></li>
+                    <li><a href="#tituloPerguntasFrequentes">FAQ</a></li>
+                </ul>
+            </nav>
+    
+            <div class="rodapeMenuMobile">
+                <div class="telMenuMobile">
+                    <div>
+                        <img class="imgRodapeMobile" alt="" src="./assets/img/iconeTelefone.svg">
+                    </div>
+                    <div>
+                        <p>+55 (21) 96806-0371</p>
+                        <p>+55 (21) 98071-8871</p>
+                    </div>
+                </div>
+                <div class="relMenuMobile">
+                    <img class="imgRodapeMobile" alt="" src="./assets/img/iconeRelogio.svg">
+                    <p id="trHorarioMobile">Seg - Sab: 9:00 - 18:00</p>
+                </div>
+                <div class="emailMenuMobile">
+                    <img class="imgRodapeMobile" alt="" src="./assets/img/iconeEmail.svg">
+                    <p>contato@sunsetriorental.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div id="modalApartamento" class="modalApartamento">

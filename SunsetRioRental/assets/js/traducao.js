@@ -1,7 +1,3 @@
-let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 
 const dataAtual = new Date();
 document.querySelector("#trParagrafoCopyright").innerHTML = `© ${dataAtual.getFullYear()} - Todos os direitos reservados. Desenvolvido por Fábio Marques.`;
@@ -41,7 +37,10 @@ let ids = [
 
 "trParagrafoCopyright",
 
-//MODAL APARTAMENTOS
+// LINKS MENU MOBILE
+"trApartamentosMobile", "trPagamentosMobile", "trSobreNosMobile", "trHorarioMobile",
+
+// MODAL APARTAMENTOS
 
 "trBotaoCTAModalApartamento", "trTituloDescricaoModalApartamento", "trFacilidadesModalApartamento", "trLocalizacaoModalApartamento"
 
@@ -171,6 +170,9 @@ const dicionarioPortugues = [
 
 `© ${dataAtual.getFullYear()} - Todos os direitos reservados. Desenvolvido por Fábio Marques.`,
 
+// LINKS MENU MOBILE
+"APARTAMENTOS", "POLÍTICAS", "SOBRE NÓS", "Seg - Sab: 9:00 - 18:00",
+
 //MODAL APARTAMENTOS
 
 "Reserve Agora",
@@ -298,6 +300,11 @@ let dicionarioIngles = [
 // RODAPÉ
 
 `© ${dataAtual.getFullYear()} - All Rights Reserved. Developed by Fábio Marques.`,
+
+
+// LINKS MENU MOBILE
+"APARTMENTS", "POLITICS", "ABOUT US", "Mon - Sat: 9:00 - 18:00",
+
 
 //MODAL APARTAMENTOS
 

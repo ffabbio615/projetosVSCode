@@ -386,8 +386,9 @@ display: flex; justify-content: center; align-items: center; border-radius: 5px;
 .botaoTopo a{text-decoration: none; padding: 2px 1px 0 0; color: var(--corNeutraBranca); font-size: calc(1.3vw + 0.2rem); font-weight: bolder;}
 /* BOTÃO BOLINHA ICONE DE HAMBURGUER COM MENU DO SITE */
 .botaoMenu{background-color: var(--corTextoAzul); position: fixed; display: none; justify-content: center; align-items: center; 
-    border-radius: 50vw; filter: drop-shadow(0 0 6px rgba(40, 90, 200, 0.644)); color: var(--corNeutraBranca); font-size: 7vw; font-family: var(--tbk); 
-    cursor: pointer; transition: 1s ease-in-out;}
+    border-radius: 50vw; filter: drop-shadow(0 0 6px rgba(40, 90, 200, 0.644)); color: var(--corNeutraBranca); transition: 1s ease-in-out;}
+/* MENU MOBILE DESABILITADO */
+.menuMobile{visibility: hidden; display: none;}
 
 /* BOTÃO CTA PADRÃO QUE LEVA AO AIRBNB */
 .botaoCTA{width: 20vw; height: 7vh; border-style: none; color: var(--corNeutraBranca); border-radius: 1.6vw; cursor: pointer;
@@ -510,8 +511,8 @@ flex-wrap: wrap;}
 .mdColunaEsquerdaRegrasDeHospedagem p, .mdColunaDireitaRegrasDeHospedagem p, .mdColunaEsquerdaPagamentosECancelamentos p, 
 .mdColunaDireitaPagamentosECancelamentos p{font-family: var(--cr); font-size: 0.8vw; line-height: 1vw; text-align: justify;}
 
-.mdConteudoRegrasDeHospedagem{grid-template-areas: 
-    "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" "mdColunaEsquerdaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
+.mdConteudoRegrasDeHospedagem{overflow-y: auto; 
+    grid-template-areas: "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" "mdColunaEsquerdaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
 .mdTituloRegrasDeHospedagem{grid-area: mdTituloRegrasDeHospedagem;}
 .mdColunaEsquerdaRegrasDeHospedagem{grid-area: mdColunaEsquerdaRegrasDeHospedagem;}
 .mdColunaDireitaRegrasDeHospedagem{grid-area: mdColunaDireitaRegrasDeHospedagem;}
@@ -714,7 +715,7 @@ box-shadow: 0 0 12px 0px var(--corNeutraPreta);}
     margin-top: 8%; position:relative; transition: 0.5s ease-in;}
 .regrasDeHospedagem:hover h3, .pagamentosECancelamentos:hover  h3, .politicasDePrivacidade:hover  h3{margin-top: -9%; ;
     position:relative; transition: 0.5s ease-in;}
-    .regrasDeHospedagem:hover p, .pagamentosECancelamentos:hover  p, .politicasDePrivacidade:hover  p{margin-top: -5%; transition: 0.3s ease-in;}
+.regrasDeHospedagem:hover p, .pagamentosECancelamentos:hover  p, .politicasDePrivacidade:hover  p{margin-top: -5%; transition: 0.3s ease-in;}
 
 
 /* ----------QUARTA PÁGINA---------- */

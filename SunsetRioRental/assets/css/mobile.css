@@ -16,21 +16,152 @@
 .botaoCTA{width: 75vw; height: 8vh; height: calc(var(--vh, 1vh) * 8); border-radius: 0.2vw; font-size: 7vw !important; 
     box-shadow: 0 0 2vw -0.2vw var(--corNeutraPreta);} 
 .botaoMenu{display: flex; width: 6.5vh; height: 6.5vh; top:0.7%; left: 5%; grid-area: botaoMenu; z-index: 5;}
+.botaoMenu:hover{background-color: var(--corFundoLaranja);}
+.botaoMenu a{text-decoration: none; font-size: 7vw; font-family: var(--tbk); color: var(--corNeutraBranca);}
+
+.menuMobile{width: 100%; height: 100vh; visibility: hidden; opacity: 0.5; transition: all 1s; }
+.menuMobile{z-index: 6; position: fixed; top: 0; left: -100%;  display: grid; grid-template-areas: "painelMenuMobile";}
+.menuMobile:target{ visibility: visible; opacity: 1; left: 0; background-color: rgb(40,90,200);}
+.painelMenuMobile{height: calc(var(--vh, 1vh) * 100); display: grid; grid-template-columns: 50% 50%; grid-template-rows: 8.15% 70% 21.85%; z-index: 7;
+    grid-template-areas: "redesMenuMobile btnFecharMenuMobile" "linksMenuMobile linksMenuMobile" "rodapeMenuMobile rodapeMenuMobile"; background-color: white;}
+
+.redesMenuMobile{grid-area: redesMenuMobile; background-color: var(--corTextoAzul); display: flex;}
+.redesMenuMobile a{height: 100%; display: flex; align-items: center; margin: 0 3%}
+.redesMenuMobile a:first-of-type{margin-left: 10%;} .redesMenuMobile a:last-of-type{margin: 0 1%;}
+.imgMenuMobile{height: 55%; width: auto;}
+
+.btnFecharMenuMobile{grid-area: btnFecharMenuMobile; background-color: var(--corTextoAzul); display: flex; align-items: center; justify-content: flex-end; }
+.btnFecharMenuMobile a{color: var(--corNeutraBranca); font-size: 8vw; margin: 0 10% 4% 0; text-decoration: none;}
+.btnFecharMenuMobile a:hover{color: var(--corNeutraCinza);}
+
+.linksMenuMobile{grid-area: linksMenuMobile; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;}
+.linksMenuMobile ul{width: 100%; display: grid; grid-template-rows: 25% 25% 25% 25%;}
+.linksMenuMobile li{list-style: none; margin: 10% 0 10% 0; text-align: center;}
+.linksMenuMobile a{color: var(--corTextoLaranja); text-decoration: none; font-size: 10vw; font-family: var(--tbk); padding: 1% 8%; transition: all 0.3s}
+.primeiroLinkMobile{background-color: var(--corTextoLaranja); color: var(--corNeutraBranca) !important;}
+.linksMenuMobile a:hover{background-color: var(--corTextoLaranja); color: var(--corNeutraBranca); transition: all 0.5s;}
+
+.rodapeMenuMobile{grid-area: rodapeMenuMobile; background-image: url("../img/rodapeAzulOnda.svg"); background-size: cover; background-position: top center; 
+    color: var(--corNeutraBranca); font-size: 4vw; font-family: var(--tbk); display: flex; flex-wrap: wrap; align-items: center;}
+.telMenuMobile, .relMenuMobile, .emailMenuMobile{height: 20%; width: 100%; display: flex; align-items: center; justify-content: center;}
+.telMenuMobile{margin: 9% 0 3% 0;} .emailMenuMobile{margin-bottom: 8%;}
+.telMenuMobile div:first-of-type{height: 100%; display: flex; align-items: center; flex-wrap: wrap; justify-content: center;}
+.telMenuMobile p{line-height: 7vw;}
+.telMenuMobile div:first-of-type {margin-right: 2%;}
+.imgRodapeMobile{height: 65%; width: auto; margin-right: 3%;}
+
+.botaoDetalhes{width: 45%; height: 12%; font-size: 4vw; letter-spacing: 0.5vw;}
 .botaoTopo{width: 4vh; height: 4vh; right: 10px; bottom:10px; border-radius: 0.5vh;}
 .botaoTopo a{padding: 0; font-size: 3.5vh !important;}
+
+/* ----------PRIMEIRA PÁGINA---------- */
 
 .topo{height: 35vh; grid-template-columns: 50% 50%; grid-template-rows: 25% 75%; grid-template-areas: "botaoMenu menuIdioma" "menuLogo menuLogo";
     height: calc(var(--vh, 1vh) * 35);}
 .topo, .menuIdioma{background-color: var(--corTextoAzul);}
 .topoTel, .topoRel, .topoRedes, .menuLinks{display: none;}
 .iconeLinguagem{height: 50%; width: auto;}
+.siglaBotaoIngles, .siglaBotaoPortugues{color: var(--corNeutraBranca); font-family: var(--tbk);}
+.siglaBotaoPortugues{margin: 0 5% 0 -4%;} .siglaBotaoIngles{margin-right: 4%;}
+.siglaBotaoPortugues::after{content: "PT";} .siglaBotaoIngles::after{content: "EN";}
 
-.secaoInicial{ height:65vh; background-position: top left; background-size: 300%; height: calc(var(--vh, 1vh) * 65);}
+.secaoInicial{height:65vh; background-position: top left; background-size: 300%; height: calc(var(--vh, 1vh) * 65);}
 .escurecerSecaoInicial{height:65vh; height: calc(var(--vh, 1vh) * 65); background: radial-gradient(closest-side, rgba(255, 255, 255, 0.185), 
     rgba(36, 19, 0, 0.322), rgba(27, 15, 0, 0.3));}
 .painelSecaoInicial{width: 92%; align-items:center; margin-left: 4%;}
 .secaoInicial h1{font-size: 10vw; line-height: 12vw; padding: 0% 1% 0 0; margin-bottom: 5%;}
 .secaoInicial p{font-size: 4.2vw; line-height: 7vw; width: 100%; text-align: justify; text-align-last: center; margin-bottom: 4%;}
+
+/* ----------SEGUNDA PÁGINA---------- */
+
+.secaoApartamentos{height:110vh; height: calc(var(--vh, 1vh) * 110);}
+.painelApartamentos{width: 92%; height: 215vh; height: calc(var(--vh, 1vh) * 215); grid-template-rows: 85vh 145vh;
+    grid-template-areas: "apartamentos" "politicas"; margin-top: 2vh;}
+.tituloApartamento h2{font-size: 10vw;} .tituloApartamento p{font-size: 5vw; margin-top: 1%;}
+.setaEListaApartamento, .setaDListaApartamento{display: none;}   
+.listaApartamentos{grid-template-columns:repeat(12, 100%); overflow-x: auto;}
+.imagemApartamento{height: 95%; margin:0 2% 0 2%;}
+.tarjaApartamento{width: 85%;}
+.tarjaApartamento h3 {font-size: 6.5vw;} .tarjaApartamento p{font-size: 2.5vw;}
+.avaliacaoDeHospedes, .tituloAvaliacaoDeHospede, .tituloAvaliacaoDeHospede, .avaliacaoEAirbnb, .avaliacaoDAirbnb, .avaliacaoAirbnb, .botaoVejaMais{display: none;}
+
+/* ----------TERCEIRA PÁGINA---------- */
+
+.secaoPagamentos{height:110vh; height: calc(var(--vh, 1vh) * 110);}
+.politicas{height: 120vh; height: calc(var(--vh, 1vh) * 120); grid-template-columns: 100%; grid-template-rows: 10% 30% 30% 30%; 
+    grid-template-areas: "tituloPolitica" "regrasDeHospedagem" "pagamentosECancelamentos" "politicasDePrivacidade";}
+.tituloPoliticas h2{font-size: 10vw; text-align: center; margin-bottom: 8%; padding-top: 6%;}
+.politicas h3{font-size: 6.5vw;} .politicas p{font-size: 3.5vw;}
+
+
+/* ----------QUARTA PÁGINA---------- */
+
+
+.secaoSobreNos{height:230vh; height: calc(var(--vh, 1vh) * 230);}
+
+.painelSobreNos{width: 95%; height: 100%; background-color: rgba(255, 255, 255, 0.85);  box-shadow: inset 0 8px 10px -8px, inset 0 -8px 10px -8px; 
+    display: grid; grid-template-rows: 12% 16% 66%; grid-template-areas: "tituloSobreNos" "painelConceitos" "painelSobreAsValerias"; 
+    position: relative; z-index: 0;}
+.painelSobreNos h2{font-size: 10vw; margin: 0 10%;}
+.painelSobreNos h3{font-size: 5vw;}
+.painelSobreNos h4{font-size: 4vw;}
+
+.tituloSobreNos{margin-top: 5%; grid-area: tituloSobreNos;}
+.tituloSobreNos p{font-size: 4vw; text-align: justify; margin: 1% 5% 10% 5%;}
+
+.painelConceitos{flex-wrap: wrap;}
+.conceitos{width: 100%; height: 30%; margin: 1.5% 2%;}
+.conceitos p:first-of-type{line-height: 3vw; font-family: var(--tbk); font-size: 4vw;} 
+.conceitos p:last-of-type{line-height: 5vw; font-size: 4vw; margin: 2% 5% 0 5%;}
+
+/* .painelSobreAsValerias{display: flex; justify-content: center; grid-area: painelSobreAsValerias;} */
+.conteudoSobreAsValerias{grid-template-columns: 100%; grid-template-rows: 27% 40% 40%; grid-template-areas: "sobreAsValerias" "valeriaGomes" "valeriaLima";
+    width: 100%; }
+
+.valeria{margin: 4% 12% 8% 12%; align-items: center; flex-wrap: wrap;}
+.valeria div{width: 100%; text-align: center;}
+.valeria h3{font-size: 6vw;}
+.valeria  p{font-size: 3.5vw; line-height: 4.5vw;}
+.imagemValerias{width: 48%; margin: 0 0;}
+.iconeSobreASunset{width: 10%; height: auto; margin: 0% 4% 0% 4%;}
+
+.sobreAsValerias{background-color:transparent; box-shadow: 0 0 0; align-items:start; justify-content: center; margin: 2% 0;}
+.valeria h3, .valeria p{margin: 2% 10% 0 10%;}
+.sobreAsValerias h4{margin: 0 0 2% 0; font-size: 5vw;}
+.sobreAsValerias p{font-size: 4vw; line-height: 5vw; width: 100%; margin: 0 5% 2.5% 5%;}
+
+
+/* ----------QUINTA PÁGINA---------- */
+
+
+.secaoFaq{height: 90vh; height: calc(var(--vh, 1vh) * 90); align-items: start;}
+.painelFaq{width:95%; height: 95%; grid-template-columns: 100%; grid-template-rows: 24% 63% 13%; grid-template-areas: "tituloPerguntasFrequentes" 
+        "perguntasFrequentes" "painelCTAFaq";}
+
+.tituloPerguntasFrequentes{margin-top: 3%;}
+.tituloPerguntasFrequentes div{width: 100%; height: 100%;}
+.tituloPerguntasFrequentes div h2{font-size: 8vw; margin-top: 5%; letter-spacing: -1.5px;} 
+.tituloPerguntasFrequentes div p{font-size: 4vw; letter-spacing: -0.045em;}
+
+.perguntasFrequentes{overflow-y: auto;}
+.perguntasFrequentes div{width: 100%; height: 94%;}
+.paragrafoFaq{font-size: 4vw; line-height: 5vw; margin:0 0 2.5% 0;}
+    
+/* AQUI SERÁ A CLASSE DA RESPOSTA FAQ GERADA VIA JAVASCRIPT */
+.respostaFaq{width: 96%; font-size: 4vw; border-radius: 1vw; line-height: 5vw;}
+    
+    
+    
+    footer{height:20vh; height: calc(var(--vh, 1vh) * 20);}
+    .rodape{height: 85%; margin-top: 3vh;}
+    .rodapeRedesSociais div:not(.paragrafoCopyright){height:18%; margin: 0.5vh 0 0 0;}
+    .rodapeRedesSociais div p:not(.paragrafoCopyright){font-size: 4vw;}
+    .rodapeRedesSociais a{height: 100%; width: auto; margin: 0 0.5%;}
+    .rodapeRedesSociais a:first-of-type{margin-right: 2%;}
+    .iconeRodape{height: 100%; width: auto; padding: 0 2%;}
+    .paragrafoCopyright{width: 100%; height: 55%; margin: 0; display: flex; text-align: center;}
+    .paragrafoCopyright p:first-of-type{font-size: 2.5vw !important; margin-bottom: 1%;}
+    .paragrafoCopyright p:last-of-type{margin: 0 4% 2% 4%; line-height: 5.5vw;}
 
 }
 
