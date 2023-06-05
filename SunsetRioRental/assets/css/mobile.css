@@ -51,8 +51,81 @@
 .imgRodapeMobile{height: 65%; width: auto; margin-right: 3%;}
 
 .botaoDetalhes{width: 45%; height: 12%; font-size: 4vw; letter-spacing: 0.5vw;}
-.botaoTopo{width: 4vh; height: 4vh; right: 10px; bottom:10px; border-radius: 0.5vh;}
-.botaoTopo a{padding: 0; font-size: 3.5vh !important;}
+.botaoTopo{width: 4vh; height: 4vh; right: 10px; bottom:10px; border-radius: 0.5vh; filter: drop-shadow(0 0 2px var(--corNeutraPreta));}
+.botaoTopo a{padding: 0 3% 17% 0; font-size: 3.5vh !important;}
+
+
+/* MODAL DOS APARTAMENTOS */
+.modalApartamento a{font-size: 6vw; margin: -1% -1% 0 0;}
+.painelModalApartamento{width: 100%; height: 95%;}
+.conteudoModalApartamento{width: 95%; height: 90%; grid-template-rows: 17% 30% 10% 20% 23%;
+     grid-template-areas: "mdTituloApartamento mdTituloApartamento" "mdFotoApartamento mdFotoApartamento" "botaoCTAModalApartamento botaoCTAModalApartamento"
+"mdDescricaoApartamento mdDescricaoApartamento" "mdFacilidadesApartamento mdLocalizacaoApartamento";}
+    
+.botaoCTAMobileModalApartamento{grid-area: botaoCTAModalApartamento; display: flex; justify-content: center;}
+.trBotaoCTAMobileModalApartamento{width: 92%; height: 6vh; height: calc(var(--vh, 1vh) * 6); margin-top: 3%;}
+    
+.mdFacilidadesApartamento{display: flex; margin:1% 2%;}
+.mdFotosApartamento{margin-top: 3%;}
+.mdSetaEFotosApartamento, .mdSetaDFotosApartamento{font-size: 7vw;}
+
+.mdTituloApartamento h2{font-size: 10vw;}
+.mdTituloApartamento p{font-size: 5vw;}
+.mdTituloApartamento button {display: none;}
+
+.mdConteudoModalApartamento p{margin: 0 1% 0 2%; font-size: 3.5vw;}
+.mdDescricaoApartamento{overflow-y: auto;}
+.mdDescricaoApartamento p:first-of-type{font-size: 5vw;}
+.mdDescricaoApartamento p{font-size: 3vw; padding: 0 1%;}
+
+.mdFacilidadesApartamento{grid-template-rows: 10% 90%;}
+.mdTituloFacilidadesApartamento{font-size: 5vw;}
+.mdFacilidadesEsquerdaApartamento{grid-area: mdFacilidadesEsquerdaApartamento; text-align: center;}
+.mdFacilidadesDireitaApartamento{grid-area: mdFacilidadesDireitaApartamento; text-align: center;}
+.mdFacilidadesEsquerdaApartamento, .mdFacilidadesDireitaApartamento {font-size: 2.3vw;}
+
+.mdLocalizacaoApartamento{margin-top: 2%;}
+.mdTituloLocalizacaoApartamento{font-size: 5vw;}
+
+.imagemAmpliadaModal{width: 95%; height: 60%; background-size:contain; background-repeat: no-repeat;}
+.fecharFundoImagem{padding: 0.9% 2.5%; font-size: 5vw;}
+
+/* MODAL DAS POLÍTICAS */
+
+.modalPagamentos a{font-size: 6vw; margin: -1% -1% 0 0;}
+.painelModalPagamentos{width: 100%; height: 95%;}
+.conteudoModalPagamentos{width: 95%; height: 90%;}
+
+.mdTituloRegrasDeHospedagem, .mdTituloPagamentosECancelamentos{margin-top: 3%;}
+.mdTituloRegrasDeHospedagem h2, .mdTituloPagamentosECancelamentos h2{font-size: 8vw; line-height: 10vw;}
+.mdTituloRegrasDeHospedagem p, .mdTituloPagamentosECancelamentos p{font-size: 3.5vw; margin: 2% 5% 0 5%; text-align: justify;}
+
+.mdColunaEsquerdaRegrasDeHospedagem h3, .mdColunaDireitaRegrasDeHospedagem h3, .mdColunaEsquerdaPagamentosECancelamentos h3, 
+.mdColunaDireitaPagamentosECancelamentos h3{font-size: 4vw; line-height: 5vw; margin-top: 3%;}
+.mdColunaEsquerdaRegrasDeHospedagem p, .mdColunaDireitaRegrasDeHospedagem p, .mdColunaEsquerdaPagamentosECancelamentos p, 
+.mdColunaDireitaPagamentosECancelamentos p{font-size: 3.5vw; line-height: 4.5vw;}
+
+.mdConteudoRegrasDeHospedagem{grid-template-rows: 30% 139% 115%; grid-template-areas: "mdTituloRegrasDeHospedagem mdTituloRegrasDeHospedagem" 
+    "mdColunaEsquerdaRegrasDeHospedagem mdColunaEsquerdaRegrasDeHospedagem" "mdColunaDireitaRegrasDeHospedagem mdColunaDireitaRegrasDeHospedagem";}
+
+.mdConteudoPagamentosECancelamentos{grid-template-rows: 26% 82% 70%;}
+.mdConteudoPagamentosECancelamentos{overflow-y: auto; grid-template-areas: "mdTituloPagamentosECancelamentos mdTituloPagamentosECancelamentos" 
+    "mdColunaEsquerdaPagamentosECancelamentos mdColunaEsquerdaPagamentosECancelamentos" 
+    "mdColunaDireitaPagamentosECancelamentos mdColunaDireitaPagamentosECancelamentos";}
+
+.mdConteudoPoliticasDePrivacidade{width: 100%; height: 100%; display: grid; grid-template-columns: 100%; grid-template-rows: 58% 512%; overflow:auto;
+    grid-template-areas: "mdTituloPoliticasDePrivacidade" "mdInformacoesPoliticasDePrivacidade";}
+
+.mdTituloPoliticasDePrivacidade{margin-top: 5%;}
+.mdTituloPoliticasDePrivacidade h2{font-size: 8vw; line-height: 11vw; margin-bottom: 5%;}
+.mdTituloPoliticasDePrivacidade p:first-of-type{font-size: 4vw; margin: 0 0 1% 5%;}
+.mdTituloPoliticasDePrivacidade p{font-size: 3.5vw; margin: 0 5%; line-height: 4.5vw; text-align: justify;}
+
+.mdInformacoesPoliticasDePrivacidade h3{font-size: 3.8vw; line-height: 5vw; margin-top: 3%;}
+.mdInformacoesPoliticasDePrivacidade h4{font-size: 3.5vw; line-height: 4.5vw; margin-top: 3%; font-family: var(--stbk);}
+.mdInformacoesPoliticasDePrivacidade p, li{font-size: 3.5vw; line-height: 4.5vw; margin: 2% 0;}
+.mdInformacoesPoliticasDePrivacidade li{margin-left: 5%;}
+
 
 /* ----------PRIMEIRA PÁGINA---------- */
 
@@ -62,14 +135,14 @@
 .topoTel, .topoRel, .topoRedes, .menuLinks{display: none;}
 .iconeLinguagem{height: 50%; width: auto;}
 .siglaBotaoIngles, .siglaBotaoPortugues{color: var(--corNeutraBranca); font-family: var(--tbk);}
-.siglaBotaoPortugues{margin: 0 5% 0 -4%;} .siglaBotaoIngles{margin-right: 4%;}
+.siglaBotaoPortugues{margin: 0 5% 0 -4%;} .siglaBotaoIngles{margin-right: 8%;}
 .siglaBotaoPortugues::after{content: "PT";} .siglaBotaoIngles::after{content: "EN";}
 
 .secaoInicial{height:65vh; background-position: top left; background-size: 300%; height: calc(var(--vh, 1vh) * 65);}
 .escurecerSecaoInicial{height:65vh; height: calc(var(--vh, 1vh) * 65); background: radial-gradient(closest-side, rgba(255, 255, 255, 0.185), 
     rgba(36, 19, 0, 0.322), rgba(27, 15, 0, 0.3));}
 .painelSecaoInicial{width: 92%; align-items:center; margin-left: 4%;}
-.secaoInicial h1{font-size: 10vw; line-height: 12vw; padding: 0% 1% 0 0; margin-bottom: 5%;}
+.secaoInicial h1{font-size: 9vw; line-height: 12vw; padding: 0% 1% 0 0; margin-bottom: 5%;}
 .secaoInicial p{font-size: 4.2vw; line-height: 7vw; width: 100%; text-align: justify; text-align-last: center; margin-bottom: 4%;}
 
 /* ----------SEGUNDA PÁGINA---------- */
@@ -77,10 +150,10 @@
 .secaoApartamentos{height:110vh; height: calc(var(--vh, 1vh) * 110);}
 .painelApartamentos{width: 92%; height: 215vh; height: calc(var(--vh, 1vh) * 215); grid-template-rows: 85vh 145vh;
     grid-template-areas: "apartamentos" "politicas"; margin-top: 2vh;}
-.tituloApartamento h2{font-size: 10vw;} .tituloApartamento p{font-size: 5vw; margin-top: 1%;}
+.tituloApartamento h2{font-size: 8vw; line-height: 11vw; margin-top: 6%;} .tituloApartamento p{font-size: 4vw; margin: 2% 8% 6% 8%;}
 .setaEListaApartamento, .setaDListaApartamento{display: none;}   
 .listaApartamentos{grid-template-columns:repeat(12, 100%); overflow-x: auto;}
-.imagemApartamento{height: 95%; margin:0 2% 0 2%;}
+.imagemApartamento{height: 95%; margin:0 2% 2% 2%;}
 .tarjaApartamento{width: 85%;}
 .tarjaApartamento h3 {font-size: 6.5vw;} .tarjaApartamento p{font-size: 2.5vw;}
 .avaliacaoDeHospedes, .tituloAvaliacaoDeHospede, .tituloAvaliacaoDeHospede, .avaliacaoEAirbnb, .avaliacaoDAirbnb, .avaliacaoAirbnb, .botaoVejaMais{display: none;}
@@ -90,7 +163,7 @@
 .secaoPagamentos{height:110vh; height: calc(var(--vh, 1vh) * 110);}
 .politicas{height: 120vh; height: calc(var(--vh, 1vh) * 120); grid-template-columns: 100%; grid-template-rows: 10% 30% 30% 30%; 
     grid-template-areas: "tituloPolitica" "regrasDeHospedagem" "pagamentosECancelamentos" "politicasDePrivacidade";}
-.tituloPoliticas h2{font-size: 10vw; text-align: center; margin-bottom: 8%; padding-top: 6%;}
+.tituloPoliticas h2{font-size: 8vw; line-height: 11vw; text-align: center; margin-bottom: 8%; padding-top: 6%;}
 .politicas h3{font-size: 6.5vw;} .politicas p{font-size: 3.5vw;}
 
 
@@ -102,7 +175,7 @@
 .painelSobreNos{width: 95%; height: 100%; background-color: rgba(255, 255, 255, 0.85);  box-shadow: inset 0 8px 10px -8px, inset 0 -8px 10px -8px; 
     display: grid; grid-template-rows: 12% 16% 66%; grid-template-areas: "tituloSobreNos" "painelConceitos" "painelSobreAsValerias"; 
     position: relative; z-index: 0;}
-.painelSobreNos h2{font-size: 10vw; margin: 0 10%;}
+.painelSobreNos h2{font-size: 8vw; line-height: 11vw; margin: 0 20%;}
 .painelSobreNos h3{font-size: 5vw;}
 .painelSobreNos h4{font-size: 4vw;}
 
@@ -175,18 +248,6 @@
     .secaoSobreNos{height: 90vh;} .painelSobreAsValerias{height: 40%;} */
 }
 
-
-
 /* AJUSTES DE TEXTOS E BOTÕES */
-
-@media screen and (max-width: 509px){
-    .topo40 {width: 100%;}
-    .camadaMenu{height: 50%;}
-
-}
-
-@media screen and (max-width: 879px){
-    .botaoTopo a{font-size: calc(2.5vw + 0.2rem);}
-    .botaoCTA{font-size: calc(1.5vw + 0.2rem);}
-
-}
+@media screen and (max-width: 509px){}
+@media screen and (max-width: 879px){}

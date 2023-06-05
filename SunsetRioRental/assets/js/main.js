@@ -9,6 +9,9 @@ let idioma =1;
 botaoPortugues.onclick = function(){idioma=1;};
 botaoIngles.onclick = function(){idioma=2;};
 
+//REDIRECIONA PARA O TOPO, CASO AS INFORMAÇÕES DOS APARTAMENTOS ESTEJAM VAZIAS E A PÁGINA RETORNE POR LINK EXTERNO
+if(document.location.href !="http://191.163.2.89:5500/SunsetRioRental/index.html"){
+if (document.querySelector("#trTituloModalApartamento").innerHTML==""){document.location.href = "http://191.163.2.89:5500/SunsetRioRental/index.html"}}
 
 
 
@@ -156,6 +159,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
     const conteudoCamasModalApartamento = document.querySelector("#trConteudoCamasModalApartamento");
     const conteudoPessoasModalApartamento = document.querySelector("#trConteudoPessoasModalApartamento");
     const conteudoMetragemModalApartamento = document.querySelector("#trConteudoMetragemModalApartamento");
+    const botaoCTAModalApartamento = document.querySelector("#trBotaoCTAModalApartamento");
+    const botaoCTAMobileModalApartamento = document.querySelector("#trBotaoCTAMobileModalApartamento");
     const descricaoModalApartamento = document.querySelector("#trDescricaoModalApartamento");
     const facilidade1ModalApartamento = document.querySelector("#trFacilidade1ModalApartamento");
     const facilidade2ModalApartamento = document.querySelector("#trFacilidade2ModalApartamento");
@@ -177,6 +182,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "25m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/588235675505978964?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924216_BZOKqVXzh4kfVq4r";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/588235675505978964?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924216_BZOKqVXzh4kfVq4r";
             descricaoModalApartamento.innerHTML = "Copa Loft é um apartamento de aproximadamente 28m², que acomoda até 4 pessoas, localizado a beira mar, e com vista para a rua de trás da praia. O apartamento possui 1 cama queen e 1 cama de solteiro com cama auxiliar, já para a refrigeração, tem ar condicionado no quarto e ventilador na sala. Possui também uma pequena cozinha, equipada com utensílios para cozinhar, mesa com cadeiras, geladeira, fogão, microondas, banheiro com chuveiro elétrico, TV e wifi.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -202,6 +209,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "30m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/754926310130497309?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924219_Et4HGI%2FlAlf9GLvD";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/754926310130497309?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924219_Et4HGI%2FlAlf9GLvD";
             descricaoModalApartamento.innerHTML = "O Estilo Sunset é um apartamento localizado no Posto 6 da praia de Copacabana, a menos de 5 min de caminhada até a praia. É possível acomodar até 4 pessoas, com 1 cama queen no quarto, e 1 cama de solteiro com cama auxiliar, na sala. Para refrigeração, tem ar condicionado no quarto, e ventilador de teto nos dois ambientes. O apartamento também possui chuveiro elétrico e uma pequena cozinha equipada com utensílios básicos para cozinhar.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -227,6 +236,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro";
             conteudoPessoasModalApartamento.innerHTML = "3 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "20m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/728213534370751794?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924220_oiZH5NLTfWxYZWgX";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/728213534370751794?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924220_oiZH5NLTfWxYZWgX";
             descricaoModalApartamento.innerHTML = "O Atlântico loft está localizado na Av. Atlântica, na altura do Posto 6 da praia de Copacabana. O apartamento possui cerca de 20m² e acomoda até 3 pessoas, com 1 cama de casal e 1 cama de solteiro, acomodados no mesmo ambiente,que possui ar condicionado e ventilador de teto. O apartamento possui uma pequena cozinha equipada com utensílios básicos para cozinhar, mesa com cadeiras, geladeira, fogão, microondas. chuveiro elétrico, TV e wifi. O apt tem vista para os fundos do prédio.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -252,6 +263,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "4 camas + 1 colchonete";
             conteudoPessoasModalApartamento.innerHTML = "6 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "50m²";
+            botaoCTAModalApartamento.href = "";
+            botaoCTAMobileModalApartamento.href = "";
             descricaoModalApartamento.innerHTML = "O Sunset Garden é um apartamento de 2 quartos, com uma pequena área externa, que está localizado a 2 quadras na quadra do metrô, na rua Sá Ferreira 120. O apt acomoda 6 pessoas, sendo 1 quarto com cama de casal, 1 quarto com cama de solteiro e cama auxiliar, e uma cama de viúva com um colchonete adicional, na sala. Para refrigeração, os cômodos possuem ventiladores. O apartamento possui WIFI e Smartv de 32″. A cozinha é americana, integrada à sala e equipada com utensílios básicos para cozinhar.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "";
@@ -277,6 +290,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Queen + 1 Casal + 1 Solteiro";
             conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "50m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/616750919218978429?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924223_Yerwpf%2FFkOALYdgU";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/616750919218978429?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924223_Yerwpf%2FFkOALYdgU";
             descricaoModalApartamento.innerHTML = "Venhar aproveitar sua estadia no RJ no Copa Sunset! Ele é um apartamento espaçoso, no Posto 6, na rua atrás da praia, entre Copacabana e Ipanema. São 2 quartos, sendo 1 deles suíte com cama Queen e espaço para home office. No outro quarto temos 1 cama de casal e 1 de solteiro, acomodando o total de 5 pessoas no apartamento. Ambos os quartos tem ar condicionado e ventilador de teto. A cozinha é ampla e equipada com utensílios básicos para cozinhar. Oferecemos roupa de cama, toalhas e wifi.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -302,6 +317,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "30m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/561718484482770817?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924225_t2mMHxwDsZUiR6Hd";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/561718484482770817?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924225_t2mMHxwDsZUiR6Hd";
             descricaoModalApartamento.innerHTML = "O Atlântica Estudio é um apartamento completo que acomoda até 5 pessoas, sendo 1 cama de casal no quarto, e 2 camas de solteiro com uma cama auxiliar na sala. O apartamento está equipado com: utensílios para cozinhar, geladeira, fogão, pratos, copos, TV com canais abertos, ar condicionado split no quarto e ventiladores de teto no quarto e na sala. Wifi de 100Mbps. Disponibilizamos também, roupa de cama e toalhas. A localização é entre os Postos 5 e 6.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -327,6 +344,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "25m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/571546796050403948?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924227_F7%2F8ovCp037vH9zA";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/571546796050403948?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924227_F7%2F8ovCp037vH9zA";
             descricaoModalApartamento.innerHTML = "Aproveite com sua família e amigos no Estúdio Copa! O apartamento possui 25m² e acomoda até 4 pessoas sendo de: 1 cama de casal e 1 cama de solteiro com 1 cama auxiliar, acomodados no mesmo ambiente, que é refrigerado com ar condicionado e ventilador de teto. O apartamento também possui uma pequena cozinha equipada com utensílios para cozinhar, mesa com banquinhos, geladeira, fogão. Banheiro com chuveiro elétrico. Tv smart e wifi. A localização e a beira mar mas com vista para os fundos do prédio";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -352,6 +371,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar"
             conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "30m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/51299204?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924228_CKWrPBSMaWf1f2Tj";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/51299204?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924228_CKWrPBSMaWf1f2Tj";
             descricaoModalApartamento.innerHTML = "O Mar de Copa é um excelente apartamento que acomoda até 5 pessoas, sendo 1 cama de casal, 2 camas de solteiro e 1 cama auxiliar. O apartamento está equipado com: utensílios para cozinhar, geladeira, fogão, pratos, copos, TV com canais abertos, wifi, ar condicionado. A localização é excelente, Posto 6, na divisa entre Copacabana e Ipanema! Dá para ver o nascer do sol na janela, e caminhar alguns minutos até Ipanema para ver o por do sol. Disponibilizamos também, roupa de cama e toalhas.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -377,6 +398,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "30m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/51534616?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924230_135kOtL1TUjTMdaX";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/51534616?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924230_135kOtL1TUjTMdaX";
             descricaoModalApartamento.innerHTML = "O Mar de Copa II é um excelente apartamento que acomoda até 5 pessoas, sendo 1 cama de casal, e 2 camas de solteiro + 1 auxiliar na sala. O apartamento está equipado com: utensílios para cozinhar, geladeira, fogão, pratos, copos, TV com canais abertos, wifi, ar condicionado. A localização é excelente, Posto 6, na divisa entre Copacabana e Ipanema! Dá para ver o nascer do sol na janela, e caminhar alguns minutos até Ipanema para ver o por do sol. Disponibilizamos também, roupa de cama e toalhas.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -402,6 +425,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 2 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "5 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "30m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/54045886?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924231_iAhu9k3l2PxMpiTY";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/54045886?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924231_iAhu9k3l2PxMpiTY";
             descricaoModalApartamento.innerHTML = "O Copa Dream é um apartamento completo que acomoda até 5 pessoas, sendo 1 cama de casal e 1 cama de solteiro com cama auxiliar. O apartamento está equipado com: utensílios para cozinhar, frigobar, fogão, pratos, copos, TV com canais abertos, ar condicionado no quarto e ventiladores de teto no quarto e na sala. Disponibilizamos também, roupa de cama e toalhas. A localização é no Posto 6. Obs.: Os itens e decorações mostrados nas fotos, podem sofrer alterações sem aviso prévio.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -427,6 +452,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro";
             conteudoPessoasModalApartamento.innerHTML = "3 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "25m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/53201638?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924182_ZXly8tom4NALxpW3";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/53201638?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924182_ZXly8tom4NALxpW3";
             descricaoModalApartamento.innerHTML = "Relaxe com sua família e amigos no Sunset Estúdio! O apartamento é super aconchegante e possui cerca de 23m² e acomodando até 3 pessoas. Para acomodar todos os hóspedes, o apartamento dispõe de: 1 cama de casal e 1 cama de solteiro acomodados no mesmo ambiente, que é refrigerado com ar condicionado e ventilador de teto. Uma Pequena cozinha equipada com utensílios básicos para cozinhar, além de sanduicheira, filtro para café, microondas, mesa com banquinhos e frigobar. Banheiro com chuveiro elétrico. A tv tem canais à cabo básico, e você poderá usar sua conta pessoal para assistir netflix, prime vídeo, entre outros. A internet é disponibilizada via wifi com velocidade de 250 Mbps. A localização é na Rua Sá Ferreira, em um prédio tranquilo e residencial, a cerca de 150m da saída D do metrô de General Osório, e cerca de 350m da praia de Copacabana (2 quadras), fica pertinho também, de Ipanema e do Arpoador, além de amplo comércio, bares, restaurantes, supermercados, drogarias e transportes públicos na região.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -452,6 +479,8 @@ function inserirTextoDoApartamento(i,idiomaAp)
             conteudoCamasModalApartamento.innerHTML = "1 Casal + 1 Solteiro + 1 Auxiliar";
             conteudoPessoasModalApartamento.innerHTML = "4 Pessoas";
             conteudoMetragemModalApartamento.innerHTML = "30m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/588270988006710859?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924184_0P33aFwhFlapqjrH";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/588270988006710859?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924184_0P33aFwhFlapqjrH";
             descricaoModalApartamento.innerHTML = "Aproveite para relaxar no Sunset Premium, um apartamento completo na quadra da praia e vista lateral para o mar, localizado entre o Posto 5 e 6 da praia de Copacabana. O apartamento acomoda até 4 pessoas, sendo 1 cama de casal e 1 cama de solteiro com auxiliar, acomodados no mesmo ambiente, refrigerado por ventilador de teto e ar condicionado split. Possui também, cozinha equipada com fogão, frigobar, microondas e utensílios básicos para que possa preparar refeições durante sua estadia. O apartamento possui smartv de 32″ e tv a cabo com canais básicos, além de wifi de 240Mbps. Oferecemos roupa de cama e toalhas sem custos adicionais para nossos hóspedes. Obs.: Os itens e decorações mostrados nas fotos, podem sofrer alterações sem aviso prévio.";
             facilidade1ModalApartamento.innerHTML = "WIFI";
             facilidade2ModalApartamento.innerHTML = "AR CONDICIONADO";
@@ -570,21 +599,21 @@ function selecionarRepostaFaq(resposta){
 const linkApartamento = document.location.href;
 // 1-COPA LOFT | 2-Estilo Sunset | 3-Atlântico Loft | 4-Sunset Garden | 5-Copa Sunset | 6-Atlântica Estúdio
 // 7-Estúdio Copa | 8-Mar de Copa | 9-Mar de CopaII | 10-Copa Dream | 11-Sunset Estudio | 12-Sunset Premium
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apCopaLoft"){aplicarLinkApartamento(1);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apEstiloSunset"){aplicarLinkApartamento(2);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apAtlanticoLoft"){aplicarLinkApartamento(3);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apSunsetGarden"){aplicarLinkApartamento(4);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apCopaSunset"){aplicarLinkApartamento(5);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apAtlanticaEstudio"){aplicarLinkApartamento(6);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apEstudioCopa"){aplicarLinkApartamento(7);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apMarDeCopa"){aplicarLinkApartamento(8);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apMarDeCopaII"){aplicarLinkApartamento(9);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apCopaDream"){aplicarLinkApartamento(10);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apSunsetEstudio"){aplicarLinkApartamento(11);}
-if (linkApartamento == "http://25.10.190.140:5500/SunsetRioRental/index.html#apSunsetPremium"){aplicarLinkApartamento(12);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apCopaLoft"){aplicarLinkApartamento(1);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apEstiloSunset"){aplicarLinkApartamento(2);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apAtlanticoLoft"){aplicarLinkApartamento(3);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apSunsetGarden"){aplicarLinkApartamento(4);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apCopaSunset"){aplicarLinkApartamento(5);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apAtlanticaEstudio"){aplicarLinkApartamento(6);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apEstudioCopa"){aplicarLinkApartamento(7);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apMarDeCopa"){aplicarLinkApartamento(8);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apMarDeCopaII"){aplicarLinkApartamento(9);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apCopaDream"){aplicarLinkApartamento(10);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apSunsetEstudio"){aplicarLinkApartamento(11);}
+if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apSunsetPremium"){aplicarLinkApartamento(12);}
 
 function aplicarLinkApartamento(numeroLink){
     efeitoDesfocar();
-    document.location.href = "http://25.10.190.140:5500/SunsetRioRental/index.html#modalApartamento";
+    document.location.href = "http://191.163.2.89:5500/SunsetRioRental/index.html#modalApartamento";
     selecaoDeApartamento(numeroLink);
 }

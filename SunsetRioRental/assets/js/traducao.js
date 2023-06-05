@@ -42,7 +42,7 @@ let ids = [
 
 // MODAL APARTAMENTOS
 
-"trBotaoCTAModalApartamento", "trTituloDescricaoModalApartamento", "trFacilidadesModalApartamento", "trLocalizacaoModalApartamento"
+"trBotaoCTAModalApartamento", "trBotaoCTAMobileModalApartamento", "trTituloDescricaoModalApartamento", "trFacilidadesModalApartamento", "trLocalizacaoModalApartamento"
 
 ];
 
@@ -176,6 +176,7 @@ const dicionarioPortugues = [
 //MODAL APARTAMENTOS
 
 "Reserve Agora",
+"Reserve Agora",
 "DESCRIÇÃO",
 "FACILIDADES",
 "LOCALIZAÇÃO"
@@ -308,6 +309,7 @@ let dicionarioIngles = [
 
 //MODAL APARTAMENTOS
 
+"Book Now",
 "Book Now",
 "DESCRIPTION",
 "AMENITIES",
