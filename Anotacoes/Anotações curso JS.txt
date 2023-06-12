@@ -30,6 +30,24 @@ MATH:
 .toFixed(x) > Retorna o número de casas decimais após a vírgula em x quantidade.
 
 
+STRINGS
+.includes("texto"); > Verifica se um texto, letra ou palavra específicos estão dentro da frase
+.toString("variavelNumerica"); > Converte qualquer informação de outros tipos de variáveis em texto
+
+
+DATAS
+const data = new Date(); > Cria variável recebendo a data atual
+data.getDate(); > Mostra o dia em número
+data.getDay(); > Mostra o dia da semana, sendo domingo 0 e sábado 6
+data.getMonth(); > Mostra o mês, sendo janeiro 0 e dezembro 11
+data.getFullYear(); > Mostra o ano
+data.getHours(); > Mostra as horas
+data.getMinutes(); > Mostra os minutos
+data.getSeconds(); > Mostra os segundos
+data.getMilliseconds(); > Mostra os milisegundos
+OBS.: Se os números forem menores que 10 sem ser no dia da semana, tem que adicionar 0 a esquerda
+
+
 OPERADORES DE COMPARAÇÃO
 > OU < Maior ou menor
 >= OU <= Maior que ou menor que
@@ -41,7 +59,14 @@ OPERADORES DE COMPARAÇÃO
 
 
 JAVASCRIPT-HTML
+
 document.querySelector('#idDoElementoHtml'); > Seleciona um elemento HTML pelo id dele. Uma variável recebendo isso passa a ter tudo do elemento
+document.querySelector('.classeDoElemento'); > Seleciona um elemento HTML pela classe dele.
+document.querySelector('.classe h1'); > Seleciona um elemento HTML, nesse caso h1, dentro do elemento com a classe selecionada.
+document.getElementById("idDoElementoHtml"); > Seleciona um ID, porém não precisa de #
+document.getElementByClass('classeDoElemento'); > Seleciona uma classe, porém não precisa de pronto
+document.getElementById('idDoElementoHtml').getElementsByClassName('classeDoElementoHtml'); > Seleciona todas as classes com nome específico dentro de um id
+
 
 form.addEventListener('tipoDeEvento tipo submit', function (parametro reconhecido, no caso, form) {}); > Adiciona um evento a um elemento com ação dentro da função
 elemento.preventDefault(); > Cancela a ação de um elemento, tipo cancelar o post de um form

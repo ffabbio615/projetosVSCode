@@ -10,8 +10,8 @@ botaoPortugues.onclick = function(){idioma=1;};
 botaoIngles.onclick = function(){idioma=2;};
 
 //REDIRECIONA PARA O TOPO, CASO AS INFORMAÇÕES DOS APARTAMENTOS ESTEJAM VAZIAS E A PÁGINA RETORNE POR LINK EXTERNO
-if(document.location.href !="http://191.163.2.89:5500/SunsetRioRental/index.html"){
-if (document.querySelector("#trTituloModalApartamento").innerHTML==""){document.location.href = "http://191.163.2.89:5500/SunsetRioRental/index.html"}}
+if(document.location.href.includes ("modalApartamento")){
+if (document.querySelector("#trTituloModalApartamento").innerHTML==""){document.location.href = "#topo"}}
 
 
 
@@ -599,21 +599,22 @@ function selecionarRepostaFaq(resposta){
 const linkApartamento = document.location.href;
 // 1-COPA LOFT | 2-Estilo Sunset | 3-Atlântico Loft | 4-Sunset Garden | 5-Copa Sunset | 6-Atlântica Estúdio
 // 7-Estúdio Copa | 8-Mar de Copa | 9-Mar de CopaII | 10-Copa Dream | 11-Sunset Estudio | 12-Sunset Premium
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apCopaLoft"){aplicarLinkApartamento(1);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apEstiloSunset"){aplicarLinkApartamento(2);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apAtlanticoLoft"){aplicarLinkApartamento(3);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apSunsetGarden"){aplicarLinkApartamento(4);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apCopaSunset"){aplicarLinkApartamento(5);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apAtlanticaEstudio"){aplicarLinkApartamento(6);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apEstudioCopa"){aplicarLinkApartamento(7);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apMarDeCopa"){aplicarLinkApartamento(8);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apMarDeCopaII"){aplicarLinkApartamento(9);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apCopaDream"){aplicarLinkApartamento(10);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apSunsetEstudio"){aplicarLinkApartamento(11);}
-if (linkApartamento == "http://191.163.2.89:5500/SunsetRioRental/index.html#apSunsetPremium"){aplicarLinkApartamento(12);}
+//Para aplcar, enviar link como por exemplo: SunsetRioRental/index.html#apCopaLoft
+if (linkApartamento.includes("apCopaLoft")){aplicarLinkApartamento(1);}
+if (linkApartamento.includes("apEstiloSunset")){aplicarLinkApartamento(2);}
+if (linkApartamento.includes("apAtlanticoLoft")){aplicarLinkApartamento(3);}
+if (linkApartamento.includes("apSunsetGarden")){aplicarLinkApartamento(4);}
+if (linkApartamento.includes("apCopaSunset")){aplicarLinkApartamento(5);}
+if (linkApartamento.includes("apAtlanticaEstudio")){aplicarLinkApartamento(6);}
+if (linkApartamento.includes("apEstudioCopa")){aplicarLinkApartamento(7);}
+if (linkApartamento.includes("apMarDeCopa")){aplicarLinkApartamento(8);}
+if (linkApartamento.includes("apMarDeCopaII")){aplicarLinkApartamento(9);}
+if (linkApartamento.includes("apCopaDream")){aplicarLinkApartamento(10);}
+if (linkApartamento.includes("apSunsetEstudio")){aplicarLinkApartamento(11);}
+if (linkApartamento.includes("apSunsetPremium")){aplicarLinkApartamento(12);}
 
 function aplicarLinkApartamento(numeroLink){
     efeitoDesfocar();
-    document.location.href = "http://191.163.2.89:5500/SunsetRioRental/index.html#modalApartamento";
+    document.location.href = "#modalApartamento";
     selecaoDeApartamento(numeroLink);
 }
