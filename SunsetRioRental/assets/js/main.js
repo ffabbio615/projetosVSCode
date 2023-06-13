@@ -599,7 +599,7 @@ function selecionarRepostaFaq(resposta){
 const linkApartamento = document.location.href;
 // 1-COPA LOFT | 2-Estilo Sunset | 3-Atlântico Loft | 4-Sunset Garden | 5-Copa Sunset | 6-Atlântica Estúdio
 // 7-Estúdio Copa | 8-Mar de Copa | 9-Mar de CopaII | 10-Copa Dream | 11-Sunset Estudio | 12-Sunset Premium
-//Para aplcar, enviar link como por exemplo: SunsetRioRental/index.html#apCopaLoft
+// Para aplcar, enviar link como por exemplo: SunsetRioRental/index.html#apCopaLoft
 if (linkApartamento.includes("apCopaLoft")){aplicarLinkApartamento(1);}
 if (linkApartamento.includes("apEstiloSunset")){aplicarLinkApartamento(2);}
 if (linkApartamento.includes("apAtlanticoLoft")){aplicarLinkApartamento(3);}
