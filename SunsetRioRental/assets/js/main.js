@@ -2,12 +2,14 @@
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-//SELECIONA O IDIOMA PARA GERAR AS MODAIS DO SITE NA LINGUAGEM CORRETA
-botaoPortugues = document.getElementById('botaoPortugues');
-botaoIngles = document.getElementById('botaoIngles');
-let idioma =1;
-botaoPortugues.onclick = function(){idioma=1;};
-botaoIngles.onclick = function(){idioma=2;};
+
+let idioma;
+carregarIdiomaDaPagina();
+function carregarIdiomaDaPagina(){
+    idioma = JSON.parse(localStorage.getItem('idioma'));
+    if(idioma == null){idioma = 1;}
+}
+
 
 //REDIRECIONA PARA O TOPO, CASO AS INFORMAÇÕES DOS APARTAMENTOS ESTEJAM VAZIAS E A PÁGINA RETORNE POR LINK EXTERNO
 if(document.location.href.includes ("modalApartamento")){
@@ -198,7 +200,25 @@ function inserirTextoDoApartamento(i,idiomaAp)
             mapaLocalizacao = document.querySelector("#avAtlantica3806");
         }
         else{
-
+            tituloModalApartamento.innerHTML = "Copa Loft";
+            subTituloModalApartamento.innerHTML = "Apartment by the sea";
+            conteudoCamasModalApartamento.innerHTML = "1 Double + 1 Single + 1 Auxiliary";
+            conteudoPessoasModalApartamento.innerHTML = "4 People";
+            conteudoMetragemModalApartamento.innerHTML = "25m²";
+            botaoCTAModalApartamento.href = "https://www.airbnb.com.br/rooms/588235675505978964?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924216_BZOKqVXzh4kfVq4r";
+            botaoCTAMobileModalApartamento.href = "https://www.airbnb.com.br/rooms/588235675505978964?_set_bev_on_new_domain=1685924216_MjE4ODNlYzNhYWMx&source_impression_id=p3_1685924216_BZOKqVXzh4kfVq4r";
+            descricaoModalApartamento.innerHTML = "Copa Loft is an apartment of approximately 28m², which sleeps up to 4 people, located by the sea, and overlooking the back street of the beach. The apartment has 1 queen bed and 1 single bed with an auxiliary bed, for cooling, it has air conditioning in the bedroom and a fan in the living room. It also has a small kitchen, equipped with cooking utensils, table with chairs, refrigerator, stove, microwave, bathroom with electric shower, TV and wifi.";
+            facilidade1ModalApartamento.innerHTML = "WIFI";
+            facilidade2ModalApartamento.innerHTML = "AIR CONDITIONING";
+            facilidade3ModalApartamento.innerHTML = "FAN";
+            facilidade4ModalApartamento.innerHTML = "TOWELS";
+            facilidade5ModalApartamento.innerHTML = "BEDDING";
+            facilidade6ModalApartamento.innerHTML = "GAMES";
+            facilidade7ModalApartamento.innerHTML = "IRON";
+            facilidade8ModalApartamento.innerHTML = "HAIRDRYER";
+            facilidade9ModalApartamento.innerHTML = "SOAP";
+            facilidade10ModalApartamento.innerHTML = "FIRST AID KIT";
+            mapaLocalizacao = document.querySelector("#avAtlantica3806");
         }
     }
     // Estilo Sunset

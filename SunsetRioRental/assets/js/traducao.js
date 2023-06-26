@@ -1,7 +1,7 @@
 
 const dataAtual = new Date();
 document.querySelector("#trParagrafoCopyright").innerHTML = `© ${dataAtual.getFullYear()} - Todos os direitos reservados. Desenvolvido por Fábio Marques.`;
-let ids = [
+const ids = [
 
 //PRIMEIRA PÁGINA
 
@@ -182,7 +182,7 @@ const dicionarioPortugues = [
 "LOCALIZAÇÃO"
 
 ];
-let dicionarioIngles = [
+const dicionarioIngles = [
     "Sunset Rio – Vacation rentals in Copacabana",
     "Mon - Sat: 9:00 - 18:00",
     "APARTMENTS",
@@ -318,26 +318,29 @@ let dicionarioIngles = [
 ];
 
 let alterarIdioma;
+let idiomaTraducao = 1;
 
 const botaoPortugues = document.getElementById('botaoPortugues');
 const botaoIngles = document.getElementById('botaoIngles');
-botaoPortugues.onclick = function() {
-    for (let i=0; i<dicionarioPortugues.length; i++){
-       // console.log("Português:", ids[i]);
-        alterarIdioma = document.getElementById(ids[i]);
-        alterarIdioma.innerText = dicionarioPortugues[i];
-    }
-    return;
-};
 
-botaoIngles.onclick = function() {
-    for (let i=0; i<dicionarioIngles.length; i++){
-       // console.log("Inglês:", ids[i]);
+carregarIdiomaDaPagina();
+function carregarIdiomaDaPagina(){
+    idiomaTraducao = JSON.parse(localStorage.getItem('idioma'));
+    if(idiomaTraducao != null){alterarIdiomaDaPagina();}
+}
+
+botaoPortugues.onclick = function() {idiomaTraducao = 1; alterarIdiomaDaPagina();};
+botaoIngles.onclick = function() {idiomaTraducao = 2; alterarIdiomaDaPagina();};
+
+function alterarIdiomaDaPagina(){
+    for (let i=0; i<ids.length; i++){
         alterarIdioma = document.getElementById(ids[i]);
-        alterarIdioma.innerText = dicionarioIngles[i];
+        if (idiomaTraducao == 1){alterarIdioma.innerText = dicionarioPortugues[i]; idioma = 1;}
+        if (idiomaTraducao == 2){alterarIdioma.innerText = dicionarioIngles[i];  idioma = 2;}
     }
+    localStorage.setItem('idioma', JSON.stringify(idiomaTraducao));
     return;
-};
+}
 
 // PRIMEIRA PÁGINA
 
