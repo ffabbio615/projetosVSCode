@@ -12,13 +12,21 @@ nomeDoArray.unshift (adiciona valor antes do primeiro elemento do array)
 nomeDoArray.pop (remove valor do último elemento do array)
 nomeDoArray.shift (remove valor do primeiro elemento do array)
 nomeDoArray.slice (0,X) (seleciona dentro do array os slots 0 até X)
+arrayComDoisIndices = [ [1,2,3] [4,5,6] [7,8,9] ]; (Temos os índices 0,1 e 2 dentro dos índices 0,1 e 2. Para acessar o 6 > arrayComDoisIndices[1][2])
 
 
 COMANDOS AVULSOS:
 Console.log(""); > Mostrar alguma coisa ou resultado no console
 Typeof> Diz o tipo da variável
+Instanceof > Diz se é uma instância de um objeto. Ex.: new Date(); é uma instanceof Date
 <script src=""></script> > Abre um arquivo, seja em JS ou outros
 Alert, confirm e prompt > caixas de informação, de confirmação e de inserção de informação, respectivamente
+
+
+TIMERS
+setInterval(const t = function (){método();}, 1000); > Realiza a função de 1 em 1 segundo, sendo o tempo em milisegundos, por isso 1000 para dar 1 segundo
+setTimeout(function(){clearInterval(t);}, 10000); > Realiza o cancelamento do timer com (clearInterval) em 10 segundos. Pode usar a função sem o
+  "clearInterval", mas o timer só funcionará 1 vez, difente do setInterval, que funciona direto até ser desativado.
 
 
 MATH:
@@ -32,6 +40,7 @@ MATH:
 
 STRINGS
 .includes("texto"); > Verifica se um texto, letra ou palavra específicos estão dentro da frase
+.replace("texto", ""); > Pega todas as palavras "texto" e substitui por "" | .replace("texto", "").trim(); > Retira os espaços em branco
 .toString("variavelNumerica"); > Converte qualquer informação de outros tipos de variáveis em texto
 
 
@@ -58,7 +67,39 @@ OPERADORES DE COMPARAÇÃO
 || Ou / Uma coisa ou outra
 
 
+ESTRUTURA DE CONDIÇÃO (IF COMPACTO)
+//Função que recebe dois números e exibe o maior > const maior = (x,y) => x > y ? x : y | console.log (maior(10, 5));
+--Maior vai receber X e Y, depois se X for maior que Y, então exibe X, senão exibe Y--
+
+
+ESTRUTURAS DE REPETIÇÃO
+For in > Utilizado em arrays e objetos, ele percorre os índices. Ex.: const frutas = [maçã, banana, pêra]; | for (let i in frutas){console.log(frutas[i]);}
+For of > Utilizado somente em arrays, percorre o valor dos índices. Ex.: const frutas = [maçã, banana, pêra]; | for (let i of frutas){console.log(i);}
+For each > Também percorre os valores através de uma função. Ex.: const frutas = [maçã, banana, pêra]; | frutas.forEach(function(i){console.log(i);});
+Break e Continue> O break encerra as ações na estrutura de repetição. O continue pula uma das repetições caso a condição seja atendida.
+
+
+TRATAMENTO DE ERROS (TRY CATCH THROW FINALLY)
+Try/Catch > try{ blocoASerTratado } catch(erro){ console.log("Ocorreu um erro."); } > Exibe "Ocorreu um erro" quando ocorre um erro. É uma forma genérica
+Throw > function (){throw ("Ocorreu um erro.");} try{chamaFUncao} catch (erro){console.log(erro);} > Exibe a mensagem "Ocorreu um erro" que está em throw.
+Finally > finally{console.log("Finally sempre será executado");} > Depois do catch, se houver um finally, ele sempre será executado, independente do erro.
+
+
+
+DOM (Document Object Model) > É a árvore de elementos que encontramos numa linguagem. Por exemplo o HTML, começa com Window, depois vem Document, depois
+HTML, depois Head, Body, e por aí vai.
+
+
+JSON
+const variavel = JSON.stringify(variavelConvertidaEmStringJSON); > Comando que converte uma variável em string JSON para ser armazenada
+localStorage.setItem("nomeDoArmazenamento", variavel); > Cria o armazenamento local "nomeDoArmazenamento" e salva tudo que está em "variavel"
+const variavel = localStorage.getItem("nomeDoArmazenamento"); > Recupera os dados do armazenamento local chamado "nomeDoArmazenamento"
+const lista = JSON.parse(variavel); > Adiciona todos os dados da lista do armazenamento local numa lista
+
+
 JAVASCRIPT-HTML
+
+Selecionar Elemento Por ID, Classe ou Tipo:
 
 document.querySelector('#idDoElementoHtml'); > Seleciona um elemento HTML pelo id dele. Uma variável recebendo isso passa a ter tudo do elemento
 document.querySelector('.classeDoElemento'); > Seleciona um elemento HTML pela classe dele.
@@ -66,6 +107,15 @@ document.querySelector('.classe h1'); > Seleciona um elemento HTML, nesse caso h
 document.getElementById("idDoElementoHtml"); > Seleciona um ID, porém não precisa de #
 document.getElementByClass('classeDoElemento'); > Seleciona uma classe, porém não precisa de pronto
 document.getElementById('idDoElementoHtml').getElementsByClassName('classeDoElementoHtml'); > Seleciona todas as classes com nome específico dentro de um id
+
+Node List (Similar ao array, pode utilizar os índices para manipular seus atributos internos), por exemplo, com parágrafo:
+document.querySelectorAll('p'); > Seleciona todos os elementos <p> do documento, criando uma node list.
+
+
+Atribuir a uma variável todos os estilos de CSS que foram computados a um elemento. Por exemplo no body:
+
+const estilosBody = getComputedStyle(document.body);
+
 
 
 form.addEventListener('tipoDeEvento tipo submit', function (parametro reconhecido, no caso, form) {}); > Adiciona um evento a um elemento com ação dentro da função

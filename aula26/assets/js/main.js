@@ -1,6 +1,14 @@
 // Capturar evento de submit do formulário
 const form = document.querySelector('#formulario');
 
+const testePeso = document.querySelector("#peso");
+testePeso.onkeypress = function(e){
+  if(e.keyCode == 13)
+  {
+    console.log(e);
+  }
+}
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const inputPeso = e.target.querySelector('#peso');
