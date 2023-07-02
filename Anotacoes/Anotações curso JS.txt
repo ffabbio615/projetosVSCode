@@ -113,9 +113,19 @@ document.querySelectorAll('p'); > Seleciona todos os elementos <p> do documento,
 
 
 Atribuir a uma variável todos os estilos de CSS que foram computados a um elemento. Por exemplo no body:
-
 const estilosBody = getComputedStyle(document.body);
 
+
+CALLBACK> Funciona quando você quer que algo só funcione depois de uma certa atividade, por exemplo abrir o painel do sistema após esperar o login ser feito
+
+
+IIFE (Expressão de função invocada imediatamente) > Cria uma função fora do escopo global que realiza qualquer coisa dentro dela, como se fosse na linha de
+código normal, mas sem exibir ao usuário. 
+Ex.: (function(){variáveis e funções})();
+
+
+EVAL > Avalia se um objeto de document possui a string válida para executar uma ação em javascript. Ex.: inputDeSoma = document.querySelector(.soma);
+const conta = eval(inputDeSoma.value); | É bom usar dentro de try/catch
 
 
 form.addEventListener('tipoDeEvento tipo submit', function (parametro reconhecido, no caso, form) {}); > Adiciona um evento a um elemento com ação dentro da função
