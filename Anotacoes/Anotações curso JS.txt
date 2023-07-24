@@ -13,6 +13,28 @@ nomeDoArray.pop (remove valor do último elemento do array)
 nomeDoArray.shift (remove valor do primeiro elemento do array)
 nomeDoArray.slice (0,X) (seleciona dentro do array os slots 0 até X)
 arrayComDoisIndices = [ [1,2,3] [4,5,6] [7,8,9] ]; (Temos os índices 0,1 e 2 dentro dos índices 0,1 e 2. Para acessar o 6 > arrayComDoisIndices[1][2])
+Object.freeze(nomeDoArray); (congela os valores e não permite mudar. Serve para objetos também)
+
+
+OBJETOS
+Object.defineProperty(obj, 'nome', { enumerable: true, value: nome, writable: false, configurable: false }); > Configuração de uma chave privada do objeto.
+Object.defineProperties(obj, {nome: {enumerable: true, value: nome, writable: false, ...}}) > Configuração de várias chaves privadas num objeto.
+Enumerable a torna exibível, value atribue o valor passado como parâmetro no método construtor, writable não permite alterar o valor depois de atribuido e
+configurable não permite mais configurar a chave, assim como apagar, etc.
+Object.getOwnPropertyDescriptor(obj, nome); > Recupera os dados da chave nome no objeto, informando se é enumerable, writable e configurable.
+Object.keys (pessoa); > mostra as chaves do objeto (nome, sobrenome, idade, etc)
+Object.values(pessoa); > mostra os valores das chaves do objeto.
+const produto = {nome: 'caneca', preco: 30.0}; const p = {...produto} > Chamado de Spread, em vez de ambas apontarem para o mesmo endereçamento de memória,
+as constantes agora são independentes.
+const produto = {nome: 'caneca', preco: 30.0}; const p = Object.assign({}, produto); > Outra forma de copiar um objeto sem ter o mesmo endereço de memória
+Produto.prototype.nomeCompleto = function(){ return this.nome + ' ' + this.sobrenome; } > Atribui um método ao objeto sem utilizar dentro do construtor,
+através do __proto__ (prototype) dele.
+Object.setPrototypeOf(cidadaoBrasileiro, cidadaoPortugues); > O objeto cidadaoBrasileiro recebe, sem construtor, o protótipo do objeto cidadaoPortugues.
+O construtor é um molde que dá os protótipos iguais para os objetos, mas dá para herdar de outro objeto sem ele pelo "setPrototypeOf".
+DENTRO DO CONSTRUTOR DE CAMISETA: Produto.call(this, nome, preco); > Serve para herdar atributos do método construtor Produto.
+Camiseta.prototype = Object.create(Produto.prototype); > Cria um objeto prototype de produto dentro do objeto camiseta.
+Camiseta.prototype.constructor = Camiseta; > Recebe o prototype construtor do objeto original (Camiseta), caso tenha recebido outro prototype, tipo produto
+
 
 
 COMANDOS AVULSOS:
@@ -42,6 +64,9 @@ STRINGS
 .includes("texto"); > Verifica se um texto, letra ou palavra específicos estão dentro da frase
 .replace("texto", ""); > Pega todas as palavras "texto" e substitui por "" | .replace("texto", "").trim(); > Retira os espaços em branco
 .toString("variavelNumerica"); > Converte qualquer informação de outros tipos de variáveis em texto
+.toLowerCase(); > Converte as letras em minúsculas
+.toUpperCase(); > Converte as letras em maiúsculas
+.endswith('letra'); > Checa se a string termina com a letra escolhida
 
 
 DATAS
