@@ -56,13 +56,14 @@ MATH:
 .ceil > retira as casas decimais e arredonda para cima
 .round > arredonda um número para cima ou baixo - tipo 9.49 para 9 ou 9.5 ou mais para 10
 .min e .max > pega da sequência o menor e o maior número dentro de uma sequência de números
-.random > pega um número aleatório entre 0 e 1 (se quiser por exemplo de 0 a 9, será random() *10. Para 1 até 10, ficará random() *10 +1
+.random > pega um número aleatório entre 0 e 1 (se quiser por exemplo de 0 a 9, será random() *10. Para 1 até 10, ficará random() *10 +1)
 .toFixed(x) > Retorna o número de casas decimais após a vírgula em x quantidade.
 
 
 STRINGS
 .includes("texto"); > Verifica se um texto, letra ou palavra específicos estão dentro da frase
 .replace("texto", ""); > Pega todas as palavras "texto" e substitui por "" | .replace("texto", "").trim(); > Retira os espaços em branco
+.replace(/\D+/g, ''); > Pega o texto e substitui tudo que não for número por ''
 .toString("variavelNumerica"); > Converte qualquer informação de outros tipos de variáveis em texto
 .toLowerCase(); > Converte as letras em minúsculas
 .toUpperCase(); > Converte as letras em maiúsculas
