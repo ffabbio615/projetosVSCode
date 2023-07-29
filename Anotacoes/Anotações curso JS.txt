@@ -36,6 +36,11 @@ Camiseta.prototype = Object.create(Produto.prototype); > Cria um objeto prototyp
 Camiseta.prototype.constructor = Camiseta; > Recebe o prototype construtor do objeto original (Camiseta), caso tenha recebido outro prototype, tipo produto
 
 
+POO
+Factory function (funções normais que não precisam de New Aula75) | Constructor Function (funções construtoras Aula77)
+
+
+
 
 COMANDOS AVULSOS:
 Console.log(""); > Mostrar alguma coisa ou resultado no console
