@@ -1,0 +1,2 @@
+CTRL+ALT+L > Seleciona todas as palavras iguais para substituição
+CTRL+D > Seleciona a próxima palavra igual a da selecionada. Para cada vez pressionada, seleciona a próxima palavra.

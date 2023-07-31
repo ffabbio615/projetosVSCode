@@ -39,7 +39,20 @@ Camiseta.prototype.constructor = Camiseta; > Recebe o prototype construtor do ob
 POO
 Factory function (funções normais que não precisam de New Aula75) | Constructor Function (funções construtoras Aula77)
 
-
+CLASSES
+Class NomeEmMaiusculo > Inicia uma classe
+const _atributoPrivado = Symbol('Aqui pode colocar qualquer descrição se quiser'); > Declaração de atributo privado
+constructor(atributo1, atributo2){this.atributo1=atributo1;...} > Método construtor da classe
+this[_atributoPrivado] = valor > Forma de usar o atributo privado
+set acaoAtributo(atributo){this.atributo=atributo} > Método set da classe
+get acaoAtributo(){return this.atributo} > Método get da classe
+metodoDaClasse(){} > Função (método) de uma classe em javascript
+HERANÇA
+Class NomeEmMaiusculo extends OutraClasse > Inicia uma classe herdando de OutraClasse (Aula104)
+constructor(atributo1, atributo2){super(atributo1); this.atributo2 = atributo2;} > Inicia um construtor na filha e herda atributo1 de pai (em ordem)
+MÉTODO ESTÁTICO
+static nomeDoMetodo(){} > Método estático que só pode ser utilizado pela classe. Um exemplo de uso é uma classe com métodos de abrir arquivo, salvar, etc
+NomeDaClasse.nomeDoMetodo(); > Para utilizar um método estático, não se pode instanciar um objeto da classe, e sim chamar pela própria classe.
 
 
 COMANDOS AVULSOS:
@@ -73,6 +86,9 @@ STRINGS
 .toLowerCase(); > Converte as letras em minúsculas
 .toUpperCase(); > Converte as letras em maiúsculas
 .endswith('letra'); > Checa se a string termina com a letra escolhida
+.split(' '); > Cria um array separando as Strings que vem depois de um espaço vazio ' '
+palavra = frase.shift(); > Palavra recebe primeira palavra e a remove da frase
+.join(' ') > Junta todas as palavras de um array de string, mas separando-as por um espaço vazio ' '
 
 
 DATAS
@@ -138,9 +154,10 @@ document.querySelector('.classe h1'); > Seleciona um elemento HTML, nesse caso h
 document.getElementById("idDoElementoHtml"); > Seleciona um ID, porém não precisa de #
 document.getElementByClass('classeDoElemento'); > Seleciona uma classe, porém não precisa de pronto
 document.getElementById('idDoElementoHtml').getElementsByClassName('classeDoElementoHtml'); > Seleciona todas as classes com nome específico dentro de um id
+document.querySelectorAll('p'); > Seleciona todos os elementos <p> do documento, criando uma node list. > Node List (Similar ao array, pode utilizar os
+índices para manipular seus atributos internos)
+elemento.classList.contains('cpf'); > Seleciona o elemento no qual contém em sua ou suas classes uma com o nome "cpf".
 
-Node List (Similar ao array, pode utilizar os índices para manipular seus atributos internos), por exemplo, com parágrafo:
-document.querySelectorAll('p'); > Seleciona todos os elementos <p> do documento, criando uma node list.
 
 
 Atribuir a uma variável todos os estilos de CSS que foram computados a um elemento. Por exemplo no body:
@@ -159,7 +176,7 @@ EVAL > Avalia se um objeto de document possui a string válida para executar uma
 const conta = eval(inputDeSoma.value); | É bom usar dentro de try/catch
 
 
-form.addEventListener('tipoDeEvento tipo submit', function (parametro reconhecido, no caso, form) {}); > Adiciona um evento a um elemento com ação dentro da função
+form.addEventListener('submit', function (parametro) {}); > Adiciona um evento a um elemento com ação dentro da função
 elemento.preventDefault(); > Cancela a ação de um elemento, tipo cancelar o post de um form
 
 `Texto mais ${variavel}` > Passa o valor das variáveis de javascript para HTML, através das crases. Só funciona dentro das crases e pode passar aspas dentro como texto
@@ -168,8 +185,12 @@ return > Interrompe o que vier depois desse código, seja num método ou num có
 
 document.createElement('p'); > Cria um elemento HTML. Nesse caso P (parágrafo) foi criado
 
+elemento.remove(); > Remove um elemento HTML
+
 variavelQueRecebeuUmaTag.innerHTML = ''; > Mexe dentro do conteúdo de uma TAG. Nesse caso limpou o que estava dentro da TAG, tipo apagar uma Div
 
 variavelQueRecebeuUmaTag.innerHTML.appendChild(TAGHTML); > Adiciona dentro de uma TAG (tipo uma DIV) um elemento HTML (pode ser um parágrafo, um pedaço novo de página)
 
+variavelQueRecebeuUmaTag.insertAdjacentElement('afterend', div); > Adiciona logo após uma variável uma div, em vez de dentro, como appendChild.
 
+const nomeDoElementoAnterior = elemento.previousElementSibling.innerText; > Recupera o texto do elemento anterior ao elemento em questão.
