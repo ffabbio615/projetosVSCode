@@ -1,0 +1,10 @@
+*{ margin: 0; padding: 0; }
+body{ background-color: rgb(32, 32, 32);}
+header{ margin: 3vh 5%; height: 4vh; width: 90%; }
+h1{ color: white; text-align: center; }
+section{ width: 70%; height: 89vh; margin: 0% 15%; padding-top: 1vh; background-color: white; border-radius: 0.5%;}
+h2{ margin: 1% 0 1% 1%;}
+.div-formulario{display: flex; width:80%; padding: 0 10%;}
+form label, input{display: block;}
+form{width: 100%;}
+label{font-size: 1.2em; margin: 2% 0 5px 0;} input{width: 90%; height: 3vh;}

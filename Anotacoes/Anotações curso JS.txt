@@ -42,6 +42,7 @@ Factory function (funções normais que não precisam de New Aula75) | Construct
 CLASSES
 Class NomeEmMaiusculo > Inicia uma classe
 const _atributoPrivado = Symbol('Aqui pode colocar qualquer descrição se quiser'); > Declaração de atributo privado
+#atributoPrivado > Nova declaração de atributo privado. Para chamar dentro da classe, utilizar this.#atributoPrivado. Para fora, usar get.
 constructor(atributo1, atributo2){this.atributo1=atributo1;...} > Método construtor da classe
 this[_atributoPrivado] = valor > Forma de usar o atributo privado
 set acaoAtributo(atributo){this.atributo=atributo} > Método set da classe

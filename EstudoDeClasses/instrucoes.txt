@@ -1,0 +1,14 @@
+Criar um cadastro de aluno e professores de classe pessoa, onde fechará uma turma com no mínimo 3 alunos, daí poderá atribuir o professor a essa turma
+
+Pessoa tem:
+Nome
+Sobrenome
+Endereço
+Matrícula
+turma
+
+Aluno tem
+série
+
+Professor tem
+disciplina

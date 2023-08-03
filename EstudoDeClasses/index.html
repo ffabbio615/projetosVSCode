@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Cadastro de Professores e Alunos</title>
+</head>
+<body>
+<header>
+    <h1>SISTEMA DE CADASTRO DE ALUNOS E PROFESSORES</h1>
+</header>
+<section>
+    <h2>ALUNO:</h2>
+    <div class="div-formulario">
+        <form action="" method="post" class="formulario">
+            <label>Nome:</label>
+            <input type="text" class="campoTexto" placeholder="Ex.: João">
+            <label>Sobrenome:</label>
+            <input type="text" class="campoTexto" placeholder="Ex.: Almeida Reis">
+            <label>Endereço:</label>
+            <input type="text" class="campoTexto" placeholder="Ex.: Rua das Couves">
+            <label>Matrícula:</label>
+            <input type="text" class="campoTexto" placeholder="Ex.: 12345">
+            <label>Turma:</label>
+            <input type="text" class="campoTexto" placeholder="Ex.: 1001">
+            <div>
+                <label>Série:</label>
+                <input type="text" class="campoTexto" placeholder="Ex.: 9º ano">
+            </div>
+
+            <div>
+                <label>Disciplina:</label>
+                <input type="text" disabled placeholder="Ex.: Português">
+            </div>
+            <button type="submit">ENVIAR</button>
+        </form>
+    </div>
+</section>
+
+
+    <script src="./assets/js/pessoa.js"></script>
+    <script src="./assets/js/aluno.js"></script>
+    <script src="./assets/js/professor.js"></script>
+    <script src="./assets/js/controlador.js"></script>
+</body>
+</html>
