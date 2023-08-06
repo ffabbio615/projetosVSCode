@@ -1,8 +1,8 @@
-class Aluno extends Pessoa
+class AlunoModel extends PessoaModel
 {
-    constructor(nome, sobrenome, endereco, matricula, turma, serie){
-        super(nome, sobrenome, endereco, matricula, turma);
-        this.serie = serie;
+    constructor(){
+        super();
+        this.serie = '';
     }
 
     

@@ -13,14 +13,14 @@
 // Professor tem
 // disciplina
 
-class Pessoa{
+class PessoaModel{
 
-    constructor(nome, sobrenome, endereco, matricula, turma){
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.endereco = endereco;
-        this.matricula = matricula;
-        this.turma = turma;
+    constructor(){
+        this.nome = '';
+        this.sobrenome = '';
+        this.endereco = '';
+        this.matricula = '';
+        this.turma = '';
     }
 
 }
