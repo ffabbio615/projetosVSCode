@@ -12,20 +12,12 @@ class AlunoView {
     getInputs() {
       return {
         nome: this.inputNome.value,
-        sobrenome: this.sobrenome.value,
-        endereco: this.endereco.value,
-        matricula: this.matricula.value,
+        sobrenome: this.inputSobrenome.value,
+        endereco: this.inputEndereco.value,
+        matricula: this.inputMatricula.value,
         turma: this.inputTurma.value,
         serie: this.inputSerie.value,
       };
-    }
-  
-    bindAdicionarAluno(handler) {
-        this.adicionarButton.addEventListener('click', () => {
-        const inputs = this.getInputs();
-        handler(inputs);
-        this.limparInputs();
-      });
     }
   
     limparInputs() {

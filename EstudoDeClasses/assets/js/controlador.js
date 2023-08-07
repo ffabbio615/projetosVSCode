@@ -3,13 +3,16 @@ class AlunoController {
       this.model = model;
       this.view = view;
   
-      this.view.bindAdicionarAluno(this.adicionarAluno.bind(this));
+      this.adicionarAluno();
     }
-  
-    adicionarAluno(inputs) {
-      const aluno = new AlunoModel();
-      Object.assign(aluno, inputs);
-      console.log(aluno);
+
+    adicionarAluno() {
+      this.view.adicionarButton.addEventListener('click', e => {
+      e.preventDefault();
+      Object.assign(this.model, this.view.getInputs());
+      alert(this.model.nome);
+      this.view.limparInputs();
+      });
     }
   }
   
