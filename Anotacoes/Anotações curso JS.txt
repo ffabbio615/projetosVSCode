@@ -147,8 +147,7 @@ const lista = JSON.parse(variavel); > Adiciona todos os dados da lista do armaze
 
 JAVASCRIPT-HTML
 
-Selecionar Elemento Por ID, Classe ou Tipo:
-
+SELECIONAR ELEMENTOS POR ID, CLASSE OU TIPO:
 document.querySelector('#idDoElementoHtml'); > Seleciona um elemento HTML pelo id dele. Uma variável recebendo isso passa a ter tudo do elemento
 document.querySelector('.classeDoElemento'); > Seleciona um elemento HTML pela classe dele.
 document.querySelector('.classe h1'); > Seleciona um elemento HTML, nesse caso h1, dentro do elemento com a classe selecionada.
@@ -158,11 +157,6 @@ document.getElementById('idDoElementoHtml').getElementsByClassName('classeDoElem
 document.querySelectorAll('p'); > Seleciona todos os elementos <p> do documento, criando uma node list. > Node List (Similar ao array, pode utilizar os
 índices para manipular seus atributos internos)
 elemento.classList.contains('cpf'); > Seleciona o elemento no qual contém em sua ou suas classes uma com o nome "cpf".
-
-
-
-Atribuir a uma variável todos os estilos de CSS que foram computados a um elemento. Por exemplo no body:
-const estilosBody = getComputedStyle(document.body);
 
 
 CALLBACK> Funciona quando você quer que algo só funcione depois de uma certa atividade, por exemplo abrir o painel do sistema após esperar o login ser feito
@@ -177,21 +171,25 @@ EVAL > Avalia se um objeto de document possui a string válida para executar uma
 const conta = eval(inputDeSoma.value); | É bom usar dentro de try/catch
 
 
-form.addEventListener('submit', function (parametro) {}); > Adiciona um evento a um elemento com ação dentro da função
+ADICIONAR EVENTO A UM ITEM HTML
+botao.onclick = function(){ }
+botao.addEventListener('click', e => {});
+botao.addEventListener('submit', function (parametro) {}); > Adiciona um evento a um elemento com ação dentro da função
 elemento.preventDefault(); > Cancela a ação de um elemento, tipo cancelar o post de um form
 
-`Texto mais ${variavel}` > Passa o valor das variáveis de javascript para HTML, através das crases. Só funciona dentro das crases e pode passar aspas dentro como texto
 
-return > Interrompe o que vier depois desse código, seja num método ou num código aberto
-
+CRIAÇÃO, MODIFICAÇÃO E REMOÇÃO EM ELEMENTOS HTML COM JAVASCRIPT
 document.createElement('p'); > Cria um elemento HTML. Nesse caso P (parágrafo) foi criado
-
 elemento.remove(); > Remove um elemento HTML
-
 variavelQueRecebeuUmaTag.innerHTML = ''; > Mexe dentro do conteúdo de uma TAG. Nesse caso limpou o que estava dentro da TAG, tipo apagar uma Div
-
-variavelQueRecebeuUmaTag.innerHTML.appendChild(TAGHTML); > Adiciona dentro de uma TAG (tipo uma DIV) um elemento HTML (pode ser um parágrafo, um pedaço novo de página)
-
+variavelQueRecebeuUmaTag.innerHTML.appendChild(TAGHTML); > Adiciona dentro de uma TAG (tipo uma DIV) um elemento HTML 
+(pode ser um parágrafo, um pedaço novo de página)
 variavelQueRecebeuUmaTag.insertAdjacentElement('afterend', div); > Adiciona logo após uma variável uma div, em vez de dentro, como appendChild.
-
 const nomeDoElementoAnterior = elemento.previousElementSibling.innerText; > Recupera o texto do elemento anterior ao elemento em questão.
+
+DIFERENÇA ENTRE INNERTEXT E TEXTCONTENT:
+.innerText = ''; Atribui um valor de texto a um elemento, porém ele deve ter display diferente de none, ou seja, ser visível
+.textContent = ''; Faz a mesma coisa que innerText, porém com qualquer elemento, estando ele visível ou não.
+
+ATRIBUIR A UMA VARIÁVEL TODOS OS ESTILOS DE CSS QUE FORAM COMPUTADOS A UM ELEMENTO. POR EXEMPLO NO BODY:
+const estilosBody = getComputedStyle(document.body);
