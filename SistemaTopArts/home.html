@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Artes</title>
+</head>
+<body>
+    <div>
+        <div>
+    
+        </div>
+        
+        <div>
+            <h1>Criar um Cadastro na Top Artes</h1>
+            <h2>Insira seu Nome</h2>
+            <!-- Digite sua data de nascimento e gênero / Insira seus Dados Pessoais (Somente números) / Criando seu Usuário -->
+            <form action="">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" aria-label="Nome" id="input-name">
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" aria-label="Sobrenome" id="input-lastName">
+            
+                </div>
+                <div>
+                    <label for="dia">Dia:</label>
+                    <input type="text" aria-label="Dia" id="input-day">
+                    <label for="mês">Mês:</label>
+                    <select id="input-mounth">
+                        <option value="0">Selecione o Mês</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                    <label for="Ano">Ano:</label>
+                    <input type="text" aria-label="Ano" id="input-year">
+                    <input type="text" disabled value="15/05/1991" id="input-dob">
+                    <label for="Gênero">Gênero:</label>
+                    <select id="input-gender">
+                        <option value="0">Selecione o Gênero</option>
+                        <option value="1">Feminino</option>
+                        <option value="2">Masculino</option>
+                        <option value="3">Prefiro não Dizer</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Celular">Celular:</label>
+                    <input type="text" aria-label="Celular" placeholder="(21) 98765-4321" id="input-phoneNumber">
+                    <label for="CPF">CPF:</label>
+                    <input type="text" aria-label="CPF" placeholder="123.456.789-10" id="input-cpf">
+                </div>
+                <div>
+                    <label for="E-mail">E-mail:</label>
+                    <input type="email" aria-label="E-mail" id="input-email">
+                    <label for="Usuário">Como quer ser Chamado?</label>
+                    <input type="text" aria-label="Usuário" id="input-userName">
+                    <label for="Senha">Senha:</label>
+                    <input type="password" aria-label="Senha" id="input-password">
+                </div>
+                <div>
+                    <input type="text" id="input-freeCoins" value="1000" disabled>
+                </div>
+                <button></button>
+                <button id="button-next">Avançar</button>
+                <button id="button-register">Registrar</button>
+            </form>
+            </div>
+    
+        <div>
+    
+        </div>
+    </div>
+    <script src="./assets/js/personModel.js"></script>
+    <script src="./assets/js/personView.js"></script>
+    <script src="./assets/js/personController.js"></script>
+</body>
+</html>
