@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* FONTES */
+--tr: RobotoRegular; --tb: RobotoBold; --tbk: RobotoBlack; --tl: RobotoLight; --tm: RobotoMedium; --tbi: RobotoBoldItalic; --ti: RobotoItalic
+--str: RalewayRegular; --stb: RalewayBold; --stbk: RalewayBlack; --stlt: RalewayLight; --cr: VerdanaRegular; --cb: VerdanaBold; --ci: VerdanaItalic;
+}
+
+/*FONTES*/
+
+/* Titulos */
+@font-face {font-family: RobotoRegular; src: url("../font/titles/roboto/Roboto-Regular.ttf");}
+@font-face {font-family: RobotoBold; src: url("../font/titles/roboto/Roboto-Bold.ttf");}
+@font-face {font-family: RobotoBlack; src: url("../font/titles/roboto/Roboto-Black.ttf");}
+@font-face {font-family: RobotoLight; src: url("../font/titles/roboto/Roboto-Light.ttf");}
+@font-face {font-family: RobotoMedium; src: url("../font/titles/roboto/Roboto-Medium.ttf");}
+@font-face {font-family: RobotoBoldItalic; src: url("../font/titles/roboto/Roboto-BoldItalic.ttf");}
+@font-face {font-family: RobotoItalic; src: url("../font/titles/roboto/Roboto-Italic.ttf");}
+
+/*Subtítulos*/
+@font-face {font-family: RalewayRegular; src: url("../font/subtitles/raleway/Raleway-Regular.ttf");}
+@font-face {font-family: RalewayBold; src: url("../font/subtitles/raleway/Raleway-Bold.ttf");}
+@font-face {font-family: RalewayBlack; src: url("../font/subtitles/raleway/Raleway-ExtraBold.ttf");}
+@font-face {font-family: RalewayLight; src: url("../font/subtitles/raleway/Raleway-Medium.ttf");}
+
+
+/*Corpo*/
+@font-face {font-family: VerdanaRegular; src: url("../font/body/verdana/verdana-Regular.ttf");}
+@font-face {font-family: VerdanaBold; src: url("../font/body/verdana/verdana-bold.ttf");}
+@font-face {font-family: VerdanaItalic; src: url("../font/body/verdana/verdana-bold-italic.ttf");}
+
+html{scroll-behavior: smooth; transition: 1s;}
+/* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
+::-webkit-scrollbar {width:1.2vw;}
+::-webkit-scrollbar-track {background: rgb(235,235,235)}
+::-webkit-scrollbar-thumb {background: rgb(40,10,85); border-radius: 0.5vw; border: 3px solid rgb(235,235,235)}
+
+body{
+    background: radial-gradient(at left bottom, rgb(110,20,110) 15%, rgb(40,10,85) 50%), url("../img/backgroundTexture.svg");
+    background-blend-mode:multiply;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.mainDiv{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 11.2vh 83.2vh 5.6vh;
+    grid-template-areas: "headerDiv" "middleDiv" "footerDiv";
+}
+
+.headerDiv{
+    width: 100%;
+    height: 11.2vh;
+    display: flex;
+    grid-area: headerDiv;
+    justify-content: space-between;
+}
+
+.headerLogo{
+    height: 95%;
+    width: auto;
+    margin: 1vh 0 0 2.5vw;
+    cursor: pointer;
+}
+
+.headerButton{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/headerRightButton.png");
+}
+
+.headerButton a{
+    color: white;
+    margin-left: 20%;
+    font-family: var(--tbk);
+    font-size: 1.2vw;
+    letter-spacing: 0.09vw;
+    cursor: pointer;
+}
+
+.middleDiv{
+    grid-area: middleDiv;
+    overflow-y:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2vw 0 2vw;
+}
+
+.footerDiv{
+    grid-area: footerDiv;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 2vw;
+    font-family: var(--tbk);
+}
+
+h1, h2, p, label{color: white;}

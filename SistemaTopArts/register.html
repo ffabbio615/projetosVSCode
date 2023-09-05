@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/mainStyle.css">
     <title>Top Artes</title>
 </head>
 <body>
-    <div>
-        <div>
-    
+    <div class="mainDiv">
+        <div class="headerDiv">
+            <img class="headerLogo" src="./assets/img/logo.png">
+            <div class="headerButton"><a>VOLTAR</a></div>
         </div>
-        
-        <div>
-            <h1>Criar um Cadastro na Top Artes</h1>
-            <h2>Insira seu Nome</h2>
-            <!-- Digite sua data de nascimento e gênero / Insira seus Dados Pessoais (Somente números) / Criando seu Usuário -->
+        <div class="middleDiv">
+            <!-- Informações Iniciais / Insira sua data de nascimento e gênero
+            Dados Pessoais e Contato / Insira um número de celular um CPF e um e-mail válidos
+            Autenticação e Segurança / Insira como quer ser chamado e uma senha forte com letras, símbolos e números
+            Cadastro Realizado! / Clique AQUI para retornar e logar no sistema -->
             <form action="">
                 <div>
+                    <h1>Criar um Cadastro na Top Artes</h1>
+                    <h2>Insira seu nome abaixo:</h2>
                     <label for="nome">Nome:</label>
                     <input type="text" aria-label="Nome" id="input-name">
                     <label for="sobrenome">Sobrenome:</label>
                     <input type="text" aria-label="Sobrenome" id="input-lastName">
-            
+                
                 </div>
                 <div>
                     <label for="dia">Dia:</label>
@@ -78,8 +82,8 @@
             </form>
             </div>
     
-        <div>
-    
+        <div class="footerDiv">
+            <p>STE 1.0</p>
         </div>
     </div>
     <script src="./assets/js/personModel.js"></script>
