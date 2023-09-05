@@ -75,13 +75,23 @@ body{
     background-image: url("../img/headerRightButton.png");
 }
 
+.headerLink{
+    display: flex;
+    align-items: center;
+}
+
+.headerLink a{
+    text-decoration: none;
+    color: white;
+}
+
 .headerButton a{
     color: white;
+    text-decoration: none;
     margin-left: 20%;
     font-family: var(--tbk);
     font-size: 1.2vw;
     letter-spacing: 0.09vw;
-    cursor: pointer;
 }
 
 .middleDiv{
