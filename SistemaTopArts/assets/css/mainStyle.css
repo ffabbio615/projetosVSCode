@@ -3,37 +3,55 @@
     padding: 0;
     /* FONTES */
 --tr: RobotoRegular; --tb: RobotoBold; --tbk: RobotoBlack; --tl: RobotoLight; --tm: RobotoMedium; --tbi: RobotoBoldItalic; --ti: RobotoItalic
---str: RalewayRegular; --stb: RalewayBold; --stbk: RalewayBlack; --stlt: RalewayLight; --cr: VerdanaRegular; --cb: VerdanaBold; --ci: VerdanaItalic;
+--str: RalewayRegular; --stb: RalewayBold; --stbk: RalewayBlack; --stlt: RalewayLight; 
+--cr: VerdanaRegular; --cb: VerdanaBold; --ci: VerdanaItalic;
 }
 
 /*FONTES*/
 
 /* Titulos */
 @font-face {font-family: RobotoRegular; src: url("../font/titles/roboto/Roboto-Regular.ttf");}
+.regularTitle{font-family: var(--tr);}
 @font-face {font-family: RobotoBold; src: url("../font/titles/roboto/Roboto-Bold.ttf");}
+.boldTitle{font-family: var(--tb);}
 @font-face {font-family: RobotoBlack; src: url("../font/titles/roboto/Roboto-Black.ttf");}
+.blackTitle{font-family: var(--tbk);}
 @font-face {font-family: RobotoLight; src: url("../font/titles/roboto/Roboto-Light.ttf");}
+.lightTitle{font-family: var(--tl);}
 @font-face {font-family: RobotoMedium; src: url("../font/titles/roboto/Roboto-Medium.ttf");}
+.mediumTitle{font-family: var(--tm);}
 @font-face {font-family: RobotoBoldItalic; src: url("../font/titles/roboto/Roboto-BoldItalic.ttf");}
+.boldItalicTitle{font-family: var(--tbi);}
 @font-face {font-family: RobotoItalic; src: url("../font/titles/roboto/Roboto-Italic.ttf");}
+.italicTitle{font-family: var(--ti);}
 
 /*Subtítulos*/
 @font-face {font-family: RalewayRegular; src: url("../font/subtitles/raleway/Raleway-Regular.ttf");}
+.regularSubtitle{font-family: var(--str);}
 @font-face {font-family: RalewayBold; src: url("../font/subtitles/raleway/Raleway-Bold.ttf");}
+.boldSubtitle{font-family: var(--stb);}
 @font-face {font-family: RalewayBlack; src: url("../font/subtitles/raleway/Raleway-ExtraBold.ttf");}
-@font-face {font-family: RalewayLight; src: url("../font/subtitles/raleway/Raleway-Medium.ttf");}
+.blackSubtitle{font-family: var(--stbk);}
+@font-face {font-family: RalewayLight; src: url("../font/subtitles/raleway/Raleway-Light.ttf");}
+.mediumSubtitle{font-family: var(--stlt);}
 
 
 /*Corpo*/
 @font-face {font-family: VerdanaRegular; src: url("../font/body/verdana/verdana-Regular.ttf");}
+.regularBody{font-family: var(--cr);}
 @font-face {font-family: VerdanaBold; src: url("../font/body/verdana/verdana-bold.ttf");}
+.boldBody{font-family: var(--cb);}
 @font-face {font-family: VerdanaItalic; src: url("../font/body/verdana/verdana-bold-italic.ttf");}
+.italicBody{font-family: var(--ci);}
 
 html{scroll-behavior: smooth; transition: 1s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
 ::-webkit-scrollbar {width:1.2vw;}
 ::-webkit-scrollbar-track {background: rgb(235,235,235)}
 ::-webkit-scrollbar-thumb {background: rgb(40,10,85); border-radius: 0.5vw; border: 3px solid rgb(235,235,235)}
+
+.invisible{ display: none !important; }
+.visible{ display: block; }
 
 body{
     background: radial-gradient(at left bottom, rgb(110,20,110) 15%, rgb(40,10,85) 50%), url("../img/backgroundTexture.svg");
@@ -89,9 +107,19 @@ body{
     color: white;
     text-decoration: none;
     margin-left: 20%;
-    font-family: var(--tbk);
     font-size: 1.2vw;
     letter-spacing: 0.09vw;
+}
+
+.commonButton{
+    background: white;
+    color: rgb(40,10,85);
+    width: 10%;
+    height: 4.5vh;
+    font-size: 1.2vw;
+    letter-spacing: 0.09vw;
+    border-style: none;
+    cursor: pointer;
 }
 
 .middleDiv{
