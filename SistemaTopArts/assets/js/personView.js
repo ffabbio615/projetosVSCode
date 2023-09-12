@@ -11,6 +11,8 @@ class PersonView{
         this.inputPassword = document.getElementById('input-password');
         this.freeCoins = document.getElementById('input-freeCoins');
         this.buttonRegister = document.getElementById('button-register');
+        this.buttonNext = document.getElementById('button-next');
+        this.buttonPrevious = document.getElementById('button-previous');
     }
 
     dateToDob()

@@ -16,24 +16,24 @@
             <div class="headerLink"><a class="boldTitle" href="">LINK3</a></div>
             <div class="headerLink"><a class="boldTitle" href="">LINK4</a></div>
             <div class="headerLink"><a class="boldTitle" href="">LINK5</a></div> -->
-            <div class="headerButton"><a class="boldTitle" href="">VOLTAR</a></div>
+            <div class="headerButton"><a class="boldTitle" href="./login.html">VOLTAR</a></div>
         </div>
         <div class="middleDiv">
             <!-- Informações Iniciais / Insira sua data de nascimento e gênero
                 Dados Pessoais e Contato / Insira um número de celular um CPF e um e-mail válidos
                 Autenticação e Segurança / Insira como quer ser chamado e uma senha forte com letras, símbolos e números
-                Cadastro Realizado! / Clique AQUI para retornar e logar no sistema -->
-            <form action="">
-                <div class="centerContentDiv">
+                -->
+            <form>
+                <div id="header-form-div" class="centerContentDiv">
                     <h1 class="blackTitle">Registro na Top Artes</h1>
-                    <h2 class="regularTitle">Insira seu nome abaixo:</h2>
+                    <h2 class="regularBody">Insira seu nome abaixo:</h2>
                 </div>
-                <div class="centerContentDiv invisible">
+                <div id="form-div1" class="centerContentDiv">
                     <input type="text" aria-label="Nome" placeholder="NOME" id="input-name" class="blackTitle bigInput">
                     <input type="text" aria-label="Sobrenome" placeholder="SOBRENOME" id="input-lastName" class="blackTitle bigInput">
     
                 </div>
-                <div class="centerContentDiv invisible">
+                <div id="form-div2" class="centerContentDiv invisibleDiv">
                     <input type="text" aria-label="Dia" placeholder="DIA" id="input-day" class="blackTitle smallInput leftInput">
                     <select id="input-mounth" class="blackTitle smallInput">
                         <option value="0">Mês</option>
@@ -59,12 +59,12 @@
                         <option value="3">Outro</option>
                     </select>
                 </div>
-                <div class="centerContentDiv invisible">
+                <div id="form-div3" class="centerContentDiv invisibleDiv">
                     <input type="text" aria-label="Celular" placeholder="CELULAR" id="input-phoneNumber" class="blackTitle mediumInput leftMediumInput">
-                    <input type="text" aria-label="CPF" placeholder="CPF" id="input-cpf" class="blackTitle mediumInput">
+                    <input type="text" aria-label="CPF" placeholder="CPF" id="input-cpf" class="blackTitle mediumInput rightMediumInput">
                     <input type="email" aria-label="E-mail" id="input-email" placeholder="E-MAIL" class="blackTitle bigInput">
                 </div>
-                <div class="centerContentDiv">
+                <div id="form-div4" class="centerContentDiv invisibleDiv">
                     <input type="text" aria-label="Usuário" id="input-userName" placeholder="USUÁRIO" class="blackTitle bigInput">
                     <input type="password" aria-label="Senha" id="input-password" placeholder="SENHA" class="blackTitle mediumInput leftMediumInput">
                     <input type="password" aria-label="Confirmar Senha" id="input-cpassword" placeholder="CONFIRMAR" class="blackTitle mediumInput rightMediumInput">
@@ -74,7 +74,8 @@
                 <div>
                     <input type="text" id="input-freeCoins" value="1000" disabled hidden>
                 </div>
-                <div class="centerContentDiv">
+                <div  id="form-div-buttons" class="centerContentDiv">
+                    <button id="button-previous" class="commonButton blackTitle invisible">VOLTAR</button>
                     <button id="button-next" class="commonButton blackTitle">AVANÇAR</button>
                     <button id="button-register" class="commonButton blackTitle invisible">CONCLUIR</button>
                 </div>
