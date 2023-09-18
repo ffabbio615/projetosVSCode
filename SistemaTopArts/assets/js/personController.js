@@ -53,6 +53,7 @@ class PersonController{
     nextFields(){
         this.view.buttonNext.addEventListener('click', e =>{
             e.preventDefault();
+
             if(this.countNext >=0 && this.countNext<3){
                 this.countNext ++;
                 document.getElementById(`form-div${this.countNext}`).classList = "centerContentDiv invisible";
@@ -67,7 +68,73 @@ class PersonController{
         });
     }
 
-    moveToLeft(){
+    verifyFields(){
+        if(this.countNext == 0){
+            if(this.view.inputName.value == ''){
+                this.errorMessage(this.view.inputName, 'Campo "Nome" não pode ficar em branco.');
+                return false;
+            }
+            if(this.view.inputLastName.value == ''){
+                this.errorMessage(this.view.inputName, 'Campo "Sobrenome" não pode ficar em branco.');
+                return false;
+            }
+        }
+        else if(this.countNext == 1){
+            const day = parseInt(document.querySelector('#input-day').value);
+            const mounth = parseInt(document.querySelector('#input-mounth').value);
+            const year = parseInt(document.querySelector('#input-year').value);
+            const date = new Date();
+
+            if(this.view.inputDob.value == ''){
+                this.errorMessage(document.querySelector('#input-year'), 'Data de nascimento inválida!');
+                return false;
+            } 
+
+            //0 1JAN 2FEV 3MAR 4ABR 5MAI 6JUN 7JUL 8AGO 9SET 10OUT 11NOV 12DEZ
+            if(isNaN(day && mounth && year) && day > 31 || day<=0 || mounth == 0 || year < (date.getFullYear-100) || year > (date.getFullYear ||
+                day == 31 && mounth == 2 || day == 30 && mounth == 2 || day == 29 && mounth == 2 && year != date.getFullYear%4 || 
+                day == 31 && mounth == 4 || day == 31 && mounth == 6 || day == 31 && mounth == 9 || day == 31 && mounth == 11)){
+                this.errorMessage(document.querySelector('#input-year'), 'Data de nascimento inválida!');
+                return false;
+            }
+            
+            if(this.view.inputGender.value == '0'){
+                this.errorMessage(this.view.inputGender, 'Gênero inválido!');
+                return false;
+            }
+
+        }
+        else if(this.countNext == 2){
+            if(this.view.inputPhoneNumber.value == ''){
+                this.errorMessage(this.view.Cpf, 'Informe um número de celular.');
+                return false;
+            }
+            if(this.view.inputCpf.value == ''){
+                this.errorMessage(this.view.Cpf, 'Informe seu CPF.');
+                return false;
+            }
+            if(this.view.Email.value == ''){
+                this.errorMessage(this.view.inputEmail, 'Digite seu e-mail.');
+                return false;
+            }
+
+//AQUI
+
+
+
+        }
+        else if(this.countNext == 3){
+
+            
+        }
+        return true;
+    }
+
+    verifyFields(field, message){}
+
+
+
+    fadeEffect(){
         const headerFromDiv = document.getElementById('header-form-div');
         headerFromDiv.children[0].className = "blackTitle";
         headerFromDiv.children[1].className = "regularBody";
@@ -98,7 +165,7 @@ class PersonController{
         document.getElementById('button-previous').disabled = true;
         document.getElementById('button-next').disabled = true;
         document.getElementById('button-register').disabled = true;
-        setTimeout(this.moveToLeft,2100);
+        setTimeout(this.fadeEffect,2100);
     }
 }
 
