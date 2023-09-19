@@ -18,14 +18,14 @@ class PersonView{
     dateToDob()
     {
         const day = document.getElementById('input-day');
-        const mounth = document.getElementById('input-mounth');
+        const month = document.getElementById('input-month');
         const year = document.getElementById('input-year');
-        if(mounth.value <10)
+        if(month.value <10)
         {
-            this.inputDob.value = `${day.value}/0${mounth.value}/${year.value}`;
+            this.inputDob.value = `${day.value}/0${month.value}/${year.value}`;
         }
         else{
-            this.inputDob.value = `${day.value}/${mounth.value}/${year.value}`;
+            this.inputDob.value = `${day.value}/${month.value}/${year.value}`;
         }
     }
 

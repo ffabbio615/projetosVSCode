@@ -8,12 +8,14 @@ class PersonController{
         this.nextFields();
         this.previousFields();
         this.registerUser();
+        this.cpfLimpo;
+        this.novoCPF;
     }
 
     registerUser() {
         this.view.buttonRegister.addEventListener('click', e => {
             e.preventDefault();
-            this.view.dateToDob();
+            if (this.verifyFields()) {
             Object.assign(this.model, this.view.getFields());
             this.view.cleanInputs();
             const headerFromDiv = document.getElementById('header-form-div');
@@ -30,6 +32,7 @@ class PersonController{
             document.getElementById('button-register').classList = "commonButton blackTitle invisible";
             document.getElementById('button-previous').classList = "commonButton blackTitle invisible";
             this.changeTextInformations(5);
+            }
         });
     }
 
@@ -50,20 +53,22 @@ class PersonController{
         });
     }
 
-    nextFields(){
-        this.view.buttonNext.addEventListener('click', e =>{
+    nextFields() {
+        this.view.buttonNext.addEventListener('click', e => {
             e.preventDefault();
 
-            if(this.countNext >=0 && this.countNext<3){
-                this.countNext ++;
-                document.getElementById(`form-div${this.countNext}`).classList = "centerContentDiv invisible";
-                document.getElementById(`form-div${this.countNext+1}`).classList = "centerContentDiv";
-                if(this.countNext ==1){document.getElementById('button-previous').classList = "commonButton blackTitle";}
-                if(this.countNext ==3){
-                    document.getElementById('button-next').classList = "commonButton blackTitle invisible";
-                    document.getElementById('button-register').classList = "commonButton blackTitle";
+            if (this.countNext >= 0 && this.countNext < 3) {
+                if (this.verifyFields()) {
+                    this.countNext++;
+                    document.getElementById(`form-div${this.countNext}`).classList = "centerContentDiv invisible";
+                    document.getElementById(`form-div${this.countNext + 1}`).classList = "centerContentDiv";
+                    if (this.countNext == 1) { document.getElementById('button-previous').classList = "commonButton blackTitle"; }
+                    if (this.countNext == 3) {
+                        document.getElementById('button-next').classList = "commonButton blackTitle invisible";
+                        document.getElementById('button-register').classList = "commonButton blackTitle";
+                    }
+                    this.changeTextInformations(this.countNext);
                 }
-                this.changeTextInformations(this.countNext);
             }
         });
     }
@@ -81,21 +86,20 @@ class PersonController{
         }
         else if(this.countNext == 1){
             const day = parseInt(document.querySelector('#input-day').value);
-            const mounth = parseInt(document.querySelector('#input-mounth').value);
+            const month = parseInt(document.querySelector('#input-month').value);
             const year = parseInt(document.querySelector('#input-year').value);
             const date = new Date();
-
-            if(this.view.inputDob.value == ''){
-                this.errorMessage(document.querySelector('#input-year'), 'Data de nascimento inválida!');
-                return false;
-            } 
+            const currentYear = date.getFullYear();
 
             //0 1JAN 2FEV 3MAR 4ABR 5MAI 6JUN 7JUL 8AGO 9SET 10OUT 11NOV 12DEZ
-            if(isNaN(day && mounth && year) && day > 31 || day<=0 || mounth == 0 || year < (date.getFullYear-100) || year > (date.getFullYear ||
-                day == 31 && mounth == 2 || day == 30 && mounth == 2 || day == 29 && mounth == 2 && year != date.getFullYear%4 || 
-                day == 31 && mounth == 4 || day == 31 && mounth == 6 || day == 31 && mounth == 9 || day == 31 && mounth == 11)){
+            if(isNaN(day) || isNaN(month) || isNaN(year) || day > 31 || day<=0 || month == 0 || year < (currentYear-100) || year > (currentYear) ||
+                day == 31 && month == 2 || day == 30 && month == 2 || day == 29 && month == 2 && year != currentYear%4 || 
+                day == 31 && month == 4 || day == 31 && month == 6 || day == 31 && month == 9 || day == 31 && month == 11){
                 this.errorMessage(document.querySelector('#input-year'), 'Data de nascimento inválida!');
+                this.view.inputDob.value = '';
                 return false;
+            }else{
+                this.view.dateToDob();
             }
             
             if(this.view.inputGender.value == '0'){
@@ -105,33 +109,94 @@ class PersonController{
 
         }
         else if(this.countNext == 2){
-            if(this.view.inputPhoneNumber.value == ''){
+            const cpf = this.view.inputCpf;
+            if(this.view.inputPhoneNumber.value.length != 11){
                 this.errorMessage(this.view.Cpf, 'Informe um número de celular.');
                 return false;
             }
-            if(this.view.inputCpf.value == ''){
+            if(cpf.value == ''){
                 this.errorMessage(this.view.Cpf, 'Informe seu CPF.');
                 return false;
+            }else{
+                if(!this.validaCPF(cpf)){
+                    this.errorMessage(cpf, 'CPF incorreto!');
+                    return false;
+                }
             }
-            if(this.view.Email.value == ''){
+            if(this.view.inputEmail.value == ''){
                 this.errorMessage(this.view.inputEmail, 'Digite seu e-mail.');
                 return false;
             }
-
-//AQUI
-
-
-
         }
-        else if(this.countNext == 3){
 
-            
+        else if(this.countNext == 3){
+            const userName = this.view.inputUserName.value;
+            const password = this.view.inputPassword.value;
+            const cpassword = document.querySelector('#input-cpassword');
+            const terms = document.querySelector('#input-terms');
+            if(this.view.inputUserName.value == '' || userName.length < 5){
+                this.errorMessage(this.view.inputUserName, 'Seu nome de usuário deve conter no mínimo 5 caracteres.');
+                return false;
+            }
+            if(this.view.inputPassword.value == '' || password.length < 8){
+                this.errorMessage(cpassword, 'Sua senha deve conter no mínimo 8 caracteres.');
+                return false;
+            }
+            if(cpassword.value == ''){
+                this.errorMessage(cpassword, 'Você deve confirmar a sua senha.');
+                return false;
+            }
+            if(this.view.inputPassword.value != cpassword.value){
+                this.errorMessage(cpassword, 'Os campos SENHA e CONFIRMAR devem ser iguais.');
+                return false;
+            }
+            if(!terms.checked){
+                this.errorMessage(terms, 'Você precisa concordar com os termos de uso.');
+                return false;
+            }
         }
         return true;
     }
 
-    verifyFields(field, message){}
 
+    errorMessage(field, message){
+        alert(message);
+    }
+
+
+    //MÉTODOS CPF
+    éSequência() {
+    return this.cpfLimpo.charAt(0).repeat(11) === this.cpfLimpo;
+}
+
+    geraNovoCpf() {
+    const cpfSemDigitos = this.cpfLimpo.slice(0, -2);
+    const digito1 = this.geraDigito(cpfSemDigitos);
+    const digito2 = this.geraDigito(cpfSemDigitos + digito1);
+    this.novoCPF = cpfSemDigitos + digito1 + digito2;
+}
+
+    geraDigito(cpfSemDigitos) {
+    let total = 0;
+    let reverso = cpfSemDigitos.length + 1;
+
+    for (let stringNumerica of cpfSemDigitos) {
+        total += reverso * Number(stringNumerica);
+        reverso--;
+    }
+
+    const digito = 11 - (total % 11);
+    return digito <= 9 ? String(digito) : '0';
+    }
+
+    validaCPF(cpf) {
+        this.cpfLimpo = cpf.value.replace(/\D+/g, '');
+        if (typeof this.cpfLimpo !== 'string') return false;
+        if (this.cpfLimpo.length !== 11) return false;
+        if (this.éSequência()) return false;
+        this.geraNovoCpf();
+        return this.novoCPF === this.cpfLimpo;
+    }
 
 
     fadeEffect(){
@@ -154,10 +219,10 @@ class PersonController{
             headerFromDiv.children[1].textContent ="Insira sua data de nascimento e gênero";
         } else if(countNext ==2){
             headerFromDiv.children[0].textContent = "Dados Pessoais e Contato";
-            headerFromDiv.children[1].textContent ="Insira um número de celular, um CPF e um e-mail válidos";
+            headerFromDiv.children[1].textContent ="Insira o celular e o CPF (somente números), além de um e-mail válido";
         } else if(countNext ==3){
             headerFromDiv.children[0].textContent = "Autenticação e Segurança";
-            headerFromDiv.children[1].textContent ="Insira como quer ser chamado e uma senha forte com letras, símbolos e números";
+            headerFromDiv.children[1].textContent = "Informe um nome de usuário e uma senha com no mínimo 8 caracteres";
         }
         headerFromDiv.children[0].className = "blackTitle centerContentH";
         headerFromDiv.children[1].className = "regularBody centerContentH";
