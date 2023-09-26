@@ -5,6 +5,7 @@ class PersonController{
         this.model = model;
         this.view = view;
         this.countNext = 0;
+        this.answerCountNext = 0;
         this.nextFields();
         this.previousFields();
         this.registerUser();
@@ -74,14 +75,16 @@ class PersonController{
     }
 
     verifyFields(){
+        let errorsDiv = document.querySelectorAll('.errorDiv');
+        errorsDiv.forEach(function(element){element.innerHTML = '';});
         if(this.countNext == 0){
             if(this.view.inputName.value == ''){
                 this.errorMessage(this.view.inputName, 'Campo "Nome" não pode ficar em branco.');
-                return false;
+                this.answerCountNext =1;
             }
             if(this.view.inputLastName.value == ''){
-                this.errorMessage(this.view.inputName, 'Campo "Sobrenome" não pode ficar em branco.');
-                return false;
+                this.errorMessage(this.view.inputLastName, 'Campo "Sobrenome" não pode ficar em branco.');
+                this.answerCountNext =1;
             }
         }
         else if(this.countNext == 1){
@@ -97,35 +100,35 @@ class PersonController{
                 day == 31 && month == 4 || day == 31 && month == 6 || day == 31 && month == 9 || day == 31 && month == 11){
                 this.errorMessage(document.querySelector('#input-year'), 'Data de nascimento inválida!');
                 this.view.inputDob.value = '';
-                return false;
+                this.answerCountNext =1;
             }else{
                 this.view.dateToDob();
             }
             
             if(this.view.inputGender.value == '0'){
                 this.errorMessage(this.view.inputGender, 'Gênero inválido!');
-                return false;
+                this.answerCountNext =1;
             }
 
         }
         else if(this.countNext == 2){
             const cpf = this.view.inputCpf;
             if(this.view.inputPhoneNumber.value.length != 11){
-                this.errorMessage(this.view.Cpf, 'Informe um número de celular.');
-                return false;
+                this.errorMessage(this.view.inputPhoneNumber, 'Informe um número de celular.');
+                this.answerCountNext =1;
             }
             if(cpf.value == ''){
-                this.errorMessage(this.view.Cpf, 'Informe seu CPF.');
-                return false;
+                this.errorMessage(this.view.inputCpf, 'Informe seu CPF.');
+                this.answerCountNext =1;
             }else{
                 if(!this.validaCPF(cpf)){
-                    this.errorMessage(cpf, 'CPF incorreto!');
-                    return false;
+                    this.errorMessage(this.view.inputCpf, 'CPF incorreto!');
+                    this.answerCountNext =1;
                 }
             }
             if(this.view.inputEmail.value == ''){
                 this.errorMessage(this.view.inputEmail, 'Digite seu e-mail.');
-                return false;
+                this.answerCountNext =1;
             }
         }
 
@@ -136,31 +139,46 @@ class PersonController{
             const terms = document.querySelector('#input-terms');
             if(this.view.inputUserName.value == '' || userName.length < 5){
                 this.errorMessage(this.view.inputUserName, 'Seu nome de usuário deve conter no mínimo 5 caracteres.');
-                return false;
+                this.answerCountNext =1;
             }
             if(this.view.inputPassword.value == '' || password.length < 8){
                 this.errorMessage(cpassword, 'Sua senha deve conter no mínimo 8 caracteres.');
-                return false;
+                this.answerCountNext =1;
             }
             if(cpassword.value == ''){
                 this.errorMessage(cpassword, 'Você deve confirmar a sua senha.');
-                return false;
+                this.answerCountNext =1;
             }
             if(this.view.inputPassword.value != cpassword.value){
                 this.errorMessage(cpassword, 'Os campos SENHA e CONFIRMAR devem ser iguais.');
-                return false;
+                this.answerCountNext =1;
             }
             if(!terms.checked){
                 this.errorMessage(terms, 'Você precisa concordar com os termos de uso.');
-                return false;
+                this.answerCountNext =1;
             }
+        }
+        if(this.answerCountNext == 1)
+        {
+            this.answerCountNext = 0;
+            return false;
         }
         return true;
     }
 
 
-    errorMessage(field, message){
-        alert(message);
+    errorMessage(field, message) {
+        const parentDiv = field.parentNode;
+        if (!document.querySelector(`#${field.id}Message`)) {
+            const div = document.createElement('div');
+            div.className = 'errorDiv';
+            div.id = `${field.id}Message`;
+            parentDiv.appendChild(div);
+        }else document.querySelector(`#${field.id}Message`).innerHTML = '';
+        const p = document.createElement('p');
+        p.textContent = message;
+        p.className = 'errorMessage';
+        document.querySelector(`#${field.id}Message`).appendChild(p);
     }
 
 

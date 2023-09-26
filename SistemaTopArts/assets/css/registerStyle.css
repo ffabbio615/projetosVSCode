@@ -74,7 +74,8 @@ input::placeholder{
 input[type="checkbox"], p{margin-top: -1.5%; margin-bottom: 2%; margin-right: 0.5%;}
 input[type="checkbox"] p{margin: 0% 0% 3% 1%;}
 
-.termsParagraph{font-size: 1vw;}
+.termsParagraph{font-size: 1vw; margin-bottom: 3%;}
+#input-terms{margin-bottom: 3%;}
 
 span{transition: all 0.5s; border-bottom: 1px solid white;
     padding-bottom: 1px;

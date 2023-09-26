@@ -146,3 +146,22 @@ body{
 }
 
 h1, h2, p, label{color: white;}
+
+.errorDiv{
+    width: 30%;
+    margin: -1% 35% 1.5% 35%;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+
+@keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.errorMessage{
+    font-family: var(--cr);
+    width: 100%;
+    font-size: 0.9vw;
+    margin-left: 2%;
+}
