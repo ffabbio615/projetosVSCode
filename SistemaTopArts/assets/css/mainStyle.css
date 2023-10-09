@@ -67,7 +67,7 @@ body{
     height: 100vh;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 11.2vh 83.2vh 5.6vh;
+    grid-template-rows: 11.2vh 78.8vh 10vh;
     grid-template-areas: "headerDiv" "middleDiv" "footerDiv";
 }
 
@@ -98,13 +98,39 @@ body{
 .headerLink{
     display: flex;
     align-items: center;
+    margin-top: 1%;
 }
 
 .headerLink a{
+    width: 100%;
+    text-align: center;
     text-decoration: none;
     color: white;
+    font-size: 1.2vw;
+    letter-spacing: 0.09vw;
+    position: relative;
 }
 
+/* Linha que aparecerá no hover */
+.headerLink a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Altura da linha */
+    bottom: -30%; /* Posicione a linha na parte inferior do link */
+    left: 0;
+    background-color: white; /* Cor da linha */
+    transform: scaleX(0); /* Inicialmente, a linha tem largura zero */
+    transform-origin: left center; /* Inicia a transformação da esquerda */
+    transition: transform 0.7s; /* Adicione uma transição para a transformação */
+  }
+  
+  /* Efeito hover: expandir a linha */
+  .headerLink a:hover::before {
+    transform: scaleX(1); /* Expande a linha para 100% de largura */
+  }
+      
+  
 .headerButton a{
     color: white;
     text-decoration: none;
@@ -148,8 +174,8 @@ body{
 h1, h2, p, label{color: white;}
 
 .errorDiv{
-    width: 30%;
-    margin: -1% 35% 1.5% 35%;
+    width: 40%;
+    margin: -1% 25% 1.5% 35%;
     animation-name: fadein;
     animation-duration: 2s;
 }

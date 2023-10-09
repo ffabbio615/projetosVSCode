@@ -169,6 +169,11 @@ class PersonController{
 
     errorMessage(field, message) {
         const parentDiv = field.parentNode;
+        const allErrorsDivs = parentDiv.getElementsByClassName('errorDiv');
+        for(let i = 0; i<allErrorsDivs.length; i++){
+            if(allErrorsDivs[i].innerHTML==='')
+            parentDiv.removeChild(allErrorsDivs[i]);
+        }
         if (!document.querySelector(`#${field.id}Message`)) {
             const div = document.createElement('div');
             div.className = 'errorDiv';
@@ -240,7 +245,7 @@ class PersonController{
             headerFromDiv.children[1].textContent ="Insira o celular e o CPF (somente números), além de um e-mail válido";
         } else if(countNext ==3){
             headerFromDiv.children[0].textContent = "Autenticação e Segurança";
-            headerFromDiv.children[1].textContent = "Informe um nome de usuário e uma senha com no mínimo 8 caracteres";
+            headerFromDiv.children[1].textContent = "Informe um nome de usuário e uma senha com no mínimo 8 dígitos";
         }
         headerFromDiv.children[0].className = "blackTitle centerContentH";
         headerFromDiv.children[1].className = "regularBody centerContentH";

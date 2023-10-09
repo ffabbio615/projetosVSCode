@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - Top Artes</title>
+    <link rel="stylesheet" href="./assets/css/mainStyle.css">
+    <link rel="stylesheet" href="./assets/css/registerStyle.css">
 </head>
 <body>
-    
+<div class="mainDiv">
+    <div class="headerDiv">
+        <img class="headerLogo" src="./assets/img/logo.png">
+        <div class="headerButton"><a class="boldTitle" href="./home.html">VOLTAR</a></div>
+    </div>
+    <div class="middleDiv">
+        <form>
+            <div id="header-form-div" class="centerContentDiv">
+                <h1 class="blackTitle">Login na Top Artes</h1>
+                <h2 class="regularBody">Insira seu usuário e sua senha:</h2>
+            </div>
+            <div id="form-div1" class="centerContentDiv">
+                <input type="text" aria-label="Usuário" id="input-userName" placeholder="USUÁRIO" class="blackTitle bigInput">
+                <input type="password" aria-label="Senha" id="input-password" placeholder="SENHA" class="blackTitle bigInput">
+                <p class="regularBody linkParagraph"> <a href="register.html">Registrar-me </a></p>
+                <p class="regularBody linkParagraph"> <a href="#">Esqueci a Senha </a></p>
+            </div>
+            <div  id="form-div-buttons" class="centerContentDiv">
+                <button id="button-enter" class="commonButton blackTitle">ENTRAR</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="footerDiv">
+        <p>STE 1.0</p>
+    </div>
+</div>
+<script src="./assets/js/loginModel.js"></script>
+<script src="./assets/js/loginView.js"></script>
+<script src="./assets/js/loginController.js"></script>
 </body>
 </html>
