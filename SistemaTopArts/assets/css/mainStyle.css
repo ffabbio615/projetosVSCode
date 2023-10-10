@@ -171,6 +171,10 @@ body{
     font-family: var(--tbk);
 }
 
+.systemVersion{
+    margin: 0;
+}
+
 h1, h2, p, label{color: white;}
 
 .errorDiv{

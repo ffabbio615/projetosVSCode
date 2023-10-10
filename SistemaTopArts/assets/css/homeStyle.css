@@ -1,3 +1,85 @@
+.middleDiv{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "textInformationLeft imageInformationRight";
+}
+
+.textInformationLeft{
+    grid-area: textInformationLeft;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleInformation{
+    font-size: 3.5vw;
+    width: 60%;
+    text-align: center;
+    line-height: 5vw;
+    margin-top: 1%;
+}
+
+.subtitleInformation{
+    font-size: 2.5vw;
+    color: rgb(250,115,5);
+    margin: 1% 0;
+}
+
+.paragraphInformation{
+    font-size: 1.2vw;
+    width: 70%;
+    text-align: justify;
+    text-align-last: center;
+    line-height: 1.8vw;
+    margin: 1% 0;
+}
+
+.imageInformationRight{
+    grid-area: imageInformationRight;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.imagesContainer{
+    width: 80%;
+    height: 60%;
+    margin-top: 10%;
+    background-image:url("../img/colors.svg");
+    background-position: center;
+    background-size:cover;
+    display: grid;
+
+}
+
+.radioContainer{
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.radioContainer input[type="radio"]{
+    -webkit-appearance: none;
+    background-color: rgb(228, 226, 224);
+    border: 0.1vw rgb(0, 0, 0) solid;
+    border-radius: 50%;
+    width: 1.3vw;
+    height: 1.3vw;
+    margin: 0 1%;
+}
+
+input[type="radio"]:checked {
+    background-color: rgb(250,115,5);
+    border: 0.25vw rgb(255, 255, 255) solid;
+  }
+
 .footerDiv{
     justify-content: space-around;
     padding-right: 0;
@@ -20,7 +102,7 @@
 
 .footerItemDiv{
     width: 25%;
-    height: 90%;
+    height: 85%;
     background-color: white;
     cursor: pointer;
     position: relative;
