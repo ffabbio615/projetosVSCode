@@ -41,12 +41,14 @@
     text-align: center;
     line-height: 5vw;
     margin-top: 1%;
+    filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
 
 .subtitleInformation{
     font-size: 2.5vw;
     color: rgb(250,115,5);
     margin: 1% 0;
+    filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
 
 .paragraphInformation{
@@ -56,6 +58,7 @@
     text-align-last: left;
     line-height: 2.2vw;
     margin: 1% 0;
+    filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
 
 .imageInformationRight{
@@ -69,9 +72,9 @@
 }
 
 .imagesContainer{
-    width: 80%;
-    height: 60%;
-    margin-top: 10%;
+    width: 100%;
+    height: 70%;
+    margin-top: 5%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-areas: "imgHome";
@@ -82,8 +85,10 @@
     width: 100%;
     height: 100%;
     background-position: center;
-    background-size:cover;
+    background-size:contain;
+    background-repeat: no-repeat;
     grid-area: imgHome;
+    filter:drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
 }
 
 .imgHome1{background-image:url("../img/imghome01.png");}
@@ -99,8 +104,9 @@
     animation-fill-mode: forwards;
 }
 @keyframes mainPosition {
-    0%{transform: translateX(120%);}
-    100%{transform: translateX(0%);}     
+    0%{transform: translateX(120%); opacity: 0;}
+    50%{opacity: 0.4;}
+    100%{transform: translateX(0%); opacity: 1;}     
 }
 .imgEndPosition{
     animation-name: endPosition;
@@ -108,8 +114,9 @@
     animation-fill-mode: forwards;
 }
 @keyframes endPosition {
-    0%{transform: translateX(0%);}
-    100%{transform: translateX(-120%);}    
+    0%{transform: translateX(0%); opacity: 1;}
+    30%{opacity: 0;}
+    100%{transform: translateX(-120%); opacity: 0;}    
 }
 
 .radioContainer{
@@ -148,10 +155,6 @@ input[type="radio"]:checked {
 #ai-footer-div{
     background-color: rgb(250,115,5);
     transition: all 1s;
-}
-
-.footerImageIcon:hover{
-    filter: drop-shadow(0 0 1.5% white);
 }
 
 .footerItemDiv{
@@ -211,6 +214,20 @@ input[type="radio"]:checked {
 .footerImageIcon{
     height: 55%;
     width: auto;
+    transition: all 1.5s ease-in-out;
+}
+
+.footerImageIcon:hover{
+    animation-name: expandImageIcon;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes expandImageIcon {
+    0%{filter: drop-shadow(0 0 0px white);}
+    100%{transform: scale(110%); filter: drop-shadow(0 0 10px rgba(168, 222, 247, 0.795));}
+    0%{filter: drop-shadow(0 0 0px white);}
 }
 
 #silhouette-footer-div .footerImageIcon{

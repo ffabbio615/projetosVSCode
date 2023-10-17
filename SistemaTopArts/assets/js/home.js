@@ -1,7 +1,30 @@
 const imgR = [];
 const imgHome = [];
 const textInformationLeft = document.querySelector(".textInformationLeft");
+let timeoutID = setTimeout(activateRadios, 7000);
+// setTimeout(function () {
+//     activateRadios();
+// }, 7000);
 
+function activateRadios(){
+    for (let i = 1; i <= 5; i++) {
+        if(imgR[i-1].checked==true){
+            // setTimeout(function () {
+            //     activateRadios();
+            // }, 7000);
+            if(i==5){
+                imgR[0].checked = true;
+                const event = new Event("change", { bubbles: true, cancelable: true });
+                imgR[0].dispatchEvent(event);
+                break;
+            }
+            imgR[i].checked = true;
+            const event = new Event("change", { bubbles: true, cancelable: true });
+            imgR[i].dispatchEvent(event);
+            break;
+        }
+    }
+}
 
 for(let i = 0; i<5; i++)
 {
@@ -12,6 +35,8 @@ for(let i = 0; i<5; i++)
 for (let i = 1; i <= 5; i++) {
     imgR[i-1].addEventListener("change", function () {
         if (imgR[i-1].checked) {
+            clearTimeout(timeoutID);
+            timeoutID = setTimeout(activateRadios, 7000);
             textInformationLeft.classList = "textInformationLeft textInformationLeftOut";
             setTextInformation(i);
             imgHome[i-1].classList = `imgHome${i} imgMainPosition`;

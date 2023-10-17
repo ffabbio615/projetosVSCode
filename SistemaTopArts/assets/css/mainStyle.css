@@ -112,7 +112,7 @@ body{
 }
 
 /* Linha que aparecerá no hover */
-.headerLink a::before {
+.headerLink a::before, .headerButton a::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -126,7 +126,7 @@ body{
   }
   
   /* Efeito hover: expandir a linha */
-  .headerLink a:hover::before {
+  .headerLink a:hover::before, .headerButton a:hover::before {
     transform: scaleX(1); /* Expande a linha para 100% de largura */
   }
       
@@ -137,6 +137,7 @@ body{
     margin-left: 20%;
     font-size: 1.2vw;
     letter-spacing: 0.09vw;
+    position: relative;
 }
 
 .commonButton{
