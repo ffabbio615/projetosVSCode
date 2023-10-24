@@ -1,0 +1,105 @@
+.mainDivSTA{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-areas: "panelSTA contentSTA";
+}
+
+.panelSTA{
+    background-color: rgb(250,115,5);
+    grid-area: panelSTA;
+}
+
+.contentSTA{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-area: contentSTA;
+    grid-template-rows: 11vh 81vh 8vh;
+    grid-template-areas: "headerSTA" "mainContentSTA" "footerSTA";
+}
+
+.headerSTA{
+    grid-area: headerSTA;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerSTA h1{
+    align-self: self-end;
+    margin-left: 3%;
+    letter-spacing: 0.1vw;
+}
+
+.headerButtonSTA{
+    width: 18%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/headerRightButton.png");
+}
+
+/* Linha que aparecerá no hover */
+.headerButtonSTA a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Altura da linha */
+    bottom: -30%; /* Posicione a linha na parte inferior do link */
+    left: 0;
+    background-color: white; /* Cor da linha */
+    transform: scaleX(0); /* Inicialmente, a linha tem largura zero */
+    transform-origin: left center; /* Inicia a transformação da esquerda */
+    transition: transform 0.7s; /* Adicione uma transição para a transformação */
+  }
+  
+  /* Efeito hover: expandir a linha */
+  .headerButtonSTA a:hover::before {
+    transform: scaleX(1); /* Expande a linha para 100% de largura */
+  }
+      
+  
+.headerButtonSTA a{
+    color: white;
+    text-decoration: none;
+    margin-left: 20%;
+    font-size: 1.2vw;
+    letter-spacing: 0.09vw;
+    position: relative;
+}
+
+
+.mainContentSTA{
+    width: 97%;
+    height: 97%;
+    margin: 1.5% 0 0 1.5%;
+    grid-area: mainContentSTA;
+    background-color: white;
+    border-radius: 0.5vw;
+}
+
+.footerlSTA{
+    grid-area: footerSTA;
+}
+
+.footerDivSTA{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footerLogoSTA{
+    height: 95%;
+    width: auto;
+    
+}
+
+.systemVersionSTA{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}

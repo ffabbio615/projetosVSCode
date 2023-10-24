@@ -39,6 +39,14 @@ class PersonModel{
         this.#obtainedArts = [];
     }
 
+    set accountLvl(level){
+        this.#accountLvl = level;
+    }
+
+    get accountLvl(){
+        return this.#accountLvl;
+    }
+
     set freeCoins(coins){
         this.#freeCoins = coins;
     }
@@ -47,6 +55,28 @@ class PersonModel{
         return this.#freeCoins;
     }
 
+    set premiumCoins(coins){
+        this.#premiumCoins = coins;
+    }
 
+    get premiumCoins(){
+        return this.#premiumCoins;
+    }
+
+    set updatedArts(arts){
+        this.#updatedArts = arts;
+    }
+
+    get updatedArts(){
+        return this.#updatedArts;
+    }
+
+    set obtainedArts(arts){
+        this.#obtainedArts = arts;
+    }
+
+    get obtainedArts(){
+        return this.#obtainedArts;
+    }
 
 }
