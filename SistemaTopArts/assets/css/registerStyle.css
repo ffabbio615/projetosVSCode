@@ -24,6 +24,18 @@ form{width: 90%;}
     animation-duration: 2s;
 }
 
+.centerParagraphsContentDiv{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    margin-top: -3%;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+
 .centerContentH{
     animation-name: fadein;
     animation-duration: 2s;

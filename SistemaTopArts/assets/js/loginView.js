@@ -14,9 +14,8 @@ class LoginView{
         };
     }
 
-    cleanInputs()
+    cleanInput()
     {
-        this.inputUser.value = '';
         this.inputPassword.value = '';
     }
 
