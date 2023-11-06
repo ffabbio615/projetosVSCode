@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: url("../font/Montserrat-Bold.otf");
+}
+
+body{
+    background-image: url("../img/background-both.jpg");
+    background-size: cover;
+    background-position: top right;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(23, 28, 45,1);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header h1{
+    font-size:30px;
+    font-family: MontserratBold;
+}
+
+main {
+    width: 100%;
+    height: 90vh;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+}
+
+main section{
+    width: 60%;
+}
+
+section div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div input, label, div {
+    display: block;
+}
+
+div label{
+    text-align: center;
+    font-size: 32px;
+    font-family: MontserratBold;
+    color: rgb(23, 28, 45,1);
+}
+
+div label:first-child{
+    margin-top: 7%;
+}
+
+div input{
+    width: 30vw;
+    height: 5vh;
+    border-radius: 10vw;
+    border-width: 2px;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+div div button{
+    margin: 15px 20px 0 20px;
+    background-color: rgb(23, 28, 45,1);
+    color: white;
+    width: 10vw;
+    height: 5vh;
+    font-family: MontserratBold;
+    cursor: pointer;
+    border-style: none;
+}
+
+ button a{
+    color: white;
+    text-decoration: none;
+ }
+
+ .resultado{
+    margin-top: 30px;
+    width: 100%;
+    height: 5vh;
+    color: white;
+    align-items: center;
+ }
+
+ .resultado p{
+    padding: 10px 25px 10px 25px;
+    background-color: rgb(23, 28, 45,1);
+    font-family: MontserratBold;
+ }

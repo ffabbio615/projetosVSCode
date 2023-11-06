@@ -176,6 +176,11 @@ botao.onclick = function(){ }
 botao.addEventListener('click', e => {});
 botao.addEventListener('submit', function (parametro) {}); > Adiciona um evento a um elemento com ação dentro da função
 elemento.preventDefault(); > Cancela a ação de um elemento, tipo cancelar o post de um form
+elemento.getAttribute('href'); > Seleciona um atributo de um elemento HTML. Nesse exemplo foi pego o link que está dentro de uma tag <a>
+SELECIONAR UM ITEM ESPECÍFICO DO MESMO TIPO SEM FICAR ADICIONANDO EVENTOS COM FOR
+const elemento = e.target; > Pega o elemento que foi clicado, por exemplo | const alvo = elemento.tagName.toLowerCase(); > 
+Pega o nome do elemento que foi clicado, seja ele div, a, button, etc | if (alvo === 'a'){} > Se o elemento clicado for um 'a', então faz a ação.
+
 
 
 CRIAÇÃO, MODIFICAÇÃO E REMOÇÃO EM ELEMENTOS HTML COM JAVASCRIPT
@@ -193,3 +198,10 @@ DIFERENÇA ENTRE INNERTEXT E TEXTCONTENT:
 
 ATRIBUIR A UMA VARIÁVEL TODOS OS ESTILOS DE CSS QUE FORAM COMPUTADOS A UM ELEMENTO. POR EXEMPLO NO BODY:
 const estilosBody = getComputedStyle(document.body);
+
+
+
+PROMISES
+return new Promise((resolve, reject) =>{}); > Inicia o tratamento dentro de uma função, com os retornos positivo (resolve) e negativo (reject)
+.then(parametro => {console.log(parametro);}); > retorno positivo aplicado após chamar a função
+.catch(parametro => {console.log(parametro);}); > retorno positivo aplicado após chamar a função
