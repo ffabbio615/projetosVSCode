@@ -39,6 +39,10 @@ Camiseta.prototype.constructor = Camiseta; > Recebe o prototype construtor do ob
 POO
 Factory function (funções normais que não precisam de New Aula75) | Constructor Function (funções construtoras Aula77)
 
+EXPORTAR E IMPORTAR UMA FUNÇÃO (MODULES) VER AULA 118
+Criar dentro do arquivo1.js uma função > export default function nomeDaFuncao(){}
+Importar dentro do arquivo2.js a função > import nomeDaFuncao from './arquivo1';
+
 CLASSES
 Class NomeEmMaiusculo > Inicia uma classe
 const _atributoPrivado = Symbol('Aqui pode colocar qualquer descrição se quiser'); > Declaração de atributo privado
@@ -90,6 +94,7 @@ STRINGS
 .split(' '); > Cria um array separando as Strings que vem depois de um espaço vazio ' '
 palavra = frase.shift(); > Palavra recebe primeira palavra e a remove da frase
 .join(' ') > Junta todas as palavras de um array de string, mas separando-as por um espaço vazio ' '
+constante = String.fromCharCode(65); > Pega uma letra, nesse caso letra A, de um charCode
 
 
 DATAS
