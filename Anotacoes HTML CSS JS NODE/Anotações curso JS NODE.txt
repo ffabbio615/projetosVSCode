@@ -1,1 +1,31 @@
-Adicionar importações e exportações da aula 124
+COMO INICIAR/IMPORTAR O NPM (NODE PACKAGE MANAGER)
+Ir ao terminal de comandos, chegar na pasta do projeto através do comando cd nomeDoProjeto, e depois iniciar o npm dentro da pasta com o comando
+npm init -y. Pronto! o módulo do NODE com o arquivo JSON será importado dentro do projeto.
+
+
+
+
+
+EXPORTAÇÃO E IMPORTAÇÃO DE QUALQUER ELEMENTO DE UM ARQUIVO JS (ES6)
+
+EXPORT
+export class Pessoa{} | export metodoExecutado(){}; | export const variavel = valor; > Exportação simples de classe, método e variável
+export { variavel as nomeNovo }; | export { variavel as default }; > Exportação de uma váriavel com novo nome e outra variavel como padrão
+export default class Pessoa{} | export default metodoExecutado(){}; > Exportação de classe e método como padrão. *Somente pode haver 1 padrão exportado
+
+IMPORT
+import * as objeto from "./nomeDoArquivo.js"; > Importa tudo de um arquivo como um objeto
+import { Pessoa, metodoExecutado as nomeNovoParaEsseMetodo, variavel } from "./nomeDoArquivo.js"; > Importação com o mesmo nome ou atribuindo um novo
+import default from "./nomeDoArquivo.js"; > Importa o que foi exportado como padrão
+
+
+EXPORTAÇÃO E IMPORTAÇÃO COM MODULES (NODE)
+
+EXPORTAÇÃO
+module.exports.nomeNovo = nome; OU exports.idadeNova = idade; > Exporta a variável nome como nomeNovo. Tanto faz usar module ou exports direto
+module.exports = function (a, b){return a * b;}; > Exporta uma função anônima e retorna o resultado dela quando for utilizada no arquivo de importação
+module.exports = { nome, idade }; > Exporta mais de uma variável ao mesmo tempo. Quando exporta mais de uma, não pode usar exports direto
+
+IMPORTAÇÃO
+const modulo = require("./nomeDoArquivo.js"); > Faz um requerimento de importação obtendo todos os exports feitos no outro arquivo "nomeDoArquivo.js"
+const idade = modulo.idadeNova; > Atribui a idade o valor de importação da idade que está dentro do módulo exportado
