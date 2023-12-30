@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <label>Nome:</label>
-    <input type="text" id="input-nome">
-    <label>Sobrenome:</label>
-    <input type="text" id="input-sobrenome">
-    <label>Idade:</label>
-    <input type="text" id="input-idade">
-    <button id="botao-enviar-dados">Enviar Dados</button>
-    <button id="botao-receber-dados">Exibir Dados</button>
+    <div>
+        <label>Nome:</label>
+        <input type="text" id="input-nome">
+        <label>Sobrenome:</label>
+        <input type="text" id="input-sobrenome">
+        <label>Idade:</label>
+        <input type="text" id="input-idade">
+        <button id="botao-enviar-dados">Enviar Dados</button>
+        <label>Digite o Nome para Buscar:</label>
+        <input type="text" id="input-search">
+        <button id="botao-receber-dados">Exibir Dados</button>
 
-    <div class="exibirPessoa"></div>
-
+        <div class="exibirPessoa"></div>
+    </div>
     <script type="module" src="./Controle.js"></script>
 </body>
 </html>

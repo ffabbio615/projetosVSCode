@@ -4,6 +4,7 @@ export class PessoaVisao{
         this.inputSobrenome = document.querySelector('#input-sobrenome');
         this.inputIdade = document.querySelector('#input-idade');
         this.botaoEnviarDados = document.querySelector('#botao-enviar-dados');
+        this.inputBuscarDados = document.querySelector('#input-search');
         this.botaoReceberDados = document.querySelector('#botao-receber-dados');
     }
 
@@ -20,6 +21,7 @@ export class PessoaVisao{
         this.inputNome.value = '';
         this.inputSobrenome.value = '';
         this.inputIdade.value = '';
+        this.inputBuscarDados.value = '';
     }
 
 }
