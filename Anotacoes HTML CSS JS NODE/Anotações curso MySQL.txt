@@ -1,0 +1,77 @@
+DENTRO DO DBEAVER:
+
+AO CRIAR OS CAMPOS DA TABELA
+int > São dois bilhões de registros para menos e 2 bilhões para mais a partir do zero
+intunasigned > São quatro bilhões de registros para mais a partir do zero
+varchar (quantidade) > Define que o tipo utilizado terá um complemento variável com a quantidade definida entre parênteses
+datetime > tipo de data completa com horas, minutos, segundos, etc
+date > tipo de data somente com dias, meses e anos
+datetime ou date com padrão "now()" > adiciona a data na coluna de forma automática na hora do registro
+datetime ou date com padrão "now() on update now()" > adiciona a data na coluna de forma automática ao atualizar um registro
+enum > Quando utiliza um input select e pode-se ter vários valores diferentes
+
+
+SCRIPTS DO DBEAVER
+# ou -- ou /* */ > Serve para fazer comentários no script MySQL no DBEAVER
+CTRL+ENTER > Serve para executar os scripts
+
+
+SCRIPTS MySQL
+
+use nome_da_base_de_dados; > Todo código executado será relacionado a essa base de dados
+show tables; > Mostra as tabelas de uma base de dados
+describe nome_da_tabela; > Mostra todas as colunas da tabela e suas informações
+
+
+INSERT
+
+INSERT INTO tabela (coluna1, coluna2, coluna3) VALUES ("primeiroValor", "segundoValor", "terceiroValor"); > Insere na tabela os valores em ordem.
+Lembrando que pode inserir mais de uma linha na tabela, dessa forma: (coluna1, coluna2, coluna3) VALUES ("primeiroValor", "segundoValor", "terceiroValor"),
+("primeiroValor", "segundoValor", "terceiroValor"), ("primeiroValor", "segundoValor", "terceiroValor");
+
+
+SELECT INSERT
+
+INSERT INTO tabela2 (coluna1, coluna2, coluna3) SELECT (coluna1, coluna2, coluna3) FROM tabela1; > Insere valores em uma tabela usando valores de outra.
+INSERT INTO tabela2 (coluna1, coluna2, coluna3) SELECT CONCAT ("Coluna núm: ", coluna1), ("Coluna núm: ", coluna2), ("Coluna núm: ", coluna3) FROM tabela1; >
+ Insere valores em uma tabela usando valores de outra concatenando os valores de texto com os das colunas.
+
+SELECT
+
+SELECT * FROM tabela t > Seleciona tudo de uma tabela. O "t" ali é um apelido para a tabela e pode ser usado posteriormente.
+SELECT coluna FROM tabela1 t > Seleciona uma coluna específica de uma tabela. Para selecionar mais colunas, é só separar como vírgula. Ex.: tabela1, tabela2...
+SELECT * FROM tabela WHERE coluna1 >10 > Seleciona tudo de uma tabela onde o coluna escolhido tem valor maior que 10. Pode fazer com strings, datas, floats, etc.
+SELECT * FROM tabela WHERE coluna1 >10 AND coluna2 = "Nome" > Seleciona tudo da tabela onde coluna1 é maior que 10 e coluna2 tem "Nome". Para "ou", usa-se "or"
+SELECT * FROM tabela WHERE coluna BETWEEN 25 AND 100; > Seleciona na coluna da tabela que estão entre 25 e 100.
+SELECT * FROM tabela WHERE coluna IN (110, 115, 120); > Seleciona na coluna da tabela somente os dados iguais a 110, 115 e 120.
+SELECT * FROM tabela WHERE coluna LIKE "%bio"; > Seleciona na coluna da tabela os valores terminados em "bio". A % significa "qualquer coisa ". Pode-se utilizar
+por exemplo LIKE "F%io" para dizer que há um F antes de qualquer coisa que vem antes de io. Para ser mais específico, pode-se utilizar LIKE "F___o" para dizer que
+há uma palavra de 5 letras e que há qualquer coisa nas 3 letras entre o F e o O.
+SELECT * FROM tabela ORDER BY coluna1 ASC, coluna2 DESC; > Ordena a tabela primeiro pela coluna1 crescente e depois ordena a coluna2 decrescente.
+SELECT * FROM tabela LIMIT 2; > Limita para os dois primeiros resultados.
+SELECT * FROM tabela LIMIT 2 OFFSET 3; > Limita para dois resultados, porém pulando os 3 primeiros.
+
+Select Composto
+SELECT tabela1.coluna, tabela2.coluna FROM tabela1, tabela2 WHERE tabela1.coluna = tabela2.coluna; > Seleciona uma coluna de cada tabela.
+SELECT t1.coluna, t2.coluna FROM tabela1 AS t1, tabela2 AS t2; > Igual acima, seleciona uma coluna de cada tabela, mas dá nome para elas. Bom para IDs. 
+SELECT coluna1, coluna1 FROM tabela1, tabela2 WHERE tabela1.coluna1 = tabela2.coluna1; > Mostra corretamente a ligação entre duas tabelas. Essencial para IDs.
+
+JOINS
+SELECT coluna1, coluna2 FROM tabela1 INNER JOIN tabela2 ON tabela1.coluna1 = tabela2.coluna1; > Mostra registros de duas colunas da tabela1 quando houver uma
+correspondência entre a coluna1 da tabela1 e a coluna1 da tabela2.
+SELECT coluna1, coluna2 FROM tabela1 INNER JOIN tabela2 ON tabela1.coluna1 = tabela2.coluna1; > O mesmo que em cima, mas, mesmo que não tiver correspondência
+entre as colunas indicadas, todas as colunas da tabela esquerda aparecerão e as da direita aparecerão com nulo ou algum valor, se tiverem. A INNER JOIN só Mostra
+quando há a correspondência.
+RIGHT JOIN é o contrário.
+
+
+UPDATE
+
+UPDATE tabela set coluna1 = "Outro nome", coluna2 = outroValor WHERE coluna = 1; > Atualiza duas colunas da tabela onde a coluna buscada for igual a 1.
+UPDATE tabela set coluna1 = round (rand() * 10000, 2); > Atualiza a coluna1 com um número aleatório até 10000, sendo que o round limita 2 casas após a vírgula.
+
+
+DELETE
+
+DELETE FROM tabela WHERE coluna = 1; > Deleta da tabela quando a coluna tiver o valor 1. Geralmente se deleta pela primary key.
+DELETE FROM tabela WHERE coluna BETWEEN 1 AND 5; > Deleta da tabela os registros da coluna entre 1 e 5.
