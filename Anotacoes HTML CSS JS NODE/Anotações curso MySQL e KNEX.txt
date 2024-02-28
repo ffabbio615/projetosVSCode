@@ -164,8 +164,120 @@ RELAÇÃO DE MUITOS PARA MUITOS
     coluna.primary(['user_id','role_id']); //indica que os dois campos são também uma chave primária
 
 
+
 CRIAR ARQUIVO .JS QUE SE CONECTA COM O KNEX
 É só criar um arquivo com qualquer nome e inserir os códigos abaixo para conectar ao KNEX:
 
 const knexfile = require('../../knexfile'); //Aqui coloca o diretório do arquivo de conexão KNEX ao banco de dados
-const knex = require('knex')(knexfile); //Pode utilizar somente essa linha com o diretório entre aspas
+const knex = require('knex')(knexfile); //Aqui acessa a biblioteca Knex e passa o arquivo da constante anterior
+module.exports(knex); //Aqui exporta a conexão para depois ser importada (require) em outro arquivo
+
+
+
+KNEX INSERT
+Primeiro se importa a conexão do banco e cria um array com 1 ou mais objetos para fazer a inserção. Depois disso faz a
+inserção, trata o erro e encerra a conexão com o banco.
+
+const knex = require('./connection');
+
+const data = {
+    first_name: 'José',
+    last_name: 'Santos Melo',
+    email: 'josesantos2502@gmail.com',
+    password_hash: 'melo@1958',
+    salary: 1415.00
+};
+
+knex('users')
+.insert(data).then(() =>{ 
+    console.log('Dados inseridos com sucesso!'); 
+})
+.catch(()=>{ 
+    console.log('Os dados não foram inseridos'); 
+})
+.finally(() =>{ 
+    knex.destroy(); 
+});
+
+
+
+KNEX SELECT
+Seleção simples de uma ou mais colunas da tabela. Quase igual ao insert, porém apenas seleciona as colunas:
+
+knex('users').select('email', 'first_name').then(...).catch(...).finally(...);
+
+SELECT COM ALIAS EM COLUNA> knex('users').select('email as ue', 'first_name as ufn').then(...).catch(...).finally(...);
+SELECT COM ALIAS EM TABELA> knex('users as u').select('email', 'first_name').then(...).catch(...).finally(...);
+
+SELECT COM WHERE> knex('users').select('*').where('first_name', '=', 'José').then(...).catch(...).finally(...);
+SELECT COM WHERE COMPOSTO> knex('users').select('*').where({id: 4, first_name: 'José'}).then(...).catch(...).finally(...);
+SELECT COM WHERE COMPOSTO E ALIAS> knex('users').select('salary as Salário').where({id: 4, first_name: 'José'}).then(...).catch(...).finally(...);
+SELECT COM WHERE COMPOSTO E ORWHERE> knex('users').select('*').where('first_name', '=', 'José').orwhere('id', '=', 4).then(...).catch(...).finally(...);
+SELECT COM WHERE COMPOSTO E ANDWHERE> knex('users').select('*').where('first_name', '=', 'José').andwhere('id', '=', 2).then(...).catch(...).finally(...);
+SELECT COM WHERE E ANDWHEREBETWEEN> knex('users').select('*').where('first_name', '=', 'José').andWhereBetween('id', [1,20]).(...).(...).(...)
+
+OUTROS WHERE> .wherein('id', [1,2,4,5,28,54]);
+SELECT COM LIKE> knex('users').select('*').where('first_name', 'like', '%iane').(...).(...).(...) | .where('first_name', 'like', '___iane') | EXIBE TATIANE
+
+
+SELECT COMPOSTO COM INNERJOIN (Seleção de duas tabelas diferentes)
+
+knex('users as u')
+  .select('u.id as uid', 'p.id as pid', 'p.bio', 'u.first_name')
+  .innerJoin('profiles as p', 'u.id', 'p.user_id')
+  .where('u.first_name', 'like', '%a')
+  .orderBy('u.id', 'asc')
+  .limit(5);
+
+
+ORDER BY> .orderBy('id','desc') |  .orderBy('id','asc') > Ordem descendente e ascendente
+OFFSET> .offset(7) > Pula a exibição de 7 registros
+LIMIT> .limit(5) > Exibe apenas 5 registros
+ROUND E RAND > salary: knex.raw('round(rand() * ?, ?)', [10000, 2]) > Round serve para mostrar números após a vírgula (max 2). Rand serve para sortear números
+reais entre 0 e 1. Ambos não existem no Knex, por isso precisam de Knex.raw para usá-los.
+const select = knex('users')
+ MAX > .max('salary as max_salary') > O maior registro dentre os selecionados
+ MIN > .min('salary as min_salary') > O menor registro dentre os selecionados
+ AVG > .avg('salary as avg_salary') > A média dos registros dentre os selecionados
+ SUM > .sum('salary as sum_salary') > Soma de todos os registros escolhidos
+ COUNT > .count('salary as count_salary'); > Quantos registros foram encontrados
+GROUPBY > .groupBy('coluna1', 'coluna2') >  Agrupa os resultados pelo valor das colunas coluna1 e coluna2.
+
+
+DELETE
+Deleta um ou mais registros da tabela:
+
+knex('users').delete().where('id', '=', 18)
+
+
+
+UPDATE
+Primeiro prepara dos dados, depois faz o select e depois atualiza um ou mais registros na tabela:
+
+const novosDados = {
+    first_name: 'Erick',
+    last_name: 'Silva Cruz',
+    email: 'erickcruz@gmail.com',
+    password_hash: 'eruz123',
+    salary: 2200
+};
+
+knex('users')
+  .where({ id: 29 }) // Condição para selecionar o registro a ser atualizado (por exemplo, onde o id é igual a 1)
+  .update(novosDados) // Dados a serem atualizados
+  .then(() => {
+    console.log('Dados atualizados com sucesso!');
+  })
+  .catch(() => {
+    console.log('Erro ao atualizar dados');
+  })
+  .finally(() => {
+    knex.destroy();
+  });
+
+
+
+KNEX QUERY
+Executa um código SQL cru no Knex:
+
+knex.raw(query).then(...).catch(...).finally(...);
