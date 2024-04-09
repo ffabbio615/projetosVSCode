@@ -4,7 +4,7 @@
 module.exports = {
     client: 'mysql2',
     connection: {
-      database: 'base_de_dados_knex',
+      database: 'db_top_arts',
       user:     'root',
       password: 'admin'
     },
@@ -13,6 +13,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: './Projetos Pessoais/SistemaTopArts/migrations'
     }
   };

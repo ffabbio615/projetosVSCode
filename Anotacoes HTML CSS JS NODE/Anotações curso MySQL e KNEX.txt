@@ -117,11 +117,15 @@ module.exports = {
   };
 
 
-MIGRATIONS KNEX (Recurso que permite controlar e gerenciar as alterações na estrutura do banco de dados)
+MIGRATIONS KNEX (Recurso que permite controlar o banco de dados, criando e excluindo tabelas e seus campos)
 npx knex --help > Exibe todos os comandos que podem ser executados no KNEX.
-npx knex migrate:make 'create_users' > O usuário que fizer essa Migration, vai ficar registrado na pasta Migrations.
-npx knex migrate:up > Executa a próxima migração ou a migração específica que ainda não foi executada.
-npx knex migrate:down > Desfaz a última migração ou a migração específica que já foi executada.
+npx knex migrate:make 'create_users' > Cria um arquivo Migration com métodos UP e DOWN, que vai ficar registrado na pasta Migrations.
+
+DENTRO DO ARQUIVO CRIADO NA PASTA MIGRATIONS
+npx knex migrate:up > Executa a próxima migração ou a migração específica que ainda não foi executada na pasta Migrations.
+npx knex migrate:down > Desfaz a última migração ou a migração específica que já foi executada na pasta Migrations.
+
+COMANDOS QUE NÃO SÃO EXECUTADOS DENTRO DO ARQUIVO CRIADO NA PASTA MIGRATIONS
 npx knex migrate:latest > Executa todas as migrações que ainda não foram feitas, como se fosse um UPDATE.
 npx knex migrate:rollback > Reverter o último lote de migrações realizadas. Diferente do down, ele não executa a função, então uma tabela criada perderá
 apenas os campos, ficando vazia.
@@ -129,7 +133,7 @@ apenas os campos, ficando vazia.
 
 CRIAR UMA TABELA COM KNEX
 
-Dentro da função UP (A função UP envia o comando para executar):
+//Dentro da função UP (A função UP envia o comando para executar):
 return knex.schema.createTable('users', (table) =>{
     table.increments('id').primary();
     table.string('first_name', 150).notNullable();
@@ -140,8 +144,21 @@ return knex.schema.createTable('users', (table) =>{
     table.timestamps(true, true); //cria os campos created_at e updated_at com a data e hora automaticamente
   });
 
-  Dentro da função DOWN (A função DOWN reverte o comando executado, caso necessário):
+  //Dentro da função DOWN (A função DOWN reverte o comando executado, caso necessário):
   return knex.schema.dropTable('users');
+
+
+  ALTERAR UMA COLUNA DE UMA TABELA COM O KNEX
+
+  //Dentro da função UP (altera a coluna escolhida):
+  return knex.schema.alterTable('usuarios', (table) =>{
+    table.string('telefone', 30).alter(); // Altera o tipo da coluna 'telefone' para VARCHAR(30)
+  });
+
+  //Dentro da função DOWN (altera a coluna escolhida):
+   return knex.schema.alterTable('usuarios', (table) =>{
+    table.string('telefone', 30).alter(); // Desfaz a alteração para VARCHAR(20) na coluna 'telefone'
+  });
 
 
 ESTABELECER RELAÇÕES ENTRE AS TABELAS
@@ -163,9 +180,9 @@ RELAÇÃO DE MUITOS PARA MUITOS
 //unique, a relação se torna muitos para muitos
     coluna.primary(['user_id','role_id']); //indica que os dois campos são também uma chave primária
 
+-----------------------------
 
-
-CRIAR ARQUIVO .JS QUE SE CONECTA COM O KNEX
+CRIAR ARQUIVO .JS QUE SE CONECTA COM O KNEX (Após terminar as Migrations da tabela em questão)
 É só criar um arquivo com qualquer nome e inserir os códigos abaixo para conectar ao KNEX:
 
 const knexfile = require('../../knexfile'); //Aqui coloca o diretório do arquivo de conexão KNEX ao banco de dados

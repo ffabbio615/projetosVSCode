@@ -14,7 +14,7 @@ class LoginController{
             {
                 Object.assign(this.loginModel, this.loginView.getFields());
                 if(loginModel.checkAccount()){
-                    //window.open('https://www.facebook.com', '_blank');
+                    //window.open('./sta.html', '_blank');
                     window.open('./sta.html', '_self');
                 }
                 else{
