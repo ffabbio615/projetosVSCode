@@ -81,6 +81,7 @@ SELETORES BÁSICOS
 .pai~.filho = seleciona toda classe filho que vem depois de pai, porém dentro do mesmo container
 #pai = seleciona um elemento html com id pai
 html, body, h1, div, a, p, ... = seleciona um elemento pelo tipo dele
+input[type="button"] = selecion um input do tipo button. Pode ser outros tipos
 * = seleciona todos os elementos
 
 SELETORES DE ATRIBUTOS
