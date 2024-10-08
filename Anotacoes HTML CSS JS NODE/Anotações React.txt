@@ -1,0 +1,29 @@
+PARA INSTALAR O REACT NUMA PASTA DE UM PROJETO
+
+Primeiro, a pasta não pode conter nenhuma letra maiúscula e não precisa iniciar o node para instalar o REACT.
+Para importar, o código é o seguinte: "npx create-react-app ."
+Se quiser importar para um projeto que ainda não existe, deve substituir o "." pelo nome da pasta, ficando npx create-react-app nomedapasta
+
+APÓS INSTALADO, O REACT IMPORTA VÁRIAS PASTAS, SENDO A "SRC" QUE FICAM OS NOSSOS CÓDIGOS E A "PUBLIC" O ARQUIVO INDEX DO REACT 
+
+PARA INICIAR A APLICAÇÃO COM O REACT INSTALADO, UTILIZE O SEGUINTE CÓDIGO NO TEMRINAL DA PASTA DO PROJETO: "npm start"
+
+O ARQUIVO PRINCIPAL EM JS, QUE ESTÁ DENTRO DE "SRC" SE CHAMA "App.js", que é o arquivo que compila o código e dá start na página. Há também o "index.css" e o "index.js".
+Por padrão, o navegador não entende JSX, que é o arquivo REACT que tem JS e HTML, então precisa que o App.js faça essa "tradução" e rode no navegador esse arquivo transcrito.
+
+
+**AULA 191** Aula que ensina a instalar um editor de código incorreto para auxiliar na programação (NÃO FUNCIONOU!)
+INSTALAR A EXTENSÃO "EditorConfig" (do rato), DEPOIS CLICAR COM O BOTÃO DIREITO NA PASTA DO PROJETO PARA ADICIONAR O EDITOR. APÓS ISSO, DEIXAR DESSA FORMA:
+
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+APÓS INSTALAR E CONFIGURAR O EDITOR, INSTALAR O ESLINT, DIGITANDO NO TERMINAL O CÓDIGO:
+"npm i eslint babel-eslint --save-dev"
+
+APÓS INSTALAR O ESLINT, ADICIONAR A EXTENSÃO "ESLint" E INICIAR NO TERMINAL COM O CÓDIGO:
+"npx eslint --init"

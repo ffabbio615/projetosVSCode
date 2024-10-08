@@ -79,7 +79,7 @@ DELETE FROM tabela WHERE coluna BETWEEN 1 AND 5; > Deleta da tabela os registros
 
 ______________________________________________________________________________________________________
 
-
+DENTRO DO VS CODE (NO TERMINAL)
 
 KNEX > O Knex.js é um construtor de consultas SQL para Node.js
 Para utilizar o KNEX, deve-se ter primeiro o MySQL instalado, o NODE importado e depois importar o KNEX (aula 535)

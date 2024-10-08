@@ -1,3 +1,6 @@
+*TUDO SOBRE NPM NA AULA 126 - NODE PACKAGE MANAGER
+
+
 COMO INICIAR/IMPORTAR O NPM (NODE PACKAGE MANAGER)
 Ir ao terminal de comandos, chegar na pasta do projeto através do comando cd nomeDoProjeto, e depois iniciar o npm dentro da pasta com o comando
 npm init -y. Pronto! o módulo do NODE com o arquivo JSON será importado dentro do projeto.
