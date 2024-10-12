@@ -1,29 +1,78 @@
 PARA INSTALAR O REACT NUMA PASTA DE UM PROJETO
-
 Primeiro, a pasta não pode conter nenhuma letra maiúscula e não precisa iniciar o node para instalar o REACT.
-Para importar, o código é o seguinte: "npx create-react-app ."
+
+-----WEBPACK-----
+
+Para instalar o REACT com WEBPACK, o código é o seguinte: "npx create-react-app ."
 Se quiser importar para um projeto que ainda não existe, deve substituir o "." pelo nome da pasta, ficando npx create-react-app nomedapasta
 
 APÓS INSTALADO, O REACT IMPORTA VÁRIAS PASTAS, SENDO A "SRC" QUE FICAM OS NOSSOS CÓDIGOS E A "PUBLIC" O ARQUIVO INDEX DO REACT 
+PARA INICIAR A APLICAÇÃO NO WEBPACK COM O REACT INSTALADO, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL DA PASTA DO PROJETO: "npm start"
+*PARA PARAR A APLICAÇÃO, UTILIZE "CTRL+C" NO TEMRINAL 
 
-PARA INICIAR A APLICAÇÃO COM O REACT INSTALADO, UTILIZE O SEGUINTE CÓDIGO NO TEMRINAL DA PASTA DO PROJETO: "npm start"
+PARA COMPILAR O PROJETO E FAZER O DEPLOY (IMPLANTAR), FAZENDO COM QUE ELE ESTEJA PRONTO PARA HOSPEDAGEM, UTILIZAMOS O COMANDO:
+"npm run build"
+Assim que concluir, uma pasta chamada "build" será criada, já com o projeto todo compilado.
+-----------
+
+
+-----VITE-----
+
+1-PARA INSTALAR O REACT COM O VITE, O CÓDIGO É O SEGUINTE: "npm create vite@latest", DEPOIS DIGITAR O NOME DO PROJETO E O FRAMEWORK, QUE NO CASO SERÁ O REACT.
+2-DEPOIS ABRA O TERMINAL DO DIRETÓRIO ONDE FICARÁ O PROJETO OU ACESSE NO MESMO TEMRINAL ANTERIOR: "cd meu-projeto-vite"
+3-DEPOIS DE CRIADO O PROJETO, DEVE-SE UTILIZAR O CÓDIGO: "npm install"
+*SE UM PROJETO JÁ CRIADO FOR IMPORTADO, TAMBÉM PRECISA UTILIZAR O CÓDIGO: "npm install"
+4-PARA INICIAR A APLICAÇÃO (SERVDOR) NO VITE COM O REACT E ELE INSTALADOS, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL DA PASTA DO PROJETO: "npm run dev"
+5-PARA PARAR A APLICAÇÃO, UTILIZE "CTRL+C" NO TEMRINAL
+-----------
+
+
 
 O ARQUIVO PRINCIPAL EM JS, QUE ESTÁ DENTRO DE "SRC" SE CHAMA "App.js", que é o arquivo que compila o código e dá start na página. Há também o "index.css" e o "index.js".
 Por padrão, o navegador não entende JSX, que é o arquivo REACT que tem JS e HTML, então precisa que o App.js faça essa "tradução" e rode no navegador esse arquivo transcrito.
 
 
-**AULA 191** Aula que ensina a instalar um editor de código incorreto para auxiliar na programação (NÃO FUNCIONOU!)
-INSTALAR A EXTENSÃO "EditorConfig" (do rato), DEPOIS CLICAR COM O BOTÃO DIREITO NA PASTA DO PROJETO PARA ADICIONAR O EDITOR. APÓS ISSO, DEIXAR DESSA FORMA:
 
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
 
-APÓS INSTALAR E CONFIGURAR O EDITOR, INSTALAR O ESLINT, DIGITANDO NO TERMINAL O CÓDIGO:
-"npm i eslint babel-eslint --save-dev"
 
-APÓS INSTALAR O ESLINT, ADICIONAR A EXTENSÃO "ESLint" E INICIAR NO TERMINAL COM O CÓDIGO:
-"npx eslint --init"
+--INICIANDO A PROGRAMAÇÃO--
+
+
+-----REACT-----
+
+MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo de vida dos componentes):
+
+render(){ return ();} > Método raiz de construção no REACT. Ele funciona como se fosse o método Start() do Unity 3D
+
+componentDidMount(){} > Método que executa código depois que o componente é montado no DOM
+
+componentWillUnmont(){} > Método que realiza tarefas de limpeza quando o componente está prestes a ser removido do DOM.
+Ele é chamado imediatamente antes de um componente ser desmontado e destruído.
+
+componentDidUpdate(){} > Método que executa sem interrupção, ou seja, igual ao método Update do Unity 3D
+
+
+-----JSX (Javascript + HTML)-----
+
+DIFERENÇA ENTRE HTML E JSX
+Uma ferramenta boa para transcrever código e mostrar a diferença entre um código html e um com jsx é o site > transform.tools/html-to-jsx
+
+
+CLASS - CLASSNAME (No HTML, a classe CSS se chama class, já no JSX, a classe CSS se chama classname)
+<div class = ""> </div> = HTML
+<div classname = ""> </div> = JSX
+
+
+FOR - HTMLFOR
+<label for="nome">Nome: </label> = HTML
+<label htmlFor="nome">Nome: </label> = JSX
+
+
+
+-----VERIFICAÇÃO CONDICIONAL EM JAVASCRIPT-----
+
+OPERADOR && (VERDADEIRO À ESQUERDA)
+O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vier após, senão não exibe. Ex.:  {product.discountedPrice && <h4>$ {product.discountedPrice}</h4>}
+
+OPERADORES ? : (VERDADEIRO OU FALSO)
+Utilizado como if, ele exibe verdadeiro "?" ou falso ":". Ex.:  {product.discountedPrice ? <h4>$ {product.discountedPrice}</h4> : ''}
