@@ -76,3 +76,35 @@ O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vi
 
 OPERADORES ? : (VERDADEIRO OU FALSO)
 Utilizado como if, ele exibe verdadeiro "?" ou falso ":". Ex.:  {product.discountedPrice ? <h4>$ {product.discountedPrice}</h4> : ''}
+
+
+
+-----COMPONENTES-----
+Os componentes, que são fragmentos das páginas, por questões de limpeza e organização de código, devem ficar separados em arquivos distintos, sendo exportados e importados no App principal,
+que seria o App.jsx. Cada seção de uma página pode ser feita de forma separada e unida depois em fragmentos, compondo o site no final. Os arquivos CSS serão importados dentro do App principal.
+
+PARA EXPORTAR > export default function NomeDaFuncao (){} OU function NomeDaFuncao (){} export default NomeDaFuncao
+PARA IMPORTAR > import QualquerNomeDeFuncao from './components/NomeDoArquivoDaFuncao'; | Depois acessa o componente assim: <NomeDaFuncao /> 
+*CASO ACESSE O COMPONENTE MAPEADO, DEVE-SE MANTER A KEY NESSE ACESSO PARA EVITAR ERRO. | <NomeDaFuncao key={lista.id} />
+
+
+
+-----PROPS----- 
+São funções importadas que passam atributos internamente, em vez de serem somente acessadas. Ex.: export default function NomeDaFuncao ({atributo}){}
+Depois acessa o componente assim: <NomeDaFuncao nomeDoProp={atributoPassado} key={lista.id}
+
+
+
+-----STATES-----
+É um recurso do REACT que dá um estado a uma variável, indicando que a página atualizará automaticamente esta variável caso haja uma mudança nesse estado dessa variável.
+
+PARA IMPORTAR A BIBLIOTECA > import { useState } from 'react';
+EXEMPLO DE VARIÁVEL DE ARRAY DECLARADA COM STATE > const [items, setItems] = useState( [ { } ] );
+
+
+
+-----EVENTS-----
+Falar e mostrar exemplo de onclick
+
+*UTILIZAMOS e.preventDefault(); para parar um evento para ser tratado, porém ele não impede o elemento pai de acionar o evento dele também, por isso que devemos utilizar:
+e.stopPropagation();
