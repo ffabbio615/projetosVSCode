@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+//-----COLORS-----//
+//PRIMARY RED
+$primary-color-red: rgb(170, 20, 0);
+
+//PRIMARY BLUE
+$primary-color-blue: rgb(10, 70, 110);
+
+//SECONDARY RED
+$secondary-color-red-8: rgb(210, 130, 115);
+$secondary-color-red-5: rgb(195, 90, 75);
+$secondary-color-red-2: rgb(180, 45, 30);
+$secondary-color-red3: rgb(135, 15, 0);
+$secondary-color-red5: rgb(120, 15, 0);
+$secondary-color-red8: rgb(75, 10, 0);
+$secondary-color-red11: rgb(60, 5, 0);
+
+//SECONDARY BLUE
+$secondary-color-blue-14: rgb(195, 210, 220);
+$secondary-color-blue-11: rgb(150, 175, 195);
+$secondary-color-blue-8: rgb(110, 145, 170);
+$secondary-color-blue-5: rgb(65, 115, 145);
+$secondary-color-blue-2: rgb(35, 90, 125);
+$secondary-color-blue2: rgb(10, 55, 90);
+$secondary-color-blue5: rgb(5, 40, 65);
+$secondary-color-blue8: rgb(5, 30, 50);
+
+//NEUTRAL
+$neutral-color-white: rgb(255,255,255);
+$neutral-color-light-gray: rgb(230,230,230);
+$neutral-color-medium-gray: rgb(135,135,135);
+$neutral-color-dark-gray: rgb(30,30,30);
+$neutral-color-black: rgb(0,0,0);
+
+
+
+body{
+    background-color: $primary-color-blue;
+}

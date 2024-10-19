@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
@@ -98,7 +96,6 @@ section.items  .description .quantity-area .quantity {
 section.items  .description .quantity-area button:focus {
   outline:0;
 }
-
 
 section.summary {
   background-color: rgb(245, 245, 245);

@@ -1,0 +1,67 @@
+O QUE É SASS?
+
+É uma linguagem de extensão para CSS (SCSS) que adiciona funcionalidades avançadas ao CSS tradicional, facilitando o desenvolvimento de estilos para páginas web.
+Com Sass, você pode usar recursos que não estão disponíveis no CSS puro, como:
+
+VARIÁVEIS: Permite definir valores reutilizáveis para cores, tamanhos, etc.
+$primary-color: #3498db;
+body {
+  background-color: $primary-color;
+}
+
+
+NESTING (Aninhamento): Facilita a escrita de regras CSS dentro de outras, refletindo a estrutura HTML.
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+
+MIXINS: Permitem reutilizar blocos de código.
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  @include flex-center;
+}
+
+HERANÇA: Facilita a reutilização de estilos, permitindo que um seletor herde propriedades de outro.
+%button-style {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.button {
+  @extend %button-style;
+}
+
+OPERAÇÕES MATEMÁTICAS: Permite fazer cálculos diretamente nos estilos.
+.container {
+  width: 100% - 20px;
+}
+
+
+-----INSTALAÇÃO DO SASS-----
+
+Para instalar o SASS, deve-se usar o seguinte código no terminal: npm install --save-dev sass
+*Aparecerá uma dependência nas configurações do projeto para habilitar o SASS. Tudo em SASS será compilado posteriormente para CSS, para que o browser possa ler os arquivos.
+
+
+
+-----MODULOS SCSS-----
+
+Como as páginas de estilo ficam globalmente acessíveis entre os arquivos JSX, precisamos criar os módulos SCSS para evitar que alguma classe possua o mesmo nome e o novo estilo cause uma
+mudança no estilo do outro elemento da outra página. Para garantir que possa utilizar o mesmo nome de classe, temos que fazer:
+
+1-Mudar o nome do arquivo SCSS, adicionando ".module" no nome para identificarmos que se trata de um módulo
+2-Imporar esse arquivo de módulo no arquivo JSX de forma diferente do normal: "import  classes  from './nomeDoEstilo.module.scss'"
+3-Trocar o className que adiciona o nome da classe para a versão sem aspas, dentro de chaves: "<div className={classes.nomeDaClasseDoConflito} </div>
+***NÃO pode utilizar isso quando as classes possuem nomes com hífen, ex.: "<p> className={classes.nome-da-classe-do-conflito} </p>
+****Para utilizar classes com hífens, precisamos alterar o acesso da classe no elemento, colocando colchetes e aspas. Ex.: <p> className={classes['nome-da-classe-do-conflito']} </p>
+*****Para trabalhar com múltiplas classes, precisamos adicionar JS nesse acesso. Ex.: <p> className={`${classes['nome-da-classe-do-conflito']} ${classes.segundaClasse}`} </p>
