@@ -1,0 +1,7 @@
+@use '../App.scss';
+
+.faq-section{
+    min-height: 785px;
+    min-width: 100vw;
+    background-color: App.$neutral-color-white;
+}

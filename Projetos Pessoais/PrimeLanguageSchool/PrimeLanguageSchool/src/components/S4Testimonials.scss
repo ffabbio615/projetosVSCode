@@ -1,0 +1,70 @@
+@use '../App.scss';
+
+.testimonials-section{
+    min-height: 630px;
+    min-width: 100vw;
+    background-color: App.$neutral-color-light-gray;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    h1{
+        width: 100%;
+        font: App.$title-h1-42px;
+        margin: 0px 0 40px 0;
+    }
+}
+.testimonials-group {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .testimonials-card {
+        height: 385px;
+        width: 275px;
+        background-color: App.$neutral-color-white;
+        border-radius: 0.5vw;
+        margin: 10px 10px;
+
+        .testimonial {
+            width: 100%;
+            height: 305px;
+
+            .prime-testimonial-icon {
+                width: 100%;
+                height: 100px;
+                align-content: center;
+
+                div {
+                    width: 70px;
+                    height: 70px;
+                    margin: 0 102.5px;
+                    background-image: url(../assets/img/primeIcon.png);
+                    background-size: cover;
+                }
+            }
+
+            p {
+                padding: 0 25px;
+                height: 205px;
+                align-content: center;
+                font: App.$paragraph-14px;
+            }
+        }
+
+
+        .testimonial-name {
+            width: 100%;
+            height: 80px;
+            background-color: App.$primary-color-blue;
+            color: App.$neutral-color-white;
+            font: App.$title-h5-20px;
+            letter-spacing: 0.4px;
+            align-content: center;
+            border-radius: 0 0 0.5vw 0.5vw
+        }
+    }
+}

@@ -145,10 +145,11 @@ box-shadow: -12px 0px 15px -6px red,  box-shadow: -12px 0px 15px -6px blue; = Ad
 filter: blur() | brightness() | contrast() | drop-shadow() | grayscale() | invert() | opacity() | saturate() | sepia() | url()
 
 
+WEBKIT E BARRA DE ROLAGEM
 
-
-
-
-
-
-
+/* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
+html{ scroll-behavior: smooth; transition: 1s; } = Deixa a rolagem da página mais suave
+::-webkit-scrollbar {width:12px; height: 12px;} =  Define o tamanho da barra de rolagem vertical e horizontal
+::-webkit-scrollbar-track {background: red} = Define a cor de fundo da barra de rolagem
+::-webkit-scrollbar-thumb {background: blue} = Define a cor do carrinho da rolagem
+::-webkit-scrollbar:vertical{display: none;} = Mostra ou não uma barra de rolagem em vertical ou horizontal

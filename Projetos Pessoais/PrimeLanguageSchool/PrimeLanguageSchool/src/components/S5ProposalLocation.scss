@@ -1,0 +1,14 @@
+@use '../App.scss';
+
+.proposal-location-section{
+    min-height: 645px;
+    min-width: 100vw;
+    .proposal-location{
+        min-height: 645px;
+        background-color: App.$secondary-color-blue-2;
+    }
+    .location{
+        min-height: 285px;
+        background-color: App.$primary-color-blue;
+    }
+}

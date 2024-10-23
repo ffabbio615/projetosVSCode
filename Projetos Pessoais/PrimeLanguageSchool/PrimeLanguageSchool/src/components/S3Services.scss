@@ -1,0 +1,14 @@
+@use '../App.scss';
+
+.services-section{
+    min-height: 1120px;
+    min-width: 100vw;
+    .courses{
+        background-color: App.$primary-color-blue;
+        min-height: 420px;
+    }
+    .english-levels{
+        background-color: App.$neutral-color-white;
+        min-height: 700px;
+    }
+}

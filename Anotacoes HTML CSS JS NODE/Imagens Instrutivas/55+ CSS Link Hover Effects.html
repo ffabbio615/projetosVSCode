@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://freefrontend.com/css-link-styles/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>55+ CSS Link Hover Effects</title>
+		<meta name="description" content="Welcome to our collection of CSS link examples! In this carefully curated compilation, we have gathered a selection of free HTML and CSS code examples that showcase the creativity and versatility of link effects.">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="https://freefrontend.com/css-link-styles/">
+		<meta property="og:title" content="55+ CSS Link Hover Effects">
+		<meta property="og:description" content="Welcome to our collection of CSS link examples! In this carefully curated compilation, we have gathered a selection of free HTML and CSS code examples that showcase the creativity and versatility of link effects.">
+		<meta property="og:image" content="https://freefrontend.com//assets/img/css-link-styles/thumb.png">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="freefrontend.com">
+		<meta name="twitter:creator" content="@FreeFrontend">
+		<meta name="twitter:url" content="https://freefrontend.com/css-link-styles/">
+		<meta name="twitter:title" content="55+ CSS Link Hover Effects">
+		<meta name="twitter:description" content="Welcome to our collection of CSS link examples! In this carefully curated compilation, we have gathered a selection of free HTML and CSS code examples that showcase the creativity and versatility of link effects.">
+		<meta name="twitter:image" content="https://freefrontend.com//assets/img/css-link-styles/thumb.png"> 
+		<link href="https://freefrontend.com/MonaSans.woff2" as="font" type="font/woff2">
+		
+<style>
+@font-face {
+  font-family: "Mona Sans";
+  src: url('../MonaSans.woff2') format('woff2 supports variations'), url('../MonaSans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+:root {
+  --gap: 1.67rem;
+  --primary: #333;
+  --secondary: #444;
+  --duration: .15s;
+  --ttfunction: cubic-bezier(.4,0,.2,1);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Mona Sans", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  word-break: break-word;
+  background-color: #efefef;
+}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  word-break: break-word;
+}
+strong,
+b {
+  font-weight: 600;
+}
+ol,
+ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+em {
+  font-variation-settings:"wght" 400,"wdth" 100,"slnt" -10;
+  font-style: normal;
+}
+figure {
+  margin: 0;
+}
+video {
+  max-width: 100%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button,
+input,
+textarea {
+  padding: 0;
+  font: inherit;
+  background: transparent;
+  border: 0;
+  appearance: none;
+}
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+img.imagelong {
+  border-radius: 0 0 40px 0; 
+}
+iframe {
+  max-width: 100%;
+}
+hr {
+  min-width: 100%;
+  margin-bottom: 75px;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+p {
+  text-wrap: pretty;
+}
+div.wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+div.wrapper.min {
+  max-width: 680px;
+}
+header.header {
+  background-color: #111;
+  position: sticky;
+  border-bottom: 1px solid var(--primary);
+  top: 0;
+  font-size: 14px;
+  line-height: 2;
+  z-index: 999;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1.logo {
+  font-size: 14px;
+}
+p.logo {
+  margin: 0;
+}
+nav a {
+  color: #ddd;
+  display: block;
+  padding: 0 6px;
+  border: 1px solid #111;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+.logo a {
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+.logo a:hover {
+  font-weight: 900;
+}
+
+ul.navi li {
+  display: inline-block;
+  font-size: 12px;
+  list-style-type: none;
+}
+ul.navi li a:hover {
+  background-color: #222;
+  border: 1px solid #444;
+}
+div.wrapper.search {
+  margin: 10px auto 40px;
+}
+.gsib_a,
+.gsc-search-button {
+  line-height: 1;
+}
+.gsc-search-button.gsc-search-button-v2 {
+  margin: 0;
+  padding: 7px 27px;
+}
+.gsc-control-cse {
+  padding: 10px 0 !important;
+}
+.footer {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  text-align: center;
+}
+.footer a {
+  margin: 0 5px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  font-size: 160px;
+  font-weight: 700;
+}
+.first-entry {
+  position: relative;
+}
+.entry-header h2 {
+  font-size: 30px;
+}
+.post-entry {
+  position: relative;
+  margin: 60px 0;
+  padding: var(--gap);
+  border: 1px solid #ddd;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+.post-entry:hover {
+  border-color: #333;
+  background-color: #fff;
+}
+.home p {
+  margin-bottom: 1em;
+}
+.meta-info {
+  font-size: 12px;
+  font-weight: 300;
+  color: #444;
+}
+.meta-info span {
+  color: #4059AD;
+}
+.entry-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.pagination {
+  margin: 60px 0;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+.pagination a {
+  padding: 2px 15px;
+  font-size: 18px;
+  color: var(--primary);
+  border: 1px solid #111;
+}
+.pagination a:hover {
+  color: var(--secondary);
+}
+.post-title {
+  font-size: 30px;
+  margin-top: -15px;
+  transform: translateY(10px);
+}
+h2.list-header {
+  font-size: 22px;
+  padding: 10px 20px 5px;
+  background-color: #e6e6e6;
+}
+.list-header + ol {
+  columns: 1;
+  margin-bottom: 1.67em;
+  padding-bottom: 20px;
+  background-color: #e6e6e6;
+}
+.post-content a {
+  text-decoration: underline;
+}
+a.welcome {
+  padding: 0 10px;
+  border-radius: 2px;
+  border: 1px solid rgba(221, 221, 221, .5);
+  background-color: rgba(221, 221, 221, .5);  
+  text-decoration: none;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+a.welcome:hover {
+  border: 1px solid var(--primary);
+}
+.highlight {
+  padding: 1em;
+  background: #e6e6e6;
+}
+footer.page-footer {
+  margin: 50px 0;
+}
+footer.page-footer ul.pagination {
+  display: flex;
+  text-align: center;
+  list-style: none;
+  gap: 0.1rem;
+}
+footer.page-footer ul.pagination li a {
+  margin: 0 5px;
+}
+footer.page-footer ul.pagination li a:hover {
+  color: var(--secondary);
+}
+footer.page-footer ul.pagination li.active a {
+  text-decoration: underline;
+}
+footer.page-footer ul.pagination li:first-child {
+  margin: 0 15px 0 0;
+}
+footer.page-footer ul.pagination li:last-child {
+  margin: 0 0 0 15px;
+}
+h2.subheader {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.sitemap {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  margin-bottom: 5em;
+}
+.sitemap.fb {
+  grid-template-columns: 1fr;
+}
+.sitemap .card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+.sitemap .card:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: #fff;
+}
+.sitemap .card article {
+  padding: 0.5em;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.sitemap h3 {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.sitemap .card span {
+  font-size: 12px;
+  color: #444;
+}
+.sitemap.fb .card span {
+  font-size: 14px;
+}
+.sitemap.fb  h3 {
+  text-transform: none;
+}
+code {
+  display: inline-block;
+  padding: 0 0.5em;
+  font-size: 90%;
+  font-family: "Mona Sans", "Nimbus Mono PS", "Courier New", monospace;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+}
+.highlight code {
+  color: #eee;
+  background-color: #111;
+}
+.news h2.accent {
+  margin-top: 75px;
+  border-top: 1px solid #111; 
+  display: inline-block;
+}
+.news h2.accent:first-child {
+  margin-top: 30px;
+}
+.ffn {
+  padding: 0;
+  list-style: none;
+}
+.ffn li {
+  margin: 30px 0;
+}
+.ffn li:first-child {
+  margin-top: 10px;
+}
+.ffn a {
+  display: inline-flex;
+  gap: .3rem;
+  margin-left: -8px;
+  padding-left: 8px;
+  margin-right: -8px;
+  padding-right: 8px;
+}
+.ffn a:hover {
+  background-color: #f6f9fe;
+}
+.ffn a img {
+  width: 18px;
+  height: 18px;
+  margin-top: 7px;
+}
+ul.ffn h3 {
+  font-size: 18px;
+  padding: 0 5px;
+}
+ul.ffn a h3 code {
+  background: none;
+  display: inline;
+  padding: 0;
+}
+ul.ffn h4 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #444;
+}
+ul.ffn h4 span {
+  color: #111;
+}
+ul.ffn p {
+  margin-top: 0px;
+  line-height: 1.5;
+}
+ul.ffn img.cover {
+  width: 100%;
+  height: auto;
+}
+ul.ffn.preview img {
+  width: 200px;
+  height: auto;
+} 
+ul.ffn.preview a {
+  padding-bottom: 8px;
+  border: 1px solid #efefef;
+  width: 100%;
+}
+ul.ffn.preview a:hover {
+  border: 1px solid var(--primary);
+}
+.news .highlight {
+  margin-top: 95px;
+  font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+  font-weight: normal;
+  background-color: #e6e6e6;
+}
+.ffn-list {
+  margin: 25px 0;
+  list-style-type: none;
+  columns: 15em;
+}
+.ffn-list li {
+  border-bottom: 1px dashed var(--primary);
+  font-size: 14px;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+.ffn-list li:hover {
+  background-color: #f6f9fe;
+}
+.ffn-list a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+.ffn-list span {
+  float: right;
+}
+main figure img {
+  z-index: 99;
+  width: 100%;
+}
+main figure img + img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+}
+main figure:hover img + img {
+  z-index: 1;
+}
+main .img-extra {
+  display: block;
+  line-height: 1;
+}
+main .img-extra::after {
+  content: "↑ hover or tap the image to play the video";
+  font-size: 12px;
+  color: #444;
+}
+article.wrapper-2017,
+article.wrapper-2024 {
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: var(--gap);
+  border: 0.5px solid hsla(0, 0%, 0%, 0.15);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+article.wrapper-2017 p {
+  margin-bottom: 1.67em;
+}
+article.wrapper-2024 p {
+  margin: 5px 0;
+}
+article.wrapper-2024 p:last-child {
+  margin-bottom: 22px;
+}
+article.wrapper-2024 li::after {
+  content: "";
+  display: inline-block;
+  margin: 0 5px;
+}
+article.wrapper-2024 li:last-child::after {
+  content: none;
+}
+article.wrapper-2024 li {
+  display: inline-block;
+  list-style-type: none;
+}
+article.wrapper-2017:hover,
+article.wrapper-2024:hover {
+  border-color: var(--primary);
+  background-color: #fff;
+}
+article.wrapper-2017 figure,
+article.wrapper-2024 figure {
+  position: relative;
+  margin: 0;
+}
+article.wrapper-2024 video {
+  margin-bottom: -5px;
+}
+.info-box .info {
+  box-sizing: border-box;
+  float: left;
+  width: 33.3333333333%;
+  min-height: 50px;
+}
+.info-box .info h4,
+h4.about-the-item {
+  font-size: 12px;
+  color: #444;
+  margin-top: 26px;
+  font-weight: 400;
+}
+.info-box {
+  overflow: hidden;
+}
+.info-box .info ul {
+  list-style: none;
+  padding: 0;
+}
+article.wrapper-2017 h3 {
+  font-size: 18px;
+}
+article.wrapper-2024 h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+article.wrapper-2017::after {
+  content: " ";
+  display: block;
+  padding: 20px;
+  margin: 10px auto;
+  width: 100%;
+}
+.info span,
+span.about-the-item {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 43px;
+}
+.info {
+  clear: none;
+}
+.info-box a:hover {
+  color: #444;
+}
+article.wrapper-2017 .accent,
+article.wrapper-2024 .accent {
+  display: inline-block;
+  width: 25%;
+  color: #444;
+  font-size: 12px;
+}
+article.wrapper-2024 .accent {
+  position: relative;
+  width: 100%;
+  margin-top: -30px;
+}
+article.wrapper-2017 h3 + p {
+  margin-top: 0;
+}
+article.wrapper-2017 p + p {
+  margin-bottom: 0;
+  line-height: 0.5em;
+}
+article.wrapper-2017 a,
+article.wrapper-2024 a {
+  color: #efefef;
+  background-color: var(--primary);
+  text-decoration: none;
+  padding: 0px 10px 2px 10px;
+  border: 1px solid var(--primary);
+  transition-duration: var(--duration);
+  transition-timing-function: var(--ttfunction);
+}
+
+article.wrapper-2017 a:hover,
+article.wrapper-2024 a:hover{
+  color: var(--primary);
+  background-color: #fff;
+}
+
+@media (min-width: 476px) {
+  .list-header + ol {
+    columns: 2;
+  }
+  .sitemap {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .sitemap-item-feature {
+    grid-column: 1 / span 2;
+  }
+}
+@media (min-width: 800px) {
+  .sitemap {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  header.header {
+    position: relative;
+  }
+  nav.nav {
+    display: block;
+  }
+  ul.navi {
+    padding: 0;
+  }
+  ul.navi li {
+    margin: 0 8px 0 0;
+  }
+  .wrapper {
+    padding: 0 20px;
+  }
+  article.post-entry:first-child {
+    margin-top: 10px;
+  }
+  nav.pagination {
+    margin: -40px 0 20px;
+  }
+  div.wrapper.search {
+    margin-bottom: 0;
+  }
+  article.wrapper-2017 {
+    margin: 33px 0;
+    padding: 10px;
+  }
+  article.wrapper-2017::after {
+    padding: 5px;
+  }
+  .info-box .info {
+    width: 100%;
+    text-align: center;
+  }
+  .info-box .info h4 {
+    margin-top: 10px;
+  }
+  article.wrapper-2017 p + p {
+    line-height: 1em;
+  }
+  article.wrapper-2017 .accent {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  nav.container ul.pagination li a {
+    font-size: 10px;
+  }
+  footer.page-footer {
+    margin: -15px 0 0;
+  }
+  footer.page-footer ul.pagination {
+    margin: 0 0 15px;
+  }
+}
+
+.wrapper-ads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+</style>
+		<link rel="apple-touch-icon" href="https://freefrontend.com/apple-touch-icon.png">
+		<link rel="icon" href="https://freefrontend.com/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" href="https://freefrontend.com/css-link-styles/index.xml" title="FreeFrontend"><script async="" src="./55+ CSS Link Hover Effects_files/async-ads.js.download"></script><script src="./55+ CSS Link Hover Effects_files/f.txt"></script><script src="./55+ CSS Link Hover Effects_files/f(1).txt"></script><script async="" src="./55+ CSS Link Hover Effects_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script>
+
+	<script src="./55+ CSS Link Hover Effects_files/cse_element__en.js.download" type="text/javascript"></script><link type="text/css" href="./55+ CSS Link Hover Effects_files/default+en.css" rel="stylesheet"><link type="text/css" href="./55+ CSS Link Hover Effects_files/minimalist.css" rel="stylesheet"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css">.gsc-control-cse{font-family:roboto, arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:roboto, arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}.gsc-control-cse{border-color:#efefef;background-color:#efefef}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#111111}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#111111;background-color:#111111;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#333333;border-color:#333333;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#444444;border-color:#444444;background-color:#FFFFFF}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover{border-color:#000000;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#444444}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#444444}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#444444}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#777777}.gsc-cursor-page{color:#444444}a.gsc-trailing-more-results:link{color:#444444}.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,.gs-fileFormatType{color:#333333}.gs-webResult div.gs-visibleUrl{color:#000000}.gs-webResult div.gs-visibleUrl-short{color:#000000}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:none}.gs-webResult div.gs-visibleUrl-breadcrumb{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-breadcrumb{display:none}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#444444;background-color:#FFFFFF;color:#444444}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#333333;background-color:#FFFFFF;color:#333333}.gsc-webResult.gsc-result.gsc-promotion{border-color:#CCCCCC;background-color:#E6E6E6}.gsc-completion-title{color:#444444}.gsc-completion-snippet{color:#333333}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#444444}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#00CC00}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#333333}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#00CC00}.gcsc-find-more-on-google{color:#444444}.gcsc-find-more-on-google-magnifier{fill:#444444}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="./55+ CSS Link Hover Effects_files/ca-pub-2687268505112777"></script><script async="" src="./55+ CSS Link Hover Effects_files/AGSKWxVpazdE6QeDhErl5JejY2XeIMqBV6gWGnF6UtDHWboeVcuPhVb3D3K4pDQeixj-hCdZ7-P-8NR6xh229HPMykZye7nnRvGftlcORIdJ0P0rJ9nu7ldH-9GvvtQVaVIWyYlwq"></script><script async="" src="./55+ CSS Link Hover Effects_files/AGSKWxU491uta3B8Wcb0i7fIe1ch3i_PQX5ixoA8rj0CFAuJE-03V-sCTEvfNroAnhWUVIfq9K6n0CTkMavidrKRD4hzTfF6nyW5iwyUt8OkOuxrp2NE6Fh6VjjHChCyJdPj919EI"></script><script async="" src="./55+ CSS Link Hover Effects_files/AGSKWxWYR2XGhq1cXeOr8iShJ_wDnMgvTkty0xRVfIDUSFiir2mI8MNUbDRTGbxOxId3O8IDvlKk7NPyO5J3APJNqdWDD-EvcuAR-IEFJKpWuWq5b8fLI1NYDixPIkpSsMVz9fMOf"></script><script async="" src="./55+ CSS Link Hover Effects_files/AGSKWxWfrr_y1hGdPtVxd-Rmr_MQbM-67O-j2XXnXenv9c8rTWGJ1XL6MrQFpBqch7aFiMvKHTfQMH6I5w2FH58jh76dMU9pas81kpv-1FNd2Mg0ZeesDc4ZC_vAArwToMVqeJUXG"></script></head>
+	<body class="list">
+		<header class="header">
+			<nav class="nav" aria-label="Main"><p class="logo"><a href="https://freefrontend.com/">FreeFrontend</a></p>
+				<ul class="navi">
+					<li><a href="https://freefrontend.com/html-code-examples/">HTML</a></li>
+					<li><a href="https://freefrontend.com/css-code-examples/">CSS</a></li>
+					<li><a href="https://freefrontend.com/css-landscapes/">CSS Landscapes</a></li>
+					<li><a href="https://freefrontend.com/javascript-code-examples/">JavaScript</a></li>
+					<li><a href="https://freefrontend.com/bootstrap-code-examples/">Bootstrap</a></li>
+					<li><a href="https://freefrontend.com/tailwind-code-examples/">Tailwind</a></li>
+					<li><a href="https://freefrontend.com/jquery-code-examples/">jQuery</a></li>
+					<li><a href="https://freefrontend.com/react-code-examples/">React</a></li>
+					<li><a href="https://freefrontend.com/vue-code-examples/">Vue</a></li>
+					<li><a href="https://freefrontend.com/free-web-books/">Books</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="wrapper search">
+			<script async="" src="./55+ CSS Link Hover Effects_files/f(3).txt"></script>
+			<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" role="presentation" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" role="presentation" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" aria-label="search" id="gsc-i-id1" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Clear search box" role="button" style="display: none;"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div aria-label="refinement" role="tab" class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-refinementsAreaInvisible"></div></div><div class="gsc-above-wrapper-area-invisible"><div class="gsc-above-wrapper-area-backfill-container"></div><table cellspacing="0" cellpadding="0" role="presentation" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>
+		</div>
+		
+<div class="wrapper">
+  <main class="main">
+    <article class="post-single">
+      <header class="post-header">
+        <img class="imagelong" src="https://freefrontend.com/css-link-styles/">
+        <h1 class="post-title">55+ CSS Link Hover Effects</h1>
+        <div class="meta-info">
+          March 23, 2023</div>
+      </header>
+      <div class="post-content"><p class="intro">Welcome to our <strong>collection of CSS link examples</strong>! In this carefully curated compilation, we have gathered a selection of free HTML and CSS code examples that showcase the creativity and versatility of link effects. These examples have been sourced from reputable platforms such as <em>CodePen, GitHub</em>, and other valuable resources.</p>
+<p>With our <strong>March 2023 update</strong>, we are excited to present <strong>twelve new additions</strong> to our collection, ensuring that you have access to the latest and most innovative link effects available. Our collection features a range of link styles, each hand-picked for their unique visual appeal and interactive potential.</p>
+<p>Links are an essential element of web design, providing navigation and interactivity for users. However, with the right CSS styling, links can become more than just clickable text. They can transform into <em>eye-catching buttons, animated icons, and captivating visual elements</em> that enhance the user experience.</p>
+<p>Each CSS link example in our collection showcases the power of the <code>:hover</code> and <code>:active</code> states, allowing you to create dynamic and engaging effects when users interact with your links. From subtle transitions and hover animations to bold transformations and interactive hover effects, our collection offers a diverse range of possibilities to elevate your link designs.</p>
+<p>Start exploring our collection now and discover the endless possibilities to elevate your link designs with the power of CSS.</p>
+<h2 class="list-header">Related Articles</h2>
+<ol>
+  <li><a href="https://freefrontend.com/css-breadcrumbs/" title="Collection of free HTML and CSS breadcrumb navigation code examples: simple, responsive, multiline, collapsed, etc">CSS Breadcrumbs</a></li>
+  <li><a href="https://freefrontend.com/css-arrows/" title="Collection of free HTML and CSS arrow code examples: animated, back to top, down, simple and for boxes">CSS Arrows</a></li>
+</ol>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-custom-animated-links-with-psuedo-elements.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>designcourse</li>
+		<li><time>March 18, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/designcourse/pen/KKZVjxa">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-custom-animated-links-with-psuedo-elements.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Custom Animated Links with Psuedo Elements</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<div class="wrapper-ads">
+  <div class="ads">
+    <script async="" src="./55+ CSS Link Hover Effects_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script>
+    <!-- 300*250 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2687268505112777" data-ad-slot="6309063256" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 250px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./55+ CSS Link Hover Effects_files/ads.html" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CIOzwvW-o4kDFfhN3QIdgnUGFg" data-load-complete="true"></iframe></div></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-hover-effect-4.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>CSS-Tricks</li>
+		<li><time>February 3, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/team/css-tricks/pen/xxPORam">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-hover-effect-4.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Hover Effect #4</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-hover-effect-5.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>CSS-Tricks</li>
+		<li><time>February 3, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/team/css-tricks/pen/OJOXWPp">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-hover-effect-5.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Hover Effect #5</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<div class="wrapper-ads">
+  <div class="ads">
+    <script async="" src="./55+ CSS Link Hover Effects_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script>
+    <!-- 300*250 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2687268505112777" data-ad-slot="6309063256" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" style="border: none; height: 250px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./55+ CSS Link Hover Effects_files/ads(1).html" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true" data-google-query-id="CL-Dp_W-o4kDFRtU3QIdVbszIQ"></iframe></div></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-hover-effect-6.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>CSS-Tricks</li>
+		<li><time>February 3, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/team/css-tricks/pen/gOXMgxR">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-hover-effect-6.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Hover Effect #6</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-hover-effect-7.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>CSS-Tricks</li>
+		<li><time>February 3, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/team/css-tricks/pen/xxPOgmZ">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-hover-effect-7.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Hover Effect #7</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<div class="wrapper-ads">
+  <div class="ads">
+    <script async="" src="./55+ CSS Link Hover Effects_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script>
+    <!-- 300*250 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2687268505112777" data-ad-slot="6309063256" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_3_host" style="border: none; height: 250px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_3" name="aswift_3" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./55+ CSS Link Hover Effects_files/ads(2).html" data-google-container-id="a!4" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CJnop_W-o4kDFaxU3QIdC9okWw" data-load-complete="true"></iframe></div></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-hover-effect-1.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>CSS-Tricks</li>
+		<li><time>February 2, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/team/css-tricks/pen/gOXMLLY">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-hover-effect-1.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Hover Effect #1</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-hover-effect-2.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>CSS-Tricks</li>
+		<li><time>February 2, 2022</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/team/css-tricks/pen/jOarVmy">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-hover-effect-2.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Hover Effect #2</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<div class="wrapper-ads">
+  <div class="ads">
+    <script async="" src="./55+ CSS Link Hover Effects_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script>
+    <!-- 300*250 -->
+    <ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 0px;" data-ad-client="ca-pub-2687268505112777" data-ad-slot="6309063256" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_4_host" style="border: none; height: 0px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_4" name="aswift_4" browsingtopics="true" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 300px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./55+ CSS Link Hover Effects_files/ads(3).html" data-google-container-id="a!5" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true" data-google-query-id="CPy1qPW-o4kDFVVU3QIdhd8d6Q"></iframe></div></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-mouse-out-hover-effect.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Geoff Graham</li>
+		<li><time>December 29, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/geoffgraham/pen/yLzvXyL">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-mouse-out-hover-effect-final.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Mouse-Out Hover Effect</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-link-split-hover-effect.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>James Hancock</li>
+		<li><time>October 29, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/jhancock532/pen/YzxxEKa">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-link-split-hover-effect.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Link Split Hover Effect</h3>
+  <p>The text is duplicated, masked with <code>clip-path</code> then psuedoelements and movements are animated with CSS transitions. The underscore is made with a linear gradient background image, but if you don't plan to use a link like this over multiple lines of text, you could just use another pseudoelement.</p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-exploring-creative-link-hover-effects.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Adi Purdila</li>
+		<li><time>May 29, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/adipurdila/pen/MWpELyG">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-exploring-creative-link-hover-effects.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Exploring Creative Link Hover Effects</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-fade-out-other-links-on-hover.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Håvard Brynjulfsen</li>
+		<li><time>April 26, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/havardob/pen/jOyJzer">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-fade-out-other-links-on-hover.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Fade out Other Links on Hover</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/laser-revealed-title-link.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>JFarrow</li>
+		<li><time>March 11, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/JFarrow/pen/wvoRObL">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Laser Revealed Title Link</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+    <figure>
+	<img src="./55+ CSS Link Hover Effects_files/displaying-link-urls.png" alt="Demo image: Laser Revealed Title Link" title="Laser Revealed Title Link">
+  </figure>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Will Boyd</li>
+		<li><time>February 23, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/lonekorean/pen/dyOVxzx">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Displaying Link URLs</h3>
+  <p>How to display the <code>href</code> attribute of a link next to the link text.</p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/2023-neat-hover-effects.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Chance Rhodes</li>
+		<li><time>February 19, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/chancer5/pen/MWbvaeo">demo and code</a></li>
+	  <li><a href="https://freefrontend.com/assets/zip/css-link-styles/2023-neat-hover-effects.zip">download</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Neat Hover Effects</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/css-line-hover-styles-for-links.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Mary Lou</li>
+		<li><time>February 10, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://tympanus.net/codrops/2021/02/10/simple-css-line-hover-animations-for-links/">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Simple CSS Line Hover Animations for Links</h3>
+  <p>A couple of simple &amp; subtle CSS-based line hover animations for links.</p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/css-link-hover-animation.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Shunya Koide</li>
+		<li><time>January 31, 2021</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/shunyadezain/pen/rNWawyP">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>CSS Link Hover Animation</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/animated-svg-links.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Adam Kuhn</li>
+		<li><time>December 1, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/cobra_winfrey/pen/zYKGePx">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Animated SVG Links</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/link-hover-animation.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Aaron Iker</li>
+		<li><time>October 15, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/aaroniker/pen/VwjexVy">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Link Hover Animation</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/variable-powered-underline-transition.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Jhey</li>
+		<li><time>July 13, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/jh3y/pen/gOPjBPM">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Variable Powered Underline Transition</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>no</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/underline-animation-link.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Cojea Gabriel</li>
+		<li><time>June 5, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/gabrielcojea/pen/ExPaBzQ">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Underline Animation - Link</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/link-hover-interaction.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Sikriti Dakua</li>
+		<li><time>May 23, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/dev_loop/pen/mdeopLN">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Link Hover Interaction</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/link-hover-flash.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>alphardex</li>
+		<li><time>May 22, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/alphardex/pen/WNQPWmj">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Link Hover Flash</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/underline-animation_1.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Aaron Iker</li>
+		<li><time>May 7, 2020</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/aaroniker/pen/pojaBvb">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Underline Animation</h3>
+  <p></p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/link-fill-on-hover.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Katherine Kato</li>
+		<li><time>November 4, 2019</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/kathykato/pen/zYYRGRQ">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS (SCSS)</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Link Fill on Hover</h3>
+  <p>Link hover effects that fill a link with an underline or line-through using CSS <code>transitions</code> and the <code>clip-path</code> property. </p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article>
+<article class="wrapper-2017">
+  <video src="/assets/img/css-link-styles/underline-link-effect.mp4" preload="metadata" loop=""></video>
+	<div class="img-extra"></div>
+  <div class="info-box">
+	<div class="info info-author">
+	  <h4>Author</h4>
+	  <ul>
+		<li>Eina O</li>
+		<li><time>April 10, 2019</time></li>
+	  </ul>
+	</div>
+  <div class="info info-link">
+	<h4>Links</h4>
+	<ul>
+	  <li><a href="https://codepen.io/thelittleblacksmith/pen/zXNVvY">demo and code</a></li>
+	</ul>
+  </div>
+  <div class="info info-frontend">
+	<h4>Made with</h4>
+	<ul>
+	  <li>HTML / CSS</li>
+	</ul>
+	</div>
+  </div>
+  <h4 class="about-the-item">About a code</h4>
+  <h3>Underline Link Effect</h3>
+  <p>Animated underline/border link effect. Edit <code>transform-origin</code> to change how where the animation starts. It's currently set to left.</p>
+  <p><span class="accent">Compatible browsers: </span>Chrome, Edge, Firefox, Opera, Safari</p>
+  <p><span class="accent">Responsive: </span>yes</p>
+  <p><span class="accent">Dependencies: </span>-</p>
+</article></div>
+    </article>
+    <div class="wrapper">
+      <nav class="pagination">
+        
+        
+        
+        <a class="next" href="https://freefrontend.com/css-link-styles/page/2/">Next →</a>
+        
+      </nav>
+    </div>
+
+		</main>
+		</div>
+		<footer class="footer">
+			<span>2016 - 2024 ©<a href="https://freefrontend.com/">FreeFrontend</a></span>
+			<span>∘</span>
+			<span><a href="https://freefrontend.com/privacy-policy">Privacy Policy and Cookies Policy</a></span>
+			<span>∘</span>
+			<span><a href="https://www.youtube.com/channel/UCGr_1whd05px8Jiksu_XVzQ">YouTube</a></span>
+			<span>∘</span>
+			<span><a href="https://twitter.com/FreeFrontend">X</a></span>
+			<span>∘</span>
+			<span><a rel="me" href="https://mastodon.social/@freefrontend">Mastodon</a></span>
+			<span>∘</span>
+			<span><a href="https://freefrontend.com/index.xml">RSS</a></span>
+		</footer>
+		<script>const videos=document.querySelectorAll("video");videos.forEach((e=>{e.addEventListener("mouseover",(function(){this.play()})),e.addEventListener("mouseout",(function(){this.pause()})),e.addEventListener("touchstart",(function(){this.play()})),e.addEventListener("touchend",(function(){this.pause()}))}));</script>
+		<script async="" src="./55+ CSS Link Hover Effects_files/js"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-WDG25XV6ED');
+		</script>
+	<script defer="" src="./55+ CSS Link Hover Effects_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8d6e69bb4aae6479&quot;,&quot;version&quot;:&quot;2024.10.3&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;97791655c0a0482fa6c994cbcaf11dd9&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="./55+ CSS Link Hover Effects_files/ads(4).html" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><table cellspacing="0" cellpadding="0" role="presentation" class="gstl_50 gssb_c" style="width: 167px; display: none; top: 71px; left: 602px; position: absolute;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./55+ CSS Link Hover Effects_files/saved_resource.html"></iframe><iframe name="__tcfapiLocator" src="./55+ CSS Link Hover Effects_files/saved_resource(1).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__uspapiLocator" src="./55+ CSS Link Hover Effects_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__gppLocator" src="./55+ CSS Link Hover Effects_files/saved_resource(3).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="./55+ CSS Link Hover Effects_files/saved_resource(4).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="./55+ CSS Link Hover Effects_files/saved_resource(5).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="./55+ CSS Link Hover Effects_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./55+ CSS Link Hover Effects_files/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

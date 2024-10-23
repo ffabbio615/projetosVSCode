@@ -1,0 +1,14 @@
+@use '../App.scss';
+
+.footer{
+    min-height: 80px;
+    min-width: 100vw;
+    background-color: App.$primary-color-blue;
+    text-align: center;
+    align-content: center;
+    color: App.$neutral-color-white;
+
+    p{
+        line-height: 24px;
+    }
+}
