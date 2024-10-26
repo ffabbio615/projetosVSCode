@@ -4,7 +4,7 @@ export default function S6Faq(){
     return(
         <>
         
-        <section className="faq-section"></section>
+        <section id="FAQ" className="faq-section"></section>
         
         </>
     )

@@ -28,6 +28,9 @@
         background-color: App.$neutral-color-white;
         border-radius: 0.5vw;
         margin: 10px 10px;
+        transition: 0.3s;
+        color: App.$neutral-color-black;
+        text-decoration: none;
 
         .testimonial {
             width: 100%;
@@ -67,4 +70,42 @@
             border-radius: 0 0 0.5vw 0.5vw
         }
     }
+
+    .testimonials-card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px -5px App.$neutral-color-dark-gray;
+    }
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+
+    .testimonials-section{
+        min-height: 560px;
+    
+        h1{
+            width: 80%;
+            font: App.$m-title-h1-36px;
+            margin: -15px 0 20px 0;
+        }
+    }
+    .testimonials-group {
+        width: 85%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: scroll;
+    
+        .testimonials-card {
+            height: 385px;
+            width: 275px;
+            margin: 0px 20px 10px -10px;
+        }  
+                
+    
+        .testimonials-card:hover {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 App.$neutral-color-dark-gray;
+        }
+    }
+
 }

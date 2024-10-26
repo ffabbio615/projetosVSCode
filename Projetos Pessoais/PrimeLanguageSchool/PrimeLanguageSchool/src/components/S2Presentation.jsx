@@ -4,7 +4,7 @@ export default function S2Presentation(){
     return(
         <>
         
-        <section className="presentation-section"></section>
+        <section id="presentation" className="presentation-section"></section>
 
         </>
     )

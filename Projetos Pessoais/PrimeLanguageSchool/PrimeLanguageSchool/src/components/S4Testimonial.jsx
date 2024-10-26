@@ -10,7 +10,7 @@ export default function S4Testimonials() {
 
                 <div className="testimonials-group">
 
-                    <div className="testimonials-card">
+                    <a href="https://www.google.com/search?sca_esv=dcbcef83952848e4&cs=0&output=search&kgmid=/g/11w4tpzgfc&q=Prime+Language+School&shndl=30&source=sh/x/loc/uni/m1/1&kgs=cdca6df0228fce36#lrd=0x9bd53c5e99f93d:0x87dee3db96d9f8f9,1,,,," className="testimonials-card">
                         <div className="testimonial">
                             <div className="prime-testimonial-icon"><div></div></div>
                             <p> "Sou aluno da Prime Language School e estou adorando as aulas online! 🎉 As aulas são super flexíveis, posso estudar no meu próprio ritmo e horário. Os professores são incríveis e sempre prontos para ajudar. 👩‍🏫👨‍🏫"</p>
@@ -18,9 +18,9 @@ export default function S4Testimonials() {
                         <div className="testimonial-name">
                             Wado Lobo
                         </div>
-                    </div>
+                    </a>
 
-                    <div className="testimonials-card">
+                    <a href="https://www.google.com/search?sca_esv=dcbcef83952848e4&cs=0&output=search&kgmid=/g/11w4tpzgfc&q=Prime+Language+School&shndl=30&source=sh/x/loc/uni/m1/1&kgs=cdca6df0228fce36#lrd=0x9bd53c5e99f93d:0x87dee3db96d9f8f9,1,,,," className="testimonials-card">
                         <div className="testimonial">
                             <div className="prime-testimonial-icon"><div></div></div>
                             <p> "Minha jornada Prime School tem sido incrível. As aulas de conversação são o ponto alto para mim.
@@ -30,9 +30,9 @@ export default function S4Testimonials() {
                         <div className="testimonial-name">
                             Anthony Oliveira
                         </div>
-                    </div>
+                    </a>
 
-                    <div className="testimonials-card">
+                    <a href="https://www.google.com/search?sca_esv=dcbcef83952848e4&cs=0&output=search&kgmid=/g/11w4tpzgfc&q=Prime+Language+School&shndl=30&source=sh/x/loc/uni/m1/1&kgs=cdca6df0228fce36#lrd=0x9bd53c5e99f93d:0x87dee3db96d9f8f9,1,,,," className="testimonials-card">
                         <div className="testimonial">
                             <div className="prime-testimonial-icon"><div></div></div>
                             <p> "Maravilhoso. O ambiente. O local. O professor. Tudo..eu amo..estou lá praticamente todos os dias. Tem melhorado meu inglês e nas viagens q faço internacionais, as pessoas me elogiam.
@@ -41,9 +41,9 @@ export default function S4Testimonials() {
                         <div className="testimonial-name">
                             Lynda Del Santo
                         </div>
-                    </div>
+                    </a>
 
-                    <div className="testimonials-card">
+                    <a href="https://www.google.com/search?sca_esv=dcbcef83952848e4&cs=0&output=search&kgmid=/g/11w4tpzgfc&q=Prime+Language+School&shndl=30&source=sh/x/loc/uni/m1/1&kgs=cdca6df0228fce36#lrd=0x9bd53c5e99f93d:0x87dee3db96d9f8f9,1,,,," className="testimonials-card">
                         <div className="testimonial">
                             <div className="prime-testimonial-icon"><div></div></div>
                             <p className="third-testimonial"> "I really liked the Prime!
@@ -54,7 +54,7 @@ export default function S4Testimonials() {
                         <div className="testimonial-name">
                             Jorge Mello
                         </div>
-                    </div>
+                    </a>
 
                 </div>
 

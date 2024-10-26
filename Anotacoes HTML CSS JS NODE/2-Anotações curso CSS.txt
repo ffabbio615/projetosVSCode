@@ -41,6 +41,7 @@ sticky = posiciona o elemento até a chegada de outro com o mesmo comportamento,
 align-items = posição dos itens na vertical (start, center e end)
 justify-content = posição dos itens na horizontal (start ou left, center e end ou right)
 z-index = ordem das camadas. Quanto maior, mais na frente, quanto menor, mais atrás. -n|n (-1,0,1,2,3, etc)
+scroll-margin-top: 100px; = Se tiver um header fixed, por exemplo, utilize isso para rolar na altura certa ao clicar num link para ir para uma seção da página
 
 
 TEXTOS

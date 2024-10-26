@@ -13,13 +13,13 @@ export default function Header(){
                 <div className='header-menu-logo'><div className='header-logo'></div></div>
 
                 <div className='header-links'>
-                    <a href=''>Sobre nós</a>
-                    <a href=''>Cursos</a>
-                    <a href=''>Unidade</a>
-                    <a href=''>FAQ</a>
+                    <a href='#presentation'>Sobre nós</a>
+                    <a href='#services'>Cursos</a>
+                    <a href='#location'>Unidade</a>
+                    <a href='#FAQ'>FAQ</a>
                 </div>
 
-                <div className='header-student-button'><button>ÁREA DO ALUNO</button></div>
+                <div className='header-student-button'><div className='student-button'>ÁREA DO ALUNO</div></div>
             </div>
         </header>
         </>

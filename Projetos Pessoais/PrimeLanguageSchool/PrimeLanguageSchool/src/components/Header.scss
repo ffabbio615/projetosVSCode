@@ -2,11 +2,14 @@
 
 header{
     min-height: 150px;
-    min-width: 100vw;
+    width: 100vw;
     background-color: App.$neutral-color-white;
     filter: drop-shadow(0 -8px 12px App.$neutral-color-black);
     position: fixed;
+    z-index: 1000;
     top: 0;
+
+    .social-media, .header-menu{ width: 100%;}
     
     .social-media{
         background-color: App.$primary-color-red;
@@ -82,7 +85,7 @@ header{
                   color: App.$primary-color-blue;
                 }
                 50% {
-                    color: App.$secondary-color-blue8;
+                    color: App.$primary-color-red;
                 }
                 100% {
                     color: App.$primary-color-blue;
@@ -99,9 +102,12 @@ header{
             align-items: center;
             justify-content: center;
 
-            button{
+            .student-button{
                 width: 200px;
                 height: 65px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 margin-right: 15px;
                 background-color: App.$primary-color-red;
                 color: App.$neutral-color-white;
@@ -113,11 +119,61 @@ header{
                 cursor: pointer;
             }
 
-            button:hover{
+            .student-button:hover{
                 filter: brightness(1.2);
                 box-shadow: 0px 0px 12px -4px App.$neutral-color-black;
             }
 
         }
     }
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+
+    header{
+        min-height: 130px;
+        position:static;
+        
+        .social-media{
+    
+            .social-media-facebook{
+                margin-right: 6vw;
+            }
+        }
+        
+        .header-menu{
+            min-height: 90px;
+            justify-content: space-between;
+    
+            .header-menu-logo{
+                min-width: 177px;
+                display: flex;
+                justify-content: center;
+                margin-left: 2vw;
+
+                .header-logo{
+                    min-height: 70px;
+                    width: 162px;
+                    margin: 0;
+                }
+            }
+    
+            .header-links{
+                display: none;
+            }
+    
+            .header-student-button{
+                min-width: 170px;
+                min-height: 70px;
+    
+                .student-button{
+                    width: 155px;
+                    height: 55px;
+                    font: App.$m-title-h6-12px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+
 }

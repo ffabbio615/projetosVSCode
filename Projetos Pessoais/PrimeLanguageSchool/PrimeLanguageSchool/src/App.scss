@@ -9,6 +9,7 @@ $primary-color-blue: rgb(10, 70, 110);
 $secondary-color-red-8: rgb(210, 130, 115);
 $secondary-color-red-5: rgb(195, 90, 75);
 $secondary-color-red-2: rgb(180, 45, 30);
+$secondary-color-red-plus: rgb(223, 0, 0);
 $secondary-color-red3: rgb(135, 15, 0);
 $secondary-color-red5: rgb(120, 15, 0);
 $secondary-color-red8: rgb(75, 10, 0);
@@ -59,7 +60,9 @@ $neutral-color-black: rgb(0,0,0);
 
 @font-face { font-family: 'PreTestoRegular'; src: url(../src/assets/fonts/PreTesto-Regular.ttf); }
 
-//FONT DEFINITIONS
+//-----Font Definitions-----//
+
+//DESKTOP
 $title-h1-42px: normal 42px 'GiphursBold', sans-serif;
 $title-h2-36px: normal 36px 'GiphursBold', sans-serif;
 $title-h3-30px: normal 30px 'GiphursBold', sans-serif;
@@ -81,6 +84,19 @@ $paragraph-14px: normal 14px 'MontserratRegular', sans-serif;
 $paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
 $paragraph-12px: normal 12px 'MontserratRegular', sans-serif;
 
+//MOBILE
+$m-title-h1-36px: normal 36px 'GiphursBold', sans-serif;
+$m-title-h2-30px: normal 30px 'GiphursBold', sans-serif;
+$m-title-h3-24px: normal 24px 'GiphursBold', sans-serif;
+$m-title-h4-20px: normal 20px 'GiphursBold', sans-serif;
+$m-title-h5-16px: normal 16px 'GiphursBold', sans-serif;
+$m-title-h6-12px: normal 12px 'GiphursBold', sans-serif;
+
+$m-subtitle-20px: normal 20px 'MontserratBold', sans-serif;
+$m-subtitle-16px: normal 16px 'MontserratBold', sans-serif;
+
+$m-paragraph-15px: normal 15px 'MontserratRegular', sans-serif;
+$m-paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
 
 html{scroll-behavior: smooth; transition: 0.8s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
@@ -94,10 +110,55 @@ html{scroll-behavior: smooth; transition: 0.8s;}
     padding: 0;
 }
 
-body{
-    background-color: $primary-color-blue;
+#presentation {
+    scroll-margin-top: 180px;
 }
 
-p{
-    font: $paragraph-16px;
+#services {
+    scroll-margin-top: 150px;
+}
+
+#location {
+    scroll-margin-top: 62px;
+}
+
+.CTA-button{
+    width: 300px;
+    height: 65px;
+    background-color: $primary-color-red;
+    border-style: solid;
+    border-color: $neutral-color-white;
+    border-radius: 50vw;
+    border-width: 4px;
+    color: $neutral-color-white;
+    font: $title-h5-20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.CTA-button:hover{
+    filter: drop-shadow(0 0 5px $neutral-color-white);
+    animation: CTA-glowing 1.5s infinite;
+    background-color: $secondary-color-red-plus;
+    box-shadow: inset 0 0 10px 3px $primary-color-red;
+}
+
+@keyframes CTA-glowing{
+    0%{
+        filter: drop-shadow(0 0 5px $neutral-color-white);
+    }
+    50%{
+        filter: drop-shadow(0 0 10px $neutral-color-white);
+    }
+    100%{
+        filter: drop-shadow(0 0 5px $neutral-color-white);
+    }
+}
+
+.CTA-button:active{
+    filter: drop-shadow(0 0 10px $neutral-color-white);
+    background-color: $primary-color-red;
+    box-shadow: inset 0 0 5px 2px $secondary-color-red5;
 }

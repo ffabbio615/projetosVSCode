@@ -9,6 +9,24 @@
     color: App.$neutral-color-white;
 
     p{
+        font: App.$paragraph-16px;
         line-height: 24px;
     }
+}
+
+
+@media (max-width: 800px) and (orientation: portrait) {
+    .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 130px;
+
+        p{
+            font: App.$m-paragraph-15px;
+            line-height: 22px;
+            max-width: 80%;
+        }
+    }
+    
 }
