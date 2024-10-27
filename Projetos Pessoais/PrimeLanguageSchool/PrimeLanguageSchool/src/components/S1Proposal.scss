@@ -1,11 +1,10 @@
 @use '../App.scss';
 
 .proposal-section{
-    min-height: 935px;
+    min-height: calc(100vh - 150px);
     min-width: 100vw;
-    margin-top: 150px;
 
-    .proposal-background, .foreground-stars{ min-height: 650px; width: 100%; }
+    .proposal-background, .foreground-stars{ min-height: calc(69vh - 75px); width: 100%; }
 
     .proposal-background{
         background-color: App.$secondary-color-blue-2;
@@ -22,11 +21,11 @@
 
         .proposal{
             width: 80%;
-            height: 650px;
+            height: calc(69vh - 75px);;
         }
     }
     .methodology-background{
-        min-height: 285px;
+        min-height: calc(31vh - 75px);
         background-color: App.$primary-color-blue;
         display: flex;
         justify-content: center;
@@ -52,6 +51,12 @@
 
 
 @media (max-width: 800px) and (orientation: portrait) {
+
+    .proposal-background, .foreground-stars{ min-height: calc(69vh - 65px); }
+
+    .proposal{ min-height: calc(69vh - 65px); }
+
+    .methodology-background{ min-height: calc(31vh - 65px); }
 
     .proposal-section{
         margin-top: 0px;

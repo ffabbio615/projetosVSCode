@@ -46,7 +46,7 @@ scroll-margin-top: 100px; = Se tiver um header fixed, por exemplo, utilize isso 
 
 TEXTOS
 font-size = tamanho da fonte; (px, em, %, ...)
-font-size: clamp(1em, 1em + 1vw, 1.5em); Parâmetros: valor mínimo, valor desejável e valor máximo respectivamente
+font-size: clamp(1em, 1em + 1vw, 1.5em); Parâmetros: tamanho mínimo da fonte, valor desejável (que aumenta com a largura da tela) e tamanho máximo respectivamente
 font-style = estilo da fonte (oblique e italic)
 font-weight = peso da fonte (normal ou negrito)
 direction = direção de esquerda para direita e direita para esquerda (ltr ou rtl)

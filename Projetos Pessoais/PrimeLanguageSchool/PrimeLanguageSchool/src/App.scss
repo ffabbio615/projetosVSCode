@@ -63,26 +63,38 @@ $neutral-color-black: rgb(0,0,0);
 //-----Font Definitions-----//
 
 //DESKTOP
-$title-h1-42px: normal 42px 'GiphursBold', sans-serif;
-$title-h2-36px: normal 36px 'GiphursBold', sans-serif;
-$title-h3-30px: normal 30px 'GiphursBold', sans-serif;
-$title-h4-24px: normal 24px 'GiphursBold', sans-serif;
-$title-h5-20px: normal 20px 'GiphursBold', sans-serif;
-$title-h6-16px: normal 16px 'GiphursBold', sans-serif;
+$webAdj42px: clamp(36px, 2.8vw, 42px);
+$webAdj36px: clamp(32px, 2.5vw, 36px);
+$webAdj32px: clamp(28px, 2.2vw, 32px);
+$webAdj30px: clamp(26px, 2.1vw, 30px);
+$webAdj24px: clamp(20px, 1.65vw, 24px);
+$webAdj20px: clamp(18px, 1.32vw, 20px);
+$webAdj16px: clamp(14px, 1.1vw, 16px);
+$webAdj15px: clamp(13px, 1.03vw, 15px);
+$webAdj14px: clamp(12px, 0.96vw, 14px);
+$webAdj13px: clamp(11px, 0.9vw, 13px);
+$webAdj12px: clamp(10px, 0.81vw, 12px);
 
-$subtitle-36px: normal 36px 'MontserratBold', sans-serif;
-$subtitle-32px: normal 32px 'MontserratBold', sans-serif;
-$subtitle-24px: normal 24px 'MontserratBold', sans-serif;
-$subtitle-20px: normal 20px 'MontserratBold', sans-serif;
-$subtitle-16px: normal 16px 'MontserratBold', sans-serif;
+$title-h1-42px: normal $webAdj42px 'GiphursBold', sans-serif;
+$title-h2-36px: normal $webAdj36px 'GiphursBold', sans-serif;
+$title-h3-30px: normal $webAdj30px 'GiphursBold', sans-serif;
+$title-h4-24px: normal $webAdj24px 'GiphursBold', sans-serif;
+$title-h5-20px: normal $webAdj20px 'GiphursBold', sans-serif;
+$title-h6-16px: normal $webAdj16px 'GiphursBold', sans-serif;
 
-$paragraph-24px: normal 24px 'MontserratRegular', sans-serif;
-$paragraph-20px: normal 20px 'MontserratRegular', sans-serif;
-$paragraph-16px: normal 16px 'MontserratRegular', sans-serif;
-$paragraph-15px: normal 15px 'MontserratRegular', sans-serif;
-$paragraph-14px: normal 14px 'MontserratRegular', sans-serif;
-$paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
-$paragraph-12px: normal 12px 'MontserratRegular', sans-serif;
+$subtitle-36px: normal $webAdj36px 'MontserratBold', sans-serif;
+$subtitle-32px: normal $webAdj32px 'MontserratBold', sans-serif;
+$subtitle-24px: normal $webAdj24px 'MontserratBold', sans-serif;
+$subtitle-20px: normal $webAdj20px 'MontserratBold', sans-serif;
+$subtitle-16px: normal $webAdj16px 'MontserratBold', sans-serif;
+
+$paragraph-24px: normal $webAdj24px 'MontserratRegular', sans-serif;
+$paragraph-20px: normal $webAdj20px 'MontserratRegular', sans-serif;
+$paragraph-16px: normal $webAdj16px 'MontserratRegular', sans-serif;
+$paragraph-15px: normal $webAdj15px 'MontserratRegular', sans-serif;
+$paragraph-14px: normal $webAdj14px 'MontserratRegular', sans-serif;
+$paragraph-13px: normal $webAdj13px 'MontserratRegular', sans-serif;
+$paragraph-12px: normal $webAdj12px 'MontserratRegular', sans-serif;
 
 //MOBILE
 $m-title-h1-36px: normal 36px 'GiphursBold', sans-serif;
@@ -96,7 +108,13 @@ $m-subtitle-20px: normal 20px 'MontserratBold', sans-serif;
 $m-subtitle-16px: normal 16px 'MontserratBold', sans-serif;
 
 $m-paragraph-15px: normal 15px 'MontserratRegular', sans-serif;
+$m-paragraph-14px: normal 14px 'MontserratRegular', sans-serif;
 $m-paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
+
+// @media (max-width: 2000px){
+//     $adjustment: 10px;
+//     $title-h1-42px: normal 42px - $adjustment 'GiphursBold', sans-serif;
+// }
 
 html{scroll-behavior: smooth; transition: 0.8s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
@@ -108,18 +126,6 @@ html{scroll-behavior: smooth; transition: 0.8s;}
 *{
     margin: 0;
     padding: 0;
-}
-
-#presentation {
-    scroll-margin-top: 180px;
-}
-
-#services {
-    scroll-margin-top: 150px;
-}
-
-#location {
-    scroll-margin-top: 62px;
 }
 
 .CTA-button{

@@ -46,8 +46,7 @@ export default function S4Testimonials() {
                     <a href="https://www.google.com/search?sca_esv=dcbcef83952848e4&cs=0&output=search&kgmid=/g/11w4tpzgfc&q=Prime+Language+School&shndl=30&source=sh/x/loc/uni/m1/1&kgs=cdca6df0228fce36#lrd=0x9bd53c5e99f93d:0x87dee3db96d9f8f9,1,,,," className="testimonials-card">
                         <div className="testimonial">
                             <div className="prime-testimonial-icon"><div></div></div>
-                            <p className="third-testimonial"> "I really liked the Prime!
-                                As salas de estudo são confortáveis, o ambiente tranquilo e os professores muito experientes e dedicados.
+                            <p className="third-testimonial"> "(...) As salas de estudo são confortáveis, o ambiente tranquilo e os professores muito experientes e dedicados.
                                 Foge do lugar comum, daquela opressiva formalidade que encontrei em outros cursos, apresentando um estilo
                                 inovador e dinâmico, focado no objetivo pretendido pelo aluno."</p>
                         </div>

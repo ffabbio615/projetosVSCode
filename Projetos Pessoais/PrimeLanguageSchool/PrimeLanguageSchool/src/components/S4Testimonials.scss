@@ -13,21 +13,25 @@
     h1{
         width: 100%;
         font: App.$title-h1-42px;
-        margin: 0px 0 40px 0;
+        // margin: 0px 0 20px 0;
+        padding: 20px 0 20px 0;
     }
 }
 .testimonials-group {
     width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 275px 275px 275px 275px;
+    place-content: center;
+    gap:15px;
+    
 
     .testimonials-card {
         height: 385px;
         width: 275px;
         background-color: App.$neutral-color-white;
         border-radius: 0.5vw;
-        margin: 10px 10px;
+        justify-self: center;
+        margin: 10px 0px;
         transition: 0.3s;
         color: App.$neutral-color-black;
         text-decoration: none;
@@ -77,10 +81,31 @@
     }
 }
 
+@media (max-width: 1366px){
+
+    .testimonials-section{
+        h1{
+            padding: 20px 0 0 0;
+        }
+    }
+    .testimonials-group{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        grid-template-columns: 275px 275px;
+        grid-template-rows: 385px 385px;
+        height: 850px;
+
+        .testimonials-card{
+            margin: 0;
+        }
+    }
+}
+
 @media (max-width: 800px) and (orientation: portrait) {
 
     .testimonials-section{
-        min-height: 560px;
+        min-height: 500px;
     
         h1{
             width: 80%;
@@ -94,11 +119,23 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: scroll;
+        height: 400px;
+        margin-bottom: 15px;
     
         .testimonials-card {
-            height: 385px;
+            height: 380px;
             width: 275px;
             margin: 0px 20px 10px -10px;
+
+            .testimonial{
+                p{
+                    font: App.$m-paragraph-14px;
+                }
+            }
+        
+            .testimonial-name {
+                font: App.$m-title-h4-20px;
+            }
         }  
                 
     
@@ -107,5 +144,4 @@
             box-shadow: 0 0 0 0 App.$neutral-color-dark-gray;
         }
     }
-
 }

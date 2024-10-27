@@ -1,7 +1,7 @@
 @use '../App.scss';
 
 .presentation-section{
-    min-height: 780px;
     min-width: 100vw;
+    min-height: 100vh;
     background-color: App.$secondary-color-red-2;
 }
