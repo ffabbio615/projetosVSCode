@@ -4,10 +4,35 @@ export default function S5ProposalLocation() {
     return (
         <>
             <section id="location" className="proposal-location-section">
-                <div className="proposal-location-background">
+                <div className="proposal-background">
                     <div className="foreground-stars"></div>
-                    <div className="proposal-location">
+                    
+                    <div className="proposal-container">
+                        
+                        <div className="proposal-text-container">
+                            <div className="proposal-text">
+                                <h1>Motivos para ser PRIME</h1>
+                                <div className="proposal-text-item-container">
+                                    <div className="proposal-text-item">
+                                        <h3>- Aulas online e presenciais</h3>
+                                        <p>Flexibilidade para aprender ao vivo no seu ambiente preferido.</p>
+                                    </div>
+                                    <div className="proposal-text-item">
+                                        <h3>- Aulas vip</h3>
+                                        <p>Experiência personalizada exclusiva, adaptada às suas necessidades.</p>
+                                    </div>
+                                    <div className="proposal-text-item">
+                                        <h3>- Aulas em Turmas</h3>
+                                        <p>Grupos com no máximo 5 alunos. Máximo progresso com atendimento individual e eficaz.</p>
+                                    </div>
+                                </div>
+                                <div className="CTA-container">
+                                    <button className="CTA-button">QUERO CONHECER</button>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div className="proposal-image"></div>
                     </div>
                 </div>
 
@@ -23,7 +48,7 @@ export default function S5ProposalLocation() {
                             </div>
                         </div>
                         <div className="location-map">
-                                <a className="map" href="https://www.google.com/maps/place/Prime+Language+School/@-22.9830217,-43.1941098,17z/data=!3m1!4b1!4m6!3m5!1s0x9bd53c5e99f93d:0x87dee3db96d9f8f9!8m2!3d-22.9830267!4d-43.1915349!16s%2Fg%2F11w4tpzgfc?entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D" target="blank"></a>
+                            <a className="map" href="https://www.google.com/maps/place/Prime+Language+School/@-22.9830217,-43.1941098,17z/data=!3m1!4b1!4m6!3m5!1s0x9bd53c5e99f93d:0x87dee3db96d9f8f9!8m2!3d-22.9830267!4d-43.1915349!16s%2Fg%2F11w4tpzgfc?entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D" target="blank"></a>
                         </div>
                     </div>
                 </div>

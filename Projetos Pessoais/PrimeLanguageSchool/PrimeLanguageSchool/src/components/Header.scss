@@ -127,7 +127,16 @@ header{
     }
 }
 
-@media (max-width: 800px) and (orientation: portrait) {
+@media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){
+    header{
+    .header-menu{
+        justify-content: space-between;
+    .header-links{
+        display: none;
+    }}}
+}
+
+@media screen and (min-width: 300px) and (orientation:portrait){
 
     header{
         min-height: 130px;

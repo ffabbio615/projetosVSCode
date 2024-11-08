@@ -5,3 +5,7 @@
     min-height: 100vh;
     background-color: App.$secondary-color-red-2;
 }
+
+@media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){}
+
+@media screen and (min-width: 300px) and (orientation:portrait){}

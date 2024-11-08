@@ -15,16 +15,22 @@
 }
 
 
-@media (max-width: 800px) and (orientation: portrait) {
+@media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){
+    .footer{
+        min-height: 70px;
+    }
+}
+
+@media screen and (min-width: 300px)  and (orientation:portrait){
     .footer{
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 130px;
+        min-height: 110px;
 
         p{
-            font: App.$m-paragraph-15px;
-            line-height: 22px;
+            font: App.$m-paragraph-14px;
+            line-height: 20px;
             max-width: 80%;
         }
     }

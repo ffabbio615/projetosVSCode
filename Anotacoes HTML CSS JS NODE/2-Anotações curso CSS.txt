@@ -65,12 +65,16 @@ text-transform = transforma o texto em caixa alta, caixa baixa ou somente a prim
 
 VARIADOS
 background-size: cover; = ajusta o background no tamanho da tag escolhida
+object-fit: cover; = ajusta uma tag de imagem ou vídeo no tamanho do container que ela está, mantendo as suas proporções sem distorcer.
 background-position: top center; = ajusta a posição do fundo no topo e centraliza nos cantos
 box-sizing: border-box; = coloca o elemento exatamente do tamanho que foi definido, aí o conteúdo interno não empurra
 característicaDoElemento:inherit; = ativa a herança do pai nesse elemento. Ex.: p{font-size:inherit;}
 característicaDoElemento:initial; = desativa a herança do pai nesse elemento. Ex.: p{font-size:initial;}
 overflow-x e overflow-Y: auto; = se algum conteúdo passar do tamanho da página e gerar uma barra de rolagem, isso serve para criar a barra somente nesse conteúdo
 html{ scroll-behavior: smooth;} = Rola a página deslizando suavemente
+.elemento{ user-select: none; } = Impede o usuário de selecionar o elemento, seja ele texto, imagem ou outros.
+body{ touch-action:pan-y; } = Impede o usuário de dar zoom quando for utilizar dispositivos touch.
+body{ touch-action:touch-action:pinch-zoom; } = Permite o usuário mexer no elemento somente se ele estiver fazendo o movimento de pinça.
 
 
 

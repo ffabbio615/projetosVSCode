@@ -18,9 +18,9 @@
     }
 }
 .testimonials-group {
-    width: 80%;
+    width: 60%;
     display: grid;
-    grid-template-columns: 275px 275px 275px 275px;
+    grid-template-columns: repeat(4, auto);
     place-content: center;
     gap:15px;
     
@@ -81,7 +81,7 @@
     }
 }
 
-@media (max-width: 1366px){
+@media screen and (min-width: 600px) and (max-width: 1366px) and (orientation:landscape){
 
     .testimonials-section{
         h1{
@@ -102,7 +102,7 @@
     }
 }
 
-@media (max-width: 800px) and (orientation: portrait) {
+@media screen and (min-width: 300px) and (orientation:portrait){
 
     .testimonials-section{
         min-height: 500px;
