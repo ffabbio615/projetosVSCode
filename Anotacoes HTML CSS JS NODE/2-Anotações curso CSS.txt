@@ -38,8 +38,9 @@ fixed = parecido com position absolute, mas fica fixa onde foi colocada inicialm
 static = posição padrão dos elementos
 relative = posição do elemento em relação ao elemento anterior na página
 sticky = posiciona o elemento até a chegada de outro com o mesmo comportamento, até o fim do conteúdo deles. Ex.: Lista telefônica A até chegar B, B até C, etc. Obs.: deve-se definir a posição dele na página ou no elemento, senão não funciona
-align-items = posição dos itens na vertical (start, center e end)
-justify-content = posição dos itens na horizontal (start ou left, center e end ou right)
+align-items = posição dos itens na vertical para GRID e FLEX (start, center e end)
+justify-content = posição dos itens na horizontal para FLEX (start ou left, center, end ou right, space-between, space-around, etc)
+justify-items = posição dos itens na horizontal para GRID (start ou left, center, end ou right)
 z-index = ordem das camadas. Quanto maior, mais na frente, quanto menor, mais atrás. -n|n (-1,0,1,2,3, etc)
 scroll-margin-top: 100px; = Se tiver um header fixed, por exemplo, utilize isso para rolar na altura certa ao clicar num link para ir para uma seção da página
 

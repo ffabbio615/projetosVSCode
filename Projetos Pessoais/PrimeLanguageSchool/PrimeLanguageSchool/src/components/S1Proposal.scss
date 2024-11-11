@@ -16,15 +16,19 @@
     min-height: 100vh;
     width: 100vw;
 
-    .proposal-background, .proposal-background .foreground-stars { width: 100%; min-height:650px; height: 70vh; }
-
     .proposal-background {
+        width: 100%;
+        min-height:650px;
+        height: 70vh;
         background-color: App.$secondary-color-blue-2;
         display: flex;
         justify-content: center;
         align-items: end;
+        position: relative;
 
         .foreground-stars {
+            width: 100%;
+            height: 100%;
             background-image: url(../assets/img/foregroundStars.png);
             background-size: contain;
             background-blend-mode: multiply;
@@ -144,13 +148,12 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){
+@media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape), (min-width: 800px) and (orientation:portrait){
     .proposal-section{
-
-        .proposal-background, .proposal-background .foreground-stars{ min-height: 650px; }
 
         .proposal-background{
             align-items: center;
+            min-height: 650px;
 
         .proposal {
             width: 90%;
@@ -176,12 +179,12 @@
     
                 p {
                     grid-area: paragraph;
-                    font: App.$m-paragraph-13px;
+                    font: App.$m-paragraph-15px;
                 }
 
                 .proposal-image-mobile{
                     display: block;
-                    min-height: 250px;
+                    min-height: 300px;
                     grid-area: imagem;
                 }
     
@@ -225,7 +228,7 @@
             p{
                 width: 80%;
                 margin: 0 10%;
-                font: App.$m-paragraph-14px;
+                font: App.$m-paragraph-15px;
                 text-align: center;
                 line-height: 20px
             }
@@ -245,23 +248,24 @@
     .proposal-section{
         max-width: 100vw;
 
-        .proposal-background, .proposal-background .foreground-stars{ min-height: 82vh; }
-
         .proposal-background{
+            min-height: 65vh;
+            height: auto;
             align-items: center;
 
         .proposal {
             width: 90%;
-            height: 95%;
+            height: auto;
             grid-template-columns: 1fr;
             grid-template-areas: "proposal-text";
             gap: none;
+            margin: 25px 0;
 
             .proposal-text{
                 height: 100%;
                 grid-template-rows: auto auto auto auto;
                 grid-template-areas: "title" "paragraph" "imagem" "button";
-                gap: 8px;
+                gap: 16px;
                 align-items: center;
                 grid-area: proposal-text;
                 
@@ -273,12 +277,12 @@
     
                 p {
                     grid-area: paragraph;
-                    font: App.$m-paragraph-13px;
+                    font: App.$m-paragraph-15px;
                 }
 
                 .proposal-image-mobile{
                     display: block;
-                    min-height: 250px;
+                    min-height: 300px;
                     grid-area: imagem;
                 }
     
@@ -295,8 +299,8 @@
 
 
     .methodology-background {
-        min-height: 500px;
-        height: 80vh;
+        min-height: 35vh;
+        height: auto;
 
         .methodology-elipse {
             display: none;
@@ -304,7 +308,8 @@
 
         .methodology {
             width:  90%;
-            height: 90%;
+            height: auto;
+            margin: 25px 0;
             grid-template-columns: 1fr;
             grid-template-rows: auto auto auto;
             grid-template-areas: "methodology-title" "methodology-image" "methodology-paragraph";
@@ -319,8 +324,8 @@
             p{
                 width: 90%;
                 margin: 0 5%;
-                font: App.$m-paragraph-14px;
-                text-align: justify;
+                font: App.$m-paragraph-15px;
+                text-align: center;
                 line-height: 20px
             }
 

@@ -19,6 +19,7 @@
         h1 {
             text-align: center;
             font: App.$title-h1-42px;
+            color: App.$neutral-color-dark-gray;
             margin-top: 25px;
         }
 
@@ -39,6 +40,7 @@
                 position: relative;
                 user-select: none;
                 cursor: pointer;
+                color: App.$neutral-color-dark-gray;
 
                 .text-question {
                     display: flex;

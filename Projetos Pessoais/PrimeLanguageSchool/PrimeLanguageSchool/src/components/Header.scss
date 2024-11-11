@@ -139,7 +139,9 @@ header{
 @media screen and (min-width: 300px) and (orientation:portrait){
 
     header{
-        min-height: 130px;
+        // min-height: 130px;
+        min-height: 12vh;
+        height: auto;
         
         .social-media{
     
@@ -170,8 +172,8 @@ header{
             }
     
             .header-student-button{
-                min-width: 170px;
-                min-height: 70px;
+                min-width: 160px;
+                min-height: 60px;
     
                 .student-button{
                     width: 155px;

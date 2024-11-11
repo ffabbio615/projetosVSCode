@@ -14,7 +14,7 @@ export default function S1Proposal() {
                             <p>Na PRIME Language School, nosso foco é sua fluência. Aprenda no seu ritmo e esteja preparado para qualquer desafio!</p>
                             <div class="proposal-image-mobile"></div>
                             <div class="CTA-container">
-                                <button class="CTA-button">QUERO CONHECER</button>
+                                <a href="https://wa.me/+5521965147515/?text=Olá! Desejo mais informações sobre a PRIME." target="blank"><button class="CTA-button">QUERO CONHECER</button></a>
                             </div>
                         </div>
                         <div class="proposal-image"></div>

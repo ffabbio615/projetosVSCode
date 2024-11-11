@@ -63,6 +63,7 @@ $neutral-color-black: rgb(0,0,0);
 //-----Font Definitions-----//
 
 //DESKTOP
+$webAdjPLUS: clamp(42px, 3.1vw, 48px);
 $webAdj42px: clamp(36px, 2.8vw, 42px);
 $webAdj36px: clamp(32px, 2.5vw, 36px);
 $webAdj32px: clamp(28px, 2.2vw, 32px);
@@ -77,6 +78,7 @@ $webAdj14px: clamp(12px, 0.96vw, 14px);
 $webAdj13px: clamp(11px, 0.9vw, 13px);
 $webAdj12px: clamp(10px, 0.81vw, 12px);
 
+$title-h1-PLUS: normal $webAdjPLUS 'GiphursBold', sans-serif;
 $title-h1-42px: normal $webAdj42px 'GiphursBold', sans-serif;
 $title-h2-36px: normal $webAdj36px 'GiphursBold', sans-serif;
 $title-h3-30px: normal $webAdj30px 'GiphursBold', sans-serif;
@@ -107,6 +109,7 @@ $m-title-h4-20px: normal 20px 'GiphursBold', sans-serif;
 $m-title-h5-16px: normal 16px 'GiphursBold', sans-serif;
 $m-title-h6-12px: normal 12px 'GiphursBold', sans-serif;
 
+$m-subtitle-24px: normal 24px 'MontserratBold', sans-serif;
 $m-subtitle-20px: normal 20px 'MontserratBold', sans-serif;
 $m-subtitle-16px: normal 16px 'MontserratBold', sans-serif;
 
@@ -115,6 +118,10 @@ $m-paragraph-14px: normal 14px 'MontserratRegular', sans-serif;
 $m-paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
 
 
+*{
+    margin: 0;
+    padding: 0;
+}
 
 html{scroll-behavior: smooth; transition: 0.8s;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
@@ -127,14 +134,16 @@ body{
     touch-action:pan-y;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+a{
+    text-decoration: none;
 }
 
 .CTA-button{
     width: 300px;
     height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $primary-color-red;
     border-style: solid;
     border-color: $neutral-color-white;

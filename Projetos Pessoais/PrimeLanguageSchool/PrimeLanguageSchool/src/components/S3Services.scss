@@ -2,6 +2,7 @@
 
 .services-section {
     min-height: 110vh;
+    height: auto;
     min-width: 100vw;
 
     .english-courses-container {
@@ -18,6 +19,7 @@
             width: 100%;
             margin-top: 2%;
             text-align: center;
+            color: App.$neutral-color-dark-gray;
 
 
                 h1 {
@@ -148,14 +150,13 @@
         }
     }
 
-        .exams-background,
-        .foreground-stars {
+    .exams-background, .exams-background .foreground-stars {
             min-height: 550px;
-            height: 40vh;
+            height: auto;
             width: 100%;
-        }
+    }
     
-        .exams-background {
+    .exams-background {
             background-color: App.$secondary-color-blue-2;
             display: flex;
             flex-wrap: wrap;
@@ -173,10 +174,10 @@
             .exams-container {
                 min-width: 350px;
                 width: 60%;
-                margin: 20px 0;
+                margin: 25px 0;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 25% 50% 22%;
+                grid-template-rows: auto auto auto;
                 gap: 3%;
                 grid-template-areas: "exams-title exams-title" "exams exams" "CTA-container CTA-container";
     
@@ -228,11 +229,10 @@
     
                 .CTA-container {
                     grid-area: CTA-container;
-                    margin-bottom: 20px;
                 }
             }
-        }
-        }
+    }
+}
 
 @media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){
     .services-section {
@@ -289,29 +289,35 @@
 
 .exams-background, .foreground-stars {
         min-height: 600px;
-        height: 40vh;
+        height: auto;
         width: 100%;
     }
 
     .exams-background {
 
         .exams-container {
+            width: 90%;
+
+            height: auto;
             grid-template-columns: 1fr;
-            padding: 0 10px;
-            grid-template-rows: 23% 55% 17%;
+            grid-template-rows: auto auto auto;
             gap: 2%;
+            margin: 25px 0;
 
             .exams-title {
                 grid-area: exams-title;
                 text-align: center;
 
                 h1 {
-                    font: App.$m-title-h2-30px;
-                    margin-bottom: 0px;
+                    font: App.$m-title-h1-36px;
+                    margin-bottom: 10px;
                 }
 
                 p {
+                    width: 90%;
+                    margin: 0 5%;
                     font: App.$m-paragraph-15px;
+                    text-align: center;
                 }
             }
 
@@ -326,16 +332,15 @@
                 .cambridge h3, .others-exams h3 {
                     font: App.$m-subtitle-20px;
                     text-align: center;
+                    margin-top: 15px;
                 }
 
                 .cambridge p, .others-exams p {
-                    font: App.$m-paragraph-14px;
+                    width: 70%;
+                    margin: 10px 15%;
+                    font: App.$m-paragraph-15px;
                     line-height: 20px;
                 }
-            }
-
-            .CTA-container {
-                margin-bottom: 0;
             }
         }
     }
@@ -348,9 +353,12 @@
     .services-section {
 
         .english-courses-container {
-            min-height: 1800px;
+            min-height: 100vh;
+            height: auto;
+            margin-bottom: 25px;
 
             .english-courses-title {
+                margin-bottom: 10px;
     
                     h1 {
                         font: App.$m-title-h1-36px;
@@ -371,13 +379,18 @@
                 }
 
         .english-courses{
-            height: 1650px;
+            // height: 1650px;
+            min-height: 100vh;
+            height: auto;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(7, 1fr);
 
             .course-card{
+                width: auto;
+                height: 225px;
 
                 .card-text{
+
                     h2{
                         font: App.$m-title-h2-30px;
                     }
@@ -417,9 +430,9 @@
         }
     }
 
-    .exams-background, .foreground-stars {
-            min-height: 700px;
-            height: 40vh;
+    .exams-background, .exams-background .foreground-stars {
+            min-height: 100vh;
+            height: 750px;
             width: 100%;
         }
     
@@ -427,17 +440,17 @@
     
             .exams-container {
                 grid-template-columns: 1fr;
-                padding: 0 10px;
-                grid-template-rows: 23% 55% 17%;
+                grid-template-rows: auto auto auto;
                 gap: 2%;
+
+                .exams-title, .exams, .CTA-container{width: 90%; margin: 0 5%; }
     
                 .exams-title {
                     grid-area: exams-title;
                     text-align: center;
     
                     h1 {
-                        font: App.$m-title-h2-30px;
-                        margin-bottom: 0px;
+                        font: App.$m-title-h1-36px;
                     }
     
                     p {
@@ -450,22 +463,19 @@
     
                     .cambridge, .others-exams {
                         width: 100%;
-                        margin: 0;
+                        margin: 10px 0;
                     }
     
                     .cambridge h3, .others-exams h3 {
                         font: App.$m-subtitle-20px;
-                        text-align: center;
+                        text-align: left;
                     }
     
                     .cambridge p, .others-exams p {
-                        font: App.$m-paragraph-14px;
+                        font: App.$m-paragraph-15px;
                         line-height: 20px;
+                        text-align: left;
                     }
-                }
-
-                .CTA-container {
-                    margin-bottom: 0;
                 }
             }
         }

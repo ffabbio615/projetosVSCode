@@ -140,7 +140,7 @@ export default function S3Services() {
                         </div>
 
                         <div className="CTA-container">
-                            <button className="CTA-button">QUERO CONHECER</button>
+                            <a href="https://wa.me/+5521965147515/?text=Olá! Me interessei sobre os cursos internacionais da PRIME." target="blank" className="CTA-button">QUERO CONHECER </a>
                         </div>
                     </div>
                 </div>

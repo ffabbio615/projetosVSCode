@@ -1,2 +1,11 @@
 CTRL+ALT+L > Seleciona todas as palavras iguais para substituição
 CTRL+D > Seleciona a próxima palavra igual a da selecionada. Para cada vez pressionada, seleciona a próxima palavra.
+
+Ctrl + Tab: Alternar entre abas abertas 
+Alt + ← / →: Navegar entre abas (não funciona com css)
+Ctrl + Shift + Tab: Ir para o arquivo anterior
+Ctrl + W: Fechar aba
+
+Ctrl + F: Buscar / Substituir 
+Shift + Alt + F: Indentar
+
