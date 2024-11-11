@@ -1,6 +1,31 @@
 @use '../App.scss';
 
+.whatsapp-container{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50vw;
+    background-color: #14AE5C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    filter: drop-shadow(0 0 18px rgba(App.$neutral-color-black, 0.4));
+
+    .whatsapp-icon{
+        width: 40px;
+        height: 40px;
+        background-image: url(../assets/img/whatsappIcon.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+}
+
 header{
+
     min-height: 150px;
     width: 100vw;
     background-color: App.$neutral-color-white;
@@ -128,6 +153,19 @@ header{
 }
 
 @media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){
+    
+    .whatsapp-container{
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+    
+        .whatsapp-icon{
+            width: 35px;
+            height: 35px;
+        }
+    }
+    
     header{
     .header-menu{
         justify-content: space-between;
@@ -137,6 +175,18 @@ header{
 }
 
 @media screen and (min-width: 300px) and (orientation:portrait){
+
+    .whatsapp-container{
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 20px;
+    
+        .whatsapp-icon{
+            width: 35px;
+            height: 35px;
+        }
+    }
 
     header{
         // min-height: 130px;
