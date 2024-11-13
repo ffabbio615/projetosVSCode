@@ -14,21 +14,21 @@ function App() {
 
   return (
     <>
-      <Header> </Header>
+      <Header/>
       
-      <S1Proposal></S1Proposal>
+      <S1Proposal/>
 
-      <S2Presentation></S2Presentation>
+      <S2Presentation/>
 
-      <S3Services></S3Services>
+      <S3Services/>
 
-      <S4Testimonials></S4Testimonials>
+      <S4Testimonials/>
 
-      <S5ProposalLocation></S5ProposalLocation>
+      <S5ProposalLocation/>
 
-      <S6Faq></S6Faq>
+      <S6Faq/>
 
-      <Footer></Footer>
+      <Footer/>
 
     </>
   );
