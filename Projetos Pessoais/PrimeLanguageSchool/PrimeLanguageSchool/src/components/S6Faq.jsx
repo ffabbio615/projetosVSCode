@@ -17,7 +17,7 @@ export default function S6Faq() {
                         </div>
                         <div className="text-answer">
                             As aulas VIP são personalizadas de acordo com suas necessidades e objetivos.
-                            Você terá um professor que irá focar nas suas áreas de interesse, seja gramática, conversação, preparação para exames, entre outros.
+                            O professor irá focar em todas as suas áreas de interesse.
                         </div>
                     </div>
 
@@ -112,8 +112,9 @@ export default function S6Faq() {
                             <div className="arrow-box">▼</div>
                         </div>
                         <div className="text-answer">
-                        Sim. Para o melhor aproveitamento dos nossos alunos em nossos cursos, adotamos materiais didáticos da Cambridge University Press. 
-                        O material dará acesso à plataforma onde o aluno terá acesso digital ao livro e diversos outros recursos. 
+                        Sim. Além do material exclusivo da PRIME, para o melhor aproveitamento dos nossos alunos em nossos cursos, 
+                        adotamos materiais didáticos da Cambridge University Press. 
+                        O material dará acesso à plataforma onde o aluno terá acesso digital ao livro e a diversos outros recursos.
                         </div>
                     </div>
                     </div>

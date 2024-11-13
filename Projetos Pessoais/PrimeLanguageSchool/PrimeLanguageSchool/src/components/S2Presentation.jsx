@@ -20,7 +20,7 @@ export default function S2Presentation(){
                     <p>Alexandre Mello</p>
                     <div className="proprietor-image-mobile"></div>
                     <p>Alexandre Mello, fundador da Prime Language School, é especializado em psicopedagogia e gestão escolar, aliada à certificação em ensino de inglês (ELT) 
-                        pela Cambridge English. Com anos de experiência na educação e vivência no exterior, criou a PRIME para oferecer um ambiente de aprendizado inovador e eficaz. 
+                        pela Cambridge English. Com 17 anos de carreira e vivência no exterior, criou a PRIME para oferecer um ambiente de aprendizado inovador e eficaz. 
                         Alexandre acredita ser primordial a capacitação de alunos em qualquer fase de vida, desde a fase infantil até a terceira idade.</p>
                 </div>
             </div>

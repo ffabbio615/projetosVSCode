@@ -70,7 +70,7 @@ export default function S3Services() {
 
                         <div className="course-card">
                             <div className="card-text">
-                                <h2>PRIME EXPRESS</h2>
+                                <h2>PRIME ESSENTIAL</h2>
                                 <p></p>
                             </div>
                             <div className="card-text-explanation">
@@ -121,7 +121,7 @@ export default function S3Services() {
                                 Preparação para Exames Internacionais
                             </h1>
                             <p>
-                                Somente a PRIME te preparará exclusivamente para os exames mais importantes do mundo!
+                                A PRIME te ajuda na preparação para os exames internacionais mais importantes!
                             </p>
                         </div>
 
