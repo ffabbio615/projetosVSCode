@@ -135,7 +135,7 @@ export default function S3Services() {
                             <div className="others-exams">
                                 <h3>TOEFL & IELTS</h3>
                                 <p>Curso focado em técnicas e estratégias para alcançar altas pontuações nos exames TOEFL e IELTS, aceitos mundialmente.
-                                    Recomendado para falantes não-nativos que desejam estudar, trabalhar ou imigrar para países de língua inglesa. </p>
+                                    Para falantes não-nativos que desejam estudar, trabalhar ou imigrar para países de língua inglesa. </p>
                             </div>
                         </div>
 
