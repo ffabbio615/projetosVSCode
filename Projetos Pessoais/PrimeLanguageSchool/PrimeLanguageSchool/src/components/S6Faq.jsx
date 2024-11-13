@@ -112,9 +112,9 @@ export default function S6Faq() {
                             <div className="arrow-box">▼</div>
                         </div>
                         <div className="text-answer">
-                        Sim. Além do material exclusivo da PRIME, para o melhor aproveitamento dos nossos alunos em nossos cursos, 
+                        Sim. Além do material exclusivo da PRIME, para o melhor aproveitamento de nossos alunos, 
                         adotamos materiais didáticos da Cambridge University Press. 
-                        O material dará acesso à plataforma onde o aluno terá acesso digital ao livro e a diversos outros recursos.
+                        O aluno terá acesso à plataforma digital, contendo livros e diversos outros recursos.
                         </div>
                     </div>
                     </div>
