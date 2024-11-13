@@ -286,13 +286,12 @@
                 grid-template-columns: 1fr;
 
                 .proposal-text-container{
-                    
+                    margin-bottom: 25px;
+
                     .proposal-text{
-                        margin: 25px 0;
                         height: auto;
 
                         h1{
-                            margin-bottom: 10px;
                             font: App.$m-title-h1-36px;
                         }
 
@@ -304,7 +303,7 @@
                             align-items: center;
 
                             .proposal-text-item{
-                                margin: 25px 5%;
+                                margin: 15px 5% 25px 5%;
 
                                 h3{
                                     font: App.$m-title-h3-24px;

@@ -118,7 +118,7 @@ export default function S3Services() {
                     <div className="exams-container">
                         <div className="exams-title">
                             <h1>
-                                Preparação para Exames Internacionais
+                                Exames Internacionais
                             </h1>
                             <p>
                                 A PRIME te ajuda na preparação para os exames internacionais mais importantes!

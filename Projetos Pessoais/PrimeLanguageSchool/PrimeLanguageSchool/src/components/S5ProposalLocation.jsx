@@ -11,7 +11,7 @@ export default function S5ProposalLocation() {
                         
                         <div className="proposal-text-container">
                             <div className="proposal-text">
-                                <h1>Motivos para ser PRIME</h1>
+                                <h1>Torne-se PRIME</h1>
                                 <div className="proposal-text-item-container">
                                     <div className="proposal-text-item">
                                         <h3>- Aulas online e presenciais</h3>
