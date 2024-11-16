@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+.question-box-active{
+    animation: questionBoxActive 0.5s forwards;
+
+    @keyframes questionBoxActive {
+        from {
+         opacity: 0;
+        }
+        to {
+         opacity: 1;
+        }
+    }
+}
+
+.question-box-inactive{
+    animation: questionBoxInactive 0.5s backwards;
+
+    @keyframes questionBoxInactive {
+        from {
+         opacity: 1;
+        }
+        to {
+         opacity: 0;
+        }
+    }
+}
+
 .faq-section {
     min-height: 89.5vh;
     min-width: 100vw;
@@ -21,6 +47,7 @@
             font: App.$title-h1-42px;
             color: App.$neutral-color-dark-gray;
             margin-top: 25px;
+            opacity: 0;
         }
 
         .question-box-group {
@@ -41,6 +68,14 @@
                 user-select: none;
                 cursor: pointer;
                 color: App.$neutral-color-dark-gray;
+                opacity: 0;
+
+                @for $i from 1 through 10{
+                    &:nth-child(#{$i}){
+                        animation-delay: #{0.1 * $i}s;
+                    }
+                }
+
 
                 .text-question {
                     display: flex;

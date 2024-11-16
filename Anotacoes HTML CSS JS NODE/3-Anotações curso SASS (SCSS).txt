@@ -3,14 +3,14 @@ O QUE É SASS?
 É uma linguagem de extensão para CSS (SCSS) que adiciona funcionalidades avançadas ao CSS tradicional, facilitando o desenvolvimento de estilos para páginas web.
 Com Sass, você pode usar recursos que não estão disponíveis no CSS puro, como:
 
-VARIÁVEIS: Permite definir valores reutilizáveis para cores, tamanhos, etc.
+-----VARIÁVEIS: Permite definir valores reutilizáveis para cores, tamanhos, etc-----
 $primary-color: #3498db;
 body {
   background-color: $primary-color;
 }
 
 
-NESTING (Aninhamento): Facilita a escrita de regras CSS dentro de outras, refletindo a estrutura HTML.
+-----NESTING (Aninhamento): Facilita a escrita de regras CSS dentro de outras, refletindo a estrutura HTML-----
 nav {
   ul {
     margin: 0;
@@ -22,7 +22,7 @@ nav {
 }
 
 
-MIXINS: Permitem reutilizar blocos de código.
+-----MIXINS: Permitem reutilizar blocos de código-----
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -32,7 +32,8 @@ MIXINS: Permitem reutilizar blocos de código.
   @include flex-center;
 }
 
-HERANÇA: Facilita a reutilização de estilos, permitindo que um seletor herde propriedades de outro.
+
+-----HERANÇA: Facilita a reutilização de estilos, permitindo que um seletor herde propriedades de outro-----
 %button-style {
   padding: 10px 20px;
   border-radius: 5px;
@@ -41,10 +42,110 @@ HERANÇA: Facilita a reutilização de estilos, permitindo que um seletor herde 
   @extend %button-style;
 }
 
-OPERAÇÕES MATEMÁTICAS: Permite fazer cálculos diretamente nos estilos.
+
+-----OPERAÇÕES MATEMÁTICAS: Permite fazer cálculos diretamente nos estilos-----
 .container {
   width: 100% - 20px;
 }
+
+
+-----ESTRUTURAS CONDICIONAIS E DE CONTROLE: @if, @for, @each e @while
+
+IF: Funciona como uma condicional. Você pode verificar condições e aplicar estilos dinamicamente.
+$theme: dark;
+
+body {
+  @if $theme == dark {
+    background-color: black;
+    color: white;
+  } @else {
+    background-color: white;
+    color: black;
+  }
+}
+
+FOR: Cria loops numéricos, ideal para gerar estilos iterativamente, como classes ou seletores. | Para gerar estilos com valores incrementais ou uma quantidade definida de vezes.
+@for $i from 1 through 5 {
+  .box-#{$i} {
+    width: #{100 * $i}px;
+    height: #{50 * $i}px;
+  }
+}
+Resultado em CSS
+.box-1 {
+  width: 100px;
+  height: 50px;
+}
+
+.box-2 {
+  width: 200px;
+  height: 100px;
+}
+
+.box-3...
+
+EACH: Itera sobre listas ou mapas (estruturas semelhantes a arrays ou objetos no SASS). | Para iterar sobre listas ou mapas.
+$colors: red, green, blue;
+
+@each $color in $colors {
+  .bg-#{$color} {
+    background-color: $color;
+  }
+}
+Resultado em CSS
+.bg-red {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+Exemplo com Map:
+$themes: (
+  dark: black,
+  light: white
+);
+
+@each $name, $color in $themes {
+  .theme-#{$name} {
+    background-color: $color;
+  }
+}
+Resultado em CSS:
+.theme-dark {
+  background-color: black;
+}
+
+.theme-light {
+  background-color: white;
+}
+
+WHILE: Funciona como um loop tradicional, repetindo até que uma condição seja falsa. | Quando o loop depende de uma condição dinâmica.
+$i: 1;
+
+@while $i <= 5 {
+  .item-#{$i} {
+    margin-left: #{10 * $i}px;
+  }
+  $i: $i + 1; // Incrementa $i
+}
+Resultado em CSS:
+.item-1 {
+  margin-left: 10px;
+}
+
+.item-2 {
+  margin-left: 20px;
+}
+
+item-3...
+
+
 
 
 -----INSTALAÇÃO DO SASS-----

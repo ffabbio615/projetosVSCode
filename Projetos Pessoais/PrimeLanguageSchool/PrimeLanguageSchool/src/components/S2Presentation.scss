@@ -17,6 +17,69 @@
     justify-items: center;
     align-items: center;
 
+    .presentation-background-active{
+        animation: reveal-presentation-background 1.3s forwards;
+        transform-origin: bottom;
+        @keyframes reveal-presentation-background {
+            0%{
+                transform: scaleY(0);
+                clip-path: inset(100% 0 0 0);
+            }
+            20%{
+                transform: scaleY(0.3);
+                clip-path: inset(85% 0 0 0);
+            }
+            100%{
+                transform: scaleY(1);
+                clip-path: inset(0 0 0 0);
+            }
+        }
+    }
+
+    .presentation-background-inactive{
+        animation: unreveal-presentation-background 1.3s forwards;
+        transform-origin: bottom;
+        @keyframes unreveal-presentation-background {
+            0%{
+                transform: scaleY(1);
+                clip-path: inset(0 0 0 0);
+            }
+            80%{
+                transform: scaleY(0.3);
+                clip-path: inset(85% 0 0 0);
+            }
+            100%{
+                transform: scaleY(0);
+                clip-path: inset(100% 0 0 0);
+            }
+        }
+    }
+
+    .presentation-container-active{
+        animation: reveal-presentation-container 0.5s forwards;
+        animation-delay: 1.2s;
+        @keyframes reveal-presentation-container {
+            0% {
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    }
+
+    .presentation-container-inactive{
+        animation: unreveal-presentation-container 0.3s forwards;
+        @keyframes unreveal-presentation-container {
+            0% {
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+    }
+
     .presentation-background{
         width: 100%;
         height: 95%;
@@ -28,26 +91,10 @@
         clip-path: inset(100% 0 0 0);
         transform: scaleY(0);
         transform-origin: bottom;
-        animation: reveal-presentation-background 1.3s forwards;
         position: absolute;
         z-index: 0;
     }
 
-    @keyframes reveal-presentation-background {
-        from{
-            clip-path: inset(100% 0 0 0);
-            transform: scaleY(0);
-            transform-origin: bottom;
-        }
-        20%{
-            transform: scaleY(0.3);
-            clip-path: inset(85% 0 0 0);
-        }
-        to{
-            transform: scaleY(1);
-            clip-path: inset(0 0 0 0);
-        }
-    }
 
     .presentation-container{
         width: calc(70% + ((1920px - 100vw))/2) ;
@@ -66,17 +113,6 @@
         gap: 25px;
         padding: 2%;
         opacity: 0;
-        animation: reveal-presentation-container 0.5s forwards;
-        animation-delay: 1.2s;
-
-        @keyframes reveal-presentation-container {
-            0% {
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-        }
 
         .who-we-are-container{
             grid-area: who-we-are-container;
@@ -257,10 +293,19 @@
         min-height: 100vh;
         height: auto;
 
+        .presentation-background-active{
+            animation: reveal-presentation-background 1s forwards;
+        }
+    
+        .presentation-container-active{
+            animation: reveal-presentation-container 0.5s forwards;
+            animation-delay: 1s;
+        }
+
         .presentation-background{
-            clip-path: inset(0 0 0 0);
-            transform: scaleY(1);
-            animation: none;
+            // clip-path: inset(0 0 0 0);
+            // transform: scaleY(1);
+            // animation: none;
             background-image: url(../assets/img/londonBuildingsMobile.png);
         }
 
@@ -275,9 +320,9 @@
             padding: 5%;
             margin: 25px 0;
             text-align: center;
-            opacity: 1;
-            animation: none;
-            animation-delay: 0;
+            // opacity: 1;
+            // animation: none;
+            // animation-delay: 0;
 
             .who-we-are-container{
                 h1{

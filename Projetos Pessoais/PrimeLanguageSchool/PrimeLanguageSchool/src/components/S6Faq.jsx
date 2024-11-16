@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./S6Faq.scss";
 
 // export default function S6Faq() {
@@ -129,6 +129,33 @@ import "./S6Faq.scss";
 
 export default function S6Faq(){
 
+    const faqSectionRef = useRef(null);
+    const [questionBoxActive, setQuestionBoxActive] = useState(false);
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+
+            if(faqSectionRef.current){
+                const sectionTop = faqSectionRef.current.getBoundingClientRect().top + window.scrollY;
+
+                if (window.scrollY >= sectionTop -400) {
+                    setQuestionBoxActive(true);
+                } else {
+                    setQuestionBoxActive(false);
+                }
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    });
+
+
+
     const [activeIndex, setActiveIndex] = useState(null);
 
     const toggleQuestion = (index) => {
@@ -178,16 +205,18 @@ export default function S6Faq(){
         },
     ];
 
+    
+
     return (
-        <section id="FAQ" className="faq-section">
+        <section id="FAQ" className="faq-section" ref={faqSectionRef}>
             <div className="faq-group">
-                <h1>Dúvidas Frequentes</h1>
+                <h1 className={`${questionBoxActive ? 'question-box-active' : 'question-box-inactive'}`}> Dúvidas Frequentes</h1>
 
                 <div className="question-box-group">
                     {faqData.map((faq, index) => (
                         <div
                             key={index}
-                            className={`question-box ${activeIndex === index ? "question-box-opened" : ""}`}
+                            className={`question-box ${activeIndex === index ? "question-box-opened" : ""} ${questionBoxActive ? 'question-box-active' : 'question-box-inactive'}`}
                             onClick={() => toggleQuestion(index)}
                         >
                             <div className="text-question">

@@ -10,7 +10,6 @@ import S6Faq from './components/S6Faq';
 import Footer from './components/footer';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

@@ -1,13 +1,41 @@
 import "./S5ProposalLocation.scss";
+import React, {useRef, useEffect, useState} from "react";
 
 export default function S5ProposalLocation() {
+
+    const proposalLocationSectionRef = useRef(null);
+    const [proposalContainerActive, setproposalContainerActive] = useState(false);
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+
+            if(proposalLocationSectionRef.current){
+                const sectionTop = proposalLocationSectionRef.current.getBoundingClientRect().top + window.scrollY;
+
+                if (window.scrollY >= sectionTop -400) {
+                    setproposalContainerActive(true);
+                } else {
+                    setproposalContainerActive(false);
+                }
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    });
+
+
     return (
         <>
-            <section id="location" className="proposal-location-section">
+            <section id="location" className="proposal-location-section" ref={proposalLocationSectionRef}>
                 <div className="proposal-background">
                     <div className="foreground-stars"></div>
                     
-                    <div className="proposal-container">
+                    <div className={`proposal-container ${proposalContainerActive ? 'proposal-container-active' : ''}`}>
                         
                         <div className="proposal-text-container">
                             <div className="proposal-text">

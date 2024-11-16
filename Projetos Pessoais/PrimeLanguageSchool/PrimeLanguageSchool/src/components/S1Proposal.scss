@@ -15,6 +15,14 @@
 .proposal-section{
     min-height: 100vh;
     width: 100vw;
+    animation: show-proposal 1.5s forwards;
+    opacity: 0;
+
+    @keyframes show-proposal {
+        100%{
+            opacity: 1;
+        }
+    }
 
     .proposal-background {
         width: 100%;

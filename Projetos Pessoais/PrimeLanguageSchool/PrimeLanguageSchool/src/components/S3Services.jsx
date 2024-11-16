@@ -1,11 +1,55 @@
 import "./S3Services.scss";
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function S3Services() {
+    
+    const servicesSectionRef = useRef(null); // Referência para a seção "services"
+    const [isActive, setIsActive] = useState(false); // Estado para controlar a classe ativa
+
+    const examsBackgroundRef = useRef(null);
+    const [examIsActive, setExamIsActive] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (servicesSectionRef.current) {
+                // Obtém a posição da seção em relação ao topo da página
+                const sectionTop = servicesSectionRef.current.getBoundingClientRect().top + window.scrollY;
+
+                // Adiciona ou remove a classe "active" com base na posição de rolagem
+                if (window.scrollY >= sectionTop -400) {
+                    setIsActive(true);
+                } else {
+                    setIsActive(false);
+                }
+            }
+
+            if (examsBackgroundRef.current) {
+                // Obtém a posição da seção em relação ao topo da página
+                const sectionTop = examsBackgroundRef.current.getBoundingClientRect().top + window.scrollY;
+
+                // Adiciona ou remove a classe "active" com base na posição de rolagem
+                if (window.scrollY >= sectionTop -400) {
+                    setExamIsActive(true);
+                } else {
+                    setExamIsActive(false);
+                }
+            }
+        };
+
+        // Adiciona o evento de rolagem
+        window.addEventListener('scroll', handleScroll);
+
+        // Remove o evento de rolagem ao desmontar o componente
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
 
-            <section id="services" className="services-section">
-                <div className="english-courses-container">
+            <section id="services" className="services-section" ref={servicesSectionRef}>
+                <div className={`english-courses-container ${isActive ? 'active' : ''}`}>
                     <div className="english-courses-title">
                         <h1>
                             Nossos Cursos
@@ -106,16 +150,14 @@ export default function S3Services() {
                             <div className="card-cover"></div>
                             <div className="black-card-cover"></div>
                         </div>
-
-
                     </div>
                 </div>
 
-                <div className="exams-background">
+                <div className="exams-background" ref={examsBackgroundRef}>
 
                     <div className="foreground-stars"></div>
 
-                    <div className="exams-container">
+                    <div className={`exams-container ${examIsActive ? 'active' : ''}`}>
                         <div className="exams-title">
                             <h1>
                                 Exames Internacionais

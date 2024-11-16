@@ -121,9 +121,10 @@ $m-paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
 *{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
-html{scroll-behavior: smooth; transition: 0.8s;}
+html{scroll-behavior: smooth !important; transition: 0.8s !important;}
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
 ::-webkit-scrollbar {width:12px; height: 12px;}
 ::-webkit-scrollbar-track {background: $primary-color-red;}
@@ -132,6 +133,7 @@ html{scroll-behavior: smooth; transition: 0.8s;}
 
 body{
     touch-action:pan-y;
+    background-color: $primary-color-blue;
 }
 
 a{

@@ -4,6 +4,10 @@
     min-height: 100vh;
     width: 100vw;
 
+    .proposal-container-active{
+        opacity: 1 !important;
+    }
+
     .proposal-background {
         width: 100%;
         min-height:650px;
@@ -31,6 +35,8 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 95px;
+            transition: 500ms ease-in;
+            opacity: 0;
             
 
             .proposal-text-container {

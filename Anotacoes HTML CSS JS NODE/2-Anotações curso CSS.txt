@@ -76,6 +76,7 @@ html{ scroll-behavior: smooth;} = Rola a página deslizando suavemente
 .elemento{ user-select: none; } = Impede o usuário de selecionar o elemento, seja ele texto, imagem ou outros.
 body{ touch-action:pan-y; } = Impede o usuário de dar zoom quando for utilizar dispositivos touch.
 body{ touch-action:touch-action:pinch-zoom; } = Permite o usuário mexer no elemento somente se ele estiver fazendo o movimento de pinça.
+elemento{ clip-path: inset(100% 0 0 0); } = Mexe na forma do elemento para modelar, esconder e cortar a forma dele. X Y W H. Completo: https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
 
 
 
@@ -143,7 +144,7 @@ PSEUDO-ELEMENTOS (São classes com elementos que podem mudar a estrutura da pág
 .class::grammar-error {} = Checa de há concordância na linguagem definida no HTML. Altera somente a parte que está errada.
 
 
-EFEITOS
+EFEITOS (FILTERS)
 
 box-shadow: 10px 10px 15px black; = Caixa de sombra criada com cor e desfoque. X Y Blur Color
 box-shadow: inset 10px 10px 15px black; = A mesma sombra, porém dentro do elemento

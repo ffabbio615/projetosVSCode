@@ -9,7 +9,7 @@ export default function Header() {
             <header className='header'>
                 <div className='social-media'>
                     <a href='https://www.instagram.com/primelanguageschoolrj/profilecard/?igsh=cWJjYzZza3BhcnUx' target='blank' className='social-media-instagram'></a>
-                    <a href='' target='blank' className='social-media-facebook'></a>
+                    <a href='https://www.facebook.com/share/15MjuFpGF3/?mibextid=LQQJ4d' target='blank' className='social-media-facebook'></a>
                 </div>
 
                 <div className='header-menu'>
@@ -23,7 +23,7 @@ export default function Header() {
                     </div>
 
                     <div className='header-student-button'>
-                        <a href='' target='blank' className='student-button'>ÁREA DO ALUNO</a>
+                        <a href='https://portal.sponteweb.com.br/SelecionaLogin.aspx?cid=488282' target='blank' className='student-button'>ÁREA DO ALUNO</a>
                     </div>
                 </div>
             </header>

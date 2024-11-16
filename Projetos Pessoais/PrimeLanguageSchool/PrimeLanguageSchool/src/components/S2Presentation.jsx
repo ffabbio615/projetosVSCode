@@ -1,12 +1,41 @@
 import "./S2Presentation.scss";
+import React, {useState, useEffect, useRef} from "react";
 
 export default function S2Presentation(){
+
+    const presentationSectionRef = useRef(null);
+    const [isActive, setIsActive] = useState(false); 
+
+    useEffect (() => {
+        const handleScroll = () =>{
+            if(presentationSectionRef.current){
+
+                const sectionTop = presentationSectionRef.current.getBoundingClientRect().top + window.scrollY;
+                const viewportHeight = window.innerHeight;
+
+                if(window.scrollY >= sectionTop - viewportHeight * 0.5){
+                    setIsActive(true);
+                }else if(window.scrollY <= sectionTop - viewportHeight * 0.8){
+                    setIsActive(false);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
+
+
     return(
         <>
         
-        <section id="presentation" className="presentation-section">
-        <div className="presentation-background"></div>
-        <div className="presentation-container">
+        <section id="presentation" className="presentation-section" ref={presentationSectionRef}>
+        <div className={`presentation-background ${isActive ? 'presentation-background-active' : 'presentation-background-inactive'}`}></div>
+        <div className={`presentation-container ${isActive ? 'presentation-container-active' : 'presentation-container-inactive'}`}>
             <div className="who-we-are-container">
                 <h1>Quem somos?</h1>
                 <p>Fundada em 2022 em Copacabana, a Prime Language School é dedicada a oferecer aulas de inglês flexíveis, adaptadas às necessidades individuais de cada aluno. 
