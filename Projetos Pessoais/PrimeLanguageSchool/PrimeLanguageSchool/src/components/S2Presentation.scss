@@ -294,12 +294,28 @@
         height: auto;
 
         .presentation-background-active{
-            animation: reveal-presentation-background 1s forwards;
+            animation: reveal-presentation-background 0.5s forwards;
+            @keyframes reveal-presentation-background {
+                0%{
+                    opacity: 0;
+                    transform: scaleY(1);
+                    clip-path: inset(0 0 0 0);
+                }
+                20%{
+                    transform: scaleY(1);
+                    clip-path: inset(0 0 0 0);
+                }
+                100%{
+                    opacity: 1;
+                    transform: scaleY(1);
+                    clip-path: inset(0 0 0 0);
+                }
+            }
         }
     
         .presentation-container-active{
             animation: reveal-presentation-container 0.5s forwards;
-            animation-delay: 1s;
+            animation-delay: 0.5s;
         }
 
         .presentation-background{
