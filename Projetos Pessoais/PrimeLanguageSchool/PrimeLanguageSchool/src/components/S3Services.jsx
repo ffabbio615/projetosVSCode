@@ -45,6 +45,50 @@ export default function S3Services() {
         };
     }, []);
 
+
+    const [courseCardActive, setCourseCardActive] = useState(null);
+    const toggleCard = (index) =>{
+        setCourseCardActive(courseCardActive === index ? null : index);
+    };
+
+    const servicesData = [
+        {
+            title: 'PRIME KIDS',
+            description: '',
+            explanation: 'Aprendizado por meio de jogos e músicas, desenvolvendo vocabulário e compreensão auditiva em um ambiente divertido e interativo.'
+        },
+        {
+            title: 'PRIME TEENS',
+            description: '',
+            explanation: 'Foco em fluência e confiança na comunicação, com debates e atividades interativas que aprimoram a conversação.'
+        },
+        {
+            title: 'PRIME PLUS',
+            description: '',
+            explanation: 'Aperfeiçoamento da comunicação com discussões, leitura e escrita, preparando os alunos para avançar.'
+        },
+        {
+            title: 'PRIME MASTER',
+            description: '',
+            explanation: 'Desenvolvimento avançado em comunicação eficaz, com preparação para exames internacionais.'
+        },
+        {
+            title: 'PRIME ESSENTIAL',
+            description: '',
+            explanation: 'Curso básico para iniciantes, abordando fundamentos essenciais para comunicação cotidiana e uso prático no trabalho.'
+        },
+        {
+            title: 'PRIME INTER',
+            description: '',
+            explanation: 'Foco no desenvolvimento de habilidades de conversação, escrita e compreensão em contextos mais complexos. Ideal para profissionais que usam inglês no ambiente de trabalho.'
+        },
+        {
+            title: 'PRIME HIGH',
+            description: '',
+            explanation: 'Curso avançado visando fluência e proficiência, incluindo inglês para negócios e situações profissionais, ideal para maximizar oportunidades de carreira.'
+        },
+    ];
+
     return (
         <>
 
@@ -59,7 +103,27 @@ export default function S3Services() {
                         </p>
                     </div>
                     <div className="english-courses">
+                        {servicesData.map((service, index) => (
+                            <div
+                            key={index}
+                            className={`course-card ${courseCardActive === index ? 'course-card-active' : 'course-card-inactive'}`}
+                            onClick={() => toggleCard(index)}
+                            >
+                            <div className="card-text">
+                                <h2>{service.title}</h2>
+                                <p>{service.description}</p>
+                            </div>
+                            <div className="card-text-explanation">
+                                <div></div>
+                                <p>{service.explanation}</p>
+                            </div>
+                            <div className="card-cover"></div>
+                            <div className="black-card-cover"></div>
+                        </div>
+                        ))}
 
+
+                        {/* <>
                         <div className="course-card">
                             <div className="card-text">
                                 <h2>PRIME KIDS</h2>
@@ -150,6 +214,7 @@ export default function S3Services() {
                             <div className="card-cover"></div>
                             <div className="black-card-cover"></div>
                         </div>
+                        </> */}
                     </div>
                 </div>
 

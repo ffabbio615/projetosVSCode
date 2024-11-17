@@ -70,6 +70,7 @@
                 position: relative;
                 background-size: cover;
                 cursor: pointer;
+                border-radius: 10px;
 
                 .card-text{
                     width: 100%;
@@ -113,19 +114,21 @@
                     } 
                 }
 
-                &:active .card-text{
-                    opacity: 0;
-                } 
+                // &:active .card-text{
+                //     opacity: 0;
+                // } 
 
-                &:active .card-text-explanation{
-                    opacity: 1;
-                }
+                // &:active .card-text-explanation{
+                //     opacity: 1;
+                // }
 
-                &:active .card-cover{
-                    opacity: 1;
-                    background-color: App.$secondary-color-blue-8 !important;
+                // &:active .card-cover{
+                //     opacity: 1;
+                //     background-color: App.$secondary-color-blue-8 !important;
 
-                }
+                // }
+
+
 
                 .card-cover{
                     width: 100%;
@@ -133,10 +136,11 @@
                     position: absolute;
                     z-index: 2;
                     transition: 100ms ease-in-out;
+                    border-radius: 10px;
                 }
-                &:hover:not(:active) .card-cover{
-                    opacity: 0;
-                }
+                // &:hover:not(:active) .card-cover{
+                //     opacity: 0;
+                // }
 
                 .black-card-cover{
                     width: 100%;
@@ -144,6 +148,26 @@
                     position: absolute;
                     z-index: 1;
                     background-color: rgba(App.$neutral-color-black, $alpha: 0.2);
+                    border-radius: 10px;
+                }
+            }
+
+            .course-card-inactive{
+                &:hover .card-cover{
+                    opacity: 0;
+                }
+            }
+
+            .course-card-active{
+                filter: drop-shadow(0 0 10px rgba(App.$secondary-color-blue8, 0.8));
+
+                .card-text{ opacity: 0; } 
+
+                .card-text-explanation{ opacity: 1; }
+
+                .card-cover{
+                    opacity: 1 !important;
+                    background-color: App.$secondary-color-blue-8 !important;
                 }
             }
 
@@ -388,7 +412,6 @@
                 }
 
         .english-courses{
-            // height: 1650px;
             min-height: 100vh;
             height: auto;
             grid-template-columns: 1fr;
