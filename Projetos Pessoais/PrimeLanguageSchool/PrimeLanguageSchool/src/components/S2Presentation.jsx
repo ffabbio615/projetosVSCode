@@ -1,5 +1,6 @@
 import "./S2Presentation.scss";
 import React, {useState, useEffect, useRef} from "react";
+import throttle from 'lodash/throttle';
 
 export default function S2Presentation(){
 
@@ -7,7 +8,7 @@ export default function S2Presentation(){
     const [isActive, setIsActive] = useState(false); 
 
     useEffect (() => {
-        const handleScroll = () =>{
+        const handleScroll = throttle(() =>{
             if(presentationSectionRef.current){
 
                 const sectionTop = presentationSectionRef.current.getBoundingClientRect().top + window.scrollY;
@@ -19,7 +20,7 @@ export default function S2Presentation(){
                     setIsActive(false);
                 }
             }
-        };
+        }, 200);
 
         window.addEventListener('scroll', handleScroll);
 

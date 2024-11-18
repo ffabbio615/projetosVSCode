@@ -8,16 +8,16 @@ export default function S1Proposal() {
 
                 <div className="proposal-background">
                     <div className="foreground-stars"></div>
-                    <div class="proposal">
-                        <div class="proposal-text">
+                    <div className="proposal">
+                        <div className="proposal-text">
                             <h1>Seja fluente, seja PRIME. Inglês que abre portas!</h1>
                             <p>Na PRIME Language School, nosso foco é sua fluência. Aprenda no seu ritmo e esteja preparado para qualquer desafio!</p>
-                            <div class="proposal-image-mobile"></div>
-                            <div class="CTA-container">
-                                <a href="https://wa.me/+5521965147515/?text=Olá! Desejo mais informações sobre a PRIME." target="blank"><button class="CTA-button">QUERO CONHECER</button></a>
+                            <div className="proposal-image-mobile"></div>
+                            <div className="CTA-container">
+                                <a href="https://wa.me/+5521965147515/?text=Olá! Desejo mais informações sobre a PRIME." target="blank"><button className="CTA-button">QUERO CONHECER</button></a>
                             </div>
                         </div>
-                        <div class="proposal-image"></div>
+                        <div className="proposal-image"></div>
                     </div>
                 </div>
 
