@@ -55,8 +55,17 @@ componentDidUpdate(){} > Método que executa sem interrupção, ou seja, igual a
 
 -----JSX (Javascript + HTML)-----
 
-DIFERENÇA ENTRE HTML E JSX
+
+-----COISAS BÁSICAS-----
+
+*JAVASCRIPT - Para inserir código Javascript dentro do HTML, precisa-se colocar dentro de chaves {}
+**RETURN - Para retornar a função exportada de componentes em React (páginas), os elementos devem estar dentro de um container. Caso haja mais para exportar, pode-se usar fragment <> </>
+
+
+
+-----DIFERENÇA ENTRE HTML E JSX-----
 Uma ferramenta boa para transcrever código e mostrar a diferença entre um código html e um com jsx é o site > transform.tools/html-to-jsx
+*Todo arquivo .jsx precisa começar com letra maiúscula.
 
 
 CLASS - CLASSNAME (No HTML, a classe CSS se chama class, já no JSX, a classe CSS se chama classname)
@@ -64,19 +73,56 @@ CLASS - CLASSNAME (No HTML, a classe CSS se chama class, já no JSX, a classe CS
 <div classname = ""> </div> = JSX
 
 
-FOR - HTMLFOR
+FOR - HTMLFOR (Serve para quando o usuário clicar num label, o campo correspondente a esse texto ser focado. O id do campo deve ter o mesmo nome do for)
 <label for="nome">Nome: </label> = HTML
 <label htmlFor="nome">Nome: </label> = JSX
+
+
+EVENTOS - Os eventos em JS e Html são escritos com letras minúsculas, já em React se usa a segunda palavra com letra maiúscula
+<button onClick={() => console.log('Clicado!')}>Clique Aqui</button>
+<input onChange={(e) => console.log(e.target.value)} />
+
+
+Resumo das Alterações
+HTML	        REACT (JSX)
+class	        className
+for	            htmlFor
+onclick	        onClick
+readonly	    readOnly
+maxlength	    maxLength
+minlength	    minLength
+tabindex	    tabIndex
+spellcheck	    spellCheck
+autocomplete	autoComplete
+novalidate	    noValidate
+
+
+
+-----RENDERIZAÇÃO DE LISTAS COM FUNÇÃO MAP-----
+Suponha que você tem uma lista de frutas para renderizar no React:
+const fruits = ["Maçã", "Banana", "Laranja", "Uva"];
+
+export default function FruitList() {
+  return (
+    <ul>
+      {fruits.map((fruit, index) => (
+        <li key={index}>{fruit}</li> // `key` é importante para identificar os itens unicamente
+      ))}
+    </ul>
+  );
+}
+*MAP - Itera sobre o array fruits e retorna um elemento <li> para cada item da lista. Nesse caso, exibe uma lista <li> com 4 frutas.
+**KEY - O atributo key é necessário para que o React identifique unicamente cada item mapeado e possa otimizar atualizações.
 
 
 
 -----VERIFICAÇÃO CONDICIONAL EM JAVASCRIPT-----
 
-OPERADOR && (VERDADEIRO À ESQUERDA)
-O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vier após, senão não exibe. Ex.:  {product.discountedPrice && <h4>$ {product.discountedPrice}</h4>}
-
 OPERADORES ? : (VERDADEIRO OU FALSO)
 Utilizado como if, ele exibe verdadeiro "?" ou falso ":". Ex.:  {product.discountedPrice ? <h4>$ {product.discountedPrice}</h4> : ''}
+
+OPERADOR && (VERDADEIRO À ESQUERDA) - Uma alternativa para não deixar vazia a verificação com '', utilizar && retornará tudo que vier de verdadeiro antes dele e parará quando algo vier falso.
+O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vier após, senão não exibe. Ex.:  {product.discountedPrice && <h4>$ {product.discountedPrice}</h4>}
 
 
 

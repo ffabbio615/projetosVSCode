@@ -16,7 +16,7 @@ export default function S2Presentation(){
 
                 if(window.scrollY >= sectionTop - viewportHeight * 0.5){
                     setIsActive(true);
-                }else if(window.scrollY <= sectionTop - viewportHeight * 0.8){
+                }else if(window.scrollY <= sectionTop - viewportHeight * 0.7){
                     setIsActive(false);
                 }
             }

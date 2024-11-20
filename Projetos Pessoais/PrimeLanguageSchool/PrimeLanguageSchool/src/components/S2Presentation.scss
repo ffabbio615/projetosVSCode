@@ -294,7 +294,7 @@
         height: auto;
 
         .presentation-background-active{
-            animation: reveal-presentation-background 0.5s forwards;
+            animation: reveal-presentation-background 1s forwards;
             @keyframes reveal-presentation-background {
                 0%{
                     opacity: 0;
@@ -314,7 +314,7 @@
         }
     
         .presentation-container-active{
-            animation: reveal-presentation-container 0.5s forwards;
+            animation: reveal-presentation-container 1s forwards;
            // animation-delay: 0.5s;
         }
 

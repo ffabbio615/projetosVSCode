@@ -1,0 +1,14 @@
+Code Runner
+
+Docker
+Dev Containers
+
+Dracula Theme Official
+Material Icon Theme
+Office Viewer (Markdown Editor)
+
+Figma for VS Code
+GitHub Pull Requests
+
+Live Server
+
