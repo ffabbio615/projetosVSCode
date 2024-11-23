@@ -1,3 +1,4 @@
+import { throttle } from "lodash";
 import "./S3Services.scss";
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -10,7 +11,7 @@ export default function S3Services() {
     const [examIsActive, setExamIsActive] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
+        const handleScroll = throttle(() => {
             if (servicesSectionRef.current) {
                 // Obtém a posição da seção em relação ao topo da página
                 const sectionTop = servicesSectionRef.current.getBoundingClientRect().top + window.scrollY;
@@ -34,7 +35,7 @@ export default function S3Services() {
                     setExamIsActive(false);
                 }
             }
-        };
+        }, 200);
 
         // Adiciona o evento de rolagem
         window.addEventListener('scroll', handleScroll);

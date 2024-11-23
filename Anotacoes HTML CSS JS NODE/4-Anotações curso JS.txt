@@ -132,6 +132,27 @@ For each > Também percorre os valores através de uma função. Ex.: const frut
 Break e Continue> O break encerra as ações na estrutura de repetição. O continue pula uma das repetições caso a condição seja atendida.
 
 
+ARROW FUNCTION - Uma forma mais curta e moderna de escrever funções em JavaScript. Elas oferecem várias vantagens, especialmente no contexto do React e desenvolvimento moderno.
+Forma tradicional:
+function soma(a, b) { return a + b; }
+
+Arrow function equivalente:
+const soma = (a, b) => a + b;
+
+Sem parâmetros:
+const log = () => console.log("Hello, World!");
+
+Com um único parâmetro (sem parênteses):
+const quadrado = x => x * x;
+
+Com múltiplas instruções (usar {}):
+const soma = (a, b) => {
+  const resultado = a + b;
+  return resultado;
+};
+
+
+
 TRATAMENTO DE ERROS (TRY CATCH THROW FINALLY)
 Try/Catch > try{ blocoASerTratado } catch(erro){ console.log("Ocorreu um erro."); } > Exibe "Ocorreu um erro" quando ocorre um erro. É uma forma genérica
 Throw > function (){throw ("Ocorreu um erro.");} try{chamaFUncao} catch (erro){console.log(erro);} > Exibe a mensagem "Ocorreu um erro" que está em throw.

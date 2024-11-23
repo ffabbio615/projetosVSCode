@@ -116,6 +116,7 @@ export default function FruitList() {
 
 
 
+
 -----VERIFICAÇÃO CONDICIONAL EM JAVASCRIPT-----
 
 OPERADORES ? : (VERDADEIRO OU FALSO)
@@ -128,7 +129,8 @@ O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vi
 
 -----COMPONENTES-----
 Os componentes, que são fragmentos das páginas, por questões de limpeza e organização de código, devem ficar separados em arquivos distintos, sendo exportados e importados no App principal,
-que seria o App.jsx. Cada seção de uma página pode ser feita de forma separada e unida depois em fragmentos, compondo o site no final. Os arquivos CSS serão importados dentro do App principal.
+que seria o App.jsx. Cada seção de uma página pode ser feita de forma separada e unida depois em fragmentos, compondo o site no final. Arquivos CSS serão importados dentro de seus componentes.
+*Também pode-se fazer um componente ser renderizado e esse mesmo componente renderizar outra coisa de outro componente.
 
 PARA EXPORTAR > export default function NomeDaFuncao (){} OU function NomeDaFuncao (){} export default NomeDaFuncao
 PARA IMPORTAR > import QualquerNomeDeFuncao from './components/NomeDoArquivoDaFuncao'; | Depois acessa o componente assim: <NomeDaFuncao /> 
@@ -150,8 +152,106 @@ EXEMPLO DE VARIÁVEL DE ARRAY DECLARADA COM STATE > const [items, setItems] = us
 
 
 
------EVENTS-----
-Falar e mostrar exemplo de onclick
+-----ALTERAR UM ESTADO (STATE)-----
+Depois de declarar o estado, que pode estar falso, verdadeiro, vazio (null) ou com uma lista, pode-se alterar, digamos, essa lista, com filter. Exemplo: 
+const [fruits, setFruits] = useState(
+  [
+    {
+      fruta: "Maçã",
+      cor: "vermelha",
+      madura: false
+    }, 
+    {
+      fruta: "Banana",
+      cor: "amarela",
+      madura: true
+    }, 
+    {
+      fruta: "Laranja",
+      cor: "laranja",
+      madura: false
+    },
+    {
+      fruta: "Uva",
+      cor: "roxa",
+      madura: false
+    },     
+  ]
+);
 
+const handleMaduraChange = (frutaNome) => {
+  setFruits((prevFruits) =>
+    prevFruits.map((fruit) =>
+      fruit.fruta === frutaNome ? { ...fruit, madura: true } : fruit
+    )
+  );
+};
+// Exemplo de chamada para atualizar a laranja
+handleMaduraChange("Laranja");
+
+
+
+
+-----EVENTS-----
 *UTILIZAMOS e.preventDefault(); para parar um evento para ser tratado, porém ele não impede o elemento pai de acionar o evento dele também, por isso que devemos utilizar:
 e.stopPropagation();
+**Em React é comum criar funções chamadas handle + nome do evento, tipo handleClick, handleMouseOver, handleScroll, etc, para identificar que essa função conterá um evento.
+
+ONCLICK (onClick) - Para adicionar um evento de click (assim como qualquer outro), fazemos assim (exemplo dentro de um button):
+
+function handleClick(){
+  Ação que o botão clicado fará.
+}
+
+return(
+  <button onClick={handleClick}>Clique Aqui</button>
+)
+
+
+
+-----PROP ARGUMENTS AND EVENTS-----
+*Passando propos para outro componente e acessando os dados passados nele para realizar eventos e outras ações.
+**No exemplo abaixo, faz-se o mapeamento da lista de itens, faz a prop e envia esse item para o Componente, depois envia o evento de click como prop também para o Componente.
+Dentro da div, aciona o evento de click, porém retornando a prop com o id do item e exibindo o alerta.
+
+export default function Principal(){
+return(
+  {
+    items.map(item =>
+      <Componente
+        item={item}
+        eventoOnClick={(id) => alert(`Exibindo o id ${id} do componente clicado`)}
+        key={item.id}
+      />  
+  )}
+);}
+
+export default function Componente({item, eventoOnClick}) {
+  return (
+    <div onClick={ ()=> eventoOnClick(item.id)} </div>
+  );
+}
+
+
+***Outro exemplo, mas com o uso de outra função para processar os argumentos.
+
+export default function Item({changeQuantity}) {
+
+    return (
+            <div className="quantity-area">
+                <button onClick={(e) => changeQuantity(e, id, +1)}>+</button>
+            </div>
+    )
+}
+
+export default function App() {
+
+    function quantityHandler(e, id, increment) {
+        e.stopPropagation();
+        alert("Olá");
+    }
+
+    return (
+            <Item changeQuantity={(e, id, increment) => quantityHandler(e, id, increment)} />
+    )
+}

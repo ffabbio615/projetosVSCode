@@ -1,42 +1,24 @@
 import "./S2Presentation.scss";
-import React, {useState, useEffect, useRef} from "react";
-import throttle from 'lodash/throttle';
+import ScrollSection, { ScrollSectionContext } from "./ScrollSection";
+import React, {useContext} from "react";
 
 export default function S2Presentation(){
 
-    const presentationSectionRef = useRef(null);
-    const [isActive, setIsActive] = useState(false); 
-
-    useEffect (() => {
-        const handleScroll = throttle(() =>{
-            if(presentationSectionRef.current){
-
-                const sectionTop = presentationSectionRef.current.getBoundingClientRect().top + window.scrollY;
-                const viewportHeight = window.innerHeight;
-
-                if(window.scrollY >= sectionTop - viewportHeight * 0.5){
-                    setIsActive(true);
-                }else if(window.scrollY <= sectionTop - viewportHeight * 0.7){
-                    setIsActive(false);
-                }
-            }
-        }, 200);
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-
-    }, []);
-
-
     return(
         <>
-        
-        <section id="presentation" className="presentation-section" ref={presentationSectionRef}>
-        <div className={`presentation-background ${isActive ? 'presentation-background-active' : 'presentation-background-inactive'}`}></div>
-        <div className={`presentation-container ${isActive ? 'presentation-container-active' : 'presentation-container-inactive'}`}>
+        <ScrollSection id="presentation" sectionClassName="presentation-section" enterPosition={0.5} exitPosition={0.6}>
+        <Content />
+        </ScrollSection>
+        </>
+    );
+
+    function Content() {
+        const sectionActive = useContext(ScrollSectionContext); // Absorve as mudanças do state do outro component.
+    
+        return (
+            <>
+            <div className={`presentation-background ${sectionActive ? 'presentation-background-active' : 'presentation-background-inactive'}`}></div>
+        <div className={`presentation-container ${sectionActive ? 'presentation-container-active' : 'presentation-container-inactive'}`}>
             <div className="who-we-are-container">
                 <h1>Quem somos?</h1>
                 <p>Fundada em 2022 em Copacabana, a Prime Language School é dedicada a oferecer aulas de inglês flexíveis, adaptadas às necessidades individuais de cada aluno. 
@@ -59,7 +41,7 @@ export default function S2Presentation(){
                 <div className="course-image2"></div>
             </div>
         </div>
-        </section>
         </>
-    )
+        );
+    }
 }
