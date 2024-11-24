@@ -235,15 +235,6 @@ export default function Componente({item, eventoOnClick}) {
 
 ***Outro exemplo, mas com o uso de outra função para processar os argumentos.
 
-export default function Item({changeQuantity}) {
-
-    return (
-            <div className="quantity-area">
-                <button onClick={(e) => changeQuantity(e, id, +1)}>+</button>
-            </div>
-    )
-}
-
 export default function App() {
 
     function quantityHandler(e, id, increment) {
@@ -253,5 +244,14 @@ export default function App() {
 
     return (
             <Item changeQuantity={(e, id, increment) => quantityHandler(e, id, increment)} />
+    )
+}
+
+export default function Item({changeQuantity}) {
+
+    return (
+            <div className="quantity-area">
+                <button onClick={(e) => changeQuantity(e, id, +1)}>+</button>
+            </div>
     )
 }

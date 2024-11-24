@@ -6,6 +6,7 @@ Se não estiver instalado, utilizar esse link> https://nodejs.org/pt
 
 INSTALAR O VITE
 O Vite é uma ferramenta de desenvolvimento Web que torna muito mais fácil fazer projetos web. Ele tem um servidor local que roda rápido os projetos no ambiente local.
+Para instalar o vite já com React, utilizar o código > npm create vite@latest my-app --template react
 Para instalar o vite, precisamos utilizar o código>  npm install vite -g
 Para verificar se o Vite está instalado, basta uitlizar no temrinal vite -v
 
