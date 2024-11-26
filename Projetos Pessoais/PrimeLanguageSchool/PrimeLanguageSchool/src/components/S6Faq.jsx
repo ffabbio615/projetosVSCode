@@ -1,14 +1,7 @@
-import React, { useState, useContext } from "react";
-import ScrollSection, { ScrollSectionContext } from "./ScrollSection";
+import React, { useState, useRef, useEffect } from "react";
 import "./S6Faq.scss";
 
 export default function S6Faq(){
-
-    const [activeIndex, setActiveIndex] = useState(null);
-
-    const toggleQuestion = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
-    };
 
     const faqData = [
         {
@@ -53,38 +46,66 @@ export default function S6Faq(){
         },
     ];
 
-    function Content(){
-        const sectionActive = useContext(ScrollSectionContext);
-        return(
-        <div className="faq-group">
-        <h1 className={`${sectionActive ? 'question-box-active' : 'question-box-inactive'}`}> Dúvidas Frequentes</h1>
+    const faqSectionRef = useRef(null);
+    const [questionBoxActive, setQuestionBoxActive] = useState(false);
 
-        <div className="question-box-group">
-            {faqData.map((faq, index) => (
-                <div
-                    key={index}
-                    className={`question-box ${activeIndex === index ? "question-box-opened" : ""} ${sectionActive ? 'question-box-active' : 'question-box-inactive'}`}
-                    onClick={() => toggleQuestion(index)}
-                >
-                    <div className="text-question">
-                        <p>{faq.question}</p>
-                        <div className="arrow-box">▼</div>
-                    </div>
-                    <div className="text-answer">
-                        {faq.answer}
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-    );
-    }
-    
+    useEffect(() => {
+
+        const handleScroll = () => {
+
+            if(faqSectionRef.current){
+                const sectionTop = faqSectionRef.current.getBoundingClientRect().top + window.scrollY;
+
+                if (window.scrollY >= sectionTop -400) {
+                    setQuestionBoxActive(true);
+                } else {
+                    setQuestionBoxActive(false);
+                }
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    });
+
+
+
+    const [activeIndex, setActiveIndex] = useState(null);
+    const toggleQuestion = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+
 
     return (
-        <ScrollSection id={"FAQ"} sectionClassName={"faq-section"} enterPosition={0.5} exitPosition={0.6}>
-            <Content />
-        </ScrollSection>
-    );
+        <>
+        <section id="FAQ" className="faq-section" ref={faqSectionRef}>
+            <div className="faq-group">
+                <h1>Dúvidas Frequentes</h1>
+                <h1 className={`${questionBoxActive ? 'question-box-active' : 'question-box-inactive'}`}> Dúvidas Frequentes</h1>
 
+                <div className="question-box-group">
+                    {faqData.map((faq, index) => (
+                        <div
+                            key={index}
+                            className={`question-box ${activeIndex === index ? "question-box-opened" : ""} ${questionBoxActive ? 'question-box-active' : 'question-box-inactive'}`}
+                            onClick={() => toggleQuestion(index)}
+                        >
+                            <div className="text-question">
+                                <p>{faq.question}</p>
+                                <div className="arrow-box">▼</div>
+                            </div>
+                            <div className="text-answer">
+                                {faq.answer}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+        </>
+    );
 }
