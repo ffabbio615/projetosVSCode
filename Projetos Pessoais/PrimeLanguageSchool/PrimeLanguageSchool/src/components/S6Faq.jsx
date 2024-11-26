@@ -84,7 +84,6 @@ export default function S6Faq(){
         <>
         <section id="FAQ" className="faq-section" ref={faqSectionRef}>
             <div className="faq-group">
-                <h1>Dúvidas Frequentes</h1>
                 <h1 className={`${questionBoxActive ? 'question-box-active' : 'question-box-inactive'}`}> Dúvidas Frequentes</h1>
 
                 <div className="question-box-group">
