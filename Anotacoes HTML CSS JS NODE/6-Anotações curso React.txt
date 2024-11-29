@@ -2,35 +2,39 @@ PARA INSTALAR O REACT NUMA PASTA DE UM PROJETO
 Primeiro, a pasta não pode conter nenhuma letra maiúscula e não precisa iniciar o node para instalar o REACT.
 
 -----WEBPACK-----
+{
+  Para instalar o REACT com WEBPACK, o código é o seguinte: "npx create-react-app ."
+  Se quiser importar para um projeto que ainda não existe, deve substituir o "." pelo nome da pasta, ficando npx create-react-app nomedapasta
 
-Para instalar o REACT com WEBPACK, o código é o seguinte: "npx create-react-app ."
-Se quiser importar para um projeto que ainda não existe, deve substituir o "." pelo nome da pasta, ficando npx create-react-app nomedapasta
+  APÓS INSTALADO, O REACT IMPORTA VÁRIAS PASTAS, SENDO A "SRC" QUE FICAM OS NOSSOS CÓDIGOS E A "PUBLIC" O ARQUIVO INDEX DO REACT 
+  PARA INICIAR A APLICAÇÃO NO WEBPACK COM O REACT INSTALADO, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL DA PASTA DO PROJETO: "npm start"
+  *PARA PARAR A APLICAÇÃO, UTILIZE "CTRL+C" NO TEMRINAL 
 
-APÓS INSTALADO, O REACT IMPORTA VÁRIAS PASTAS, SENDO A "SRC" QUE FICAM OS NOSSOS CÓDIGOS E A "PUBLIC" O ARQUIVO INDEX DO REACT 
-PARA INICIAR A APLICAÇÃO NO WEBPACK COM O REACT INSTALADO, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL DA PASTA DO PROJETO: "npm start"
-*PARA PARAR A APLICAÇÃO, UTILIZE "CTRL+C" NO TEMRINAL 
-
-PARA COMPILAR O PROJETO E FAZER O DEPLOY (IMPLANTAR), FAZENDO COM QUE ELE ESTEJA PRONTO PARA HOSPEDAGEM, UTILIZAMOS O COMANDO:
-"npm run build"
-Assim que concluir, uma pasta chamada "build" será criada, já com o projeto todo compilado.
------------
+  PARA COMPILAR O PROJETO E FAZER O DEPLOY (IMPLANTAR), FAZENDO COM QUE ELE ESTEJA PRONTO PARA HOSPEDAGEM, UTILIZAMOS O COMANDO:
+  "npm run build"
+  Assim que concluir, uma pasta chamada "build" será criada, já com o projeto todo compilado.
+  -----------
+}
 
 
 -----VITE-----
+{
+  1-PARA INSTALAR O REACT COM O VITE, O CÓDIGO É O SEGUINTE: "npm create vite@latest", DEPOIS DIGITAR O NOME DO PROJETO E O FRAMEWORK, QUE NO CASO SERÁ O REACT.
+  2-DEPOIS ABRA O TERMINAL DO DIRETÓRIO ONDE FICARÁ O PROJETO OU ACESSE NO MESMO TEMRINAL ANTERIOR: "cd meu-projeto-vite"
+  3-DEPOIS DE CRIADO O PROJETO, DEVE-SE UTILIZAR O CÓDIGO: "npm install"
+  *SE UM PROJETO JÁ CRIADO FOR IMPORTADO, TAMBÉM PRECISA UTILIZAR O CÓDIGO: "npm install"
+  4-PARA INICIAR A APLICAÇÃO (SERVDOR) NO VITE COM O REACT E ELE INSTALADOS, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL DA PASTA DO PROJETO: "npm run dev"
+  *SE QUISER ABRIR A APLICAÇÃO EM OUTRO PC OU DISPOSITIVO ATRAVÉS DESSE SERVIDOR, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL: "npm run dev -- --host"
+  5-PARA PARAR A APLICAÇÃO, UTILIZE "CTRL+C" NO TEMRINAL
+  -----------
+}
 
-1-PARA INSTALAR O REACT COM O VITE, O CÓDIGO É O SEGUINTE: "npm create vite@latest", DEPOIS DIGITAR O NOME DO PROJETO E O FRAMEWORK, QUE NO CASO SERÁ O REACT.
-2-DEPOIS ABRA O TERMINAL DO DIRETÓRIO ONDE FICARÁ O PROJETO OU ACESSE NO MESMO TEMRINAL ANTERIOR: "cd meu-projeto-vite"
-3-DEPOIS DE CRIADO O PROJETO, DEVE-SE UTILIZAR O CÓDIGO: "npm install"
-*SE UM PROJETO JÁ CRIADO FOR IMPORTADO, TAMBÉM PRECISA UTILIZAR O CÓDIGO: "npm install"
-4-PARA INICIAR A APLICAÇÃO (SERVDOR) NO VITE COM O REACT E ELE INSTALADOS, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL DA PASTA DO PROJETO: "npm run dev"
-*SE QUISER ABRIR A APLICAÇÃO EM OUTRO PC OU DISPOSITIVO ATRAVÉS DESSE SERVIDOR, UTILIZE O SEGUINTE CÓDIGO NO TERMINAL: "npm run dev -- --host"
-5-PARA PARAR A APLICAÇÃO, UTILIZE "CTRL+C" NO TEMRINAL
------------
 
 
-
-O ARQUIVO PRINCIPAL EM JS, QUE ESTÁ DENTRO DE "SRC" SE CHAMA "App.js", que é o arquivo que compila o código e dá start na página. Há também o "index.css" e o "index.js".
-Por padrão, o navegador não entende JSX, que é o arquivo REACT que tem JS e HTML, então precisa que o App.js faça essa "tradução" e rode no navegador esse arquivo transcrito.
+O ARQUIVO PRINCIPAL EM JS, QUE ESTÁ DENTRO DE "SRC" SE CHAMA "App.js", que é o arquivo que compila o código e dá start na página. 
+Há também o "index.css" e o "index.js".
+Por padrão, o navegador não entende JSX, que é o arquivo REACT que tem JS e HTML, então precisa que o App.js faça essa "tradução" 
+e rode no navegador esse arquivo transcrito.
 
 
 
@@ -42,15 +46,16 @@ Por padrão, o navegador não entende JSX, que é o arquivo REACT que tem JS e H
 -----REACT-----
 
 MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo de vida dos componentes):
+{
+  render(){ return ();} > Método raiz de construção no REACT. Ele funciona como se fosse o método Start() do Unity 3D
 
-render(){ return ();} > Método raiz de construção no REACT. Ele funciona como se fosse o método Start() do Unity 3D
+  componentDidMount(){} > Método que executa código depois que o componente é montado no DOM
 
-componentDidMount(){} > Método que executa código depois que o componente é montado no DOM
+  componentWillUnmont(){} > Método que realiza tarefas de limpeza quando o componente está prestes a ser removido do DOM.
+  Ele é chamado imediatamente antes de um componente ser desmontado e destruído.
 
-componentWillUnmont(){} > Método que realiza tarefas de limpeza quando o componente está prestes a ser removido do DOM.
-Ele é chamado imediatamente antes de um componente ser desmontado e destruído.
-
-componentDidUpdate(){} > Método que executa sem interrupção, ou seja, igual ao método Update do Unity 3D
+  componentDidUpdate(){} > Método que executa sem interrupção, ou seja, igual ao método Update do Unity 3D
+}
 
 
 -----JSX (Javascript + HTML)-----
@@ -63,195 +68,372 @@ componentDidUpdate(){} > Método que executa sem interrupção, ou seja, igual a
 
 
 
------DIFERENÇA ENTRE HTML E JSX-----
-Uma ferramenta boa para transcrever código e mostrar a diferença entre um código html e um com jsx é o site > transform.tools/html-to-jsx
-*Todo arquivo .jsx precisa começar com letra maiúscula.
+-----DIFERENÇAS ENTRE HTML E JSX-----
+{
+  Uma ferramenta boa para transcrever código e mostrar a diferença entre um código html e um com jsx é o site > transform.tools/html-to-jsx
+  *Todo arquivo .jsx precisa começar com letra maiúscula.
 
 
-CLASS - CLASSNAME (No HTML, a classe CSS se chama class, já no JSX, a classe CSS se chama classname)
-<div class = ""> </div> = HTML
-<div classname = ""> </div> = JSX
+  CLASS - CLASSNAME (No HTML, a classe CSS se chama class, já no JSX, a classe CSS se chama classname)
+  <div class = ""> </div> = HTML
+  <div classname = ""> </div> = JSX
 
 
-FOR - HTMLFOR (Serve para quando o usuário clicar num label, o campo correspondente a esse texto ser focado. O id do campo deve ter o mesmo nome do for)
-<label for="nome">Nome: </label> = HTML
-<label htmlFor="nome">Nome: </label> = JSX
+  FOR - HTMLFOR (Serve para quando o usuário clicar num label, o campo correspondente a esse texto ser focado. O id do campo deve ter o mesmo nome do for)
+  <label for="nome">Nome: </label> = HTML
+  <label htmlFor="nome">Nome: </label> = JSX
 
 
-EVENTOS - Os eventos em JS e Html são escritos com letras minúsculas, já em React se usa a segunda palavra com letra maiúscula
-<button onClick={() => console.log('Clicado!')}>Clique Aqui</button>
-<input onChange={(e) => console.log(e.target.value)} />
+  EVENTOS - Os eventos em JS e Html são escritos com letras minúsculas, já em React se usa a segunda palavra com letra maiúscula
+  <button onClick={() => console.log('Clicado!')}>Clique Aqui</button>
+  <input onChange={(e) => console.log(e.target.value)} />
 
 
-Resumo das Alterações
-HTML	        REACT (JSX)
-class	        className
-for	            htmlFor
-onclick	        onClick
-readonly	    readOnly
-maxlength	    maxLength
-minlength	    minLength
-tabindex	    tabIndex
-spellcheck	    spellCheck
-autocomplete	autoComplete
-novalidate	    noValidate
-
+  Resumo das Alterações
+  HTML	        REACT (JSX)
+  class	        className
+  for	          htmlFor
+  checkd        defaultChecked
+  onclick	      onClick
+  readonly	    readOnly
+  maxlength	    maxLength
+  minlength	    minLength
+  tabindex	    tabIndex
+  spellcheck	  spellCheck
+  autocomplete	autoComplete
+  novalidate	  noValidate
+}
 
 
 -----RENDERIZAÇÃO DE LISTAS COM FUNÇÃO MAP-----
-Suponha que você tem uma lista de frutas para renderizar no React:
-const fruits = ["Maçã", "Banana", "Laranja", "Uva"];
+{
+  Suponha que você tem uma lista de frutas para renderizar no React:
+  const fruits = ["Maçã", "Banana", "Laranja", "Uva"];
 
-export default function FruitList() {
-  return (
-    <ul>
-      {fruits.map((fruit, index) => (
-        <li key={index}>{fruit}</li> // `key` é importante para identificar os itens unicamente
-      ))}
-    </ul>
-  );
+  export default function FruitList() {
+    return (
+      <ul>
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit}</li> // `key` é importante para identificar os itens unicamente
+        ))}
+      </ul>
+    );
+  }
+  *MAP - Itera sobre o array fruits e retorna um elemento <li> para cada item da lista. Nesse caso, exibe uma lista <li> com 4 frutas.
+  **KEY - O atributo key é necessário para que o React identifique unicamente cada item mapeado e possa otimizar atualizações.
 }
-*MAP - Itera sobre o array fruits e retorna um elemento <li> para cada item da lista. Nesse caso, exibe uma lista <li> com 4 frutas.
-**KEY - O atributo key é necessário para que o React identifique unicamente cada item mapeado e possa otimizar atualizações.
 
 
+-----FUNÇÃO FILTER-----
+{
+  .filter(): Esse método cria um novo array contendo apenas os itens que atendem a uma condição.
+  A condição é definida pela função passada para o .filter().
+}
 
 
 -----VERIFICAÇÃO CONDICIONAL EM JAVASCRIPT-----
+{
+  OPERADORES ? : (VERDADEIRO OU FALSO)
+  Utilizado como if, ele exibe verdadeiro "?" ou falso ":". Ex.:  {product.discountedPrice ? <h4>$ {product.discountedPrice}</h4> : ''}
 
-OPERADORES ? : (VERDADEIRO OU FALSO)
-Utilizado como if, ele exibe verdadeiro "?" ou falso ":". Ex.:  {product.discountedPrice ? <h4>$ {product.discountedPrice}</h4> : ''}
-
-OPERADOR && (VERDADEIRO À ESQUERDA) - Uma alternativa para não deixar vazia a verificação com '', utilizar && retornará tudo que vier de verdadeiro antes dele e parará quando algo vier falso.
-O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vier após, senão não exibe. Ex.:  {product.discountedPrice && <h4>$ {product.discountedPrice}</h4>}
+  OPERADOR && (VERDADEIRO À ESQUERDA) - Uma alternativa para não deixar vazia a verificação com '', utilizar && retornará tudo que vier de verdadeiro antes dele e parará quando algo vier falso.
+  O código testado usando && deve ser verdadeiro, então ele exibirá tudo que vier após, senão não exibe. Ex.:  {product.discountedPrice && <h4>$ {product.discountedPrice}</h4>}
+}
 
 
 
 -----COMPONENTES-----
-Os componentes, que são fragmentos das páginas, por questões de limpeza e organização de código, devem ficar separados em arquivos distintos, sendo exportados e importados no App principal,
-que seria o App.jsx. Cada seção de uma página pode ser feita de forma separada e unida depois em fragmentos, compondo o site no final. Arquivos CSS serão importados dentro de seus componentes.
-*Também pode-se fazer um componente ser renderizado e esse mesmo componente renderizar outra coisa de outro componente.
+{
+  Os componentes, que são fragmentos das páginas, por questões de limpeza e organização de código, devem ficar separados em arquivos distintos, sendo exportados e importados no App principal,
+  que seria o App.jsx. Cada seção de uma página pode ser feita de forma separada e unida depois em fragmentos, compondo o site no final. Arquivos CSS serão importados dentro de seus componentes.
+  *Também pode-se fazer um componente ser renderizado e esse mesmo componente renderizar outra coisa de outro componente.
 
-PARA EXPORTAR > export default function NomeDaFuncao (){} OU function NomeDaFuncao (){} export default NomeDaFuncao
-PARA IMPORTAR > import QualquerNomeDeFuncao from './components/NomeDoArquivoDaFuncao'; | Depois acessa o componente assim: <NomeDaFuncao /> 
-*CASO ACESSE O COMPONENTE MAPEADO, DEVE-SE MANTER A KEY NESSE ACESSO PARA EVITAR ERRO. | <NomeDaFuncao key={lista.id} />
+  PARA EXPORTAR > export default function NomeDaFuncao (){} OU function NomeDaFuncao (){} export default NomeDaFuncao
+  PARA IMPORTAR > import QualquerNomeDeFuncao from './components/NomeDoArquivoDaFuncao'; | Depois acessa o componente assim: <NomeDaFuncao /> 
+  *CASO ACESSE O COMPONENTE MAPEADO, DEVE-SE MANTER A KEY NESSE ACESSO PARA EVITAR ERRO. | <NomeDaFuncao key={lista.id} />
+}
 
 
 
 -----PROPS----- 
-São funções importadas que passam atributos internamente, em vez de serem somente acessadas. Ex.: export default function NomeDaFuncao ({atributo}){}
-Depois acessa o componente assim: <NomeDaFuncao nomeDoProp={atributoPassado} key={lista.id}
+{
+  São funções importadas que passam atributos internamente, em vez de serem somente acessadas. Ex.: export default function NomeDaFuncao ({atributo}){}
+  Depois acessa o componente assim: <NomeDaFuncao nomeDoProp={atributoPassado} key={lista.id}
+}
 
 
 
 -----STATES-----
-É um recurso do REACT que dá um estado a uma variável, indicando que a página atualizará automaticamente esta variável caso haja uma mudança nesse estado dessa variável.
+{
+  É um recurso do REACT que dá um estado a uma variável, indicando que a página atualizará automaticamente esta variável caso haja uma mudança nesse estado dessa variável.
 
-PARA IMPORTAR A BIBLIOTECA > import { useState } from 'react';
-EXEMPLO DE VARIÁVEL DE ARRAY DECLARADA COM STATE > const [items, setItems] = useState( [ { } ] );
+  PARA IMPORTAR A BIBLIOTECA > import { useState } from 'react';
+  EXEMPLO DE VARIÁVEL DE ARRAY DECLARADA COM STATE > const [items, setItems] = useState( [ { } ] );
 
 
 
------ALTERAR UM ESTADO (STATE)-----
-Depois de declarar o estado, que pode estar falso, verdadeiro, vazio (null) ou com uma lista, pode-se alterar, digamos, essa lista, com filter. Exemplo: 
-const [fruits, setFruits] = useState(
-  [
+  -----ALTERAR UM ESTADO (STATE)-----
     {
-      fruta: "Maçã",
-      cor: "vermelha",
-      madura: false
-    }, 
-    {
-      fruta: "Banana",
-      cor: "amarela",
-      madura: true
-    }, 
-    {
-      fruta: "Laranja",
-      cor: "laranja",
-      madura: false
-    },
-    {
-      fruta: "Uva",
-      cor: "roxa",
-      madura: false
-    },     
-  ]
-);
+      Depois de declarar o estado, que pode estar falso, verdadeiro, vazio (null) ou com uma lista, pode-se alterar, digamos, essa lista, com filter. Exemplo: 
+      const [fruits, setFruits] = useState(
+        [
+          {
+            fruta: "Maçã",
+            cor: "vermelha",
+            madura: false
+          }, 
+          {
+            fruta: "Banana",
+            cor: "amarela",
+            madura: true
+          }, 
+          {
+            fruta: "Laranja",
+            cor: "laranja",
+            madura: false
+          },
+          {
+            fruta: "Uva",
+            cor: "roxa",
+            madura: false
+          },     
+        ]
+      );
 
-const handleMaduraChange = (frutaNome) => {
-  setFruits((prevFruits) =>
-    prevFruits.map((fruit) =>
-      fruit.fruta === frutaNome ? { ...fruit, madura: true } : fruit
-    )
-  );
-};
-// Exemplo de chamada para atualizar a laranja
-handleMaduraChange("Laranja");
-
+      const handleMaduraChange = (frutaNome) => {
+        setFruits((prevFruits) =>
+          prevFruits.map((fruit) =>
+            fruit.fruta === frutaNome ? { ...fruit, madura: true } : fruit
+          )
+        );
+      };
+      // Exemplo de chamada para atualizar a laranja
+      handleMaduraChange("Laranja");
+      }
+    }
+}
 
 
 
 -----EVENTS-----
-*UTILIZAMOS e.preventDefault(); para parar um evento para ser tratado, porém ele não impede o elemento pai de acionar o evento dele também, por isso que devemos utilizar:
-e.stopPropagation();
-**Em React é comum criar funções chamadas handle + nome do evento, tipo handleClick, handleMouseOver, handleScroll, etc, para identificar que essa função conterá um evento.
+{
+  *UTILIZAMOS e.preventDefault(); para parar um evento para ser tratado, porém ele não impede o elemento pai de acionar o evento dele também, por isso que devemos utilizar:
+  e.stopPropagation();
+  **Em React é comum criar funções chamadas handle + nome do evento, tipo handleClick, handleMouseOver, handleScroll, etc, para identificar que essa função conterá um evento.
 
-ONCLICK (onClick) - Para adicionar um evento de click (assim como qualquer outro), fazemos assim (exemplo dentro de um button):
+  ONCLICK (onClick) - Para adicionar um evento de click (assim como qualquer outro), fazemos assim (exemplo dentro de um button):
 
-function handleClick(){
-  Ação que o botão clicado fará.
+  function handleClick(){
+    Ação que o botão clicado fará.
+  }
+
+  return(
+    <button onClick={handleClick}>Clique Aqui</button>
+  )
 }
-
-return(
-  <button onClick={handleClick}>Clique Aqui</button>
-)
 
 
 
 -----PROP ARGUMENTS AND EVENTS-----
-*Passando propos para outro componente e acessando os dados passados nele para realizar eventos e outras ações.
-**No exemplo abaixo, faz-se o mapeamento da lista de itens, faz a prop e envia esse item para o Componente, depois envia o evento de click como prop também para o Componente.
-Dentro da div, aciona o evento de click, porém retornando a prop com o id do item e exibindo o alerta.
-
-export default function Principal(){
-return(
+{
+  *Passando propos para outro componente e acessando os dados passados nele para realizar eventos e outras ações.
+  **No exemplo abaixo, faz-se o mapeamento da lista de itens, faz a prop e envia esse item para o Componente, depois envia o evento de click como prop também para o Componente.
+  Dentro da div, aciona o evento de click, porém retornando a prop com o id do item e exibindo o alerta.
   {
-    items.map(item =>
-      <Componente
-        item={item}
-        eventoOnClick={(id) => alert(`Exibindo o id ${id} do componente clicado`)}
-        key={item.id}
-      />  
-  )}
-);}
-
-export default function Componente({item, eventoOnClick}) {
-  return (
-    <div onClick={ ()=> eventoOnClick(item.id)} </div>
-  );
-}
-
-
-***Outro exemplo, mas com o uso de outra função para processar os argumentos.
-
-export default function App() {
-
-    function quantityHandler(e, id, increment) {
-        e.stopPropagation();
-        alert("Olá");
+    export default function Principal(){
+      return(
+      {
+        items.map(item =>
+          <Componente
+            item={item}
+            eventoOnClick={(id) => alert(`Exibindo o id ${id} do componente clicado`)}
+            key={item.id}
+          />  
+          )
+      }
+    );
     }
 
-    return (
-            <Item changeQuantity={(e, id, increment) => quantityHandler(e, id, increment)} />
-    )
+    export default function Componente({item, eventoOnClick}) {
+      return (
+        <div onClick={ ()=> eventoOnClick(item.id)} </div>
+      );
+    }
+  }
+
+  ***Outro exemplo, mas com o uso de outra função para processar os argumentos.
+  {
+      export default function App() {
+
+          function quantityHandler(e, id, increment) {
+              e.stopPropagation();
+              alert("Olá");
+          }
+
+          return (
+                  <Item changeQuantity={(e, id, increment) => quantityHandler(e, id, increment)} />
+          )
+      }
+
+      export default function Item({changeQuantity}) {
+
+          return (
+                  <div className="quantity-area">
+                      <button onClick={(e) => changeQuantity(e, id, +1)}>+</button>
+                  </div>
+          )
+      }
+  }
+
+  ****Exemplo de como passar props, remover um item de uma lista e alterar o outro já feito:
+  {
+    //fazer os imports no component TodoList
+
+    const lista = [
+      { id:0, titulo: Lista1, feito: true }
+      { id:1, titulo: Lista2, feito: true }
+      { id:2, titulo: Lista3, feito: false }
+    ]
+    export default function TodoList(){
+      const [listar, setListar] = useState(lista);
+
+      removerTodoHandler(id){
+        if(confirm("Você tem certeza que deseja apagar a tarefa?")){
+          setListar(listar.filter(todo => todo.id !== id));
+          //Verifica se ao listar a lista, o id que está sendo exibido é diferente do id passado para ser apagado, pois o
+          //filter criará um novo array com os ids que são diferentes. Quando chegar no id correto, ele não será listado
+        }
+      }
+
+        alternarParaFeitoHandler(id){
+          setListar(listar.map(todo =>{
+            if(todo.id === id){
+              todo.feito = !todo.feito;
+              return todo;
+            } else{
+              return todo;
+            }
+          }));
+      }
+
+      return(
+        <>
+        <div className="todos">
+        {listar.map(todo =>
+        <Todo
+        removerTodo={(id) => removerTodoHandler(id)}
+        alternarParaFeito={(id) => alternarParaFeitoHandler(id)}
+        todo={todo}
+        key={todo.id}
+        />
+        )}
+        </div>
+        </>
+      )
+    }
+
+    (fazer os imports no component Todo)
+
+    export default function Todo(todo, removerTodo, alternarParaFeito){
+
+      return(
+        <>
+        <div className={`todo ${todo.feito ? 'feito' : ''}`}>
+        <button onClick={()=> removerTodo(todo.id)} className="btnApagar">APAGAR</button>
+        <h1>{todo.titulo}</h1>
+        <input type="checkbox" defaultChecked={todo.feito} onClick={()=> alternarParaFeito(todo.id)} />
+        </div>
+        </>
+      )
+    }
+  }
 }
 
-export default function Item({changeQuantity}) {
 
-    return (
-            <div className="quantity-area">
-                <button onClick={(e) => changeQuantity(e, id, +1)}>+</button>
+
+-----CONTEXT-----
+{
+  É utilizado para passar informações entre os componentes distantes, mas sem a necessidade de ter que passar para os componentes pais até o topo.
+  Com o context, deve-se notar qual elemento acima (pai) é o mais perto dos elementos os quais precisamos passar essas informações.
+  Após identificado, deve-se colocar todas essas informações nesse componente principal, daí somente passar as informações adiante.
+
+  *Seguindo o exemplo acima dos arguments e events, utilizaremos o context.
+  **A lista que estava em TodosList ficará agora em App, assim como os estados (states) para alteração
+
+  >>>TodosContext.js<<<
+  {
+    import {createContext} from 'react';
+
+    export const TodosContext = createContext(); //Cria um contexto em react
+  }
+
+
+  >>>App.jsx<<<
+  {
+    import {TodosContext} from './TodosContext.js'; //importa o component TodosContext
+    import {useState} from 'react';
+
+    coloca a lista do TodosList
+
+    function App()
+    {
+      coloca o state que liga com a lista
+
+      return(
+        <>
+        <TodosContext.Provider value={{listar, setListar}}> 
+        //o provider é o componente usado para distribuir os dados do contexto (value) para todos os componentes 
+        //que estão dentro dele (filhos) na árvore de componentes.
+        </>
+      )
+    }
+  }
+
+
+  >>>TodosList.jsx<<<
+  {
+    import {createContext} from 'react';
+    import {TodosContext} from './TodosContext.js'; //importa o component TodosContext
+
+    export default function TodosList(){
+      
+      const contexto = useContext (TodosContext); 
+      //Aqui o atributo contexto receberá todo contexto enviado pelo TodosContext através do App ("listar", "setListar")
+      //Agora o que era "listar" passará a ser "contexto.listar" ou "contexto.setListar", pois contexto nada mais é
+      //que uma cópia dinâmica do "listar" e "setListar", que são os states
+
+      removerTodoHandler(id){
+            if(confirm("Você tem certeza que deseja apagar a tarefa?")){
+              store.setListar(contexto.listar.filter(todo => todo.id !== id));
+            }
+          }
+
+            alternarParaFeitoHandler(id){
+              contexto.setListar(contexto.listar.map(todo =>{
+                if(todo.id === id){
+                  todo.feito = !todo.feito;
+                  return todo;
+                } else{
+                  return todo;
+                }
+              }));
+          }
+
+          return(
+            <>
+            <div className="todos">
+            {contexto.listar.map(todo =>
+            <Todo
+            removerTodo={(id) => removerTodoHandler(id)}
+            alternarParaFeito={(id) => alternarParaFeitoHandler(id)}
+            todo={todo}
+            key={todo.id}
+            />
+            )}
             </div>
-    )
+            </>
+          )
+        }
+    }
+  }
 }
