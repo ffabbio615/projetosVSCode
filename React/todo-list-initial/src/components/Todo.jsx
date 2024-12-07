@@ -1,10 +1,18 @@
 import './Todo.scss'
-function Todo({ todo, removeTodo, marcaTodo }) {
+import React from 'react';
+import { useTodos } from '../TodosContext.jsx';
+
+function Todo({todo}) {
+
+    const contexto = useTodos();
 
   return (
     <>
         <div className={`todo ${todo.isDone ? 'done' : ''}`}>
-            <button className="erase" onClick={() => removeTodo(todo.id)}>x erase</button>
+            <button className="erase" onClick={() => contexto.dispatch({
+        type: 'deleted',
+        id: todo.id
+      })}>x erase</button>
             <h3>
                 {todo.title}
             </h3>
@@ -12,7 +20,7 @@ function Todo({ todo, removeTodo, marcaTodo }) {
                 {todo.description}
             </p>
             <div className="task-check">
-                <input type="checkbox" onClick={() => marcaTodo(todo.id)} defaultChecked={todo.isDone} />
+                <input type="checkbox" onClick={() => contexto.dispatch({type: 'toggledIsDone', id: todo.id})} defaultChecked={todo.isDone} />
                 <label>
                     {!todo.isDone ? 'To-Do' : 'Done'}
                 </label>

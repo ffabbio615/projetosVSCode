@@ -78,7 +78,7 @@ MATH:
 .floor > retira as casas decimais e arredonda para baixo
 .ceil > retira as casas decimais e arredonda para cima
 .round > arredonda um número para cima ou baixo - tipo 9.49 para 9 ou 9.5 ou mais para 10
-.min e .max > pega da sequência o menor e o maior número dentro de uma sequência de números
+.min e .max > pega da sequência o menor e o maior número dentro de uma sequência de números | *Para pegar o maior número em um array, precisa fazer o spread. Ex.: Math.max(... array);
 .random > pega um número aleatório entre 0 e 1 (se quiser por exemplo de 0 a 9, será random() *10. Para 1 até 10, ficará random() *10 +1)
 .toFixed(x) > Retorna o número de casas decimais após a vírgula em x quantidade.
 

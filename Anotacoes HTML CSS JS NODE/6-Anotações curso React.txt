@@ -64,8 +64,18 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 -----COISAS BÁSICAS-----
 
 *JAVASCRIPT - Para inserir código Javascript dentro do HTML, precisa-se colocar dentro de chaves {}
-**RETURN - Para retornar a função exportada de componentes em React (páginas), os elementos devem estar dentro de um container. Caso haja mais para exportar, pode-se usar fragment <> </>
+**ARROW FUNCTION - Só há necessidade quando for usar algum parâmetro numa Prop ou num evento ou mudar algum State. Ex.: <button OnClick={funcao}> ou <button OnClick={()=> estado(true)}
+***RETURN - Para retornar a função exportada de componentes em React (páginas), os elementos devem estar dentro de um container. Caso haja mais para exportar, pode-se usar fragment <> </>
 
+
+-----EXPORT DEFAULT E EXPORT-----
+{
+  No react, só pode exportar apenas uma função default no arquivo .jsx, então isso implicará no import em outro arquivo.
+
+  EXPORT DEFAULT FUNCTION> Para "export default function", a importação terá de ser feita normalmente: import qualquerNome from './nomeDoArquivo';
+
+  EXPORT FUNCTION> Para "export function", a importação terá de ser feita entre { }: import { qualquerNome } from './nomeDoArquivo';
+}
 
 
 -----DIFERENÇAS ENTRE HTML E JSX-----
@@ -169,7 +179,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
   PARA IMPORTAR A BIBLIOTECA > import { useState } from 'react';
   EXEMPLO DE VARIÁVEL DE ARRAY DECLARADA COM STATE > const [items, setItems] = useState( [ { } ] );
-
+                                                     decl, variavel, estado, = tipo hook (valorDoEstado) > O valor pode ser falso, nulo, array, uma variável ou um valor qualquer
 
 
   -----ALTERAR UM ESTADO (STATE)-----
@@ -364,7 +374,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
   {
     import {createContext} from 'react';
 
-    export const TodosContext = createContext(); //Cria um contexto em react
+    export const TodosContext = createContext(""); //Cria um contexto em react que será utilizado depois, por isso a String vazia
   }
 
 
@@ -436,4 +446,99 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
         }
     }
   }
+}
+
+
+-----REDUCER-----
+{
+  Por que usar reducers?
+  Os reducers nos permitem lidar com transições de estado e lógica de maneira previsível.
+  Ao encapsular toda a lógica do state em um arquivo separado, obtemos um código mais limpo e legível.
+
+  Um exemplo simples:
+  Digamos que temos uma página com uma lista de alunos onde o usuário pode fazer duas coisas: Adicionar um novo aluno à lista | Excluir alunos da lista
+
+  É assim que o código ficaria sem um reducer:
+  {
+    // Arquivo: Students.jsx
+    
+    const [students, setStudents] = useState([
+        { studentId: 1, firstName: 'John', lastName: 'Doe' },
+        { studentId: 2, firstName: 'Jane', lastName: 'Smith' },
+        { studentId: 3, firstName: 'Amit', lastName: 'Patel' },
+        { studentId: 4, firstName: 'Emily', lastName: 'Johnson' },
+      ]);
+    
+      // Função para adicionar um aluno
+      const handleAddStudent = (studentId, firstName, lastName) => {
+        setStudents([...students, { studentId, firstName, lastName }]);
+      };
+    
+      // Função para excluir um aluno
+      const handleDeleteStudent = (studentId) => {
+        const updatedStudents = students.filter((student) => student.studentId !== studentId);
+        setStudents(updatedStudents);
+      };
+    
+    // Para manter a simplicidade, foram omitidas partes do código, incluindo o template.
+  }
+
+  Se quisermos mover essas funções para um arquivo separado para limpar o componente Students, podemos criar um reducer em 3 etapas simples:
+
+  ETAPA 1. Crie um arquivo reducer onde ficará a lógica para lidar com os alunos. A função reducer deve declarar os tipos de ação para que possamos despachar mais tarde:
+  {
+    // Arquivo: studentsReducer.js
+    
+    const studentsReducer = (state, action) => {
+      
+    switch (action.type) {
+        case 'added':
+          return [...state, action.newStudent];
+        case 'deleted':
+          return state.filter((student) => student.studentId !== action.studentId);
+        default:
+          return state;
+      }
+    };
+    
+    export default studentsReducer;
+
+    * Observe como a função reducer recebe o estado atual, faz a transformação e retorna o estado atualizado.
+  }
+
+  ETAPA 2. Em vez de usar o hook useState com um método setStudents, usamos o hook useReducer e passamos dispatch como o método setter. O dispatch executará um reducer, que deve ser passado como primeiro argumento da função useReducer (neste caso, o StudentsReducer):
+  {
+    // Arquivo: Students.jsx (Não se esqueça de importar StudentsReducer e useReducer no topo)
+    
+    const [students, dispatch] = useReducer(studentsReducer, [
+        { studentId: 1, firstName: 'John', lastName: 'Doe' },
+        { studentId: 2, firstName: 'Jane', lastName: 'Smith' },
+        { studentId: 3, firstName: 'Amit', lastName: 'Patel' },
+        { studentId: 4, firstName: 'Emily', lastName: 'Johnson' },
+      ]);
+  }
+
+  ETAPA 3. Nos locais onde chamaríamos as funções handleAddStudent e handleDeleteStudent, despachamos as ações, que executarão a função reducer:
+  {
+    // Arquivo: Students.jsx
+    
+    <button 
+      onClick={dispatch({ type: 'added', newStudent: { studentId, firstName, lastName } })}
+    >
+      Add Student
+    </button>
+    
+    <button 
+      onClick={dispatch({ type: 'deleted', studentId: studentId })}
+    >
+      Delete Student
+    </button>
+    
+    // Para simplificar, foi omitido o código onde obteríamos studentId, firstName e lastName dos campos do formulário.
+
+    * Como você verá em alguns exemplos do curso, é uma prática comum passar as propriedades necessárias para o redutor como 'payload' em vez de 'newStudent', 'studentId', etc.
+  }
+
+
+  E é só isso! Em 3 etapas simples, conseguimos mover a lógica para adicionar e excluir alunos em um arquivo separado.
 }

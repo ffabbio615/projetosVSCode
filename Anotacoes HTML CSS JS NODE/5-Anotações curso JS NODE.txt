@@ -1,77 +1,73 @@
-*TUDO SOBRE NPM NA AULA 126 - NODE PACKAGE MANAGER
+*TUDO SOBRE NPM NA AULA 126 DO CURSO COMPLETO DE JAVASCRIPT E TYPESCRIPT - NODE PACKAGE MANAGER
 
 CONFERIR SE O NODE ESTÁ INSTALADO
 No terminal, utilizar esses códigos> node -v e npm -v
 Se não estiver instalado, utilizar esse link> https://nodejs.org/pt
 
-INSTALAR O VITE
-O Vite é uma ferramenta de desenvolvimento Web que torna muito mais fácil fazer projetos web. Ele tem um servidor local que roda rápido os projetos no ambiente local.
-Para instalar o vite já com React, utilizar o código > npm create vite@latest my-app --template react
-Para instalar o vite, precisamos utilizar o código>  npm install vite -g
-Para verificar se o Vite está instalado, basta uitlizar no temrinal vite -v
+-----INSTALAR O VITE-----
+{
+  O Vite é uma ferramenta de desenvolvimento Web que torna muito mais fácil fazer projetos web. Ele tem um servidor local que roda rápido os projetos no ambiente local.
+  Para instalar o vite já com React, utilizar o código > npm create vite@latest my-app --template react
+  Para instalar o vite, precisamos utilizar o código>  npm install vite -g
+  Para verificar se o Vite está instalado, basta uitlizar no temrinal vite -v
+  *Sempre que trabalhar com um projeto já iniciado, precisa iniciar o node nele com o comando no terminal > npm install ou npm i
+}
+
+-----COMO INICIAR/IMPORTAR O NPM (NODE PACKAGE MANAGER)-----
+{
+  Ir ao terminal de comandos, chegar na pasta do projeto através do comando cd nomeDoProjeto, e depois iniciar o npm dentro da pasta com o comando
+  npm init -y. Pronto! o módulo do NODE com o arquivo JSON será importado dentro do projeto.
+  *Sempre que trabalhar com um projeto já iniciado, precisa iniciar o node nele com o comando no terminal > npm install ou npm i
+}
 
 
-COMO INICIAR/IMPORTAR O NPM (NODE PACKAGE MANAGER)
-Ir ao terminal de comandos, chegar na pasta do projeto através do comando cd nomeDoProjeto, e depois iniciar o npm dentro da pasta com o comando
-npm init -y. Pronto! o módulo do NODE com o arquivo JSON será importado dentro do projeto.
+-----PARA COMPILAR E HOSPEDAR O SITE (BUILD)-----
+{
+  1- Após rodar npm run build, o Vite cria a pasta dist, que contém todos os arquivos otimizados (HTML, CSS, JavaScript) prontos para serem hospedados.
 
-***Sempre que trabalhar com um projeto já iniciado, precisa iniciar o node nele com o comando no terminal > npm install
+  2- Configure o Projeto para SPA (Aplicações de Página Única)
+  Como o React é uma aplicação SPA, é necessário redirecionar todas as rotas para o index.html. Para isso, crie ou edite um arquivo chamado 
+  .htaccess na raiz do projeto (dentro da pasta dist) com o seguinte conteúdo:
 
+  apache
+  Copiar código
+  <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+  </IfModule>
 
-COMO COMPILAR O PROJETO
-Para compilar, tanto no Vite quanto no NODE, utilize o código: npm run build
+  Isso garante que todas as rotas sejam redirecionadas para o index.html, permitindo que o React controle o roteamento.
 
+  3. Para Visualizar o projeto após compilar, No VITE, utilize o código: npm run preview
 
-VISUALIZAR O PROJETO APÓS COMPILAR
-No VITE, utilize o código: npm run preview
-
-
-
-
-
-PARA HOSPEDAR O SITE
-1- Após rodar npm run build, o Vite cria a pasta dist, que contém todos os arquivos otimizados (HTML, CSS, JavaScript) prontos para serem hospedados.
-
-2- Configure o Projeto para SPA (Aplicações de Página Única)
-Como o React é uma aplicação SPA, é necessário redirecionar todas as rotas para o index.html. Para isso, crie ou edite um arquivo chamado 
-.htaccess na raiz do projeto (dentro da pasta dist) com o seguinte conteúdo:
-
-apache
-Copiar código
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-
-Isso garante que todas as rotas sejam redirecionadas para o index.html, permitindo que o React controle o roteamento.
-
-3. Compacte os Arquivos
-Zip a pasta dist.
-Certifique-se de que o conteúdo do zip inclui os arquivos diretamente (sem uma subpasta).
-
+  4. Compacte os Arquivos
+  Zip a pasta dist.
+  Certifique-se de que o conteúdo do zip inclui os arquivos diretamente (sem uma subpasta).
+}
 
 -----LOCALWEB-----
+{
+  1. Acesse o Painel da Locaweb
+  Faça login no painel da Locaweb.
+  Vá para a seção Hospedagem de Sites e selecione o domínio onde deseja hospedar o site.
 
-1. Acesse o Painel da Locaweb
-Faça login no painel da Locaweb.
-Vá para a seção Hospedagem de Sites e selecione o domínio onde deseja hospedar o site.
+  2. Envie os Arquivos
+  Via Gerenciador de Arquivos:
 
-2. Envie os Arquivos
-Via Gerenciador de Arquivos:
+  No painel da Locaweb, acesse o Gerenciador de Arquivos.
+  Navegue até a pasta public_html.
+  Faça o upload do arquivo .zip contendo a pasta dist.
+  Extraia o conteúdo do .zip diretamente no public_html.
+  Via FTP:
 
-No painel da Locaweb, acesse o Gerenciador de Arquivos.
-Navegue até a pasta public_html.
-Faça o upload do arquivo .zip contendo a pasta dist.
-Extraia o conteúdo do .zip diretamente no public_html.
-Via FTP:
-
-Use um cliente FTP (como FileZilla).
-Configure o FTP com os dados fornecidos pela Locaweb (geralmente estão no painel).
-Conecte-se e envie o conteúdo da pasta dist para a pasta public_html.
-6. Teste o Site
-Após o upload, acesse o domínio associado à hospedagem para testar o site.
-Se você usou o .htaccess, o roteamento do React deve funcionar corretamente.
+  Use um cliente FTP (como FileZilla).
+  Configure o FTP com os dados fornecidos pela Locaweb (geralmente estão no painel).
+  Conecte-se e envie o conteúdo da pasta dist para a pasta public_html.
+  6. Teste o Site
+  Após o upload, acesse o domínio associado à hospedagem para testar o site.
+  Se você usou o .htaccess, o roteamento do React deve funcionar corretamente.
+}
