@@ -542,3 +542,26 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
   E é só isso! Em 3 etapas simples, conseguimos mover a lógica para adicionar e excluir alunos em um arquivo separado.
 }
+
+
+-----EFFECT (com localStorage)-----
+{
+  O hook useEffect do React permite que algo seja feito toda vez que o DOM iniciado ou atualizado. Também é ativado quando uma variável de um estado é modificada (atualizada). Ex.:
+
+  const lista = localStorage.getItem('listar') ? JSON.parse(localStorage.getItem('listar')) : []; > Significa que a lista criada receberá algo armazenado no navegador ou um array vazio.
+
+  const [listar, dispatch] = useReducer(TodosReducer, lista); > Aqui é a declaração de um reducer com o estado da lista, chamado de listar
+
+  useEffect(()=>{
+        localStorage.setItem('listar', JSON.stringify(listar));
+      },[listar])
+
+
+  No exemplo acima, esse método é ativado assim que a página é carregada, junto com o estado da lista "listar", pois assim insere na memória do navegador o conteúdo da lista.
+  *Para que o effect ative novamente e atualize os dados da lista, dentro de [] foi adicionado o estado "listar". Toda vez que é alterado, o effect ativa.
+
+  A estrutura original de effect, encontrada na página oficial, é:
+
+     useEffect(()=>{
+      },[])
+}
