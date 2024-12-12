@@ -227,8 +227,8 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
 -----EVENTS-----
 {
-  *UTILIZAMOS e.preventDefault(); para parar um evento para ser tratado, porém ele não impede o elemento pai de acionar o evento dele também, por isso que devemos utilizar:
-  e.stopPropagation();
+  *UTILIZAMOS e.preventDefault(); para parar um evento ou o envio de formulário para ser tratado, porém ele não impede o elemento pai de 
+  acionar o evento dele também, por isso que devemos utilizar: e.stopPropagation();
   **Em React é comum criar funções chamadas handle + nome do evento, tipo handleClick, handleMouseOver, handleScroll, etc, para identificar que essa função conterá um evento.
 
   ONCLICK (onClick) - Para adicionar um evento de click (assim como qualquer outro), fazemos assim (exemplo dentro de um button):
@@ -564,4 +564,92 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
      useEffect(()=>{
       },[])
+}
+
+
+-----ROUTER-----
+{
+  INSTALAÇÃO
+  {
+    No React, o React Router não vem instalado por padrão quando você cria um projeto com Create React App (CRA) 
+    ou outras ferramentas como Vite. Você precisa instalar o pacote separadamente.
+
+    Para instalar, use o seguinte comando no terminal dentro do diretório do seu projeto React:
+
+    npm install react-router-dom
+
+    Após a instalação, você pode começar a usar o React Router importando os componentes necessários, como 
+    BrowserRouter, Routes, Route, entre outros, dessa forma: import { BrowserRouter, Routes, Route } from 'react-router-dom';
+  }
+
+  ESTRUTURA DO ROUTER
+  {
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  }
+
+  <ROUTE>
+  {
+    <Route path="/" element={<componente />} /> //Use isso para definir o componente que será a página inicial
+    <Route index element={<componente />} /> //Outra maneira de definir a página inicial automaticamente
+    <Route path="pagina1" element={<componente1 />} /> //Use isso para definir o caminho de outro componente em outra página
+    //seguinte à página inicial
+  }
+
+  REDIRECIONADORES <NavLink> e <Link>
+  {
+    NavLink:
+    Redireciona para outra página (ou permanece se for a principal) como se fosse a tag <a>, envolvendo um elemento. Ex.:
+      import {NavLink} from "react-router-dom"
+      <NavLink to="/pagina1"> className={({ isActive }) => (isActive ? "active-link" : "inactive-link")} <button>Acesse a página 1</button></NavLink>
+      <NavLink to="/pagina2"> <button>Acesse a página 2</button></NavLink>
+    *Após clicado e ativado, o <NavLink> adiciona automaticamente uma className chamada "active" na tag <a> que é gerada na 
+    página como HTML e JS.
+
+    Link:
+    Também redireciona, mas não é adicionada uma className chamada "active".
+    <Link to="/pagina1"> <button>Acesse a página 1</button></Link>
+    <Link to="/"> <button>Voltar para home</button></Link>
+  }
+
+  -----NAVIGATE - REDIRECIONADOR PROGRAMÁTICO-----
+  {
+    O Navigate é um hook (useNavigate) que é utilizado para redirecionar para outra página de forma programada, sem o usuário clicar para ir.
+    Deve-se importar o hook primeiro: import {useNavigate} from 'react-router-dom';
+
+    const navigate = useNavigate(); //Cria uma variável para receber a funcionalidade do navigate.
+
+    //Dentro de uma função, por exemplo de confirmação de compra ou algo que seja necessária a mudança de página, o navigate redireciona a página.
+    navigate("/"); //Aqui ele faz o retorno para a página inicial, mas poderia ser outra rota qualquer, tipo depois de um login, por exemplo.
+
+  }
+
+  USEPARAMS
+  {
+    O useParams é um hook fornecido pelo React Router que permite acessar os parâmetros dinâmicos da URL 
+    em componentes funcionais do React. Ele é muito útil quando você define rotas com parâmetros dinâmicos 
+    (como IDs, nomes ou outras variáveis) e precisa usá-los no componente correspondente.
+
+    Use Params quando você tem uma rota que inclui parâmetros dinâmicos, como:
+      /product/:id
+      /user/:username
+      /blog/:postId
+    *Esses parâmetros podem ser acessados pelo componente que é renderizado para essa rota.
+
+     <Route path="/product/:id" element={<ProductPage />} /> //No arquivo App define o caminho e diz que o valor que vier
+     //depois de /product será chamado de id.
+
+     const { id } = useParams(); //No componente ProductPage, quando o usuário acessa, por exemplo, /product/123, 
+     //o useParams retorna um objeto com os valores dos parâmetros definidos na rota, que é "123", ficando id{"123"}
+
+     *Atenção a valores nulos: Se o parâmetro não for encontrado ou a rota não corresponder, o useParams retornará um 
+     objeto vazio {}.
+     
+     **Sincronização com a URL: Sempre que a URL muda, o valor retornado por useParams é atualizado automaticamente.
+  }
 }
