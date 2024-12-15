@@ -612,7 +612,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
     página como HTML e JS.
 
     Link:
-    Também redireciona, mas não é adicionada uma className chamada "active".
+    Também redireciona, mas NÃO é adicionada uma className chamada "active".
     <Link to="/pagina1"> <button>Acesse a página 1</button></Link>
     <Link to="/"> <button>Voltar para home</button></Link>
   }
