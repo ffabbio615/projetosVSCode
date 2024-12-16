@@ -9,7 +9,7 @@ import S5ProposalLocation from './components/S5ProposalLocation';
 import S6Faq from './components/S6Faq';
 import Footer from './components/footer';
 import CertificateLogin from './certificate/CertificateLogin';
-import Certificate from './certificate/Certificate';
+import CertificateForm from './certificate/CertificateForm';
 
 function App() {
 
@@ -36,7 +36,7 @@ function App() {
           />
 
           <Route path='/certificados' element={<CertificateLogin/>} />
-          <Route path='/certificados/login:login' element={<Certificate/>} />
+          <Route path='/certificados/login/:username' element={<CertificateForm/>} />
 
         </Routes>
       </BrowserRouter>
