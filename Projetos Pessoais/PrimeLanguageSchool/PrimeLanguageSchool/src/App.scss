@@ -37,28 +37,28 @@ $neutral-color-black: rgb(0,0,0);
 //-----Typography-----//
 
 //IMPORTS
-@font-face { font-family: 'GiphursThin'; src: url(../src/assets/fonts/Giphurs-Thin.otf); }
-@font-face { font-family: 'GiphursExtraLight'; src: url(../src/assets/fonts/Giphurs-ExtraLight.otf); }
-@font-face { font-family: 'GiphursLight'; src: url(../src/assets/fonts/Giphurs-Light.otf); }
-@font-face { font-family: 'GiphursRegular'; src: url(../src/assets/fonts/Giphurs-Regular.otf); }
-@font-face { font-family: 'GiphursMedium'; src: url(../src/assets/fonts/Giphurs-Medium.otf); }
-@font-face { font-family: 'GiphursSemiBold'; src: url(../src/assets/fonts/Giphurs-SemiBold.otf); }
-@font-face { font-family: 'GiphursBold'; src: url(../src/assets/fonts/Giphurs-Bold.otf); }
-@font-face { font-family: 'GiphursExtraBold'; src: url(../src/assets/fonts/Giphurs-ExtraBold.otf); }
-@font-face { font-family: 'GiphursBlack'; src: url(../src/assets/fonts/Giphurs-Black.otf); }
+@font-face { font-family: 'GiphursThin'; src: url(../src/assets/fonts/Giphurs-Thin.otf) format('truetype');}
+@font-face { font-family: 'GiphursExtraLight'; src: url(../src/assets/fonts/Giphurs-ExtraLight.otf) format('truetype');}
+@font-face { font-family: 'GiphursLight'; src: url(../src/assets/fonts/Giphurs-Light.otf) format('truetype');}
+@font-face { font-family: 'GiphursRegular'; src: url(../src/assets/fonts/Giphurs-Regular.otf) format('truetype');}
+@font-face { font-family: 'GiphursMedium'; src: url(../src/assets/fonts/Giphurs-Medium.otf) format('truetype');}
+@font-face { font-family: 'GiphursSemiBold'; src: url(../src/assets/fonts/Giphurs-SemiBold.otf) format('truetype');}
+@font-face { font-family: 'GiphursBold'; src: url(../src/assets/fonts/Giphurs-Bold.otf) format('truetype');}
+@font-face { font-family: 'GiphursExtraBold'; src: url(../src/assets/fonts/Giphurs-ExtraBold.otf) format('truetype');}
+@font-face { font-family: 'GiphursBlack'; src: url(../src/assets/fonts/Giphurs-Black.otf) format('truetype');}
 
-@font-face { font-family: 'MontserratThin'; src: url(../src/assets/fonts/Montserrat-Thin.ttf); }
-@font-face { font-family: 'MontserratExtraLight'; src: url(../src/assets/fonts/Montserrat-ExtraLight.ttf); }
-@font-face { font-family: 'MontserratLight'; src: url(../src/assets/fonts/Montserrat-Light.ttf); }
-@font-face { font-family: 'MontserratRegular'; src: url(../src/assets/fonts/Montserrat-Regular.ttf); }
-@font-face { font-family: 'MontserratItalic'; src: url(../src/assets/fonts/Montserrat-Italic.ttf); }
-@font-face { font-family: 'MontserratMedium'; src: url(../src/assets/fonts/Montserrat-Medium.ttf); }
-@font-face { font-family: 'MontserratSemiBold'; src: url(../src/assets/fonts/Montserrat-SemiBold.ttf); }
-@font-face { font-family: 'MontserratBold'; src: url(../src/assets/fonts/Montserrat-Bold.ttf); }
-@font-face { font-family: 'MontserratExtraBold'; src: url(../src/assets/fonts/Montserrat-ExtraBold.ttf); }
-@font-face { font-family: 'MontserratBlack'; src: url(../src/assets/fonts/Montserrat-Black.ttf); }
+@font-face { font-family: 'MontserratThin'; src: url(../src/assets/fonts/Montserrat-Thin.ttf) format('truetype');}
+@font-face { font-family: 'MontserratExtraLight'; src: url(../src/assets/fonts/Montserrat-ExtraLight.ttf) format('truetype');}
+@font-face { font-family: 'MontserratLight'; src: url(../src/assets/fonts/Montserrat-Light.ttf) format('truetype');}
+@font-face { font-family: 'MontserratRegular'; src: url(../src/assets/fonts/Montserrat-Regular.ttf) format('truetype');}
+@font-face { font-family: 'MontserratItalic'; src: url(../src/assets/fonts/Montserrat-Italic.ttf) format('truetype');}
+@font-face { font-family: 'MontserratMedium'; src: url(../src/assets/fonts/Montserrat-Medium.ttf) format('truetype');}
+@font-face { font-family: 'MontserratSemiBold'; src: url(../src/assets/fonts/Montserrat-SemiBold.ttf) format('truetype');}
+@font-face { font-family: 'MontserratBold'; src: url(../src/assets/fonts/Montserrat-Bold.ttf) format('truetype');}
+@font-face { font-family: 'MontserratExtraBold'; src: url(../src/assets/fonts/Montserrat-ExtraBold.ttf) format('truetype');}
+@font-face { font-family: 'MontserratBlack'; src: url(../src/assets/fonts/Montserrat-Black.ttf) format('truetype');}
 
-@font-face { font-family: 'PreTestoRegular'; src: url(../src/assets/fonts/PreTesto-Regular.ttf); }
+@font-face { font-family: 'PreTesto'; src: url(../src/assets/fonts/PreTesto.ttf) format('truetype');}
 
 //-----Font Definitions-----//
 
@@ -116,6 +116,9 @@ $m-subtitle-16px: normal 16px 'MontserratBold', sans-serif;
 $m-paragraph-15px: normal 15px 'MontserratRegular', sans-serif;
 $m-paragraph-14px: normal 14px 'MontserratRegular', sans-serif;
 $m-paragraph-13px: normal 13px 'MontserratRegular', sans-serif;
+
+//DOCUMENTS
+$document-font: 'PreTesto';
 
 
 *{

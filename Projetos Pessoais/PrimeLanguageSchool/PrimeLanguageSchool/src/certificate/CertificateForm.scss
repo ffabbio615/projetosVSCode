@@ -8,14 +8,14 @@
 .certificate-form-title{
     font: App.$title-h3-30px;
     color: App.$neutral-color-white;
-    position:absolute;
-    top: 25px;
-    right: 25px;
+    text-align: end;
+    height: 10vh;
+    margin: 25px 25px 0 0;
 }
 
 .certificate-form-container{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,6 @@
         width: 320px;
         height: auto;
         padding-left: 10px;
-        margin-top: 200px;
 
         label{
             color: App.$neutral-color-white;

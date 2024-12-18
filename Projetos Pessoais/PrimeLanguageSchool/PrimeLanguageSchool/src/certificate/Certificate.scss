@@ -7,94 +7,236 @@
     background-image: url(../assets/img/primeIcon.svg);
     background-repeat: no-repeat;
     position: absolute;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
-.certificate-container {
-    width: auto;
-    height: 90vh;
+body{
+    touch-action:auto;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
     aspect-ratio: 297 / 210;
-    background: App.$neutral-color-white;
-    box-shadow: 0 0 20px App.$neutral-color-dark-gray;
-    margin: 5vh auto;
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
+    background-color: App.$primary-color-blue;
+    display: grid;
+    justify-items: center;
     align-items: center;
-    position: relative;
-    z-index: 0;
 
-    .red-triangles-container{
-        width: 25%;
-        height: 100%;
-        background-color: App.$primary-color-red;
-        position: absolute;
-        left: 0;
 
-        .certificate-container-logo{
+    .certificate-container {
+        width: auto;
+        height: 90%;
+        aspect-ratio: 297 / 210;
+        background: App.$neutral-color-white;
+        box-shadow: 0 0 20px App.$neutral-color-dark-gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 0;
+        
+        .certificate-background{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: url(../assets/img/certificateBackground.svg);
+            background-repeat: no-repeat;
+            left: 7.8%;
+            opacity: 0.12;
+            mix-blend-mode: multiply;
+        }
 
-            .certificate-logo{
+        .red-triangles-container{
+            width: 25%;
+            height: 100%;
+            position: absolute;
+            left: 0;
 
+            .triangles{
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                .red-t1{
+                    width: 100%;
+                    height: 50%;
+                    background-color: App.$primary-color-red;
+                    clip-path: polygon(-100% -100%, 0% 100%, 100% 0%);
+                    position: absolute;
+                    top: 0;
+                    z-index: 4;
+                }
+
+                .red-t2{
+                    width: 100%;
+                    height: 90%;
+                    position: absolute;
+                    bottom: 0;
+                    background-color: App.$primary-color-red;
+                    clip-path: polygon(-100% -100%, 0% 100%, 100% 100%);
+                    z-index: 3;
+                }
+
+                .red-t3{
+                    width: 100%;
+                    height: 40%;
+                    position: absolute;
+                    top: 10%;
+                    background-color: App.$secondary-color-red5;
+                    clip-path: polygon(-23% -52%, 0% 100%, 28.5% 64.4%);
+                    z-index: 5;
+                }
+
+                .certificate-container-logo{
+                    width: 100%;
+                    height: 20%;
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 6;
+
+    
+                    .certificate-logo{
+                        width: 80%;
+                        height: 52%;
+                        background-image: url(../assets/img/primeLogoV1.svg);
+                        background-repeat: no-repeat;
+                        background-size:contain;
+                        filter: invert(2) brightness(5);
+                        margin: 8% 0 5% 5%;
+                    }
+    
+                    .cnpj{
+                        font: App.$paragraph-16px;
+                        color: App.$neutral-color-white;
+                        margin-left: 9%
+                    }
+                }
+            }
+        }
+
+        .watermark{
+            @include watermark();
+            z-index: 2;
+            filter: invert(1) brightness(5);
+        }
+
+        .watermark-colored{
+            @include watermark();
+            z-index: 3;
+            opacity: 0.1;
+        }
+
+        .blue-border{
+            width: 3%;
+            height: 100%;
+            background-color: App.$primary-color-blue;
+            position: absolute;
+            right: 0;
+        }
+
+        .certificate-data-container{
+            width: 60%;
+            height: auto;
+            max-height: 100%;
+            z-index: 4;
+            margin: 12.5% 0 12.5% 15%;
+            text-align: center;
+
+            .certificate-title-container{
+                margin-bottom: 5%;
+
+                .certificate-data-title{
+                    font: App.$document-font;
+                    // font-size: 60pt;
+                    font-size: clamp(40px, 4.2vw, 80px);
+                    font-weight: 900;
+                    letter-spacing: 7px;
+                }
             }
 
-            .cnpj{
+            .student-description{
+                margin-bottom: 5%;
+            }
 
+            .course-title{
+                font: App.$title-h1-42px;
+                letter-spacing: 1px;
+                margin-bottom: 5%;
+            }
+
+            .course-description{
+                margin-bottom: 8%;
+            }
+
+            .todays-date{
+                margin-bottom: 10%;
+            }
+
+            .certificate-description{
+                width: 80%;
+                margin-left: 10%;
+                font: App.$document-font;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 40px;
+            }
+
+            .signature-container{
+                width: 80%;
+                height: auto;
+                position: relative;
+                margin-left: 10%;
+
+                .signature{
+                    height: 120px;
+                    width: 50%;
+                    margin: -62px 0 0 25%;
+                    position: absolute;
+                    background-image: url(../assets/img/signatureImage.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .principals-signature-text{
+                    line-height: 24px;
+                }
             }
         }
     }
+}
 
-    .watermark{
-        @include watermark();
-        z-index: 2;
-        filter: invert(1) brightness(5);
+@media screen and (min-width: 300px) and (orientation:portrait){
+
+    main{
+        margin-left: 20%;
     }
-
-    .watermark-colored{
-        @include watermark();
-        z-index: 3;
-        opacity: 0.1;
-    }
-
-    .blue-border{
-        width: 4%;
-        height: 100%;
-        background-color: App.$primary-color-blue;
-        position: absolute;
-        right: 0;
-    }
-
-    .certificate-data-container{
-        width: 60%;
-        height: 100%;
-        z-index: 4;
-        margin-left: 10%;
-        text-align: center;
-
-        .certificate-data-title{
-
+    
+    
+        .certificate-container {
         }
+}
 
-        .certificate-description{
 
-        }
+@media print {
 
-        .course-title{
+    @page {
+        size: A4 landscape;
+        margin: 0;
+      }
 
-        }
+    html, body {
+        width: 297mm;
+        height: 210mm;
+      }
 
-        .signature-container{
-
-            .signature{
-
-            }
-
-            .principal-name{
-
-            }
-
-            .principal{
-
-            }
+      main{
+        background-color: white;
+    
+        .certificate-container {
+            width: auto;
+            height: 100%;
+            box-shadow: none;
         }
     }
 }
