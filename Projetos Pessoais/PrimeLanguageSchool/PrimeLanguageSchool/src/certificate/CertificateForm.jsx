@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom";
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import './CertificateForm.scss';
 import Certificate from "./Certificate";
+import Inputmask from "inputmask";
 
 export default function CertificateForm(){
-
-    const {username} = useParams();
 
     function showPicker(id)
     {
@@ -34,7 +32,7 @@ export default function CertificateForm(){
         const hours = document.querySelector("#hours").value;
         const level = document.querySelector("#level").value;
 
-        if(name && cpf && course && beginDate && endDate && level !== '')
+        if(name && cpf && beginDate && endDate !=='' && course !=="SELECIONE O CURSO" && level !== 'SELECIONE O NÍVEL')
         {
             setStudent([
                 {
@@ -53,19 +51,37 @@ export default function CertificateForm(){
         }
     }
 
+    function countHours(){
+        let beginDate = new Date(document.querySelector("#begin-date").value);
+        let endDate = new Date(document.querySelector("#end-date").value);
+        
+        if(beginDate && endDate !== ''){
+            const totalHours = (endDate.getFullYear() - beginDate.getFullYear()) * 12 + (endDate.getMonth() - beginDate.getMonth());
+            document.querySelector("#hours").value = totalHours * 8;
+        }
+    }
+
+    const cpfRef = useRef(null);
+    useEffect(() => {
+        // Aplica a máscara de CPF diretamente ao campo de input
+        const mask = new Inputmask("999.999.999-99");
+        mask.mask(cpfRef.current);
+      }, []);
+
     return(
         <>
         { student[0].name === '' ?
             <>
-            <h1 className="certificate-form-title">Olá, {username}!</h1>
+            <h1 className="certificate-form-title">Gerador de Certificados</h1>
             <div className="certificate-form-container">
                 <div className="form">
                     <label htmlFor="name">Nome do Aluno:</label>
                     <input type="text" id="name" placeholder="Ex.: Alexandre Mello" />
-                    <label htmlFor="ncpf">CPF:</label>
-                    <input type="text" id="cpf" placeholder="Somente números" />
+                    <label htmlFor="cpf">CPF:</label>
+                    <input type="text" id="cpf" ref={cpfRef} placeholder="Somente números" />
                     <label htmlFor="course">Curso:</label>
                     <select name="course" id="course">
+                        <option defaultValue="kids">SELECIONE O CURSO</option>
                         <option defaultValue="kids">PRIME KIDS</option>
                         <option defaultValue="teens">PRIME TEENS</option>
                         <option defaultValue="plus">PRIME PLUS</option>
@@ -74,14 +90,15 @@ export default function CertificateForm(){
                         <option defaultValue="inter">PRIME INTER</option>
                         <option defaultValue="high">PRIME HIGH</option>
                     </select>
-                    <label htmlFor="begin-date">Selecione a data inicial:</label>
-                    <input onClick={() => showPicker("begin-date")} type="date" id="begin-date" defaultValue="2023/12/25" min="2023/12/25" />
-                    <label htmlFor="end-date">Selecione a data final:</label>
-                    <input onClick={() => showPicker("end-date")} type="date" id="end-date" defaultValue="2024/12/25" min="2023/12/25" />
+                    <label htmlFor="begin-date">Selecione mês e ano iniciais:</label>
+                    <input onClick={() => showPicker("begin-date")}  type="month" id="begin-date" />
+                    <label htmlFor="end-date">Selecione mês e ano finais:</label>
+                    <input onClick={() => showPicker("end-date")} onChange={countHours} type="month" id="end-date" />
                     <label htmlFor="hours">Carga horária:</label>
-                    <input type="text" id="hours" placeholder="Somente números. Ex.: 48" />
-                    <label htmlFor="level">Selecione o nível:</label>
+                    <input type="text" id="hours" disabled placeholder="-" />
+                    <label htmlFor="level">Nível do aluno:</label>
                     <select name="level" id="level">
+                        <option defaultValue="a1">SELECIONE O NÍVEL</option>
                         <option defaultValue="a1">A1</option>
                         <option defaultValue="a2">A2</option>
                         <option defaultValue="b1">B1</option>

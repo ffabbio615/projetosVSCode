@@ -8,9 +8,9 @@
 .certificate-form-title{
     font: App.$title-h3-30px;
     color: App.$neutral-color-white;
-    text-align: end;
-    height: 10vh;
-    margin: 25px 25px 0 0;
+    text-align: center;
+    height: 5vh;
+    margin: 25px 0;
 }
 
 .certificate-form-container{
@@ -30,24 +30,29 @@
             font: App.$title-h6-16px;
         }
 
-        input[type="text"], input[type="date"], select {
+        input[type="text"], input[type="month"], select {
             width: 300px;
             height: 45px;
             border: none;
-            background-color: App.$neutral-color-light-gray;
+            background-color: App.$neutral-color-white;
             color: App.$neutral-color-dark-gray;
+            text-transform: uppercase;
             padding-left: 10px;
             font: App.$paragraph-16px;
             margin: 12.5px 0;
         }
 
-        input[type="text"]::placeholder, input[type="date"]::placeholder{
+        input[type="text"]::placeholder, input[type="month"]::placeholder{
             color: App.$neutral-color-medium-gray;
         }
 
-        input[type="date"], select{
+        input[type="month"], select{
             cursor: pointer;
             padding-right: 10px;
+        }
+
+        #hours{
+            background-color: App.$neutral-color-light-gray;
         }
 
         select {

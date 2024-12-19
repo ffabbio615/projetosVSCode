@@ -653,3 +653,56 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
      **Sincronização com a URL: Sempre que a URL muda, o valor retornado por useParams é atualizado automaticamente.
   }
 }
+
+-----EXPORTAR EM PDF-----
+{
+  ***Não funciona quando tem efeitos de sombra, clip paths, etc. Tem que salvar no elemento pai, senão não aparecem os estilos por causa do Sass que coloca uma classe dentro de outra.
+  1- Instale a biblioteca html2pdf.js: Se ainda não tiver a biblioteca instalada, você pode instalá-la usando no terminal o código: npm install html2pdf.js
+  2- Crie o Componente com o botão de salvar: Dentro do seu componente, você pode criar um botão que, quando clicado, salva a mídia impressa como um PDF.
+  EXEMPLO:
+  {
+    import React, { useRef } from 'react';
+    import html2pdf from 'html2pdf.js';
+
+    const MediaPrintComponent = () => {
+      const printRef = useRef();
+
+      const handleSaveAsPDF = () => {
+        const element = printRef.current;
+        const options = {
+          margin: 0.5,
+          filename: 'documento.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 4 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().from(element).set(options).save();
+      };
+
+      return (
+        <div>
+          <div ref={printRef}>
+            <h1>Minha Mídia Impressa</h1>
+            <p>Este é o conteúdo que será exportado para PDF.</p>
+            <p>Você pode adicionar mais conteúdo aqui.</p>
+          </div>
+
+          <button onClick={handleSaveAsPDF}>Salvar como PDF</button>
+        </div>
+      );
+    };
+    export default MediaPrintComponent;
+  }
+
+  Como Funciona:
+  {
+    useRef: Estamos usando o useRef para criar uma referência para o conteúdo que queremos salvar como PDF.
+    html2pdf: Quando o botão é clicado, chamamos o método html2pdf().from(element) para converter o conteúdo referenciado (o div com o conteúdo) em um arquivo PDF.
+    Configuração do PDF: Você pode personalizar várias opções, como o nome do arquivo (filename), qualidade da imagem, margens, e outros detalhes para o layout.
+    Personalizações:
+    O html2pdf permite que você defina opções como margens, formato da página, e qualidade da imagem.
+    Se quiser usar um formato diferente, pode ajustar o parâmetro jsPDF para algo como A4 ou outro.
+    Essa abordagem permite que você adicione facilmente a funcionalidade de salvar o conteúdo de uma mídia impressa como PDF diretamente em um componente React, 
+    sem a necessidade de criar um componente separado.
+  }
+}

@@ -23,6 +23,20 @@ main{
     justify-items: center;
     align-items: center;
 
+    .btn-pdf-save{
+        width: 50px;
+        height: 50px;
+        background-color: App.$primary-color-blue;
+        background-image: url(../assets/img/primeWhiteIcon.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        right: 2vw;
+        top: 2vw;
+    }
 
     .certificate-container {
         width: auto;
@@ -107,9 +121,11 @@ main{
                     }
     
                     .cnpj{
-                        font: App.$paragraph-16px;
+                        font: App.$document-font;
+                        font-weight: 600;
+                        font-size: clamp(12.5px, 1.1vw, 17.5px);
                         color: App.$neutral-color-white;
-                        margin-left: 9%
+                        margin-left: 9%;
                     }
                 }
             }
@@ -136,7 +152,7 @@ main{
         }
 
         .certificate-data-container{
-            width: 60%;
+            width: calc(60% + ((1920px - 100vw))/2) ;
             height: auto;
             max-height: 100%;
             z-index: 4;
@@ -144,33 +160,32 @@ main{
             text-align: center;
 
             .certificate-title-container{
-                margin-bottom: 5%;
+                margin-bottom: 2.2vw;
 
                 .certificate-data-title{
                     font: App.$document-font;
-                    // font-size: 60pt;
-                    font-size: clamp(40px, 4.2vw, 80px);
+                    font-size: clamp(55px, 4.2vw, 80px);
                     font-weight: 900;
                     letter-spacing: 7px;
                 }
             }
 
             .student-description{
-                margin-bottom: 5%;
+                margin-bottom: 2.2vw;
             }
 
             .course-title{
                 font: App.$title-h1-42px;
                 letter-spacing: 1px;
-                margin-bottom: 5%;
+                margin-bottom: 2.2vw;
             }
 
             .course-description{
-                margin-bottom: 8%;
+                margin-bottom: 3.2vw;
             }
 
             .todays-date{
-                margin-bottom: 10%;
+                margin-bottom: 80px;
             }
 
             .certificate-description{
@@ -178,7 +193,7 @@ main{
                 margin-left: 10%;
                 font: App.$document-font;
                 font-weight: 500;
-                font-size: 20px;
+                font-size: clamp(12.5px, 2vw, 20px);
                 line-height: 40px;
             }
 
@@ -210,11 +225,31 @@ main{
 
     main{
         margin-left: 20%;
-    }
-    
-    
-        .certificate-container {
+
+        .btn-pdf-save{
+            display: none;
         }
+
+        .certificate-container {
+    
+            .certificate-data-container{
+                width: 60%;
+    
+                .todays-date{
+                    margin-bottom: 60px;
+                }
+    
+                .signature-container{
+    
+                    .signature{
+                        height: 100px;
+                        width: 40%;
+                        margin: -52px 0 0 30%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -232,6 +267,10 @@ main{
 
       main{
         background-color: white;
+
+        .btn-pdf-save{
+            display: none;
+        }
     
         .certificate-container {
             width: auto;

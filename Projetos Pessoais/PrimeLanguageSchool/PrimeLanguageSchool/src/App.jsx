@@ -36,7 +36,7 @@ function App() {
           />
 
           <Route path='/certificados' element={<CertificateLogin/>} />
-          <Route path='/certificados/login/:username' element={<CertificateForm/>} />
+          <Route path='/certificados/login/' element={<CertificateForm/>} />
 
         </Routes>
       </BrowserRouter>
