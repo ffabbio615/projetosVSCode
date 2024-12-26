@@ -74,7 +74,11 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
   EXPORT DEFAULT FUNCTION> Para "export default function", a importação terá de ser feita normalmente: import qualquerNome from './nomeDoArquivo';
 
-  EXPORT FUNCTION> Para "export function", a importação terá de ser feita entre { }: import { qualquerNome } from './nomeDoArquivo';
+  EXPORT FUNCTION> Para "export function", a importação terá de ser feita entre, pois é um parâmetro específico { }: import { qualquerNome } from './nomeDoArquivo';
+
+  Ex.:
+  export default MovieList; / import MovieList from './MovieList';
+  export const MovieList = () => {  }; / import { MovieList } from './MovieList';
 }
 
 
@@ -653,6 +657,8 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
      **Sincronização com a URL: Sempre que a URL muda, o valor retornado por useParams é atualizado automaticamente.
   }
 }
+
+
 
 -----EXPORTAR EM PDF-----
 {

@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(29, 29, 29);
+  background-image: url('https://static.vecteezy.com/system/resources/previews/043/555/242/non_2x/realistic-3d-cinema-film-strip-in-perspective-isolated-on-blue-background-template-cinema-festival-movie-design-cinema-film-strip-for-ad-poster-presentation-show-brochure-banner-or-flyer-vector.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+h1{
+  width: 100vw;
+  height: 15%;
+  font-size: 36px;
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  z-index: 0;
+}
+
+
+html{scroll-behavior: smooth !important; transition: 0.8s !important;}
+/* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
+::-webkit-scrollbar {width:12px; height: 12px;}
+::-webkit-scrollbar-track {background: white;}
+::-webkit-scrollbar-thumb {background:gray;}
+::-webkit-scrollbar:vertical{display: none;}

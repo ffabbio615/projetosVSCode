@@ -1,0 +1,55 @@
+ul{
+    width: auto;
+    max-width: 95vw;
+    height: 85vh;
+    color: white;
+    padding: 0 5%;
+    display: flex;
+    overflow-x: auto;
+    margin: 0 auto;
+    z-index: 2;
+
+    li:hover{
+        transform: scale(1.01);
+        box-shadow: 0 0 10px black;
+    }
+
+    li{
+        min-width: 30%;
+        height: 95%;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+        margin: 0 20px;
+        border: 1px solid gray;
+        border-radius: 15px;
+        justify-items: center;
+        text-align: justify;
+        padding-bottom: 16px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        h3{
+            height: 40px;
+            align-self: center;
+            font-size: 24px;
+            padding-top: 7.5px;
+
+        }
+    
+        img{
+            width: auto;
+            height: 300px;
+        }
+
+        .movieInformations{
+            overflow-y:auto;
+
+            p{
+                padding: 0 10px;
+            }
+        }
+    
+    }
+
+}
