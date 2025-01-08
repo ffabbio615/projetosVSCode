@@ -9,7 +9,6 @@ import S5ProposalLocation from './components/S5ProposalLocation';
 import S6Faq from './components/S6Faq';
 import Footer from './components/footer';
 import CertificateLogin from './certificate/CertificateLogin';
-import CertificateForm from './certificate/CertificateForm';
 
 function App() {
 
