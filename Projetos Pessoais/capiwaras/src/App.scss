@@ -5,7 +5,7 @@ $primary-medium-green: rgb(0, 150, 60);
 $primary-dark-green: rgb(0, 80, 40);
 
 //SECONDARY GREEN
-$secondary-color-red-8: rgb(0, 140, 60);
+$secondary-color-medium-green: rgb(0, 140, 60);
 
 //BUTTON COLORS
 $btn-color-red: rgb(180, 0, 0);
@@ -57,8 +57,8 @@ $webAdj14px: clamp(12px, 0.96vw, 14px);
 $webAdj13px: clamp(11px, 0.9vw, 13px);
 $webAdj12px: clamp(10px, 0.81vw, 12px);
 
-$title-h1-PLUS: normal $webAdjPLUS 'GiphursBold', sans-serif;
-$title-h1-42px: normal $webAdj42px 'GiphursBold', sans-serif;
+$title-h1-PLUS: normal $webAdjPLUS 'GiphursBlack', sans-serif;
+$title-h1-42px: normal $webAdj42px 'GiphursBlack', sans-serif;
 $title-h2-36px: normal $webAdj36px 'GiphursBold', sans-serif;
 $title-h3-30px: normal $webAdj30px 'GiphursBold', sans-serif;
 $title-h4-24px: normal $webAdj24px 'GiphursBold', sans-serif;
@@ -74,18 +74,6 @@ $paragraph-14px: normal $webAdj14px 'KantumruyRegular', sans-serif;
 $paragraph-13px: normal $webAdj13px 'KantumruyRegular', sans-serif;
 $paragraph-12px: normal $webAdj12px 'KantumruyRegular', sans-serif;
 
-//MOBILE
-$m-title-h1-36px: normal 36px 'GiphursBold', sans-serif;
-$m-title-h2-30px: normal 30px 'GiphursBold', sans-serif;
-$m-title-h3-24px: normal 24px 'GiphursBold', sans-serif;
-$m-title-h4-20px: normal 20px 'GiphursBold', sans-serif;
-$m-title-h5-16px: normal 16px 'GiphursBold', sans-serif;
-$m-title-h6-12px: normal 12px 'GiphursBold', sans-serif;
-
-$m-paragraph-15px: normal 15px 'KantumruyRegular', sans-serif;
-$m-paragraph-14px: normal 14px 'KantumruyRegular', sans-serif;
-$m-paragraph-13px: normal 13px 'KantumruyRegular', sans-serif;
-
 
 *{
     margin: 0;
@@ -93,39 +81,68 @@ $m-paragraph-13px: normal 13px 'KantumruyRegular', sans-serif;
     user-select: none;
 }
 
-html{scroll-behavior: smooth !important; transition: 0.8s !important; background-color: $primary-medium-green;}
+html{scroll-behavior: smooth !important; transition: 0.8s !important; }
 /* Barras de Rolagem (tamanho | fundo da barra onde corre a seta | alça da barra que mostra a altura que está) */
 ::-webkit-scrollbar {width:12px; height: 12px;}
-::-webkit-scrollbar-track {background: $primary-dark-green;}
-::-webkit-scrollbar-thumb {background: $primary-medium-green;}
+::-webkit-scrollbar-track {background: $primary-medium-green;}
+::-webkit-scrollbar-thumb {background: $primary-dark-green;}
 ::-webkit-scrollbar:vertical{display: none;}
 
 body{
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: $primary-medium-green;
+    aspect-ratio: 9/16;
+    overflow: hidden;
+}
+
+#root{
     touch-action:pan-y;
     background-color: $neutral-color-light-gray;
     width: 100%;
-    max-width: 440px;
-    height: 956px;
-    aspect-ratio: 1/auto;
-    // height: auto;
-    // max-height: 956px;
-    overflow-y: scroll;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 90% 10%;
 }
 
 @media screen and (min-width: 441px){
+
     body{
-        margin-left: calc(50% - 220px);
-        margin-top: calc(50vh - 478px);
-        height: 956px;
-        overflow-y: scroll;
+        max-width: 440px;
+        max-height: 90vh;
+        padding-top: 5vh;
+        padding-left: calc(50% - 220px);
+
+        #root{
+            box-shadow: 0 0 25px rgba($neutral-color-dark-gray , 0.5);
+        }
     }
 }
+
+// body{
+//     touch-action:pan-y;
+//     background-color: $neutral-color-light-gray;
+//     width: 100vw;
+//     aspect-ratio: 9/16;
+//     height: auto;
+//     overflow-y: scroll;
+// }
+
+// @media screen and (min-width: 441px){
+//     body{
+//         max-width: 440px;
+//         max-height: 838px;
+//         margin-left: calc(50% - 220px);
+//         margin-top: calc(50vh - 419px);
+//         box-shadow: 0 0 25px rgba($neutral-color-dark-gray , 0.5);
+//     }
+// }
 
 a{
     text-decoration: none;
 }
 
-@mixin CTA-button(){
+@mixin standard-button(){
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,14 +156,24 @@ a{
     z-index: 1;
 }
 
-.CTA-button-small{
+.standard-button-small{
     width: 120px;
     height: 40px;
-    @include CTA-button();
+    @include standard-button();
 }
 
-.CTA-button-medium{
+.standard-button-medium{
     width: 200px;
     height: 45px;
-    @include CTA-button();
+    @include standard-button();
+}
+
+@media screen  and (orientation: landscape) {
+    body{
+        width: 100vw;
+        height: calc(var(--vh, 1vh) * 100);
+        transform: rotate(90deg);
+        transform-origin: left top;
+        overflow: hidden;
+    }
 }

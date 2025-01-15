@@ -66,7 +66,8 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 *JAVASCRIPT - Para inserir código Javascript dentro do HTML, precisa-se colocar dentro de chaves {}
 **ARROW FUNCTION - Só há necessidade quando for usar algum parâmetro numa Prop ou num evento ou mudar algum State. Ex.: <button OnClick={funcao}> ou <button OnClick={()=> estado(true)}
 ***RETURN - Para retornar a função exportada de componentes em React (páginas), os elementos devem estar dentro de um container. Caso haja mais para exportar, pode-se usar fragment <> </>
-
+***IMAGENS - Para inserir imagens, deve-se importar primeiro. Ex.: import logoSymbol from '../assets/img/capiwarasSymbol.svg'; e depois inserir: <img src={logoSymbol} alt="Símbolo da Logo Capiwaras" />
+****IMAGENS - Para inserir no src sem importar, deve-se retornar 1 nível, porque o React entende que a imagem está na pasta pública. Ex.: <img src='../src/assets/img/dishes/saladaCaesar.jpg' className="food-image" alt='Imagem do Prato' />
 
 -----EXPORT DEFAULT E EXPORT-----
 {

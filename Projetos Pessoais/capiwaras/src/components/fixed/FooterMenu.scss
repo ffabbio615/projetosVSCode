@@ -1,0 +1,78 @@
+@use '../../App.scss';
+
+@mixin icons($bkg-color){
+    width: 35px;
+    height: 35px;
+    background-image: url($bkg-color);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#root{
+
+    .footer-container{
+        // width: 100%;
+        // max-width: 440px;
+        // height: 80px;
+        background-color: App.$neutral-color-white;
+        // position:fixed;
+        // bottom: 0;
+
+
+        .footer-button-container{
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .btn-footer-menu{
+                width: 90px;
+                height: 60px;
+                
+                a{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    -webkit-tap-highlight-color: transparent;
+                    
+                .menu-icon{
+                    @include icons("../../assets/img/icons/menuIconTest.svg");
+                }
+
+                .home-icon{
+                    @include icons("../../assets/img/icons/homeIcon.svg");
+                }
+
+                .delivery-icon{
+                    @include icons("../../assets/img/icons/deliveryIcon.svg");
+                    height: 35px;
+                    width: 55px;
+                    background-size: 100% calc(100% - 5px);
+                }
+
+            .btn-footer-paragraph{
+                    width: 90px;
+                    text-align: center;
+                    font: App.$paragraph-16px;
+                    text-transform: uppercase;
+                    color: App.$neutral-color-medium-gray;
+                }
+            }
+            
+            a.active .menu-icon, a.active .home-icon, a.active .delivery-icon{ filter: invert(60%) sepia(76%) saturate(6244%) hue-rotate(125deg) brightness(86%) contrast(101%); }
+            a.active .btn-footer-paragraph{ color: App.$primary-medium-green; }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 441px){
+
+    #root{
+        .footer-container{
+            
+        }
+    } 
+}

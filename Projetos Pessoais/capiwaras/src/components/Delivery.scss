@@ -1,0 +1,251 @@
+@use '../App.scss';
+
+.delivery-container{
+    overflow-y: scroll;
+
+    .header-container{
+        width: 100%;
+        height: 36.6vh;
+        position: relative;
+        
+        .header-background{
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            background-color: App.$primary-medium-green;
+            margin-top: -25px;
+            z-index: 0;
+        }
+
+        .header-logo{
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            
+            img{
+                width: auto;
+                height: 7.85vh;
+                background-image: url('../assets/img/capiwarasLogoPB.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                z-index: 10;
+            }
+        }
+
+        .capiwaras-Description-container{
+            position: relative;
+            width: 90%;
+            height: 57%;
+            margin: 50px 5% 25px 5%;
+            background-color: App.$neutral-color-light-gray;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(App.$neutral-color-dark-gray , 0.25);
+            // z-index: 10;
+
+            .capiwaras-delivery-symbol{
+                width: 68px;
+                height: 68px;
+                left: calc(50% - 35px);
+                top: -35px;
+                background-color: App.$neutral-color-white;
+                border: 2px solid App.$neutral-color-light-gray;
+                border-radius: 50vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+
+
+                img{
+                    margin-top: 12px;
+                    width: 57px;
+                    height: 43px;
+                }
+
+            }
+        }
+
+    }
+
+
+    .delivery-promo-items-container {
+        width: 90%;
+        height: auto;
+        margin: 0px 5% 0 5%;
+
+        .food-category-container {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+
+            .category-title {
+                font: App.$title-h3-30px;
+                color: App.$primary-medium-green;
+                position: relative;
+            }
+        }
+
+        .food-items-container {
+            width: 100%;
+            height: auto;
+            // margin-top: 25px;
+            display: grid;
+            grid-template-columns: 46% 46%;
+            column-gap: 7%;
+
+            .food-option-menu{
+                display: grid;
+                position: relative;
+                height: 26.15vh;
+                grid-template-rows: 40% 40% 20%;
+                background-color: App.$neutral-color-white;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 0 8px rgba(App.$neutral-color-dark-gray, 0.25);
+                text-align: center;
+
+                .food-discount{
+                    width: 38px;
+                    height: 38px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50vw;
+                    border: 1px solid App.$secondary-color-medium-green;
+                    background-color: App.$primary-medium-green;
+                    color: App.$neutral-color-white;
+                    font: App.$paragraph-14px;
+                    font-weight: 600;
+                    letter-spacing: 0.3px;
+                    position: absolute;
+                    right: 2%;
+                    top: 2%;
+
+                }
+
+                .food-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .food-title {
+                    width: 90%;
+                    margin: 0 5%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font: App.$title-h5-20px;
+                    color: App.$primary-medium-green;
+                }
+
+                .item-price-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: App.$primary-medium-green;
+                    border-radius: 0 0 10px 10px;
+                    border-bottom: 2px solid App.$primary-dark-green;
+
+                    .food-price {
+                        font: App.$title-h5-20px;
+                        color: App.$neutral-color-white;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .delivery-items-container {
+        width: 90%;
+        height: auto;
+        margin: 0px 5% 0 5%;
+
+        .food-category-container {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+
+            .category-title {
+                font: App.$title-h3-30px;
+                color: App.$primary-medium-green;
+                position: relative;
+            }
+        }
+
+        .food-items-container:last-of-type {
+            margin-bottom: 25px;
+        }
+
+        .food-items-container {
+            width: 100%;
+            height: auto;
+            display: grid;
+            margin-top: 25px;
+
+            .food-option-menu{
+                display: grid;
+                position: relative;
+                height: 18.40vh;
+                min-height: 175px;
+                grid-template-rows: 71.60% 28.40%;
+                background-color: App.$neutral-color-white;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 0 8px rgba(App.$neutral-color-dark-gray, 0.25);
+
+                .food-description-container{
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    align-items: center;
+                    justify-items: center;
+
+                    .food-text-container{
+                        width: 90%;
+                        height: 90%;
+                        margin-left: 5%;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .food-title {
+                            display: flex;
+                            align-items: center;
+                            font: App.$title-h5-20px;
+                            color: App.$primary-medium-green;
+                        }
+
+                        .food-description{
+                            display: flex;
+                            align-items: center;
+                            font: App.$paragraph-14px;
+                            line-height: 18px;
+                            color: App.$primary-light-green;
+                        }
+                    }
+
+                    .food-image {
+                        width: 90%;
+                        height: 85%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .item-price-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: App.$primary-medium-green;
+                    border-radius: 0 0 10px 10px;
+                    border-bottom: 2px solid App.$primary-dark-green;
+
+                    .food-price {
+                        font: App.$title-h6-16px;
+                        color: App.$neutral-color-white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -32,6 +32,20 @@ nav {
   @include flex-center;
 }
 
+@mixin rtl($property, $ltr-value, $rtl-value) {
+  #{$property}: $ltr-value;
+
+  [dir=rtl] & {
+    #{$property}: $rtl-value;
+  }
+}
+
+.sidebar {
+  @include rtl(float, left, right);
+}
+
+
+
 
 -----HERANÇA: Facilita a reutilização de estilos, permitindo que um seletor herde propriedades de outro-----
 %button-style {

@@ -1,0 +1,156 @@
+@use '../App.scss';
+
+@mixin control-button ($path){
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-image: url($path);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#root{
+
+    .menu-container {
+        overflow-y: scroll;
+
+        .logo-container {
+            margin: 20px 0;
+            width: 100%;
+            display: grid;
+            justify-items: center;
+
+            .symbol {
+                width: 95px;
+                height: 71.5px;
+                background-image: url('../assets/img/capiwarasSymbol.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .logo {
+                width: 164px;
+                height: 41px;
+                margin-top: 5px;
+                background-image: url('../assets/img/capiwarasLogo.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .title-menu {
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+    
+            h1{
+                font: App.$title-h1-42px;
+                color: App.$primary-dark-green;
+                position: relative;
+    
+                .add-button {
+                    position: absolute;
+                    @include control-button('../assets/img/icons/addButton.png');
+                }
+            }
+        }
+
+        .menu-items-container {
+            width: 90%;
+            height: auto;
+            margin: 20px 5%;
+    
+            .food-category-container {
+                width: 100%;
+                height: auto;
+                margin: 20px 0;
+    
+                .category-title {
+                    font: App.$title-h3-30px;
+                    color: App.$primary-medium-green;
+                    position: relative;
+    
+                        .edit-button {
+                            position: absolute;
+                            margin-left: 5px;
+                            @include control-button('../assets/img/icons/editButton.png');
+                        }
+    
+                        .delete-button {
+                            position: absolute;
+                            margin-left: 35px;
+                            @include control-button('../assets/img/icons/deleteButton.png');
+                        }
+                }
+            }
+    
+            .food-items-container {
+                width: 100%;
+                height: auto;
+                margin-top: 25px;
+                display: grid;
+                grid-template-columns: 46% 46%;
+                column-gap: 7%;
+                
+                .food-option-menu{
+                    display: grid;
+                    position: relative;
+                    height: 26.15vh;
+                    margin-bottom: 25px;
+                    grid-template-rows: 40% 40% 20%;
+                    background-color: App.$neutral-color-white;
+                    border-radius: 0 0 10px 10px;
+                    box-shadow: 0 0 8px rgba(App.$neutral-color-dark-gray, 0.25);
+                    text-align: center;
+
+                    .edit-button {
+                        position: absolute;
+                        right: 25px;
+                        top: -9px;
+                        @include control-button('../assets/img/icons/editButton.png');
+                    }
+    
+                    .delete-button {
+                        position: absolute;
+                        right: -9px;
+                        top: -9px;
+                        @include control-button('../assets/img/icons/deleteButton.png');
+                    }
+    
+                    .food-image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                    }
+    
+                    .food-title {
+                        width: 90%;
+                        height: 100%;
+                        margin: 0 5%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font: App.$title-h5-20px;
+                        color: App.$primary-medium-green;
+                    }
+    
+                    .item-price-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: App.$primary-medium-green;
+                        border-radius: 0 0 10px 10px;
+                        border-bottom: 2px solid App.$primary-dark-green;
+
+                        .food-price {
+                            font: App.$title-h5-20px;
+                            color: App.$neutral-color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
