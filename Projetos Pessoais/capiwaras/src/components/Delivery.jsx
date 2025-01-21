@@ -1,8 +1,15 @@
 import './Delivery.scss';
-import logoSymbol from '../assets/img/capiwarasSymbol.svg';
-import logoPB from '../assets/img/capiwarasLogoPB.svg';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Delivery(){
+
+    const navigate = useNavigate();
+
+    function itemHandler(){
+
+        navigate("/delivery/add-item");
+    }
+
     return(
         <>
         <main className='delivery-container'>
@@ -10,11 +17,24 @@ export default function Delivery(){
             <div className='header-container'>
                 <div className='header-background'></div>
                 <div className='header-logo'>
-                    <img src={logoPB} alt="Símbolo da Logo Capiwaras" />
+                    <img src="../src/assets/img/capiwarasLogoPB.svg" alt="Símbolo da Logo Capiwaras" />
                 </div>
                 <div className='capiwaras-Description-container'>
+                    <div className='text-map-container'>
+                        <div className='text-container'>
+                            <div className='title-distance'>
+                                <h5>Capiwaras - Madureira</h5>
+                                <p>Distância: 1,7km - Entrega: R$5,00</p>
+                            </div>
+                            <div className='rate-time'>
+                                <img src='../src/assets/img/icons/star.svg' /><p>5,0 (125 avaliações)</p>
+                                <p>Tempo estimado para entrega: 25-45 min</p>
+                            </div>
+                        </div>
+                        <Link to={"https://maps.app.goo.gl/2ViUvSa4h4iYAHxXA"}><img src='../src/assets/img/maps/capiwarasMap.png' /></Link>
+                    </div>
                     <div className='capiwaras-delivery-symbol'>
-                        <img src={logoSymbol} alt="Símbolo da Logo Capiwaras" />
+                        <img src="../src/assets/img/capiwarasSymbol.svg" alt="Símbolo da Logo Capiwaras" />
                     </div>
                 </div>
             </div>
@@ -39,7 +59,7 @@ export default function Delivery(){
                 <div className="food-category-container">
                     <p className="category-title">Frangos</p>
                 </div>
-                <div className="food-items-container">
+                <div onClick={itemHandler} className="food-items-container">
                     <div className='food-option-menu'>
                         <div className='food-description-container'>
                             <div className='food-text-container'>

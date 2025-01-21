@@ -1,0 +1,20 @@
+@use "../App.scss";
+
+#order-item-container{
+    display: flex;
+    justify-content: space-around;
+
+    img{
+        height: 80%;
+        width: auto;
+        margin-right: 10px;
+    }
+}
+
+#text-container{
+
+    p{
+        color: App.$neutral-color-dark-gray;
+        cursor: default;
+    }
+}

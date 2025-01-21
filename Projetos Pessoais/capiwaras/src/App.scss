@@ -74,7 +74,6 @@ $paragraph-14px: normal $webAdj14px 'KantumruyRegular', sans-serif;
 $paragraph-13px: normal $webAdj13px 'KantumruyRegular', sans-serif;
 $paragraph-12px: normal $webAdj12px 'KantumruyRegular', sans-serif;
 
-
 *{
     margin: 0;
     padding: 0;
@@ -105,41 +104,9 @@ body{
     grid-template-rows: 90% 10%;
 }
 
-@media screen and (min-width: 441px){
-
-    body{
-        max-width: 440px;
-        max-height: 90vh;
-        padding-top: 5vh;
-        padding-left: calc(50% - 220px);
-
-        #root{
-            box-shadow: 0 0 25px rgba($neutral-color-dark-gray , 0.5);
-        }
-    }
-}
-
-// body{
-//     touch-action:pan-y;
-//     background-color: $neutral-color-light-gray;
-//     width: 100vw;
-//     aspect-ratio: 9/16;
-//     height: auto;
-//     overflow-y: scroll;
-// }
-
-// @media screen and (min-width: 441px){
-//     body{
-//         max-width: 440px;
-//         max-height: 838px;
-//         margin-left: calc(50% - 220px);
-//         margin-top: calc(50vh - 419px);
-//         box-shadow: 0 0 25px rgba($neutral-color-dark-gray , 0.5);
-//     }
-// }
-
 a{
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @mixin standard-button(){
@@ -154,21 +121,37 @@ a{
     letter-spacing: 0.8px;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
-.standard-button-small{
+.standard-small-button{
     width: 120px;
     height: 40px;
     @include standard-button();
 }
 
-.standard-button-medium{
+.standard-medium-button{
     width: 200px;
     height: 45px;
     @include standard-button();
 }
 
-@media screen  and (orientation: landscape) {
+
+@media screen and (min-width: 500px){
+
+    body{
+        max-width: 440px;
+        max-height: 90vh;
+        padding-top: 5vh;
+        padding-left: calc(50% - 220px);
+
+        #root{
+            box-shadow: 0 0 25px rgba($neutral-color-dark-gray , 0.5);
+        }
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 1199px) and (orientation: landscape) {
     body{
         width: 100vw;
         height: calc(var(--vh, 1vh) * 100);

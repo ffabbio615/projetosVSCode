@@ -1,0 +1,210 @@
+@use "../App.scss";
+
+.capiwaras-bag-container{
+    overflow-y: scroll;
+
+    .header-container{
+        width: 100%;
+        height: 28vh;
+        position: relative;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: "logo" "description";
+        
+        .header-background{
+            position: absolute;
+            width: 100%;
+            height: 26vh;
+            background-color: App.$primary-medium-green;
+            margin-top: -25px;
+            z-index: 0;
+        }
+
+        .header-logo{
+            grid-area: logo;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            
+            img{
+                width: 70%;
+                height: auto;
+                z-index: 10;
+            }
+        }
+
+        .capiwaras-Description-container{
+            grid-area: description;
+            position: relative;
+            width: 90%;
+            height: 100%;
+            max-height: 125px;
+            margin: 0 5%;
+            background-color: App.$neutral-color-light-gray;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(App.$neutral-color-dark-gray , 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .capiwaras-delivery-symbol{
+                width: 65px;
+                height: 65px;
+                background-color: App.$neutral-color-white;
+                border: 2px solid App.$neutral-color-light-gray;
+                border-radius: 50vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 15px;
+
+                img{
+                    margin-top: 10%;
+                    width: 80%;
+                    height: auto;
+                }
+
+            }
+            
+            .text-container{
+                color: App.$neutral-color-dark-gray;
+
+                    h5{
+                        font: App.$title-h5-20px;
+                        margin-bottom: 2px;
+                    }
+
+                    p{
+                        font: App.$paragraph-13px;
+                        letter-spacing: 0.3px;
+                        color: App.$primary-medium-green;
+                        cursor: pointer;
+                    }
+            }
+        }
+    }
+
+
+    .bag-items-container {
+        width: 90%;
+        height: auto;
+        margin: 0px 5% 0 5%;
+
+        h6{
+            font: App.$title-h6-16px;
+            color: App.$primary-medium-green;
+        }
+
+        .bag-title-container {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+
+            h4 {
+                font: App.$title-h4-24px;
+                color: App.$primary-medium-green;
+            }
+        }
+
+        .item-container:last-of-type{
+            margin-bottom: 25px;
+        }
+
+        .item-container{
+            width: 100%;
+            height: 80px;
+            background-color: App.$neutral-color-white;
+            color: App.$primary-medium-green;
+            display: grid;
+            grid-template-columns: 5% 52% 23% 20%;
+            align-items: center;
+            margin-bottom: 7px;
+
+            .bag-edit-button{
+                width: 100%;
+                max-width: 15px;
+                height: 100%;
+                background-color: App.$btn-color-yellow;
+                border: none;
+                background-image: url("../assets/img/icons/editIcon.png");
+                background-repeat: no-repeat;
+                background-size: 80%;
+                background-position: center center;
+                cursor: pointer;
+            }
+
+            .title-item-container{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 10px;
+
+                p{
+                    font: App.$paragraph-14px;
+                }
+            }
+
+            img{
+                justify-self: center;
+                min-width: 55px;
+                width: 100%;
+                min-height: 43px;
+                height: auto;
+            }
+
+            .item-buttons-container{
+                height: 100%;
+                width: auto;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                font: App.$title-h6-16px;
+
+                button{
+                    border: none;
+                    background: none;
+                    color: App.$primary-medium-green;
+                    font: App.$title-h4-24px;
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        .aditional-item, .resume-value-container:not(:last-of-type) .resume-item{
+            font: App.$paragraph-14px;
+            color: App.$primary-light-green;
+        }
+
+        .aditional-items-container{
+            margin-top: 20px;
+
+            .items-container{
+
+                .aditional-item{
+                    background-color: App.$neutral-color-white;
+                    margin-top: 8px;
+                    padding-left: 6px;
+                }
+            }
+        }
+
+        .resume-items-container{
+            margin: 20px 0 25px 0;
+
+            .resume-value-container{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5px;
+            }
+
+        }
+
+        .order-button-container{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+    }
+
+}

@@ -41,13 +41,64 @@
             background-color: App.$neutral-color-light-gray;
             border-radius: 30px;
             box-shadow: 0 2px 8px rgba(App.$neutral-color-dark-gray , 0.25);
-            // z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .text-map-container{
+                height: 100%;
+                display: grid;
+                grid-template-columns: 70% 30%;
+                margin: 5% 2.5% 0 2.5%;
+                align-items: center;
+                justify-items: center;
+
+
+                .text-container{
+                    color: App.$neutral-color-dark-gray;
+
+                    .title-distance{
+                        margin-bottom: 10px;
+
+                        h5{
+                            font: App.$title-h5-20px;
+                        }
+
+                        p{
+                            font: App.$paragraph-13px;
+                        }
+                    }
+
+                    .rate-time{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        img{
+                            width: 15.7px;
+                            height: 15px;
+                            margin-right: 5px;
+                        }
+                        
+                        p{
+                            font: App.$paragraph-13px;
+                        }
+                    }
+                }
+
+                a{
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
 
             .capiwaras-delivery-symbol{
-                width: 68px;
-                height: 68px;
-                left: calc(50% - 35px);
-                top: -35px;
+                width: auto;
+                height: 34%;
+                // left: calc(50% - 35px);
+                
+                top: -17%;
                 background-color: App.$neutral-color-white;
                 border: 2px solid App.$neutral-color-light-gray;
                 border-radius: 50vw;
@@ -58,9 +109,9 @@
 
 
                 img{
-                    margin-top: 12px;
-                    width: 57px;
-                    height: 43px;
+                    margin-top: 15%;
+                    width: auto;
+                    height: 75%;
                 }
 
             }
@@ -89,10 +140,10 @@
         .food-items-container {
             width: 100%;
             height: auto;
-            // margin-top: 25px;
             display: grid;
             grid-template-columns: 46% 46%;
             column-gap: 7%;
+            cursor: pointer;
 
             .food-option-menu{
                 display: grid;
@@ -184,6 +235,7 @@
             height: auto;
             display: grid;
             margin-top: 25px;
+            cursor: pointer;
 
             .food-option-menu{
                 display: grid;

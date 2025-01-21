@@ -11,12 +11,7 @@
 #root{
 
     .footer-container{
-        // width: 100%;
-        // max-width: 440px;
-        // height: 80px;
         background-color: App.$neutral-color-white;
-        // position:fixed;
-        // bottom: 0;
 
 
         .footer-button-container{
@@ -34,7 +29,6 @@
                     flex-wrap: wrap;
                     justify-content: center;
                     align-items: center;
-                    -webkit-tap-highlight-color: transparent;
                     
                 .menu-icon{
                     @include icons("../../assets/img/icons/menuIconTest.svg");
@@ -66,13 +60,4 @@
             }
         }
     }
-}
-
-@media screen and (min-width: 441px){
-
-    #root{
-        .footer-container{
-            
-        }
-    } 
 }
