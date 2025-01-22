@@ -17,7 +17,7 @@ export default function Delivery(){
             <div className='header-container'>
                 <div className='header-background'></div>
                 <div className='header-logo'>
-                    <img src="../src/assets/img/capiwarasLogoPB.svg" alt="Símbolo da Logo Capiwaras" />
+                    <img src="../src/assets/img/capiwarasLogoPB.svg" alt="Logo Capiwaras" />
                 </div>
                 <div className='capiwaras-Description-container'>
                     <div className='text-map-container'>

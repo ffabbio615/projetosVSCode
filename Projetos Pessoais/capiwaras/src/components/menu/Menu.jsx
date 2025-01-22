@@ -1,4 +1,5 @@
 import './Menu.scss';
+import { Link } from 'react-router-dom';
 
 export default function Menu(){
 
@@ -6,13 +7,13 @@ export default function Menu(){
         <>
         <main className="menu-container">
             <div className="logo-container">
-                <div className="symbol"></div>
-                <div className="logo"></div>
+                <img className="symbol" src="../src/assets/img/capiwarasSymbol.svg" alt="Símbolo da Logo Capiwaras" />
+                <img className="logo" src="../src/assets/img/capiwarasLogo.svg" alt="Logo da Logo Capiwaras" />
             </div>
 
             <div className="title-menu">
                 <h1>CARDÁPIO 
-                <button className="add-button"></button>
+                <Link to={"/menu/add-items"}><button className="add-button"></button></Link>
                 </h1>
                 
             </div>
@@ -36,5 +37,5 @@ export default function Menu(){
             </div>
         </main>
         </>
-    )
+    );
 }

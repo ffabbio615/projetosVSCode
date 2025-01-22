@@ -1,6 +1,6 @@
 import "./CapiwarasBag.scss";
 import { Link } from "react-router-dom";
-import ModalConfirmBox from "./modal/ModalConfirmBox";
+import ModalConfirmBox from "../modal/ModalConfirmBox";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 

@@ -1,4 +1,4 @@
-@use '../App.scss';
+@use '../../App.scss';
 
 @mixin control-button ($path){
     width: 18px;
@@ -16,26 +16,20 @@
         overflow-y: scroll;
 
         .logo-container {
-            margin: 20px 0;
-            width: 100%;
+            margin: 20px 30%;
+            width: 40%;
             display: grid;
             justify-items: center;
 
             .symbol {
-                width: 95px;
-                height: 71.5px;
-                background-image: url('../assets/img/capiwarasSymbol.svg');
-                background-repeat: no-repeat;
-                background-size: contain;
+                width: 70%;
+                height: auto;
             }
 
             .logo {
-                width: 164px;
-                height: 41px;
+                width: 100%;
+                height: auto;
                 margin-top: 5px;
-                background-image: url('../assets/img/capiwarasLogo.svg');
-                background-repeat: no-repeat;
-                background-size: contain;
             }
         }
 
@@ -51,7 +45,7 @@
     
                 .add-button {
                     position: absolute;
-                    @include control-button('../assets/img/icons/addButton.png');
+                    @include control-button('../../assets/img/icons/addButton.png');
                 }
             }
         }
@@ -74,13 +68,13 @@
                         .edit-button {
                             position: absolute;
                             margin-left: 5px;
-                            @include control-button('../assets/img/icons/editButton.png');
+                            @include control-button('../../assets/img/icons/editButton.png');
                         }
     
                         .delete-button {
                             position: absolute;
                             margin-left: 35px;
-                            @include control-button('../assets/img/icons/deleteButton.png');
+                            @include control-button('../../assets/img/icons/deleteButton.png');
                         }
                 }
             }
@@ -108,14 +102,14 @@
                         position: absolute;
                         right: 25px;
                         top: -9px;
-                        @include control-button('../assets/img/icons/editButton.png');
+                        @include control-button('../../assets/img/icons/editButton.png');
                     }
     
                     .delete-button {
                         position: absolute;
                         right: -9px;
                         top: -9px;
-                        @include control-button('../assets/img/icons/deleteButton.png');
+                        @include control-button('../../assets/img/icons/deleteButton.png');
                     }
     
                     .food-image {

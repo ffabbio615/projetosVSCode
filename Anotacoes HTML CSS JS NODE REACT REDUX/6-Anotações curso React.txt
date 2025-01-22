@@ -511,7 +511,8 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
     * Observe como a função reducer recebe o estado atual, faz a transformação e retorna o estado atualizado.
   }
 
-  ETAPA 2. Em vez de usar o hook useState com um método setStudents, usamos o hook useReducer e passamos dispatch como o método setter. O dispatch executará um reducer, que deve ser passado como primeiro argumento da função useReducer (neste caso, o StudentsReducer):
+  ETAPA 2. Em vez de usar o hook useState com um método setStudents, usamos o hook useReducer e passamos dispatch como o método setter. O dispatch executará um reducer, 
+  que deve ser passado como primeiro argumento da função useReducer (neste caso, o StudentsReducer):
   {
     // Arquivo: Students.jsx (Não se esqueça de importar StudentsReducer e useReducer no topo)
     

@@ -1,4 +1,4 @@
-@use '../App.scss';
+@use '../../App.scss';
 
 @mixin food-description-text ($text-size){
     font: $text-size;
@@ -127,14 +127,14 @@
                 justify-self: center;
                 min-width: 60px;
                 width: 80px;
-                height: 70px;
+                height: 70%;
                 min-height: 47.5px;
             }
 
             .item-buttons-container{
                 height: 100%;
                 width: auto;
-                justify-content: center;
+                justify-content: space-evenly;
                 align-items: center;
                 display: flex;
                 font: App.$title-h6-16px;
@@ -144,7 +144,7 @@
                     background: none;
                     color: App.$primary-medium-green;
                     font: App.$title-h4-24px;
-                    margin: 0 10px;
+                    cursor: pointer;
                 }
             }
         }

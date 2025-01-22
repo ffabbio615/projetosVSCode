@@ -2,12 +2,14 @@
 import './App.scss'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
-import Menu from './components/Menu.jsx';
-import Delivery from './components/Delivery.jsx';
-import AddItem from './components/AddItem.jsx';
-import CapiwarasBag from './components/CapiwarasBag.jsx';
+import Menu from './components/menu/Menu.jsx';
+import MenuAddItems from './components/menu/MenuAddItems.jsx';
+import MenuEditItem from './components/menu/MenuEditItem.jsx';
+import Delivery from './components/delivery/Delivery.jsx';
+import AddItem from './components/delivery/AddItem.jsx';
+import CapiwarasBag from './components/delivery/CapiwarasBag.jsx';
+import CompletedOrder from './components/delivery/CompletedOrder.jsx';
 import FooterMenu from './components/fixed/FooterMenu.jsx'
-import CompletedOrder from './components/CompletedOrder.jsx';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/menu' element={<Menu/>} />
+          <Route path='/menu/add-items' element={<MenuAddItems/>} />
+          <Route path='/menu/edit-item' element={<MenuEditItem/>} />
           <Route path='/delivery' element={<Delivery/>} />
           <Route path='/delivery/add-item' element={<AddItem/>} />
           <Route path='/delivery/add-item/capiwaras-bag' element={<CapiwarasBag/>} />
