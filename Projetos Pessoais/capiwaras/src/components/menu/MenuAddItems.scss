@@ -1,0 +1,134 @@
+@use '../../App.scss';
+
+.add-menu-container {
+    overflow-y: scroll;
+    position: relative;
+
+    .add-menu-back-icon{
+        width: 25px;
+        height: 16px;
+        margin: 20px;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    label{
+        font: App.$paragraph-16px;
+        color: App.$primary-medium-green;
+    }
+
+    .logo-container {
+        margin: 20px 30%;
+        width: 40%;
+        display: grid;
+        justify-items: center;
+
+        .symbol {
+            width: 70%;
+            height: auto;
+        }
+
+        .logo {
+            width: 100%;
+            height: auto;
+            margin-top: 5px;
+        }
+    }
+
+    .title-add-menu {
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+
+        h1{
+            font: App.$title-h1-42px;
+            color: App.$primary-dark-green;
+            position: relative;
+        }
+    }
+
+    .add-menu-items-container {
+        width: 90%;
+        height: auto;
+        margin: 20px 5%;
+
+        .add-option-container {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+
+            .option-title {
+                font: App.$title-h3-30px;
+                color: App.$primary-medium-green;
+                position: relative;
+            }
+
+            div{
+                display: flex;
+                justify-content: space-around;
+                margin-top: 10px;
+                div{
+                    input[type=radio]{
+                        accent-color: App.$primary-medium-green;
+                        margin-right: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .add-menu-fields{
+        width: 90%;
+        margin-left: 5%;
+
+        input[type="text"]{
+            width: calc(100% - 10px);
+            height: 40px;
+            border: 1px solid inline App.$neutral-color-dark-gray;
+            border-radius: 10px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"]::placeholder{
+            color: App.$neutral-color-medium-gray;
+        }
+
+        div{
+            width: 100%;
+
+            label{
+                margin-left: 10px;
+            }
+            input[type="checkbox"]{
+                accent-color: App.$primary-medium-green;
+                cursor: pointer;
+            }
+        }
+
+        .first-check{
+            margin-top: 10px;
+        }
+        
+        .last-check{
+            margin-bottom: 10px;
+        }
+
+        select{
+            width: 100%;
+            height: 40px;
+            border: 1px solid inline App.$neutral-color-dark-gray;
+            border-radius: 10px;
+            padding-left: 10px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .add-button-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+}

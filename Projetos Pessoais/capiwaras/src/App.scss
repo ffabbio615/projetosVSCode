@@ -151,12 +151,17 @@ a{
     }
 }
 
-@media screen and (min-width: 441px) and (max-width: 1199px) and (orientation: landscape) {
+@media screen and (min-width: 441px) and (max-width: 1920px) and (orientation: landscape) {
     body{
-        width: 100vw;
-        height: calc(var(--vh, 1vh) * 100);
-        transform: rotate(90deg);
-        transform-origin: left top;
-        overflow: hidden;
+        // width: 100vw;
+        // height: calc(var(--vh, 1vh) * 100);
+        // transform: rotate(90deg);
+        // transform-origin: left top;
+        // overflow: hidden;
+        width: 440px;
+        height: 956px;
+        max-height: 956px;
+        overflow-y: scroll;
+
     }
 }

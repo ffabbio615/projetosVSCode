@@ -79,6 +79,9 @@ body{ touch-action:touch-action:pinch-zoom; } = Permite o usuário mexer no elem
 elemento{ clip-path: inset(100% 0 0 0); } = Mexe na forma do elemento para modelar, esconder e cortar a forma dele. X Y W H. Completo: https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
 
 
+CHEKBOXES E RADIOBUTTONS
+accent-color: red; = Muda a cor de fundo da bolinha ou do "V" marcados.
+
 
 SELETORES BÁSICOS
 .pai = seleciona classe pai
