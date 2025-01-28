@@ -95,6 +95,11 @@
             color: App.$neutral-color-medium-gray;
         }
 
+        .promoChange{
+            background-color: App.$neutral-color-light-gray;
+            text-decoration:line-through;
+        }
+
         div{
             width: 100%;
 
@@ -122,6 +127,11 @@
             border-radius: 10px;
             padding-left: 10px;
             margin-bottom: 25px;
+            appearance: none;
+            background-image: url("../../assets/img/icons/arrowIcon.svg");
+            background-repeat: no-repeat;
+            background-position-x: calc(100% - 8px);
+            background-position-y: 50%;
         }
     }
 

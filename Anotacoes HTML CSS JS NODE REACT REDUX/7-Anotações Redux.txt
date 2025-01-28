@@ -67,7 +67,7 @@
         }
     ],
 
-    // The `reducers` field lets us define reducers and generate associated actions
+    // Os campos `reducers` nos permitem definir reducers e gera ações associadas
     reducers: {
       addBook: books => {
         // logic to add books

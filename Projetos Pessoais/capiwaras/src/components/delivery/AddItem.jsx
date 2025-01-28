@@ -20,7 +20,9 @@ export default function AddItem(){
             category: "Bebidas",
             value: 11.90,
             quantity: 0,
-            isInPromo: false
+            isInPromo: false,
+            isAditional: true,
+            acceptAditionals: false,
         },
         {
             id: 2,
@@ -30,7 +32,9 @@ export default function AddItem(){
             category: "Bebidas",
             value: 14.90,
             quantity: 0,
-            isInPromo: false
+            isInPromo: false,
+            isAditional: true,
+            acceptAditionals: false,
         },
         {
             id: 3,
@@ -40,7 +44,9 @@ export default function AddItem(){
             category: "Bebidas",
             value: 19.90,
             quantity: 0,
-            isInPromo: false
+            isInPromo: false,
+            isAditional: true,
+            acceptAditionals: false,
         },
         {
             id: 4,
@@ -50,7 +56,9 @@ export default function AddItem(){
             category: "Bebidas",
             value: 8.00,
             quantity: 0,
-            isInPromo: false
+            isInPromo: false,
+            isAditional: true,
+            acceptAditionals: false,
         },
     ]);
     
@@ -83,11 +91,12 @@ export default function AddItem(){
 
             <div className="aditional-items-container">
                 <div className="title-container">
-                    <h4>Adicione bebida:</h4>
+                    <h4>Adicione outros itens:</h4>
                     <p>Adição não obrigatória</p>
                 </div>
                 {
                     aditionalItems.map((item) =>(
+                        item.isAditional ?
                         <div key={item.id} className="item-container">
                             <div className="title-item-container">
                                 <h6>{item.name}</h6>
@@ -100,6 +109,7 @@ export default function AddItem(){
                                 <button onClick={()=> quantityHandler(item.id, 1)}>+</button>
                             </div>
                         </div>
+                        :''
                     ))
                 }
             </div>

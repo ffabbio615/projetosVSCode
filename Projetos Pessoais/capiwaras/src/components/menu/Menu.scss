@@ -4,6 +4,7 @@
     width: 18px;
     height: 18px;
     border: none;
+    background-color: transparent;
     background-image: url($path);
     background-repeat: no-repeat;
     background-size: contain;
@@ -77,6 +78,30 @@
                             @include control-button('../../assets/img/icons/deleteButton.png');
                         }
                 }
+
+                .edit-category-container{
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top: 15px;
+
+                    button{
+                        margin: 0 4px;
+                        
+                    }
+
+                    input[type = "text"]{
+                        border-radius: 10px;
+                        height: 36px;
+                        width: 65%;
+                        margin-right: 2px;
+                        padding-left: 8px;
+                        font: App.$paragraph-16px;
+                    }
+
+                    input[type = "text"]::placeholder{
+                        color: App.$neutral-color-medium-gray;
+                    }
+                }
             }
     
             .food-items-container {
@@ -127,7 +152,7 @@
                         align-items: center;
                         justify-content: center;
                         font: App.$title-h5-20px;
-                        color: App.$primary-medium-green;
+                        color: App.$primary-light-green;
                     }
     
                     .item-price-container {

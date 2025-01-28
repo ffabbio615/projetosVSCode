@@ -141,8 +141,20 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
 -----FUNÇÃO FILTER-----
 {
-  .filter(): Esse método cria um novo array contendo apenas os itens que atendem a uma condição.
-  A condição é definida pela função passada para o .filter().
+  A função .filter() é útil para encontrar elementos em arrays baseados em uma condição. Se você deseja pegar um objeto de um estado baseado no id, aqui estão alguns exemplos:
+  // Procurar um item com id 2
+  const item = itemsMenu.filter((item) => item.id === 2);
+
+
+  Retornar apenas o primeiro objeto com id - Como .filter() retorna um array, se você quer apenas o primeiro objeto, pode usar o índice [0]:
+  const item = itemsMenu.filter((item) => item.id === 2)[0];
+}
+
+
+-----FUNÇÃO FIND-----
+{
+  Similar ao FILTER, mas se você só precisa obter o primeiro objeto que atenda à condição, .find() é uma solução mais direta:
+  const item = itemsMenu.find((item) => item.id === 2);
 }
 
 

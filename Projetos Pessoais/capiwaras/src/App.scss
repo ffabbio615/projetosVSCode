@@ -109,11 +109,11 @@ a{
     -webkit-tap-highlight-color: transparent;
 }
 
-@mixin standard-button(){
+@mixin standard-button($background){
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $btn-color-green;
+    background-color: $background;
     border-style: none;
     border-radius: 5px;
     color: $neutral-color-white;
@@ -124,16 +124,44 @@ a{
     cursor: pointer;
 }
 
-.standard-small-button{
+@mixin small-button(){
     width: 120px;
     height: 40px;
-    @include standard-button();
+}
+
+@mixin medium-button(){
+    width: 200px;
+    height: 45px;
+}
+
+.standard-small-button{
+    @include small-button();
+    @include standard-button($btn-color-green);
 }
 
 .standard-medium-button{
-    width: 200px;
-    height: 45px;
-    @include standard-button();
+    @include medium-button();
+    @include standard-button($btn-color-green);
+}
+
+.edit-small-button{
+    @include small-button();
+    @include standard-button($btn-color-yellow);
+}
+
+.edit-medium-button{
+    @include medium-button();
+    @include standard-button($btn-color-yellow);
+}
+
+.remove-small-button{
+    @include small-button();
+    @include standard-button($btn-color-red);
+}
+
+.remove-medium-button{
+    @include medium-button();
+    @include standard-button($btn-color-red);
 }
 
 
