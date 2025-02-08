@@ -1,12 +1,17 @@
 import "./MenuAddItems.scss";
-import { useState, useEffect } from "react";
+import { MenuContext } from "../context/MenuContext";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
-import ModalConfirmBox from "../modal/ModalConfirmBox";
-import ModalAlertBox from "../modal/ModalAlertBox";
+import useConfirmBox from "../modal/useConfirmBox";
+import useAlertBox from "../modal/useAlertBox";
 
 export default function MenuAddItems(){
 
+    const {menuCategory, addMenuItem, addMenuCategory} = useContext(MenuContext);
     const [radioOption, setRadioOption] = useState("addItem");
+    const { ConfirmBoxComponent, confirm } = useConfirmBox();
+    const { AlertBoxComponent, alertAttention, alertConfirmation} = useAlertBox();
+    const [promoCheckOption, setPromoCheckOption] = useState(false);
 
     function optionHandler(opt){
         setRadioOption(opt.target.value);
@@ -20,127 +25,98 @@ export default function MenuAddItems(){
             document.querySelector("#inputDescription").value = "";
             document.querySelector("#inputPicture").value = "";
             document.querySelector("#inputValue").value = "";
-            setCheckOption(false);
+            setPromoCheckOption(false);
         }
     },[radioOption]);
 
-    const [checkOption, setCheckOption] = useState(false);
-
-    function checkOptionHandler(){
-        setCheckOption (!checkOption);
-    }
-
-    const [mConfirmBox, setMConfirmBox] = useState(
-        {
-            title:'',
-            action:0
-        }
-    );
-    const [showConfirmBox, setShowConfirmBox] = useState(false);
-    const [answerConfirmBox, setAnswerConfirmBox] = useState(false);
-    const [showAlertBox, setShowAlertBox] = useState({
-        show: false,
-        title:'',
-        message: '',
-    });
-    
-    function modalHandler(title, action){
-        setMConfirmBox({title, action});
-        setShowConfirmBox(true);
+    function promoCheckOptionHandler(){
+        setPromoCheckOption (!promoCheckOption);
     }
 
     const navigate = useNavigate();
 
-    const [shownConfirmBox, setShownConfirmBox] = useState(
-        {
-            shown: false,
-            redirect: false,
-        }
-    );
-
-    function checkFields(){
+    function handleAdditionConfirmationMenu(){
 
         if(radioOption === "addItem"){
-            const checkValue = (document.querySelector('#inputValue').value).replace(",",".");
-            let checkPromoValue;
-            if(checkOption){
-                checkPromoValue = (document.querySelector('#inputPromoValue').value).replace(",",".");
-            }else{
-                checkPromoValue = "0";
-            }
-            if(document.querySelector('#inputName').value === "" || document.querySelector('#inputDescription').value === ""
-            || document.querySelector('#inputPicture').value === "" || document.querySelector('#inputValue').value === ""
-            || document.querySelector('#category').value === "default" || checkPromoValue === ""){
-                setShowAlertBox({show: true, title: 'Atenção!', message: 'Preencha todos os campos do item!'});
-                return false;
-            }else{
-                if(checkValue >0 && !Number.isNaN(checkValue) && checkValue !== undefined && checkPromoValue >=0 && 
-                !Number.isNaN(checkPromoValue) && checkPromoValue !== undefined && checkPromoValue < checkValue){
-                    setShowAlertBox({show: true, title: 'Confirmação', message: 'O item foi cadastrado com sucesso!'});
-                    return false;
+            
+            confirm("Confirma a adição do item?", () => {
+                const name = document.querySelector('#inputName').value;
+                const description = document.querySelector('#inputDescription').value;
+                const picture = document.querySelector('#inputPicture').value;
+                const originalValue = (document.querySelector('#inputValue').value).replace(",",".");
+                const category = document.querySelector('#category').value;
+                let promoValue;
+                const promoItem = promoCheckOption;
+                const mainItem = document.querySelector('#mainItem').checked;
+                const aditionalItem = document.querySelector('#aditionalItem').checked;
+                const aditionalAcceptance = document.querySelector('#aditionalAcceptance').checked;
+                
+                if(promoCheckOption){
+                    promoValue = (document.querySelector('#inputPromoValue').value).replace(",",".");
+                }else{
+                    promoValue = "0";
                 }
-                else{
-                    if(checkOption){
-                        if(checkPromoValue > checkValue){
-                            setShowAlertBox({show: true, title: 'Atenção!', message: 'O valor promocional precisa ser menor que o valor original.'});
+                if(name === "" || description === "" || picture === "" || originalValue === "" || category === "default" || promoValue === ""){
+                    alertAttention("Preencha todos os campos do item!", () => {});
+                    return false;
+                }else{
+                    if(originalValue >0 && !Number.isNaN(originalValue) && originalValue !== undefined && promoValue >=0 && 
+                    !Number.isNaN(promoValue) && promoValue !== undefined && promoValue < originalValue){
+                        addMenuItem(name, description, picture, category, Number(originalValue), Number(promoValue), promoItem, mainItem, aditionalItem, aditionalAcceptance);
+                        alertConfirmation("O item foi adicionado com sucesso!", () => {
+                            navigate("/menu");
+                            return false;
+                        });
+                    }
+                    else{
+                        if(promoCheckOption){
+                            if(promoValue > originalValue){
+                                alertAttention("O valor promocional precisa ser menor que o valor original.", () => {});
+                                return false;
+                            }
+                            alertAttention('Os campos "Valor original" e "Valor promocional" precisam ser somente números com ponto ou vírgula.', () => {});
                             return false;
                         }
-                        setShowAlertBox({show: true, title: 'Atenção!', message: 'Os campos "Valor original" e "Valor promocional" precisam ser somente números com ponto ou vírgula.'});
+                        alertAttention('O campo "Valor original" precisa ser somente números com ponto ou vírgula.', () => {});
                         return false;
                     }
-                    setShowAlertBox({show: true, title: 'Atenção!', message: 'O campo "Valor original" precisa ser somente números com ponto ou vírgula.'});
+                }
+            });
+        } else  if(radioOption === "addCategory"){
+            confirm("Confirma a adição da categoria?", () => {
+                const categoryName = document.querySelector('#inputCategoryName').value;
+
+                if(categoryName === ""){
+                    alertAttention('Preencha a categoria!', () => {});
+                    return false;
+                }else{
+                    if (!menuCategory.some(category => category.category === categoryName)){
+                    addMenuCategory(categoryName)
+                    alertConfirmation("A categoria foi adicionada com sucesso!", () => {
+                        navigate("/menu");
+                        return false;
+                    });
+                }else{
+                    alertAttention('Já existe uma categoria com esse nome. Escolha outra!', () => {});
+                }   
                     return false;
                 }
-            }
-        } else  if(radioOption === "addCategory"){
-            if(document.querySelector('#inputCategoryName').value === ""){
-                setShowAlertBox({show: true, title: 'Atenção!', message: 'Preencha a categoria!'});
-                return false;
-            }else{
-                setShowAlertBox({show: true, title: 'Confirmação', message: 'A categoria foi cadastrada com sucesso!'});
-                return false;
-            }
+            });
         }
     }
 
-    useEffect(()=>{
-        if(answerConfirmBox && mConfirmBox.action === 1){
-            navigate("/menu");
-        }else if(answerConfirmBox && mConfirmBox.action === 2){
-                checkFields();
-        }
-            setAnswerConfirmBox(false);
-    },[mConfirmBox, answerConfirmBox]);
-
-    useEffect(() => {
-        if (shownConfirmBox.shown && shownConfirmBox.redirect) {
-            navigate("/menu");
-            setShownConfirmBox(false, false);
-        } else if (shownConfirmBox.shown && !shownConfirmBox.redirect) {
-            setShownConfirmBox(false, false);
-        }
-    }, [shownConfirmBox, navigate]);
+    function backToMenu(){
+        confirm("Tem certeza que deseja retornar sem concluir a adição?", () => {
+            navigate("/menu");  
+        });
+    }
 
     return(
         <>
-        {
-            showAlertBox.show ? 
-            <ModalAlertBox
-            title={showAlertBox.title}
-            message={showAlertBox.message}
-            setShowBox={setShowAlertBox}
-            setShownConfirmBox={setShownConfirmBox}
-            /> : ''
-        }
-        {showConfirmBox ? 
-            <ModalConfirmBox 
-            title={mConfirmBox.title}
-            setShowBox={setShowConfirmBox}
-            setAnswer={setAnswerConfirmBox}
-            /> 
-            : ''}
+        {AlertBoxComponent}
+        {ConfirmBoxComponent}
         <main className="add-menu-container">
-            <img onClick={()=> modalHandler("Deseja realmente retornar?", 1)} className="add-menu-back-icon" src="../src/assets/img/icons/backIcon.png" />
+            <img onClick={backToMenu} className="add-menu-back-icon" src="../src/assets/img/icons/backIcon.png" />
             <div className="logo-container">
                 <img className="symbol" src="../src/assets/img/capiwarasSymbol.svg" alt="Símbolo da Logo Capiwaras" />
                 <img className="logo" src="../src/assets/img/capiwarasLogo.svg" alt="Logo da Logo Capiwaras" />
@@ -177,13 +153,13 @@ export default function MenuAddItems(){
                     <label htmlFor="inputPicture">Imagem:</label>
                     <input id="inputPicture" type="text" placeholder="Ex.: frangoCaipira (somente o nome do arquivo)" />
                     <label htmlFor="inputValue">Valor original:</label>
-                    <input id="inputValue" className={checkOption ? "promoChange" : ""} type="text" placeholder="Ex.: R$28,90 (somente números)" />
+                    <input id="inputValue" className={promoCheckOption ? "promoChange" : ""} type="text" placeholder="Ex.: R$28,90 (somente números)" />
                         
                     <div className="first-check">
-                        <input onChange={checkOptionHandler} type="checkbox" id="promoItem" name="promoItem" value="promoItem" />
+                        <input onChange={promoCheckOptionHandler} type="checkbox" id="promoItem" name="promoItem" value="promoItem" />
                         <label htmlFor="promoItem">Item promocional</label>
                     </div>
-                    {checkOption ?
+                    {promoCheckOption ?
                             <>
                                 <label htmlFor="inputPromoValue">Valor promocional:</label>
                                 <input id="inputPromoValue" type="text" placeholder="Ex.: R$22,90 (somente números)" />
@@ -191,29 +167,35 @@ export default function MenuAddItems(){
                             : <> </>
                         }
                     <div>
-                        <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" />
-                        <label htmlFor="aditionalItem">Item principal</label>
+                        <input type="checkbox" id="mainItem" name="mainItem" value="aditionalItem" />
+                        <label htmlFor="mainlItem">Item principal</label>
                     </div>
                     <div>
                         <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" />
                         <label htmlFor="aditionalItem">Item adicional</label>
                     </div>
                     <div className="last-check">
-                        <input type="checkbox" id="aditionalAcceptance" name="topping" value="aditionalAcceptance" />
+                        <input type="checkbox" id="aditionalAcceptance" name="aditionalAcceptance" value="aditionalAcceptance" />
                         <label htmlFor="aditionalAcceptance">Aceita adicionais</label>                        
                     </div>
 
                     <label id="label-select" htmlFor="category">Categoria:</label>
-                    <select name="category" id="category" disabled={checkOption}>
-                        {checkOption ?
-                            <>
-                            <option value="promo">Promos do dia</option>
-                            </>
+                    <label id="label-select" htmlFor="category">Categoria:</label>
+                    <select name="category" id="category" disabled={promoCheckOption}>
+                        {promoCheckOption ?
+                            <option value="Promos do dia">Promos do dia</option>
                             :
                             <>
-                            <option value="default">Escolha a categoria</option>
-                            <option value="frangos">Frangos</option>
-                            <option value="bebidas">Bebidas</option>
+                                <option value="default">Escolha a categoria</option>
+                                {
+                                    menuCategory
+                                        .filter(category => category.category !== "Promos do dia") // Filtra antes de mapear
+                                        .map(category => (
+                                            <option key={category.id} value={category.category}>
+                                                {category.category}
+                                            </option>
+                                        ))
+                                }
                             </>
                         }
                     </select>
@@ -225,7 +207,8 @@ export default function MenuAddItems(){
             </div>
             
             <div className="add-button-container">
-                <button onClick={()=> modalHandler("Confirma a adição?", 2)} className="standard-medium-button">Confirmar</button>
+                <button onClick={backToMenu} className="remove-small-button">Cancelar</button>
+                <button onClick={handleAdditionConfirmationMenu} className="standard-small-button">Confirmar</button>
             </div>
         </main>
         </>

@@ -1,17 +1,19 @@
 import './Delivery.scss';
 import { useNavigate, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { MenuContext } from '../context/MenuContext';
 
 export default function Delivery(){
 
     const navigate = useNavigate();
+    const {menuItems, menuCategory} = useContext(MenuContext);
 
-    function itemHandler(){
+    function itemHandler(id){
 
-        navigate("/delivery/add-item");
+        navigate(`/delivery/add-item/${id}`);
     }
 
     return(
-        <>
         <main className='delivery-container'>
 
             <div className='header-container'>
@@ -39,83 +41,50 @@ export default function Delivery(){
                 </div>
             </div>
 
-
-            <div className="delivery-promo-items-container">
-                <div className="food-category-container">
-                    <p className="category-title">Promos do dia</p>
-                </div>
-                <div className="food-items-container">
-                    <div className='food-option-menu'>
-                        <p className='food-discount'>-30%</p>
-                        <img src='../src/assets/img/dishes/saladaCaesar.jpg' className="food-image" alt='Imagem do Prato' />
-                        <p className='food-title'>Salada Caesar com molho de alho</p>
-                        <div className="item-price-container"><p className='food-price'>R$22,50</p></div>
+            {menuCategory.some((category) => category.category === "Promos do dia") && (
+                <div className="delivery-promo-items-container">
+                    <div className="food-category-container">
+                        <p className="category-title">Promos do dia</p>
+                    </div>
+                    <div className="food-items-container">
+                        { menuItems.filter((item) => item.category === "Promos do dia").map((item) => (
+                                <div key={item.id} onClick={()=> itemHandler(item.id)} className='food-option-menu'>
+                                    <p className='food-discount'>{(((item.promoValue*100) / (item.originalValue*1)) - 100).toFixed(0)}%</p>
+                                    <img src={`../src/assets/img/dishes/${item.picture}.jpg`} className="food-image" alt='Imagem do Prato' />
+                                    <p className='food-title'>{item.name}</p>
+                                    <div className="item-price-container"><p className='food-price'>R${item.promoValue.toFixed(2).replace(".",",")}</p></div>
+                                </div>
+                            ))}
                     </div>
                 </div>
-            </div>
-
+            )}
 
             <div className="delivery-items-container">
-                <div className="food-category-container">
-                    <p className="category-title">Frangos</p>
-                </div>
-                <div onClick={itemHandler} className="food-items-container">
-                    <div className='food-option-menu'>
-                        <div className='food-description-container'>
-                            <div className='food-text-container'>
-                            <p className='food-title'>Capi Chicken Assadão</p>
-                            <p className='food-description'>Nosso frango assado e douradinho, com nossa...</p>
+                {menuCategory.filter((category)=> category.category !== "Promos do dia").map((category) =>(
+                    <React.Fragment key={category.id}>
+                        {menuItems.some((items) => items.category === category.category) &&(
+                            <div className="food-category-container">
+                                <p className="category-title">{category.category}</p>
+                            </div>
+                        )}
+                    {menuItems.filter((item) => item.category === category.category).map((item) => (
+                    <div key={item.id} onClick={()=> itemHandler(item.id)} className="food-items-container">
+                        <div className='food-option-menu'>
+                            <div className='food-description-container'>
+                                <div className='food-text-container'>
+                                <p className='food-title'>{item.name}</p>
+                                <p className='food-description'>{item.description.length > 45 ? item.description.slice(0, 45) + "..." : item.description}</p>
+                            </div>
+                                <img src={`../src/assets/img/dishes/${item.picture}.jpg`} className="food-image" alt='Imagem do Prato' />
+                            </div>
+                            <div className="item-price-container"><p className='food-price'>a partir de R${item.originalValue.toFixed(2).replace(".",",")}</p></div>
                         </div>
-                            <img src='../src/assets/img/dishes/capiChicken.jpg' className="food-image" alt='Imagem do Prato' />
-                        </div>
-                        <div className="item-price-container"><p className='food-price'>a partir de R$44,00</p></div>
                     </div>
-                </div>
-
-
-
-                <div className="food-items-container">
-                    <div className='food-option-menu'>
-                        <div className='food-description-container'>
-                            <div className='food-text-container'>
-                            <p className='food-title'>CapiWish com molho de iogurte desnatado</p>
-                            <p className='food-description'>Um sonho de sanduíche, com o molho mais leve...</p>
-                        </div>
-                            <img src='../src/assets/img/dishes/capiWish.jpg' className="food-image" alt='Imagem do Prato' />
-                        </div>
-                        <div className="item-price-container"><p className='food-price'>a partir de R$26,90</p></div>
-                    </div>
-                </div>
-                <div className="food-items-container">
-                    <div className='food-option-menu'>
-                        <div className='food-description-container'>
-                            <div className='food-text-container'>
-                            <p className='food-title'>Super Waras com salada rústica</p>
-                            <p className='food-description'>Tiras de frango com muita salada. Acompanha molho.</p>
-                        </div>
-                            <img src='../src/assets/img/dishes/superWaras.jpg' className="food-image" alt='Imagem do Prato' />
-                        </div>
-                        <div className="item-price-container"><p className='food-price'>a partir de R$55,00</p></div>
-                    </div>
-                </div>
-                <div className="food-items-container">
-                    <div className='food-option-menu'>
-                        <div className='food-description-container'>
-                            <div className='food-text-container'>
-                            <p className='food-title'>Guisado Especial Capiwaras</p>
-                            <p className='food-description'>Para você que terminou o treino e precisa de energia.</p>
-                        </div>
-                            <img src='../src/assets/img/dishes/guisadoEspecial.jpg' className="food-image" alt='Imagem do Prato' />
-                        </div>
-                        <div className="item-price-container"><p className='food-price'>a partir de R$64,90</p></div>
-                    </div>
-                </div>
-
-
-
-
+                    ))}
+                    </React.Fragment>
+                ))}
             </div>
+
         </main>
-        </>
     );
 }

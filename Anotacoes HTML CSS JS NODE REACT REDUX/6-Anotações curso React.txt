@@ -139,6 +139,17 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 }
 
 
+-----MAP QUE COMEÇA COM FRAGMENT <> E PRECISA DE UMA KEY-----
+{
+  Às vezes fazemos um map de vários itens juntos, mas eles estão divididos em várias camadas (divs), então para resolver, precisa-se adicionar o fragment <> e colocá-los dentro do
+  mesmo. O React pede uma key no elemento após o mapeamento .map, então para resolver esse pedido, utiliza-se a key dentro do fragmento da seguinte forma:
+
+  <React.Fragment key={category.id}>
+    ...
+  </React.Fragment>
+}
+
+
 -----FUNÇÃO FILTER-----
 {
   A função .filter() é útil para encontrar elementos em arrays baseados em uma condição. Se você deseja pegar um objeto de um estado baseado no id, aqui estão alguns exemplos:
@@ -155,6 +166,18 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 {
   Similar ao FILTER, mas se você só precisa obter o primeiro objeto que atenda à condição, .find() é uma solução mais direta:
   const item = itemsMenu.find((item) => item.id === 2);
+}
+
+
+-----FUNÇÃO SOME-----
+{
+  A função .some() retorna true se pelo menos um item atender à condição:
+
+  if (!orderItems.some((orderItem) => orderItem.itemType === "main")) {
+    clearAllDeliveryItems();
+  }
+
+  *Nesse caso, se o tipo de item retornar falso, ou seja, diferente de "main", executará a condição
 }
 
 
@@ -240,6 +263,30 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
     }
 }
 
+
+-----ALTERAR O MESMO STATE SEGUIDO-----
+{
+  O hook useState() é assíncrono e não reflete imediatamente as mudanças quando feitas, então quando se utiliza novamente, ou se utiliza o effect para uma ação após a atualização
+  ou pode-se usar o filtro para remover o item e adicionar o novo no lugar dele. Ex.:
+
+  setItemsMenu((items) => [
+  ...items.filter((item) => item.id !== id), 
+    {
+      id, 
+      name, 
+      description, 
+      picture, 
+      category, 
+      originalValue, 
+      promoValue, 
+      quantity: 0, 
+      isInPromo, 
+      isMainItem, 
+      isAditional, 
+      acceptAditionals
+    }
+  ]);
+}
 
 
 -----EVENTS-----
@@ -664,6 +711,8 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
      const { id } = useParams(); //No componente ProductPage, quando o usuário acessa, por exemplo, /product/123, 
      //o useParams retorna um objeto com os valores dos parâmetros definidos na rota, que é "123", ficando id{"123"}
+
+     *O NOME DO PARÂMETRO PRECISA SER IGUAL TANTO NA ROTA QUANTO NO PARAMS. EX.:  <Route path="/product/:abacate" element={<ProductPage />} /> | const { abacate } = useParams();
 
      *Atenção a valores nulos: Se o parâmetro não for encontrado ou a rota não corresponder, o useParams retornará um 
      objeto vazio {}.

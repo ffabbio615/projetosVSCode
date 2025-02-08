@@ -1,197 +1,165 @@
 import "./MenuEditItem.scss";
-import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
-import ModalConfirmBox from "../modal/ModalConfirmBox";
-import ModalAlertBox from "../modal/ModalAlertBox";
+import { useState, useContext } from "react";
+import { useNavigate, useParams } from 'react-router-dom';
+import useConfirmBox from "../modal/useConfirmBox";
+import useAlertBox from "../modal/useAlertBox";
+import { MenuContext } from "../context/MenuContext";
 
-export default function MenuAddItems(){
+export default function MenuEditItems(){
 
-    useEffect(()=>{
-            document.querySelector("#inputName").value = "";
-            document.querySelector("#inputDescription").value = "";
-            document.querySelector("#inputPicture").value = "";
-            document.querySelector("#inputValue").value = "";
-            setCheckOption(false);
-    },[]);
-
-    const [checkOption, setCheckOption] = useState(false);
-
-    function checkOptionHandler(){
-        setCheckOption (!checkOption);
-    }
-
-    const [mConfirmBox, setMConfirmBox] = useState(
-        {
-            title:'',
-            action:0
-        }
-    );
-    const [showConfirmBox, setShowConfirmBox] = useState(false);
-    const [answerConfirmBox, setAnswerConfirmBox] = useState(false);
-    const [showAlertBox, setShowAlertBox] = useState({
-        show: false,
-        title:'',
-        message: ''
-    });
-    
-    function modalHandler(title, action){
-        setMConfirmBox({title, action});
-        setShowConfirmBox(true);
-    }
-
+    const {itemId} = useParams();
+    const {menuItems, menuCategory, editMenuItem} = useContext(MenuContext);
+    const { ConfirmBoxComponent, confirm } = useConfirmBox();
+    const { AlertBoxComponent, alertAttention, alertConfirmation} = useAlertBox();
     const navigate = useNavigate();
-    const [shownConfirmBox, setShownConfirmBox] = useState(
-        {
-            shown: false,
-            redirect: false,
-        }
-    );
+    const [promoCheckOption, setpromoCheckOption] = useState(false);
 
-    function checkFields(){
+    function promoCheckOptionHandler(){
+        setpromoCheckOption (!promoCheckOption);
+    }
 
-        const checkValue = (document.querySelector('#inputValue').value).replace(",",".");
-            let checkPromoValue;
-            if(checkOption){
-                checkPromoValue = (document.querySelector('#inputPromoValue').value).replace(",",".");
+    function handleEditConfirmationMenu(){
+
+        confirm("Confirma edição do item?", () => {
+            const name = document.querySelector('#inputName').value;
+            const description = document.querySelector('#inputDescription').value;
+            const picture = document.querySelector('#inputPicture').value;
+            const originalValue = (document.querySelector('#inputValue').value).replace(",",".");
+            const category = document.querySelector('#category').value;
+            let promoValue;
+            const promoItem = promoCheckOption;
+            const mainItem = document.querySelector('#mainItem').checked;
+            const aditionalItem = document.querySelector('#aditionalItem').checked;
+            const aditionalAcceptance = document.querySelector('#aditionalAcceptance').checked;
+            
+            if(promoCheckOption){
+                promoValue = (document.querySelector('#inputPromoValue').value).replace(",",".");
             }else{
-                checkPromoValue = "0";
+                promoValue = "0";
             }
-            if(document.querySelector('#inputName').value === "" || document.querySelector('#inputDescription').value === ""
-            || document.querySelector('#inputPicture').value === "" || document.querySelector('#inputValue').value === ""
-            || document.querySelector('#category').value === "default" || checkPromoValue === ""){
-                setShowAlertBox({show: true, title: 'Atenção!', message: 'Preencha todos os campos do item!'});
+            if(name === "" || description === "" || picture === "" || originalValue === "" || category === "default" || promoValue === ""){
+                alertAttention("Preencha todos os campos do item!", () => {});
                 return false;
             }else{
-                if(checkValue >0 && !Number.isNaN(checkValue) && checkValue !== undefined && checkPromoValue >=0 && 
-                !Number.isNaN(checkPromoValue) && checkPromoValue !== undefined && checkPromoValue < checkValue){
-                    setShowAlertBox({show: true, title: 'Confirmação', message: 'O item foi editado com sucesso!'});
-                    return false;
+                if(originalValue >0 && !Number.isNaN(originalValue) && originalValue !== undefined && promoValue >=0 && 
+                !Number.isNaN(promoValue) && promoValue !== undefined && promoValue < originalValue){
+                    editMenuItem(Number(itemId), name, description, picture, category, Number(originalValue), Number(promoValue), promoItem, mainItem, aditionalItem, aditionalAcceptance);
+                    alertConfirmation("O item foi alterado com sucesso!", () => {
+                        navigate("/menu");
+                        return false;
+                    });
                 }
                 else{
-                    if(checkOption){
-                        if(checkPromoValue > checkValue){
-                            setShowAlertBox({show: true, title: 'Atenção!', message: 'O valor promocional precisa ser menor que o valor original.'});
+                    if(promoCheckOption){
+                        if(promoValue > originalValue){
+                            alertAttention("O valor promocional precisa ser menor que o valor original.", () => {});
                             return false;
                         }
-                        setShowAlertBox({show: true, title: 'Atenção!', message: 'Os campos "Valor original" e "Valor promocional" precisam ser somente números com ponto ou vírgula.'});
+                        alertAttention('Os campos "Valor original" e "Valor promocional" precisam ser somente números com ponto ou vírgula.', () => {});
                         return false;
                     }
-                    setShowAlertBox({show: true, title: 'Atenção!', message: 'O campo "Valor original" precisa ser somente números com ponto ou vírgula.'});
+                    alertAttention('O campo "Valor original" precisa ser somente números com ponto ou vírgula.', () => {});
                     return false;
                 }
             }
+        });
     }
 
-    useEffect(()=>{
-        if(answerConfirmBox && mConfirmBox.action === 1){
-            navigate("/menu");
-        }else if(answerConfirmBox && mConfirmBox.action === 2){
-            checkFields();
+    function backToMenu(){
+        confirm("Tem certeza que deseja retornar sem editar o item?", () => {
+            navigate("/menu");  
+        });
     }
-        setAnswerConfirmBox(false);
-    },[mConfirmBox, answerConfirmBox]);
-
-    useEffect(() => {
-        if (shownConfirmBox.shown && shownConfirmBox.redirect) {
-            navigate("/menu");
-            setShownConfirmBox(false, false);
-        } else if (shownConfirmBox.shown && !shownConfirmBox.redirect) {
-            setShownConfirmBox(false, false);
-        }
-    }, [shownConfirmBox, navigate]);
 
     return(
         <>
-        {
-            showAlertBox.show ? 
-            <ModalAlertBox
-            title={showAlertBox.title}
-            message={showAlertBox.message}
-            setShowBox={setShowAlertBox}
-            setShownConfirmBox={setShownConfirmBox}
-            /> : ''
-        }
-        {showConfirmBox ? 
-            <ModalConfirmBox 
-            title={mConfirmBox.title}
-            setShowBox={setShowConfirmBox}
-            setAnswer={setAnswerConfirmBox}
-            /> 
-            : ''}
-        <main className="edit-menu-container">
-            <img onClick={()=> modalHandler("Deseja realmente retornar?", 1)} className="edit-menu-back-icon" src="../src/assets/img/icons/backIcon.png" />
-            <div className="logo-container">
-                <img className="symbol" src="../src/assets/img/capiwarasSymbol.svg" alt="Símbolo da Logo Capiwaras" />
-                <img className="logo" src="../src/assets/img/capiwarasLogo.svg" alt="Logo da Logo Capiwaras" />
-            </div>
+        {AlertBoxComponent}
+        {ConfirmBoxComponent}
+        { menuItems.filter((item)=> item.id === Number(itemId)).map((items) =>(
 
-            <div className="title-edit-menu">
-                <h1>Editar Itens
-                </h1>
-                
-            </div>
-
-            <div className="edit-menu-items-container">
-                <div className="edit-option-container">
-                    <p className="option-title">Frango caipira com quiabo:</p>
-                    <img className="item-image" src="../src/assets/img/dishes/frangoCaipira.jpg" />
+            <main key={items.id} className="edit-menu-container">
+                <img onClick={backToMenu} className="edit-menu-back-icon" src="../../src/assets/img/icons/backIcon.png" />
+                <div className="logo-container">
+                    <img className="symbol" src="../../src/assets/img/capiwarasSymbol.svg" alt="Símbolo da Logo Capiwaras" />
+                    <img className="logo" src="../../src/assets/img/capiwarasLogo.svg" alt="Logo da Logo Capiwaras" />
                 </div>
-            </div>
 
-            <div className="edit-menu-fields">
-                    <label htmlFor="inputName">Nome (máximo 30 caracteres):</label>
-                    <input id="inputName" maxLength={30} type="text" placeholder="Ex.: Frango caipira com quiabo" />
-                    <label htmlFor="inputDescription">Descrição:</label>
-                    <input id="inputDescription" type="text" placeholder="Ex.: Um delicioso prato vindo de Minas Gerais." />
-                    <label htmlFor="inputPicture">Imagem:</label>
-                    <input id="inputPicture" type="text" placeholder="Ex.: frangoCaipira (somente o nome do arquivo)" />
-                    <label htmlFor="inputValue">Valor do item:</label>
-                    <input id="inputValue" className={checkOption ? "promoChange" : ""} type="text" placeholder="Ex.: R$28,90 (somente números)" />
-                        
-                    <div className="first-check">
-                        <input onChange={checkOptionHandler} type="checkbox" id="promoItem" name="promoItem" value="promoItem" />
-                        <label htmlFor="promoItem">Item promocional</label>
-                    </div>
-                    {checkOption ?
-                            <>
-                                <label htmlFor="inputPromoValue">Valor promocional:</label>
-                                <input id="inputPromoValue" type="text" placeholder="Ex.: R$22,90 (somente números)" />
-                            </>
-                            : <> </>
-                        }
-                    <div>
-                        <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" />
-                        <label htmlFor="aditionalItem">Item principal</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" />
-                        <label htmlFor="aditionalItem">Item adicional</label>
-                    </div>
-                    <div className="last-check">
-                        <input type="checkbox" id="aditionalAcceptance" name="topping" value="aditionalAcceptance" />
-                        <label htmlFor="aditionalAcceptance">Aceita adicionais</label>                        
-                    </div>
+                <div className="title-edit-menu">
+                    <h1>Editar Itens</h1>
+                </div>
 
-                    <label id="label-select" htmlFor="category">Categoria:</label>
-                    <select name="category" id="category" disabled={checkOption}>
-                        {checkOption ?
-                            <>
-                            <option value="promo">Promos do dia</option>
-                            </>
-                            :
-                            <>
-                            <option value="default">Escolha a categoria</option>
-                            <option value="frangos">Frangos</option>
-                            <option value="bebidas">Bebidas</option>
-                            </>
-                        }
-                    </select>
-            </div>
-            
-            <div className="edit-button-container">
-                <button onClick={()=> modalHandler("Confirma a adição?", 2)} className="standard-medium-button">Confirmar</button>
-            </div>
-        </main>
+                <div className="edit-menu-items-container">
+                    <div className="edit-option-container">
+                        <p className="option-title">{items.name}</p>
+                        <img className="item-image" src={`../../src/assets/img/dishes/${items.picture}.jpg`} />
+                    </div>
+                </div>
+
+                <div className="edit-menu-fields">
+                        <label htmlFor="inputName">Nome (máximo 30 caracteres):</label>
+                        <input id="inputName" maxLength={30} type="text" placeholder={items.name}/>
+
+                        <label htmlFor="inputDescription">Descrição:</label>
+                        <input id="inputDescription" type="text" placeholder={items.description}/>
+
+                        <label htmlFor="inputPicture">Imagem:</label>
+                        <input id="inputPicture" type="text" placeholder={items.picture}/>
+
+                        <label htmlFor="inputValue">Valor do item:</label>
+                        <input id="inputValue" className={promoCheckOption ? "promoChange" : ""} type="text" placeholder={items.originalValue.toFixed(2)}/>
+
+                        <div className="first-check">
+                            <input onChange={promoCheckOptionHandler} type="checkbox" id="promoItem" name="promoItem" value="promoItem" />
+                            <label htmlFor="promoItem">Item promocional</label>
+                        </div>
+                        {promoCheckOption ?
+                                <>
+                                    <label htmlFor="inputPromoValue">Valor promocional:</label>
+                                    <input id="inputPromoValue" type="text" placeholder={items.promoValue.toFixed(2)}/>
+                                </>
+                                : <> </>
+                            }
+                        <div>
+                            <input type="checkbox" id="mainItem" name="mainItem" value="mainItem" />
+                            <label htmlFor="mainItem">Item principal</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" />
+                            <label htmlFor="aditionalItem">Item adicional</label>
+                        </div>
+                        <div className="last-check">
+                            <input type="checkbox" id="aditionalAcceptance" name="topping" value="aditionalAcceptance" />
+                            <label htmlFor="aditionalAcceptance">Aceita adicionais</label>                        
+                        </div>
+
+                        <label id="label-select" htmlFor="category">Categoria:</label>
+                        <select name="category" id="category" disabled={promoCheckOption}>
+                            {promoCheckOption ?
+                                <option value="Promos do dia">Promos do dia</option>
+                                :
+                                <>
+                                    <option value="default">Escolha a categoria</option>
+                                    {
+                                        menuCategory
+                                            .filter(category => category.category !== "Promos do dia")
+                                            .map(category => (
+                                                <option key={category.id} value={category.category}>
+                                                    {category.category}
+                                                </option>
+                                            ))
+                                    }
+                                </>
+                            }
+                        </select>
+                </div>
+                
+                <div className="edit-button-container">
+                    <button onClick={backToMenu} className="remove-small-button">Cancelar</button>
+                    <button onClick={handleEditConfirmationMenu} className="standard-small-button">Confirmar</button>
+                </div>
+            </main>
+        ))}
+
         </>
     );
 }

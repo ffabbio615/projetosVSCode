@@ -1,7 +1,19 @@
 import "./CompletedOrder.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { DeliveryContext } from "../context/DeliveryContext";
+import { MenuContext } from "../context/MenuContext";
 
 export default function CompletedOrder(){
+
+    const {orderItems, clearAllDeliveryItems} = useContext(DeliveryContext);
+    const {menuItems} = useContext(MenuContext);
+    const navigate = useNavigate();
+
+    function goBackToHome(){
+        clearAllDeliveryItems();
+        navigate("/");
+    }
 
     function getHour(){
         const date = new Date();
@@ -45,6 +57,21 @@ export default function CompletedOrder(){
         
     }
 
+    function getTotalValue(){
+        let subTotalValue = 0; 
+        const deliveryValue = 5;
+        let discountsValue = 0; 
+        let newOrderItems = orderItems;
+
+        for(let i = 0; i < newOrderItems.length; i++){
+                subTotalValue = subTotalValue + (newOrderItems[i].originalValue * newOrderItems[i].quantity);
+            if(newOrderItems[i].promoValue >0){
+                discountsValue = discountsValue + ((newOrderItems[i].originalValue - newOrderItems[i].promoValue) * newOrderItems[i].quantity);
+            }
+        }
+        return("R$" + ((subTotalValue + deliveryValue) - discountsValue).toFixed(2).replace(".",","));
+    }
+
     return(
         <>
         
@@ -70,33 +97,39 @@ export default function CompletedOrder(){
                 <div className="bag-title-container">
                     <h4>Pedido #150519912045</h4>
                 </div>
-   
-                <div id="order-item-container" className="item-container">
-                    <div className="title-item-container">
-                        <h6>Capi Chicken Assadão</h6>
-                    </div>
-                    <img src='../../../src/assets/img/dishes/capiChicken.jpg' />
-                </div>
-                
-                <div className="aditional-items-container">
-                    <h6>Itens adicionais:</h6>
-                    <div className="items-container">
-                        <p className="aditional-item">1 Suco de Melancia 300ml</p>
-                        <p className="aditional-item">1 Suco de Laranja 300ml</p>
-                        <p className="aditional-item">1 Suco de Fortificante 300ml</p>
-                        <p className="aditional-item">1 Água Mineral 510ml</p>
-                    </div>
-                </div>
 
-                <div className="resume-items-container">
-                        <div className="resume-value-container">
-                            <h6 className="resume-item">Valor total do pedido:</h6>
-                            <h6 className="resume-item">R$98.70</h6>
+                {orderItems.filter((items) => items.itemType === "main").map((items) => (
+                <React.Fragment key={items.orderId}>
+                    <div id="order-item-container" className="item-container">
+                        <div className="title-item-container">
+                            <h6>{`${items.quantity}x ${items.name}`}</h6>
                         </div>
-                </div>
-
+                        {menuItems.filter((item) => item.id === items.itemId).map((item) => (
+                        <img key={item.id} src={`../../../src/assets/img/dishes/${item.picture}.jpg`} />
+                        ))}
+                    </div>
+                    
+                    {orderItems.some((item) => item.itemType === "additional" && item.orderId === items.orderId) ?
+                        <div className="aditional-items-container">
+                            <h6>Itens adicionais:</h6>
+                                <div className="items-container">
+                                    {orderItems.filter((addItem) => addItem.itemType === "additional" && addItem.orderId === items.orderId).map((addItem) => (
+                                        <p key={addItem.itemId} className="aditional-item">{`${addItem.quantity}x ${addItem.name}`}</p>
+                                    ))}
+                                </div>
+                        </div>
+                    :null}
+                    
+                    </React.Fragment>
+                ))}
+                    <div className="resume-items-container">
+                            <div className="resume-value-container">
+                                <h6 className="resume-item">Valor total do pedido:</h6>
+                                <h6 className="resume-item">{getTotalValue()}</h6>
+                            </div>
+                    </div>
                 <div className="order-button-container">
-                    <Link to={"/"}><button className="standard-medium-button">Retornar</button></Link>
+                    <button onClick={goBackToHome} className="standard-medium-button">Retornar</button>
                 </div>
 
             </div>

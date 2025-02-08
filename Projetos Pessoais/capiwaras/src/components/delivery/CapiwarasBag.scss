@@ -98,16 +98,13 @@
         .bag-title-container {
             width: 100%;
             height: auto;
-            margin: 20px 0;
+            margin-top: 20px;
+            margin-bottom: -15px;
 
             h4 {
                 font: App.$title-h4-24px;
                 color: App.$primary-medium-green;
             }
-        }
-
-        .item-container:last-of-type{
-            margin-bottom: 25px;
         }
 
         .item-container{
@@ -118,7 +115,7 @@
             display: grid;
             grid-template-columns: 5% 52% 23% 20%;
             align-items: center;
-            margin-bottom: 7px;
+            margin: 35px 0 7px 0;
 
             .bag-edit-button{
                 width: 100%;
@@ -126,7 +123,7 @@
                 height: 100%;
                 background-color: App.$btn-color-yellow;
                 border: none;
-                background-image: url("../assets/img/icons/editIcon.png");
+                background-image: url("../../assets/img/icons/editIcon.png");
                 background-repeat: no-repeat;
                 background-size: 80%;
                 background-position: center center;
@@ -177,7 +174,7 @@
         }
 
         .aditional-items-container{
-            margin-top: 20px;
+            margin: 10px 0 35px 0;
 
             .items-container{
 

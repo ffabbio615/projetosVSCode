@@ -154,6 +154,7 @@
                 border-radius: 0 0 10px 10px;
                 box-shadow: 0 0 8px rgba(App.$neutral-color-dark-gray, 0.25);
                 text-align: center;
+                margin-bottom: 25px;
 
                 .food-discount{
                     width: 38px;
@@ -213,6 +214,10 @@
         width: 90%;
         height: auto;
         margin: 0px 5% 0 5%;
+
+        .food-category-container:first-of-type {
+            margin-top: 0;
+        }
 
         .food-category-container {
             width: 100%;
