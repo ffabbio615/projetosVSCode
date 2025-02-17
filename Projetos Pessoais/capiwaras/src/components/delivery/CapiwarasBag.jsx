@@ -30,7 +30,9 @@ export default function CapiwarasBag(){
             element --;
             const checkLastItem = orderItems.filter((items) => items.orderId > 0 && items.itemType === "main");
             if(checkLastItem.length>1){
-                clearCurrentDeliveryItem(orderId); 
+                confirm("Tem certeza que deseja remover o item?", () => {
+                    clearCurrentDeliveryItem(orderId); 
+                });
             }else{
                 confirm("Tem certeza que deseja remover o item e limpar a sacola?", () => {
                     clearCurrentDeliveryItem(orderId);
@@ -55,17 +57,17 @@ export default function CapiwarasBag(){
             if(newOrderItems[i].itemType === "main"){
                 subTotalValue = subTotalValue + (newOrderItems[i].originalValue * mainItemQuantity)
             }else{
-                subTotalValue = subTotalValue + newOrderItems[i].originalValue;
+                subTotalValue = subTotalValue + (newOrderItems[i].originalValue * newOrderItems[i].quantity);
             }
             if(newOrderItems[i].promoValue >0){
                 discountsValue = discountsValue + ((newOrderItems[i].originalValue - newOrderItems[i].promoValue) * mainItemQuantity);
             }
         }
         const totalValue = (subTotalValue + deliveryValue) - discountsValue;
-        document.querySelector("#subTotal").innerText = `R$${subTotalValue.toFixed(2)}`;
-        document.querySelector("#deliveryValue").innerText = `R$${deliveryValue.toFixed(2)}`;
-        document.querySelector("#discountsValue").innerText = `R$${discountsValue.toFixed(2)}`;
-        document.querySelector("#totalValue").innerText = `R$${totalValue.toFixed(2)}`;
+        document.querySelector("#subTotal").innerText = `R$${subTotalValue.toFixed(2).replace(".",",")}`;
+        document.querySelector("#deliveryValue").innerText = `R$${deliveryValue.toFixed(2).replace(".",",")}`;
+        document.querySelector("#discountsValue").innerText = `R$${discountsValue.toFixed(2).replace(".",",")}`;
+        document.querySelector("#totalValue").innerText = `R$${totalValue.toFixed(2).replace(".",",")}`;
     }
 
     useEffect(()=>{
@@ -76,6 +78,10 @@ export default function CapiwarasBag(){
         confirm("Confirma o pedido?", () => {
             navigate("/delivery/add-item/capiwaras-bag/completed-order");    
         });
+    }
+
+    function editDeliveryItem(itemId, orderId){
+        navigate(`/delivery/edit-item/${itemId}-${orderId}`);
     }
 
     return(
@@ -108,7 +114,7 @@ export default function CapiwarasBag(){
                 { orderItems.filter((items) => items.itemType === "main").map((items) =>(
                     <React.Fragment key={items.orderId}>
                         <div className="item-container">
-                            <button className="bag-edit-button"></button>
+                            <button onClick={()=> editDeliveryItem(items.itemId, items.orderId)} className="bag-edit-button"></button>
                             <div className="title-item-container">
                                 <h6>{items.name}</h6>
                                 <p>+ R${items.promoValue > 0 ? items.promoValue.toFixed(2).replace(".",",") : items.originalValue.toFixed(2).replace(".",",")}</p>
@@ -133,6 +139,12 @@ export default function CapiwarasBag(){
                             ))}
                         </div>
                         : null}
+                        {
+                            items.observation !== "" ?
+                            <p className="observation-text">Observação: {items.observation}</p>
+                            :
+                            <p className="observation-text"></p>
+                        }
                     </React.Fragment>
                 ))}
 

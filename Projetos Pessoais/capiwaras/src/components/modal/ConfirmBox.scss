@@ -64,7 +64,9 @@
 
 @media screen and (min-width: 500px){
 
-    .modal-alert-background{
+    .modal-background{
         width: 440px;
+        height: 956px;
+        max-height: 90vh;
     }
 }

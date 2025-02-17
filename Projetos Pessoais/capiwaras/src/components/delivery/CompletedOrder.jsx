@@ -10,7 +10,7 @@ export default function CompletedOrder(){
     const {menuItems} = useContext(MenuContext);
     const navigate = useNavigate();
 
-    function goBackToHome(){
+    function goBackHome(){
         clearAllDeliveryItems();
         navigate("/");
     }
@@ -120,6 +120,12 @@ export default function CompletedOrder(){
                         </div>
                     :null}
                     
+                    {
+                        items.observation !== "" ?
+                            <p className="observation-text">Observação: {items.observation}</p>
+                        :
+                            <p className="observation-text"></p>
+                    }
                     </React.Fragment>
                 ))}
                     <div className="resume-items-container">
@@ -129,7 +135,7 @@ export default function CompletedOrder(){
                             </div>
                     </div>
                 <div className="order-button-container">
-                    <button onClick={goBackToHome} className="standard-medium-button">Retornar</button>
+                    <button onClick={goBackHome} className="standard-medium-button">Retornar</button>
                 </div>
 
             </div>

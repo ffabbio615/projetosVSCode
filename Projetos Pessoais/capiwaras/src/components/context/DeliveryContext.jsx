@@ -6,6 +6,10 @@ export function DeliveryProvider ({children}){
 
     const [orderItems, setOrderItems] = useState([]);
 
+    // useEffect(()=>{
+    //     console.log(orderItems);
+    // },[orderItems])
+
     function addMainDeliveryItemQuantity(name, orderId){
         setOrderItems(orderItems.map(item =>
             item.name === name && item.orderId === orderId 
@@ -50,15 +54,15 @@ export function DeliveryProvider ({children}){
                     return [
                         ...prevItems,
                         {
-                            orderId,
-                            itemId,
-                            name,
-                            quantity,
-                            originalValue,
-                            promoValue,
-                            itemType,
-                            reference,
-                            observation
+                            orderId: orderId,
+                            itemId: itemId,
+                            name: name,
+                            quantity: quantity,
+                            originalValue: originalValue,
+                            promoValue: promoValue,
+                            itemType: itemType,
+                            reference: reference,
+                            observation: observation,
                         }
                     ];
                 }
@@ -75,6 +79,54 @@ export function DeliveryProvider ({children}){
                 reference,
                 observation
             }]);
+        }
+    }
+
+    function editDeliveryItem(itemId, orderId, name, quantity, originalValue, promoValue, itemType, reference, observation, action){
+            
+        if(action === "plus"){
+            setOrderItems(prevItems => {
+                const existingItem = prevItems.find(item => item.name === name && item.orderId === orderId);
+        
+                if (existingItem) {
+                    if(itemType !== "main"){
+                        return prevItems.map(item =>
+                            item.name === name && item.orderId === orderId
+                                ? { ...item, quantity: item.quantity + quantity }
+                                : item
+                        );
+                    }else{
+                        return prevItems.map(item =>
+                            item.name === name && item.orderId === orderId
+                                ? { ...item, quantity: quantity, observation: observation }
+                                : item
+                        );
+                    }
+                } else {
+                    return [
+                        ...prevItems,
+                        {
+                            orderId: orderId,
+                            itemId: itemId,
+                            name: name,
+                            quantity: quantity,
+                            originalValue: originalValue,
+                            promoValue: promoValue,
+                            itemType: itemType,
+                            reference: reference,
+                            observation: observation,
+                        }
+                    ];
+                }  
+            });
+        }else if(action === "minus"){
+            setOrderItems((prevItems) => 
+                prevItems.map((item) => 
+                    item.orderId === orderId && item.itemId === itemId && item.reference === reference
+                        ? { ...item, quantity: item.quantity - 1 } // Diminui a quantidade apenas do item correspondente
+                        : item
+                ).filter(item => item.quantity > 0) // Remove o item se a quantidade chegar a 0
+            );
         }
     }
 
@@ -95,6 +147,10 @@ export function DeliveryProvider ({children}){
     );
     }
 
+    function restoreDeliveryItem(items){
+        setOrderItems([...items]);
+    }
+
     function clearCurrentDeliveryItem(orderId){
         setOrderItems(orderItems.filter(item => item.orderId !== orderId));
     }
@@ -104,8 +160,8 @@ export function DeliveryProvider ({children}){
     }
 
     return(
-        <DeliveryContext.Provider value={{orderItems, setOrderItems, addMainDeliveryItemQuantity, removeMainDeliveryItemQuantity, addDeliveryItem, removeDeliveryItem, 
-        clearCurrentDeliveryItem, clearAllDeliveryItems}}>
+        <DeliveryContext.Provider value={{orderItems, setOrderItems, addMainDeliveryItemQuantity, removeMainDeliveryItemQuantity,
+        addDeliveryItem, editDeliveryItem, removeDeliveryItem, restoreDeliveryItem, clearCurrentDeliveryItem, clearAllDeliveryItems}}>
             {children}
         </DeliveryContext.Provider>
     );

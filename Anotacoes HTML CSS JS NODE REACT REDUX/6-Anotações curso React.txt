@@ -166,6 +166,8 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 {
   Similar ao FILTER, mas se você só precisa obter o primeiro objeto que atenda à condição, .find() é uma solução mais direta:
   const item = itemsMenu.find((item) => item.id === 2);
+
+  *Para exibir um único item específico, pode-se usar dessa forma: defaultValue={orderItem.find((item) => item.itemType === "main")?.observation || ""}
 }
 
 
@@ -213,7 +215,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
 
 
------STATES-----
+-----USESTATE-----
 {
   É um recurso do REACT que dá um estado a uma variável, indicando que a página atualizará automaticamente esta variável caso haja uma mudança nesse estado dessa variável.
 
@@ -425,7 +427,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 
 
 
------CONTEXT-----
+-----USECONTEXT-----
 {
   É utilizado para passar informações entre os componentes distantes, mas sem a necessidade de ter que passar para os componentes pais até o topo.
   Com o context, deve-se notar qual elemento acima (pai) é o mais perto dos elementos os quais precisamos passar essas informações.
@@ -513,7 +515,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 }
 
 
------REDUCER-----
+-----USEREDUCER-----
 {
   Por que usar reducers?
   Os reducers nos permitem lidar com transições de estado e lógica de maneira previsível.
@@ -609,7 +611,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 }
 
 
------EFFECT (com localStorage)-----
+-----USEEFFECT (com localStorage)-----
 {
   O hook useEffect do React permite que algo seja feito toda vez que o DOM iniciado ou atualizado. Também é ativado quando uma variável de um estado é modificada (atualizada). Ex.:
 
@@ -632,7 +634,7 @@ MÉTODOS DE CICLO DE VIDA OU LIFECYCLE METHODS NO REACT (São métodos de ciclo 
 }
 
 
------ROUTER-----
+-----USEROUTER-----
 {
   INSTALAÇÃO
   {

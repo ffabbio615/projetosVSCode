@@ -124,7 +124,7 @@ export default function MenuEditItems(){
                             <label htmlFor="mainItem">Item principal</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" />
+                            <input type="checkbox" id="aditionalItem" name="aditionalItem" value="aditionalItem" disabled={promoCheckOption ? true : false} />
                             <label htmlFor="aditionalItem">Item adicional</label>
                         </div>
                         <div className="last-check">

@@ -9,6 +9,7 @@ import MenuEditItem from './components/menu/MenuEditItem.jsx';
 import { DeliveryProvider } from './components/context/DeliveryContext.jsx';
 import Delivery from './components/delivery/Delivery.jsx';
 import AddItem from './components/delivery/AddItem.jsx';
+import EditItemInBag from './components/delivery/EditItemInBag.jsx';
 import CapiwarasBag from './components/delivery/CapiwarasBag.jsx';
 import CompletedOrder from './components/delivery/CompletedOrder.jsx';
 import FooterMenu from './components/fixed/FooterMenu.jsx'
@@ -31,6 +32,7 @@ function App() {
               <Route path='/menu/edit-item/:itemId' element={<MenuEditItem/>} />
               <Route path='/delivery' element={<Delivery/>} />
               <Route path='/delivery/add-item/:itemId' element={<AddItem/>} />
+              <Route path='/delivery/edit-item/:ids' element={<EditItemInBag/>} />
               <Route path='/delivery/add-item/capiwaras-bag' element={<CapiwarasBag/>} />
               <Route path='/delivery/add-item/capiwaras-bag/completed-order' element={<CompletedOrder/>} />
             </Routes>

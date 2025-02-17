@@ -17,7 +17,7 @@
         position: fixed;
         box-shadow: 0 2px 8px rgba(App.$neutral-color-dark-gray, 0.2);
 
-        a{
+        div{
             height: 100%;
             width: 25px;
             z-index: 10;
@@ -62,10 +62,20 @@
             @include food-description-text(App.$paragraph-16px);
         }
 
-        .food-value{
-            @include food-description-text(App.$paragraph-20px);
-            font-weight: 600;
-            margin-bottom: 25px;
+        .promo-value-container{
+            display: flex;
+            padding-left: 5%;
+
+            .food-value{
+                font: App.$title-h5-20px;
+                color: App.$primary-medium-green;
+                margin: 0 5px 25px 0;
+            }
+
+            .original-value{
+                text-decoration: line-through;
+                color: App.$neutral-color-medium-gray;
+            }
         }
     }
 
@@ -217,7 +227,6 @@
             }
         }
     }
-
 }
 
 @media screen and (min-width: 500px){

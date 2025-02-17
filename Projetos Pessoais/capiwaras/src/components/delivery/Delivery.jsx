@@ -2,20 +2,33 @@ import './Delivery.scss';
 import { useNavigate, Link } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { MenuContext } from '../context/MenuContext';
+import { DeliveryContext } from '../context/DeliveryContext';
 
 export default function Delivery(){
 
     const navigate = useNavigate();
     const {menuItems, menuCategory} = useContext(MenuContext);
+    const {orderItems} = useContext(DeliveryContext);
 
     function itemHandler(id){
-
         navigate(`/delivery/add-item/${id}`);
+    }
+
+    function goToBag(){
+        navigate("/delivery/add-item/capiwaras-bag");
     }
 
     return(
         <main className='delivery-container'>
-
+            <div className='bag-items-container'>
+                    {orderItems.length>0 ?
+                        <>
+                            <img onClick={goToBag} className='bag-items bag-items-active' src="../src/assets/img/icons/bagIcon.svg" alt="Bag Icon" />
+                            <p>{orderItems.filter(item => item.itemType === "main").length}</p>
+                        </>
+                    :   <img className='bag-items bag-items-inactive' src="../src/assets/img/icons/bagIcon.svg" alt="Bag Icon" />
+                    }
+            </div>
             <div className='header-container'>
                 <div className='header-background'></div>
                 <div className='header-logo'>
@@ -52,7 +65,10 @@ export default function Delivery(){
                                     <p className='food-discount'>{(((item.promoValue*100) / (item.originalValue*1)) - 100).toFixed(0)}%</p>
                                     <img src={`../src/assets/img/dishes/${item.picture}.jpg`} className="food-image" alt='Imagem do Prato' />
                                     <p className='food-title'>{item.name}</p>
-                                    <div className="item-price-container"><p className='food-price'>R${item.promoValue.toFixed(2).replace(".",",")}</p></div>
+                                    <div className="item-price-container">
+                                        <p className='promo-food-price'>R${item.promoValue.toFixed(2).replace(".",",")}</p>
+                                        <p className='original-food-price'>R${item.originalValue.toFixed(2).replace(".",",")}</p>
+                                    </div>
                                 </div>
                             ))}
                     </div>
