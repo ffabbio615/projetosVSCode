@@ -166,13 +166,13 @@
             .course-image1{
                 width: 90%;
                 margin-left: 5%;
-                @include presentation-image(url(../assets/img/courseImage1.jpg), center center);
+                @include presentation-image(url(../assets/img/courseImage1.webp), center center);
             }
 
             .course-image2{
                 width: 90%;
                 margin-left: 5%;
-                @include presentation-image(url(../assets/img/courseImage2.jpg), center center);
+                @include presentation-image(url(../assets/img/courseImage2.webp), center center);
             }
         }
     }
