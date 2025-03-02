@@ -10,10 +10,12 @@ windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois c
     Toda vez que atualizar o arquivo .ts, devemos rodar esse código para realizar a conversão em .js e a atualização do mesmo.
 }
 
+
 -----ERRO QUANDO O CÓDIGO ESTÁ CORRETO-----
 {
     Há uma checagem em typescript que "dá erro", e só acontece isso porque o arquivo .js está aberto também. Deve-se focar apenas no .ts, sem abrir o .js
 }
+
 
 -----SINTAXE DE UMA FUNCTION COM ARGUMENTOS EM TYPESCRIPT-----
 {
@@ -26,10 +28,12 @@ windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois c
         let result = add(5, 8);
 }
 
+
 -----COMO MOSTRAR ARQUIVO DE CONFIGURAÇÃO (TSCONFIG) TYPESCRIPT-----
 {
     No terminal do projeto, digite> tsc --init
 }
+
 
 -----FERRAMENTAS A SEREM CONFIGURADAS NO TSCONFIG-----
 {
@@ -41,8 +45,132 @@ windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois c
     *Com esse arquivo TSCONFIG, para rodar o compiler não é mais necessário o código "tsc nomeDoArquivo.ts". Agora pode utilizar no terminal do projeto apenas "tsc"
 }
 
+
 -----TIPOS DE ATRIBUTOS NO JAVASCRIPT E NO TYPESCRIPT-----
 {
     JS: NUMBER | STRING | BOOLEAN | UNDEFINED | OBJECT | NULL
     TS: ANY | UNKNOWN | TUPLE | NEVER | ENUM
+
+    ANY: Quando você declara a existência de uma variável, mas não atribui nenhum tipo a ela. Ex.: let name; | name = "João"; | name = true;
+    
+    TUPLE: Quando você quer criar um array que receberá mais de um tipo, deve-se fazer assim: let item: [string, number, boolean] = ['Apple', 3, true];
+        *Para usar uma TUPLE vazia e depois atribuir os valores, use "as" para fazer uma type assertion. Ex.: let item = [] as [string, number, boolean];
+        item = ["Texto", 42, true];
+    
+    ENUM: Permite definir um conjunto de valores nomeados. Ele é útil para representar estados, categorias ou opções fixas de forma mais legível e segura.
+    Sempre declarar com o nome em maiúsculo:
+        Sem definir valores. Ex.: enum Status { Pendente, EmAndamento, Concluido } | console.log(Status.Pendente); // 0 console.log(Status.EmAndamento); // 1
+            console.log(Status.Concluido); // 2
+        Definindo valores. Ex.: enum Status { Pendente = 1, EmAndamento = 3, Concluido = 5 } | console.log(Status.EmAndamento); // 3
+
+    UNKNOWN: É um tipo seguro para representar valores desconhecidos. Ele é similar ao any, mas com mais restrições para evitar erros inesperados.
+    UNKNOWN significa que não sabemos o tipo exato de um valor no momento da atribuição, então o TypeScript exige uma verificação antes de usá-lo.
+        let valor: unknown;
+        valor = "Olá";
+        valor = 42;
+        valor = true;
+        
+        *A diferença do any é que não podemos usar diretamente esse valor sem antes verificar seu tipo.
+            let valor: unknown = "Texto";
+            console.log(valor.toUpperCase()); // ❌ ERRO: O TypeScript não sabe se é uma string.
+        
+        **A verificação se faz dessa forma:
+            let valor: unknown = "Olá";
+            // let numero: number = valor; // ❌ ERRO
+            if (typeof valor === "number") {
+                let numero: number = valor; // ✅ Agora funciona
+            }
+
+        ***Se tivermos certeza do tipo, podemos usar as:
+            let valor: unknown = "Olá";
+            let texto: string = valor as string;
+            console.log(texto.toUpperCase()); // ✅ Funciona
+    
+    NEVER: significa que a função ou variável nunca terá um valor válido. Isso acontece em três principais situações:
+    1️⃣ Funções que lançam erros e nunca retornam. (Quando uma função sempre joga um erro.)
+    2️⃣ Funções que entram em um loop infinito. (Quando uma função nunca termina.)
+    3️⃣ Casos impossíveis dentro de um switch ou if. (Para garantir que um código nunca receba valores inválidos (exemplo do switch).)
+    
+    *Exemplo de função que nunca retorna um valor válido, pois sempre joga um erro:
+        function erro(mensagem: string): never {
+        throw new Error(mensagem);
+        }
+        erro("Algo deu errado!"); // ❌ Interrompe a execução
+
+    **Se uma função nunca finaliza, seu tipo de retorno é never:
+    function loopInfinito(): never {
+        while (true) {
+            console.log("Rodando para sempre...");
+        }
+    } //Essa função nunca retorna um valor porque nunca sai do loop.
+
+    ***Quando TypeScript sabe que um caso nunca deve ocorrer, ele pode inferir never:
+        type Status = "Carregando" | "Sucesso" | "Erro";
+
+        function verificarStatus(status: Status) {
+            switch (status) {
+                case "Carregando":
+                    console.log("O sistema está carregando...");
+                    break;
+                case "Sucesso":
+                    console.log("Operação concluída!");
+                    break;
+                case "Erro":
+                    console.log("Algo deu errado.");
+                    break;
+                default:
+                    const inesperado: never = status; // ❌ Erro se um valor inesperado surgir
+                    console.log(`Status inválido: ${inesperado}`);
+            } //Se um novo status for adicionado sem atualizar o switch, o TypeScript avisará sobre um possível erro.
+        }
+}
+
+
+-----FUNCTIONS-----
+{
+    *Em TypeScript, se for declarada uma função sem dizermos os tipos dos parâmetros que estão sendo passados nela, os parâmetros serão ANY e o return dessa
+    função (se houver) será considerado ANY também. Ex.: function soma (n1, n2){ return n1+n2; }
+
+    **Se dissermos os tipos dos parâmetros e houver um return, este return será considerado o mesmo dos parâmetros.
+        Ex.: function soma (n1: number, n2: number){ return n1+n2; } //Esse return estará automaticamente reconhecido como number e só poderá ser isso.
+    
+    ***Se quisermos que os parâmetros sejam de um tipo e o return seja de um específico, devemos declarar na função. Ex.: 
+        function soma (n1: number, n2: number): boolean{ 
+            if(n1 + n2 === 10){
+                return true;
+            } else{
+                return false;
+            }
+        } //Aqui deverá sempre retornar um boolean
+}
+
+
+-----OBJECTS-----
+{
+    O TypeScript por si só já identifica os tipos dentro de um objeto, mas se por um acaso precisar declarar os tipos, a forma que deve ser feita é essa:
+        const user:{
+            firstName: string,
+            age: number,
+            lastName: string,
+        } = {
+            firstName: "Fábio",
+            age: 33,
+            lastName: "Marques Melo"
+        } //Esse é um objeto que precisa obrigatoriamente ser inicializado
+    
+    Para criar um objeto que não precisa ser inicializado, como fazemos no React, fazemos assim:
+        const user:{
+            firstName?: string,
+            age?: number,
+            lastName?: string,
+        } = {} //A adição de "?" após os nomes dos campos indica que esse campo tem o tipo definido, mas não precisa ser inicializado.
+}
+
+-----ARRAYS COM TIPOS-----
+{
+    Para seguir o conceito do Typescript, deve-se utilizar os arrays com o tipo declarado. Ex.:
+
+    const array: number[] = [10, 20, 30];
+    const nomes: string[] = []; | nomes.push["Ana", "Fábio", "Joaquim"];
+
 }
