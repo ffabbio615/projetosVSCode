@@ -6,7 +6,8 @@ export default function Header() {
             <div className='whatsapp-container'>
                 <a href="https://wa.me/+5521965147515/?text=Olá! Desejo mais informações sobre a PRIME." target="blank" className='whatsapp-icon'></a>
             </div>
-            <header className='header'>
+            
+            <header className='header' id='header'>
                 <div className='social-media'>
                     <a href='https://www.instagram.com/primelanguageschoolrj/profilecard/?igsh=cWJjYzZza3BhcnUx' target='blank' className='social-media-instagram'></a>
                     <a href='https://www.facebook.com/share/15MjuFpGF3/?mibextid=LQQJ4d' target='blank' className='social-media-facebook'></a>

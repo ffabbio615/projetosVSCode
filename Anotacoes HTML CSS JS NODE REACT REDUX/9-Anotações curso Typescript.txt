@@ -1,0 +1,42 @@
+Para Instalar o Typescript compiler, devemos utilizar no terminal global o código: npm i -g typescript
+Para verificar se o TypeScript está instalado, utilize: tsc-v para global e npx tsc -v para a raiz dos projetos no VS Code. (se o tsc-v não funcionar, abra o terminal do
+windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois confirme e teste o código novamente no temrinal do VS Code)
+
+
+-----GERAR UM COMPILER-----
+{
+    O Typescript por si só não é convertido em JavaScript, então precisamos abrir o terminal na pasta do projeto e rodar o código com o nome do arquivo, para gerar
+    uma cópia .js desse arquivo .ts> tsc nomeDoArquivo.ts
+    Toda vez que atualizar o arquivo .ts, devemos rodar esse código para realizar a conversão em .js e a atualização do mesmo.
+}
+
+-----ERRO QUANDO O CÓDIGO ESTÁ CORRETO-----
+{
+    Há uma checagem em typescript que "dá erro", e só acontece isso porque o arquivo .js está aberto também. Deve-se focar apenas no .ts, sem abrir o .js
+}
+
+-----SINTAXE DE UMA FUNCTION COM ARGUMENTOS EM TYPESCRIPT-----
+{
+    Para que a gente possa passar argumentos em typescript da forma correta, devemos declarar os tipos deles. Ex.:
+
+        function add(num1: number, num2: number){
+            return num1 + num2;
+        }
+
+        let result = add(5, 8);
+}
+
+-----COMO MOSTRAR ARQUIVO DE CONFIGURAÇÃO (TSCONFIG) TYPESCRIPT-----
+{
+    No terminal do projeto, digite> tsc --init
+}
+
+-----FERRAMENTAS A SEREM CONFIGURADAS NO TSCONFIG-----
+{
+    "rootDir": "./pasta",  //Essa ferramenta serve para dizer onde está a pasta raiz com os arquivos de código do projeto
+    "outDir": "./pasta", //Quando o compiler rodar, ele vai exportar o arquivo JS para essa pasta
+    "noImplicitAny": true, //Ativa a checagem se uma variável for usada sem ser declarado seu tipo. Ativar isso vai prevenir que essa variável se torne qualquer "any".
+    "noEmitOnError": true, //Não deixa compilar caso tenha um erro no código
+
+    *Com esse arquivo TSCONFIG, para rodar o compiler não é mais necessário o código "tsc nomeDoArquivo.ts". Agora pode utilizar no terminal do projeto apenas "tsc"
+}

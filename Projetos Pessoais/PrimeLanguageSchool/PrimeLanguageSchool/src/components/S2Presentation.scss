@@ -7,6 +7,24 @@
     background-position: $image-position;
 }
 
+.up-button{
+    width: 70px;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    border-radius: 5px 5px 0 0;
+    background-color: App.$primary-color-red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    filter: drop-shadow(0 0 18px rgba(App.$neutral-color-black, 0.4));
+    font: App.$paragraph-20px;
+    color: App.$neutral-color-white;
+    text-decoration: none;
+}
+
 .presentation-section{
     min-width: 100vw;
     min-height: 650px;
@@ -199,6 +217,11 @@
 }
 
 @media screen and (min-width: 600px) and (max-width: 1099px) and (orientation:landscape){
+
+    .up-button{
+        display: none;
+    }
+
     .presentation-section {
         min-height: 100vh;
         height: auto;
@@ -243,14 +266,14 @@
                     max-width: 90%;
                     height: 250px;
                     margin: 20px 0;
-                    @include presentation-image(url(../assets/img/courseImage1.jpg), center center);
+                    @include presentation-image(url(../assets/img/courseImage1.webp), center center);
                 }
     
                 .course-image2{
                     max-width: 90%;
                     height: 250px;
                     margin: 0 0 20px 0;
-                    @include presentation-image(url(../assets/img/courseImage2.jpg), center center);
+                    @include presentation-image(url(../assets/img/courseImage2.webp), center center);
                 }
             }
 
@@ -289,6 +312,11 @@
 }
 
 @media screen and (min-width: 300px) and (orientation:portrait){
+
+    .up-button{
+        display: none;
+    }
+
     .presentation-section {
         min-height: 100vh;
         height: auto;
@@ -360,14 +388,14 @@
                     max-width: 90%;
                     height: 200px;
                     margin: 0;
-                    @include presentation-image(url(../assets/img/courseImage1.jpg), center center);
+                    @include presentation-image(url(../assets/img/courseImage1.webp), center center);
                 }
     
                 .course-image2{
                     max-width: 90%;
                     height: 200px;
                     margin: 0;
-                    @include presentation-image(url(../assets/img/courseImage2.jpg), center center);
+                    @include presentation-image(url(../assets/img/courseImage2.webp), center center);
                 }
             }
 

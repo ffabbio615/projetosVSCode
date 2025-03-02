@@ -118,6 +118,8 @@ OPERADORES DE COMPARAÇÃO
 != Diferente / Checa valor
 !== Diferente Estrito / Checa valor e tipo
 || Ou / Uma coisa ou outra
+?== Se null ou undefined, o atributo recebe o valor
+||= Tudo que der falso (falsy), seja null, vazio ou undefined, o atributo recebe o valor
 
 
 ESTRUTURA DE CONDIÇÃO (IF COMPACTO)

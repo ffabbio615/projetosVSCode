@@ -17,6 +17,11 @@ export default function S2Presentation(){
     
         return (
             <>
+            {sectionActive ?
+            <a href="#header" className='up-button'>&#11165;</a>
+            : null
+            }
+
             <div className={`presentation-background ${sectionActive ? 'presentation-background-active' : 'presentation-background-inactive'}`}></div>
         <div className={`presentation-container ${sectionActive ? 'presentation-container-active' : 'presentation-container-inactive'}`}>
             <div className="who-we-are-container">

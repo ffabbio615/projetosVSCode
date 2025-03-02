@@ -12,3 +12,6 @@ GitHub Pull Requests
 
 Live Server
 
+ESLint (Ajuda a identificar os erros nos códigos)
+Path Intellisense (ajuda nas importações, auto completando caminhos de arquivos e prevenindo alguns erros)
+Prettier (coloca o seu código ajustado da melhor forma que facilite a leitura)
