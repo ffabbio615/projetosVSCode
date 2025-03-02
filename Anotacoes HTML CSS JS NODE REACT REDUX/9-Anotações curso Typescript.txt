@@ -40,3 +40,9 @@ windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois c
 
     *Com esse arquivo TSCONFIG, para rodar o compiler não é mais necessário o código "tsc nomeDoArquivo.ts". Agora pode utilizar no terminal do projeto apenas "tsc"
 }
+
+-----TIPOS DE ATRIBUTOS NO JAVASCRIPT E NO TYPESCRIPT-----
+{
+    JS: NUMBER | STRING | BOOLEAN | UNDEFINED | OBJECT | NULL
+    TS: ANY | UNKNOWN | TUPLE | NEVER | ENUM
+}
