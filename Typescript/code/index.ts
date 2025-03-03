@@ -39,3 +39,53 @@ const user:{
     age?: number,
     lastName?: string,
 } = {}
+
+type Users = {
+    firstName: string,
+    age: number,
+    lastName: string,
+} 
+
+const user2: Users = {
+    firstName: "Fábio",
+    age: 33,
+    lastName: "Marques Melo"
+}
+
+
+
+function nameType(name: string | number){
+    if(typeof name === 'string'){
+        return("O nome dele é: " + name);
+    }else{
+        return("O nome dele em número é: " + name);
+    }
+}
+
+let receberParecer = nameType("Fábio");
+console.log(receberParecer);
+
+receberParecer = nameType(612915);
+console.log(receberParecer);
+
+
+// INTERSECTION
+type FamilyPerson = {
+    name: string;
+    age: number;
+}
+type FamilyCategory = {
+    category: string;
+}
+type Family = FamilyPerson & FamilyCategory;
+
+const person: Family = {
+    name: "Fábio",
+    age: 33,
+    category: "neto",
+}// Foram criados dois ALIAS para definir os campos e mais um para fazer a interseção antes do atributo se apropriar deles
+
+
+//Declaração de arrays com tipo String e Number ao mesmo tempo.
+const stringAndNumbers: (string | number) [] = ["one", 1, 2, "Two", "Three", "Four"];
+console.log(stringAndNumbers[4]);

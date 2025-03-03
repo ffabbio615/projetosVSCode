@@ -43,6 +43,21 @@ windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois c
     "noEmitOnError": true, //Não deixa compilar caso tenha um erro no código
 
     *Com esse arquivo TSCONFIG, para rodar o compiler não é mais necessário o código "tsc nomeDoArquivo.ts". Agora pode utilizar no terminal do projeto apenas "tsc"
+    **Caso não queira ficar toda vez dando o comando para atualizar o arquivo .JS, deve-se utilizar o comando tsc --watch
+        Com esse código, o compilador esperará uma atualização (save) para atualizar também os arquivos JS. | Pode também utilizar tsc --w
+        Para PARAR o watch mode, deve-se utilizar o atalho CTRL+C no terminal que está com o mesmo ativado
+    ***Para utilizar o watch mode apenas em arquivos selecionados, há o que chamamos de include e exclude. Não é necessário utilizar os dois, porque quando
+    se inclui algo, se exclui o resto e vice-versa. | Para fazer, por exemplo, o include, deve-se ir até até a última linha, antes de fechar a última chave
+    e colocar o seguinte código:
+        "include": [
+            "code/index.ts",
+        ] //Incluiu o nome da pasta onde estão os arquivos TS e o nome do(s) arquivo(s)
+    
+    "sourceMap": true,  //Serve para habilitar um debug no Browser, criando automaticamente os arquivos com extensão MAP.
+    *Agora, na aba pages no navegador, dá para visualizar os arquivos TS e, consequentemente, utilizar as ferramentas de debug
+    disponíveis no browser
+
+    "removeComments": true,  //Essa ferramenta serve para compilar os arquivos TS em JS sem os comentários do código
 }
 
 
@@ -165,6 +180,80 @@ windows e digite "Set-ExecutionPolicy Unrestricted -Scope CurrentUser", depois c
             lastName?: string,
         } = {} //A adição de "?" após os nomes dos campos indica que esse campo tem o tipo definido, mas não precisa ser inicializado.
 }
+
+
+-----ALIAS TYPE-----
+{
+    O TypeScript possui o que chamamos de ALIAS, que seria um pseudônimo (nome fictício) aos tipos de declaração de atributos. Ex.:
+        
+        type Users = {
+            firstName: string,
+            age: number,
+            lastName: string,
+        } 
+
+        const user: Users = {
+            firstName: "Fábio",
+            age: 33,
+            lastName: "Marques Melo"
+        }
+    *Com esses types, você pode criar grupos com as properties dentro de uma ALIAS e pode reutilizr essas properties em outras constantes
+}
+
+
+-----UNION TYPE-----
+{
+    Serve para utilizar na function mais de um tipo por parâmetro passado, ou seja, a function, dependendo do que receber, fará algo diferente. Ex.:
+
+    function nameType(name: string | number){
+        if(typeof name === 'string'){
+            return("O nome dele é: " + name);
+        }else{
+            return("O nome dele em número é: " + name);
+        }
+    }
+    
+    let receberParecer = nameType("Fábio");
+    console.log(receberParecer);
+
+    receberParecer = nameType(612915);
+    console.log(receberParecer);
+}
+
+
+-----LITERAL TYPE-----
+{
+    Serve para indicar um valor exato para um atributo, sendo que o mesmo não poderá ser mudado. Ex.:
+        let productSize: 'P'; //Em vez de declarar String, já coloca o valor diretamente
+        productSize = 'M'; //Vai dar erro porque o produto está declarado como 'P'
+
+    Caso queira uma variação, pode-se usar UNION TYPE para aumentar seus tipos literais. Ex.:
+        let productSize: 'P' | 'M' | 'G'; //Agora o atributo responderá positivamente se usar um desses três valores
+        productSize = 'G';
+        productSize = 'P';
+        productSize = 'M';
+}
+
+
+-----INTERSECTION TYPE-----
+{
+    Serve para criar uma interseção entre dois ALIAS. Ex.:
+    type FamilyPerson = {
+        name: string;
+        age: number;
+    }
+    type FamilyCategory = {
+        category: string;
+    }
+    type Family = FamilyPerson & FamilyCategory;
+
+    const person: Family = {
+        name: "Fábio",
+        age: 33,
+        category: "neto",
+    }// Foram criados dois ALIAS para definir os campos e mais um para fazer a interseção antes do atributo se apropriar deles
+}
+
 
 -----ARRAYS COM TIPOS-----
 {
