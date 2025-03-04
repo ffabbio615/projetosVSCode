@@ -1,0 +1,223 @@
+@use '../../App.scss';
+
+@mixin align-items(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+//Aqui eu fiz conforme verifiquei no Figma, porém tenho o costume de, quando faço desktop first, colocar os estilos livres de media queries e só aplicar as modificações
+//nas classes das medias queries de menores formatos, porque fica com menos código e não fica com repetições de tamanhos, cores, etc.
+
+@media screen and (min-width: 1440px){
+    .product-section-container{
+        width: 100%;
+        padding: 40px;
+        background: App.$c-product-section-background;
+        @include align-items();
+
+        .categories-names{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            
+
+            .subcategory-name{
+                font: App.$w-product-subcategory;
+                color: App.$c-text;
+                letter-spacing: -0.4px;
+            }
+
+            .category-name{
+                font: App.$w-product-category;
+                color: App.$c-accent;
+                padding: 4px;
+                background-color: rgba(App.$c-accent, 0.3);
+                letter-spacing: -0.4px;
+            }
+        }
+
+        .video-card-products-container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 40px;
+            justify-items: center;
+            align-items: center;
+
+            .video-card-product-container:hover{
+                background: App.$c-product-container-hover;
+            }
+
+            .video-card-product-container{
+                width: 100%;
+                padding: 24px;
+                @include align-items();
+                row-gap: 16px;
+                transition: 0.3s;
+
+
+                .video-card-image{
+                    width: auto;
+                    height: 200px;
+                    border-radius: 4px;
+                }
+
+                .video-card-description{
+                    width: 100%;
+                    font: App.$w-product-description;
+                    letter-spacing: -0.8px;
+                    color: App.$c-text;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .video-card-prices-container{
+                    width: 100%;
+
+                    .original-price{
+                        width: 100%;
+                        font: App.$w-product-orginal-price;
+                        color: App.$c-text;
+                        text-decoration: line-through;
+                    }
+
+                    .promo-price{
+                        font: App.$w-product-promo-price;
+                        color: App.$c-text;
+                    }
+
+                    .video-card-pix-discount{
+                        font: App.$w-product-payment-details;
+                        color: App.$c-accent;
+                    }
+                }
+
+                .video-card-order-button{
+                    width: 100%;
+                    padding: 8px;
+                    background: App.$c-accent;
+                    border: none;
+                    color: App.$c-product-button-text;
+                    font: App.$w-product-order-button;
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+
+                .video-card-order-button:hover{
+                    background: App.$c-dark-accent;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 1439px){
+    .product-section-container{
+        width: 100%;
+        padding: 0 16px;
+        padding-top: 40px;
+        row-gap: 16px;
+        background: App.$c-product-section-background;
+        @include align-items();
+
+        .categories-names{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            
+
+            .subcategory-name{
+                font: App.$m-product-subcategory;
+                color: App.$c-text;
+                letter-spacing: -0.2px;
+            }
+
+            .category-name{
+                font: App.$m-product-category;
+                color: App.$c-accent;
+                padding: 4px;
+                background-color: rgba(App.$c-accent, 0.3);
+                letter-spacing: -0.2px;
+            }
+        }
+
+        .video-card-products-container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            overflow-x: scroll;
+            gap: 16px;
+            justify-items: center;
+            align-items: center;
+
+            .video-card-product-container{
+                width: 100%;
+                padding: 16px;
+                @include align-items();
+                row-gap: 25px;
+                transition: 0.3s;
+                border-radius: 4px;
+                background: App.$c-mobile-product-section-background;
+
+
+                .video-card-image{
+                    width: auto;
+                    height: 132px;
+                    height: 132px;
+                    border-radius: 4px;
+                }
+
+                .video-card-description{
+                    width: 100%;
+                    font: App.$m-product-description;
+                    letter-spacing: -0.8px;
+                    color: App.$c-text;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .video-card-prices-container{
+                    width: 100%;
+
+                    .original-price{
+                        width: 100%;
+                        font: App.$m-product-orginal-price;
+                        color: App.$c-text;
+                        text-decoration: line-through;
+                        letter-spacing: -0.2px;
+                    }
+
+                    .promo-price{
+                        font: App.$m-product-promo-price;
+                        color: App.$c-text;
+                        letter-spacing: -0.2px;
+                    }
+
+                    .video-card-pix-discount{
+                        font: App.$m-product-payment-details;
+                        color: App.$c-accent;
+                    }
+                }
+
+                .video-card-order-button{
+                    width: 100%;
+                    padding: 8px;
+                    background: App.$c-accent;
+                    border: none;
+                    color: App.$c-product-button-text;
+                    font: App.$m-product-order-button;
+                }
+            }
+        }
+    }
+}

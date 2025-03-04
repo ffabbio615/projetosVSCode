@@ -1,0 +1,260 @@
+@use '../../App.scss';
+
+//Aqui eu fiz conforme verifiquei no Figma, porém tenho o costume de, quando faço desktop first, colocar os estilos livres de media queries e só aplicar as modificações
+//nas classes das medias queries de menores formatos, porque fica com menos código e não fica com repetições de tamanhos, cores, etc.
+
+@media screen and (min-width: 1440px){
+
+    .return-to-home-button{
+        border: none;
+        font: App.$w-product-order-button;
+        background-color: transparent;
+        color: App.$c-accent;
+        padding: 16px;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .return-to-home-button:hover{
+        color: App.$c-dark-accent;
+    }
+
+    .text-details-pattern{
+        font: App.$w-product-detail-informations;
+        color: App.$c-text;
+        letter-spacing: -0.3px;
+    }
+
+    .product-details-container{
+        width: 100%;
+        height: 100vh;
+        background-color: App.$c-product-section-background;
+
+        .product-container{
+            padding: 120px 64px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 40px;
+
+            .product-image{
+                width: 624px;
+                height: 476px;
+            }
+            
+            .details-container{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                row-gap: 16px;
+                justify-content: center;
+
+                .product-title{
+                    font: App.$w-product-detail-title;
+                    letter-spacing: -0.8px;
+                }
+
+                .fulfilled-by-container{
+                    display: flex;
+
+                    .logitech-company{
+                        font: App.$w-product-detail-informations-accent;
+                        color: App.$c-logitech-accent;
+                        letter-spacing: -0.3px;
+                        margin: 0 8px
+                    }
+
+                    .company{
+                        font: App.$w-product-detail-informations-accent;
+                        color: App.$c-text;
+                        letter-spacing: -0.3px;
+                        margin: 0 8px
+                    }
+
+                    .stock{
+                        font: App.$w-product-detail-informations-accent;
+                        color: App.$c-accent;
+                        letter-spacing: -0.3px;
+                        margin-left: 8px;
+                    }
+
+                    .in-stock{
+                        color: App.$c-accent;
+                    }
+
+                    .no-stock{
+                        color: App.$c-no-stock;
+                    }
+                }
+
+                .original-value{
+                    text-decoration: line-through;
+                }
+
+                .promo-value{
+                    font: App.$w-product-detail-promo-price;
+                    color: App.$c-accent;
+                }
+
+                .product-details-button-container{
+                    display: flex;
+                    column-gap: 16px;
+
+                    .order-button{
+                        padding: 12px 24px;
+                        background: App.$c-accent;
+                        border: none;
+                        color: App.$c-product-button-text;
+                        font: App.$w-product-detail-order-button;
+                        transition: 0.3s;
+                        cursor: pointer;
+                    }
+    
+                    .order-button:hover{
+                        background: App.$c-dark-accent;
+                    }
+
+                    .cart-button{
+                        padding: 12px 24px;
+                        background-color: App.$c-product-section-background;
+                        border-width: 1px;
+                        border-color: App.$c-accent;
+                        color: App.$c-accent;
+                        font: App.$w-product-detail-order-button;
+                        transition: 0.3s;
+                        cursor: pointer;
+                    }
+    
+                    .cart-button:hover{
+                        background: App.$c-dark-accent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 1439px){
+
+    .return-to-home-button{
+        border: none;
+        font: App.$w-product-order-button;
+        background-color: transparent;
+        color: App.$c-accent;
+        padding: 8px 16px;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .return-to-home-button:hover{
+        color: App.$c-dark-accent;
+    }
+
+    .text-details-pattern{
+        font: App.$m-product-detail-informations;
+        color: App.$c-text;
+        letter-spacing: -0.4px;
+    }
+
+    .product-details-container{
+        width: 100%;
+        height: auto;
+        background-color: App.$c-product-section-background;
+
+        .product-container{
+            padding: 32px 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: 40px;
+
+            .product-image{
+                width: 100%;
+                height: 270px;
+                border-radius: 4px;
+            }
+            
+            .details-container{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                row-gap: 16px;
+                justify-content: center;
+
+                .product-title{
+                    font: App.$m-product-detail-title;
+                    letter-spacing: -0.2px;
+                }
+
+                .fulfilled-by-container{
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .logitech-company{
+                        font: App.$m-product-detail-informations-accent;
+                        color: App.$c-logitech-accent;
+                        letter-spacing: -0.4px;
+                        margin: 0 8px
+                    }
+
+                    .company{
+                        font: App.$m-product-detail-informations-accent;
+                        color: App.$c-text;
+                        letter-spacing: -0.4px;
+                        margin: 0 8px
+                    }
+
+                    .vertical-bar{
+                        display: none;
+                    }
+
+                    .stock{
+                        font: App.$m-product-detail-informations-accent;
+                        color: App.$c-accent;
+                        letter-spacing: -0.4px;
+                    }
+
+                    .in-stock{
+                        color: App.$c-accent;
+                    }
+
+                    .no-stock{
+                        color: App.$c-no-stock;
+                    }
+                }
+
+                .original-value{
+                    text-decoration: line-through;
+                }
+
+                .promo-value{
+                    font: App.$w-product-detail-promo-price;
+                    color: App.$c-accent;
+                }
+
+                .product-details-button-container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap: 16px;
+
+                    .order-button{
+                        width: 100%;
+                        padding: 12px 24px;
+                        background: App.$c-accent;
+                        border: none;
+                        color: App.$c-product-button-text;
+                        font: App.$m-product-detail-order-button;
+                    }
+
+                    .cart-button{
+                        width: 100%;
+                        padding: 12px 24px;
+                        background-color: App.$c-product-section-background;
+                        border-width: 1px;
+                        border-color: App.$c-accent;
+                        color: App.$c-accent;
+                        font: App.$m-product-detail-order-button;
+                    }
+                }
+            }
+        }
+    }
+}

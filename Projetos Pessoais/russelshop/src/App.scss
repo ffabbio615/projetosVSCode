@@ -1,0 +1,108 @@
+//-----COLORS-----//
+$c-text: rgb(26, 26, 26);
+$c-product-button-text: rgb(239,239,239);
+$c-accent: rgb(84,56,255);
+$c-dark-accent: rgb(55,34,186);
+$c-product-section-background: rgb(250,250,250);
+$c-mobile-product-section-background: rgb(255,255,255);
+$c-product-container-hover: rgb(232,232,232);
+$c-page-background: rgb(1,1,1);
+$c-promo-section-background: rgb(1,1,1);
+$c-logitech-text: rgb(239,239,239);
+$c-logitech-accent: rgb(0,181,234);
+$c-logitech-dark-accent: rgb(0,133,172);
+$c-logitech-product-background: linear-gradient(135deg, rgba(2,2,2,1) 0%, rgba(0,22,29,1) 100%);
+
+$c-no-stock: rgb(200, 0, 0); //Tomei a liberdade de adicionar o status de estoque para cada item, então criei uma cor para mostrar que não tem o estoque do produto.
+
+//-----TYPOGRAPHY-----//
+@font-face { font-family: 'DMSans-Regular'; src: url(..fonts/DMSans-Regular.ttf) format('truetype');}
+@font-face { font-family: 'DMSans-Medium'; src: url(../fonts/DMSans-Medium.ttf) format('truetype');}
+@font-face { font-family: 'DMSans-Bold'; src: url(../fonts/DMSans-Bold.ttf) format('truetype');}
+
+//-----LOGITECH WEB FONT DEFINITIONS-----//
+$w-logitech-logo: normal 18px 'DMSans-Regular', sans-serif;
+$w-logitech-description: normal 16px 'DMSans-Bold', sans-serif;
+$w-logitech-orginal-price: normal 16px 'DMSans-Regular', sans-serif;
+$w-logitech-promo-price: normal 32px 'DMSans-Bold', sans-serif;
+$w-logitech-order-button: normal 20px 'DMSans-Bold', sans-serif;
+
+$w-product-category: normal 12px 'DMSans-Bold', sans-serif;
+$w-product-subcategory: normal 24px 'DMSans-Medium', sans-serif;
+$w-product-description: normal 16px 'DMSans-Bold', sans-serif;
+$w-product-orginal-price: normal 14px 'DMSans-Regular', sans-serif;
+$w-product-promo-price: normal 18px 'DMSans-Bold', sans-serif;
+$w-product-payment-details: normal 14px 'DMSans-Regular', sans-serif;
+$w-product-order-button: normal 16px 'DMSans-Bold', sans-serif;
+
+$w-product-detail-title: normal 24px 'DMSans-Bold', sans-serif;
+$w-product-detail-informations: normal 16px 'DMSans-Regular', sans-serif;
+$w-product-detail-informations-accent: normal 16px 'DMSans-Bold', sans-serif;
+$w-product-detail-promo-price: normal 48px 'DMSans-Bold', sans-serif;
+$w-product-detail-order-button: normal 20px 'DMSans-Bold', sans-serif;
+
+
+//-----LOGITECH MOBILE FONT DEFINITIONS-----//
+$m-logitech-logo: normal 14px 'DMSans-Regular', sans-serif;
+$m-logitech-description: normal 14px 'DMSans-Bold', sans-serif;
+$m-logitech-orginal-price: normal 12px 'DMSans-Regular', sans-serif;
+$m-logitech-promo-price: normal 24px 'DMSans-Bold', sans-serif;
+$m-logitech-order-button: normal 16px 'DMSans-Bold', sans-serif;
+
+$m-product-category: normal 10px 'DMSans-Bold', sans-serif;
+$m-product-subcategory: normal 20px 'DMSans-Medium', sans-serif;
+$m-product-description: normal 14px 'DMSans-Bold', sans-serif;
+$m-product-name: normal 14px 'DMSans-Bold', sans-serif;
+$m-product-orginal-price: normal 12px 'DMSans-Regular', sans-serif;
+$m-product-promo-price: normal 18px 'DMSans-Bold', sans-serif;
+$m-product-payment-details: normal 12px 'DMSans-Regular', sans-serif;
+$m-product-order-button: normal 16px 'DMSans-Bold', sans-serif;
+
+$m-product-detail-title: normal 24px 'DMSans-Bold', sans-serif;
+$m-product-detail-informations: normal 16px 'DMSans-Regular', sans-serif;
+$m-product-detail-informations-accent: normal 16px 'DMSans-Bold', sans-serif;
+$m-product-detail-promo-price: normal 48px 'DMSans-Bold', sans-serif;
+$m-product-detail-order-button: normal 20px 'DMSans-Bold', sans-serif;
+
+
+//-----GENERAL DEFINITIONS-----//
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth !important; 
+    transition: 0.8s !important;
+    background-color: $c-page-background;
+}
+
+body{
+    overflow-y: scroll;
+}
+
+@media screen and (min-width: 1440px){
+
+    html{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    body{
+        width: 1440px;
+    }
+}
+
+// @media screen and (min-width: 300px){
+//     body{
+//         touch-action:pan-y;
+//     }
+// }
