@@ -143,7 +143,8 @@
 
 
                 .promo-product-image{
-                    width: 100%;
+                    max-width: 100%;
+                    width: auto;
                     height: 144px;
                     border-radius: 4px;
                 }
